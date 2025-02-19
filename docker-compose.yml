@@ -1,0 +1,14 @@
+services:
+  node-app:
+    build: services/graphql
+    container_name: graphql
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/usr/src/app
+      - ./services/graphql/package.json:/usr/src/app/package.json
+      - ./services/graphql/package-lock.json:/usr/src/app/package-lock.json
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev

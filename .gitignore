@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE/Editor
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Docker
+.docker/
+docker-compose.override.yml
