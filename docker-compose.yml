@@ -1,5 +1,5 @@
 services:
-  node-app:
+  graphql:
     build: services/graphql
     container_name: graphql
     ports:
@@ -12,3 +12,9 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+  sensor:
+    build: services/sensor
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=UTC
