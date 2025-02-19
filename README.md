@@ -7,9 +7,9 @@ The system simulates a network of sensors, such as Raspberry Pi, capable of meas
 The measured data includes: CO2, PM10 and PM2.5 (Particulate Matter)
 
 -   CO2 (Carbon Dioxide)
--   It is an important indicator of indoor air quality.
--   Elevated levels can indicate poor ventilation.
--   Optimal values are below 1000 ppm.
+    -   It is an important indicator of indoor air quality.
+    -   Elevated levels can indicate poor ventilation.
+    -   Optimal values are below 1000 ppm.
 -   PM10 consists of particles with a diameter of less than 10 micrometers.
 -   PM2.5 consists of even finer particles, with a diameter of less than 2.5 micrometers.
     -   They mainly originate from traffic, heating, and industrial activities.
