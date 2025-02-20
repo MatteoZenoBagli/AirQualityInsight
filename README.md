@@ -21,3 +21,34 @@ Other values that may be measured in the future:
 -   CO (Carbon Monoxide): from incomplete combustion.
 -   SO2 (Sulfur Dioxide): from industrial processes.
 -   VOCs (Volatile Organic Compounds): from solvents, paints, and building materials.
+
+## Services
+
+The project utilizes the following services and technologies:
+
+### Backend Services
+- **Node.js/Express Server**
+  - GraphQL API endpoint for handling data queries and mutations
+  - RESTful endpoints for service health checks and system management
+
+- **Python Sensor Simulator**
+  - Generates simulated sensor data
+  - Configurable parameters for different sensor types and data patterns
+  - Pushes data to Kafka topics
+
+### Data Infrastructure
+- **MongoDB**
+  - Primary database for storing sensor data and system configuration
+  - Handles time-series data collection and aggregation
+
+- **Apache Kafka**
+  - Message broker for real-time data streaming
+  - Handles communication between sensor simulator and data processing services
+  - Enables scalable event-driven architecture
+
+- **Apache ZooKeeper**
+  - Manages Kafka cluster configuration
+  - Handles service discovery and leader election
+  - Maintains configuration information and naming
+
+Each service is containerized and can be deployed independently. See the individual service directories for specific configuration and deployment instructions.
