@@ -12,9 +12,37 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+
   sensor:
     build: services/sensor
+    container_name: sensor
     volumes:
       - ./data:/data
+    depends_on:
+      - mongodb
+      - kafka
     environment:
       - TZ=UTC
+      - MONGODB_URI=mongodb://mongodb:27017/sensordata
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    networks:
+      - sensors-network
+
+  mongodb:
+    build: services/mongodb
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=sensordata
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - sensors-network
+
+networks:
+  sensors-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
