@@ -1,0 +1,113 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": null,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": {
+                "type": "grafana-mongodb-datasource",
+                "uid": "mongodb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "scaleDistribution": {
+                            "type": "linear"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 0
+            },
+            "id": 1,
+            "options": {
+                "dims": {
+                    "frame": {
+                        "field": "timestamp"
+                    },
+                    "x": {
+                        "field": "co2",
+                        "label": "CO2 (ppm)"
+                    },
+                    "y": {
+                        "field": "pressure",
+                        "label": "Pressure (hPa)"
+                    }
+                },
+                "showLegend": true,
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "grafana-mongodb-datasource",
+                        "uid": "mongodb"
+                    },
+                    "query": "db.sensordata.aggregate([
+                        {
+                            $project: {
+                            co2: 1,
+                            pressure: 1,
+                            timestamp: 1,
+                            _id: 0
+                            }
+                        },
+                        {
+                            $sort: { timestamp: 1 }
+                        }
+                    ])",
+                    "queryType": "aggregate"
+                }
+            ],
+            "title": "CO2 vs Pressure Correlation",
+            "type": "scatter"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "CO2 and Pressure Analysis",
+    "version": 0,
+    "weekStart": ""
+}

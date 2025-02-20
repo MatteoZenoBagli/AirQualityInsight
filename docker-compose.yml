@@ -20,7 +20,6 @@ services:
       - ./data:/data
     depends_on:
       - mongodb
-      - kafka
     environment:
       - TZ=UTC
       - MONGODB_URI=mongodb://mongodb:27017/sensordata
@@ -40,9 +39,21 @@ services:
     networks:
       - sensors-network
 
+  grafana:
+    container_name: build
+    build: services/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+
 networks:
   sensors-network:
     driver: bridge
 
 volumes:
   mongodb_data:
+  grafana-storage:
