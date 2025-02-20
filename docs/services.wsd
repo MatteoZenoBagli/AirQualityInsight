@@ -1,0 +1,57 @@
+@startuml
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam ArrowColor #666666
+skinparam componentStyle rectangle
+
+' Custom styling
+skinparam component {
+    BorderColor #2C3E50
+    FontColor #2C3E50
+    BackgroundColor #ECF0F1
+    ArrowColor #7F8C8D
+    BorderThickness 2
+}
+
+skinparam database {
+    BorderColor #2C3E50
+    FontColor #2C3E50
+    BackgroundColor #D5EAF2
+}
+
+skinparam queue {
+    BorderColor #2C3E50
+    FontColor #2C3E50
+    BackgroundColor #FFE5CC
+}
+
+' Components
+[Client Applications] as client #E8F6F3
+[Python Sensor\nSimulator] as sensor #E8F6F3
+queue "Apache Kafka" as kafka
+[Apache Zookeeper] as zookeeper #FFE5CC
+[Node Express Server] as express #D5EAF2
+[GraphQL API] as graphql #D5EAF2
+database "MongoDB" as mongodb
+
+' Relations
+client --> express
+express --> client
+sensor --> kafka
+zookeeper --> kafka
+kafka --> express
+express --> graphql
+graphql --> express
+graphql --> mongodb
+mongodb --> graphql
+
+legend right
+  |= Component |= Type |
+  |<#FFE5CC> Kafka/Zookeeper | Message Broker |
+  |<#E8F6F3> Client/Sensor | Frontend/Data Source |
+  |<#D5EAF2> Express/GraphQL | API Services |
+  |<#D5EAF2> MongoDB | Database |
+endlegend
+
+@enduml
