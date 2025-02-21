@@ -52,5 +52,3 @@ The project utilizes the following services and technologies:
   - Maintains configuration information and naming
 
 Each service is containerized and can be deployed independently. See the individual service directories for specific configuration and deployment instructions.
-
-![UML Schema](docs/services.svg)
