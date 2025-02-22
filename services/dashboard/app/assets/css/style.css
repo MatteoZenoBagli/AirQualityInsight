@@ -1,0 +1,64 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+.map-container {
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    width: 9rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.controls pre {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.25rem 0;
+}
+
+.info {
+    padding: 0.5rem;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.info h4 {
+    margin: 0 0 0.5rem;
+    color: #777;
+}
+
+.legend {
+    line-height: 1.5rem;
+    color: #555;
+}

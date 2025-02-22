@@ -5,13 +5,12 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./app:/usr/src/app
+      - ./services/graphql/app:/usr/src/app
       - ./services/graphql/package.json:/usr/src/app/package.json
       - ./services/graphql/package-lock.json:/usr/src/app/package-lock.json
       - /usr/src/app/node_modules
     environment:
       - NODE_ENV=development
-    command: npm run dev
 
   sensor:
     build: services/sensor
@@ -20,11 +19,9 @@ services:
       - ./data:/data
     depends_on:
       - mongodb
-      - kafka
     environment:
       - TZ=UTC
       - MONGODB_URI=mongodb://mongodb:27017/sensordata
-      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
     networks:
       - sensors-network
 
@@ -40,7 +37,27 @@ services:
     networks:
       - sensors-network
 
+  dashboard:
+    build: services/dashboard
+    container_name: dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/sensordata
+      - NODE_ENV=production
+    depends_on:
+      - mongodb
+    volumes:
+      - ./services/dashboard/app:/usr/src/app
+      - ./services/graphql/package.json:/usr/src/app/package.json
+      - ./services/graphql/package-lock.json:/usr/src/app/package-lock.json
+      - /usr/src/app/node_modules
+    networks:
+      - app-network
+
 networks:
+  app-network:
+    driver: bridge
   sensors-network:
     driver: bridge
 

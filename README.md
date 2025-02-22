@@ -52,3 +52,8 @@ The project utilizes the following services and technologies:
   - Maintains configuration information and naming
 
 Each service is containerized and can be deployed independently. See the individual service directories for specific configuration and deployment instructions.
+
+## List of sensors positions in Bologna
+
+1. Piazza Maggiore: 44.4937° N, 11.3427° E
+...

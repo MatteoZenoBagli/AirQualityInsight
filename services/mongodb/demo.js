@@ -1,6 +1,3 @@
-// populate-and-query.js
-
-// Helper functions
 function printSection(title) {
     print('\n' + '='.repeat(50));
     print(title);
@@ -12,7 +9,6 @@ function getOSMLink(coordinates) {
     return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${long}&zoom=18`;
 }
 
-// Connect to the database
 db = db.getSiblingDB('sensordata');
 
 printSection('Cleaning existing data');

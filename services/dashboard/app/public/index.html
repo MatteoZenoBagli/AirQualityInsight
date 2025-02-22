@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- TODO ADD METADATA -->
+
+        <title>Vue OpenStreetMap App</title>
+        <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        <!-- https://leafletjs.com/ -->
+        <script src="/node_modules/leaflet/dist/leaflet.js"></script>
+        <script src="/node_modules/vue/dist/vue.global.js"></script>
+        <script src="/assets/scripts/map.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="controls">
+                    <pre>
+                        <span>Latitude:</span>
+                        <span>{{ center.lat.toFixed(4) }}</span>
+                    </pre>
+                    <pre>
+                        <span>Longitude:</span>
+                        <span>{{ center.lng.toFixed(4) }}</span>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
