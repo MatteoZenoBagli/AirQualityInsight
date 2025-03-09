@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- TODO ADD METADATA -->
+
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="/assets/css/style.css" />
+
+        <!-- https://leafletjs.com/ -->
+        <script src="/node_modules/leaflet/dist/leaflet.js"></script>
+        <script src="/node_modules/vue/dist/vue.global.js"></script>
+        <script src="/assets/scripts/map.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="map-container">
+                <div v-if="loading" class="loading-overlay">
+                  <img src="/assets/loading-spinner.svg" alt="Loading..." class="loading-gif"/>
+                </div>
+                <div id="map"></div>
+                <div class="center-marker">
+                    <div class="icon"></div>
+                </div>
+                <div class="controls">
+                    <pre>
+                        <span>Latitude:</span>
+                        <span>{{ center.lat }}</span>
+                    </pre>
+                    <pre>
+                        <span>Longitude:</span>
+                        <span>{{ center.lng }}</span>
+                    </pre>
+                    <button class="copy-btn" id="coordinates-copy-btn">Copia</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

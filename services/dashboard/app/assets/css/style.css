@@ -1,0 +1,135 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+.map-container {
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    width: 9rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.controls pre {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.25rem 0;
+}
+
+.info {
+    padding: 0.5rem;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.info h4 {
+    margin: 0 0 0.5rem;
+    color: #777;
+}
+
+.legend {
+    line-height: 1.5rem;
+    color: #555;
+}
+
+
+.center-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.center-marker .icon {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-marker .icon::before {
+    content: "+";
+    font-size: 1.75rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.copy-btn {
+    background-color: #4CAF50;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #45a049;
+}
+
+.copy-btn:active {
+    background-color: #3e8e41;
+}
+.content-frozen {
+  pointer-events: none; /* Prevents any interaction with the content */
+  filter: blur(2px); /* Optional: adds a slight blur effect */
+  opacity: 0.7; /* Optional: dims the content */
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensures it's above everything else */
+}
+
+.loading-gif {
+  /* Adjust size as needed */
+  width: 80px;
+  height: 80px;
+}
