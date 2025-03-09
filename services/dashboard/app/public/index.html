@@ -6,7 +6,7 @@
 
         <!-- TODO ADD METADATA -->
 
-        <title>Vue OpenStreetMap App</title>
+        <title>Dashboard</title>
         <link rel="stylesheet" href="/node_modules/leaflet/dist/leaflet.css">
         <link rel="stylesheet" href="/assets/css/style.css" />
 
@@ -19,6 +19,9 @@
         <div id="app">
             <div class="map-container">
                 <div id="map"></div>
+                <div class="center-marker">
+                    <div class="icon"></div>
+                </div>
                 <div class="controls">
                     <pre>
                         <span>Latitude:</span>
@@ -28,7 +31,16 @@
                         <span>Longitude:</span>
                         <span>{{ center.lng.toFixed(4) }}</span>
                     </pre>
+                    <button class="copy-btn" id="coordinates-copy-btn">Copia</button>
                 </div>
+            </div>
+            <div class="sensors-list-container">
+                <Table
+                    :items="products"
+                    title="Product List"
+                    :columns="columns"
+                    :per-page="5"
+                />
             </div>
         </div>
     </body>

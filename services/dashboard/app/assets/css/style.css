@@ -62,3 +62,50 @@ html {
     line-height: 1.5rem;
     color: #555;
 }
+
+
+.center-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.center-marker .icon {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-marker .icon::before {
+    content: "+";
+    font-size: 1.75rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.copy-btn {
+    background-color: #4CAF50;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #45a049;
+}
+
+.copy-btn:active {
+    background-color: #3e8e41;
+}

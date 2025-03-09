@@ -10,3 +10,9 @@
 - I sensori devono essere disposti su tutte le vie principali ed all'interno delle mura
 - Sarebbe interessante ricoprire anche comuni limitrofi
 - Ho scaricato il Piano Territoriale TAV1 da https://cartografia.cittametropolitana.bo.it/catalogo/scarico_dati.htm
+- Mostrare la heatmap https://handsondataviz.org/leaflet-heatmap.html
+- Usare GraphQl per ottenere solo i park, le strade ecc
+- Ordinare i sensori per tipo
+- Interactive Choropleath Map https://leafletjs.com/examples/choropleth/
+- Layer Groups and Layers Control https://leafletjs.com/examples/layers-control/ per i parchi, chiese ecc
+- Quando ricevo un messaggio da un sensore, lo illumino di verde o simile (lampeggio ecc)

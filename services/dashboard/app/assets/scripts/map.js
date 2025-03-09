@@ -23,7 +23,7 @@ const app = createApp({
                     return response.json();
                 })
                 .then((data) => {
-                    // sensor_locations = data;
+                    sensor_locations = data;
                     loading = false;
                 })
                 .catch((err) => {
@@ -51,14 +51,24 @@ const app = createApp({
             for (const sensor_location of sensor_locations)
                 L.marker([sensor_location.lat, sensor_location.lng])
                     .addTo(map)
-                    .bindPopup(sensor_location.description);
+                    .bindPopup(sensor_location.desc);
+
+            let currentLat, currentLng;
+
+            function updateCurrentCoordinates () {
+                const newCenter = map.getCenter();
+                currentLat = newCenter.lat.toFixed(6);
+                currentLng = newCenter.lng.toFixed(6);
+            }
+
+            updateCurrentCoordinates();
 
             // Update map's coordinates on move
             map.on('moveend', () => {
-                const newCenter = map.getCenter();
+                updateCurrentCoordinates();
                 center.value = {
-                    lat: newCenter.lat,
-                    lng: newCenter.lng
+                    lat: currentLat,
+                    lng: currentLng
                 };
                 zoom.value = map.getZoom();
             });
@@ -67,68 +77,59 @@ const app = createApp({
             fetch('/data/amministrative_boundaries.geojson')
                 .then((response) => response.json())
                 .then((data) => {
-                    L.geoJSON(data, {
-                        style: function (feature) {
+                    const administrativeBoundariesLayer = L.geoJSON(data, {
+                        style(feature) {
                             return {
                                 color: '#ff7800',
                                 weight: 2,
                                 opacity: 0.65
                             };
                         },
-                        onEachFeature: function (feature, layer) {
-                            layer.bindPopup(feature.properties.nome_campo);
+                        pointToLayer(feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: 8,
+                                fillColor: '#ff7800',
+                                color: '#000',
+                                weight: 1,
+                                opacity: 1,
+                                fillOpacity: 0.8
+                            });
                         }
-                    }).bindPopup(function (layer) {
-                        return layer.feature.properties.description;
                     }).addTo(map);
                 });
-            // const boundaryCoords = [
-            //     [44.7264, 11.1378], // Northwest (near Galliera)
-            //     [44.7264, 11.8128], // Northeast (near Mordano)
-            //     [44.1456, 11.8128], // Southeast (near Alto Reno Terme)
-            //     [44.1456, 10.9], // Southwest (near Lizzano in Belvedere)
-            //     [44.7264, 11.1378] // Back to start to close the polygon
-            // ];
 
-            // // Create a polygon for the province boundary
-            // const boundaryPolygon = L.polygon(boundaryCoords, {
-            //     color: 'red',
-            //     weight: 3,
-            //     fillColor: '#fd8d3c',
-            //     fillOpacity: 0.2
-            // }).addTo(map);
+            const coordinatesCopyBtn = document.getElementById(
+                'coordinates-copy-btn'
+            );
+            if (coordinatesCopyBtn)
+                coordinatesCopyBtn.addEventListener('click', function () {
+                    const coordText = `${currentLat}\t${currentLng}`;
 
-            // boundaryPolygon.bindPopup(
-            //     '<b>Bologna Province</b><br>Emilia-Romagna, Italy'
-            // );
+                    navigator.clipboard
+                        .writeText(coordText)
+                        .then(() => {
+                            // Feedback visivo che la copia è avvenuta
+                            const btn = this;
+                            const originalText = btn.textContent;
+                            btn.textContent = 'Copiato!';
+                            btn.style.backgroundColor = '#2196F3';
 
-            // // Add a legend
-            // const legend = L.control({ position: 'bottomright' });
-            // legend.onAdd = function (map) {
-            //     const div = L.DomUtil.create('div', 'info legend');
-            //     div.innerHTML =
-            //         '<h4>Bologna Province</h4>' +
-            //         '<i style="background: #fd8d3c"></i> Province Boundary<br>' +
-            //         '<i style="background: blue"></i> City Locations';
-            //     return div;
-            // };
-            // legend.addTo(map);
-
-            // // Add information control
-            // const info = L.control();
-            // info.onAdd = function (map) {
-            //     this._div = L.DomUtil.create('div', 'info');
-            //     this.update();
-            //     return this._div;
-            // };
-            // info.update = function () {
-            //     this._div.innerHTML =
-            //         '<h4>Bologna Province, Italy</h4>' +
-            //         'The province contains ' +
-            //         cities.length +
-            //         ' municipalities';
-            // };
-            // info.addTo(map);
+                            // Ripristino del testo originale dopo 1.5 secondi
+                            setTimeout(() => {
+                                btn.textContent = originalText;
+                                btn.style.backgroundColor = '';
+                            }, 1.5 * 1000); // ms
+                        })
+                        .catch((err) => {
+                            console.error(
+                                'Errore nella copia delle coordinate: ',
+                                err
+                            );
+                            alert(
+                                'Non è stato possibile copiare le coordinate. Prova a farlo manualmente.'
+                            );
+                        });
+                });
         }
 
         return {
@@ -140,4 +141,5 @@ const app = createApp({
 
 document.addEventListener('DOMContentLoaded', () => {
     app.mount('#app');
+    // sensors-list
 });
