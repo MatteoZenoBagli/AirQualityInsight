@@ -1,3 +1,31 @@
 # Ideas
 
 - Ai sensori possiamo assegnare una posizione (in coordinate) in modo da tracciare una mappa visiva
+- Realizzare dei grafici di correlazione e regressione per previsioni future
+- Simulare i dati in funzione del orario e del periodo
+- Non discostare troppo i dati
+- Gestire misurazioni sballate
+- I sensori vorrei fossero molti, anche migliaia se necessario
+- La densità dei sensori deve essere proporzionale alla importanza della loro posizione: più importante la zona / strada, maggiore il numero di sensori
+- I sensori devono essere disposti su tutte le vie principali ed all'interno delle mura
+- Sarebbe interessante ricoprire anche comuni limitrofi
+- Ho scaricato il Piano Territoriale TAV1 da https://cartografia.cittametropolitana.bo.it/catalogo/scarico_dati.htm
+- Mostrare la heatmap https://handsondataviz.org/leaflet-heatmap.html
+- Usare GraphQl per ottenere solo i park, le strade ecc
+- Ordinare i sensori per tipo
+- Interactive Choropleath Map https://leafletjs.com/examples/choropleth/
+- Layer Groups and Layers Control https://leafletjs.com/examples/layers-control/ per i parchi, chiese ecc
+- Quando ricevo un messaggio da un sensore, lo illumino di verde o simile (lampeggio ecc)
+https://wiki.openstreetmap.org/wiki/Overpass_turbo/Wizard
+https://dev.overpass-api.de/overpass-doc/en/index.html
+https://overpass-turbo.eu/
+https://overpass-ultra.us/#query=gist:02ff60269445fe611a246e1647d475e6
+https://overpass-ultra.us/#map&q=LQhQHsAcBcEtwHYGcBcoAE6AWBDJWV0BbDdHaaAJ1gCMBXORAYUSvABs1NMBjOpaOCIBBCtXqMEhAOQAeHNkoBTAGYBeAEQA6DQD4A8gDcllSHiToAquyo5ZAehy7ppGuDoIAJqnQBtYADsAVoALACcAQAcIQDMAGwATAAM8QHxADQxwQCsSSFJkUEJMWEAjKVxcemBwfmxAQkBcSEJkdlBmTlBLQFlCXFJSXGRALqkRDgAHgBC7l4+-kGhEdHxyakZWVq5+YUNJeWV1Ut1WY3Nre0BndvdjX0DQ6OgPKyUHKikwOjQAJ6QSkIAHElBxwDxyEoWAg2OxSJgoJJPtxuJBwEhYJJ9DB4MguCjuEoEDgaOwlAAJWAAcywwh4fEoOB4v0IVDoSnh3FsPAA1pYkCYADLg8i41mUdmgAS-Mn4pSTaBE7yELAUSCoez2aVkpBaWywdgCHBafD2SDvQQTdXAdjU1VaABWSEQpHYOF+JmR3G+fwBhB4sEoPDJnMwZlgMPxBPQAaDZOAr3Y4EoMgAxHFPDhPHEVC5o7xA8GlMABO8ecXE8nCAB3LCYjn5mOF+Ol8Dl4DV2CeaAEdAJUPcWNF4CMzywfiEGKcn3-QHoJC-IhuOHR8ORgeYWCvBAJsEp9DSdOZ7O5jfoLeIYC4JO7pP72v1s8XnfX8Adrs9wj9xuKhVXnA3pW951oqZ6-tA-43p23a9t+BJur87jQFGBLPsAZieGOCBUoQSRPtuwCwBMVKAmemDfBCApkeg3y+GoajpH4JHQIx0hUjglCeESKC+ko0gjIxrxEEQHiYr8YyNuR6D2M+SD2BMPKwPY7GcUSCZElQShaJA2HUd8MnbnJClKSpXEINpuk-vKEEqLASjsJ4MgAN7EkQSgAL55vm4HACorCEL4ABy4CCOgADKODIOgABKShUnQbqUBJ3nWcAhgcbAJLxpFPBYFWfhkioLHoNQNLFYIkCMW4FBCMl0Y+YiuIAeKkpWX+Dr8HAKgsmQDDgGBqWjpl7DAOAKgqAKyHoKUoAgMAoC+DQbiTCgWw7AURQHBUVQ1MsUSxIkKRxGkVRrXcvSlP0gzDMctR5GcTQtG0QQjAA3KACDVpQvhkrASB0MoaimUSb0QAwMYaSYr1AA&m=13.63/37.54077/-77.45111
+https://overpass-ultra.us/#map&query=gist:02ff60269445fe611a246e1647d475e6
+https://overpass-ultra.us/#m=12.37/37.5359/-77.4362&q=LQhQHsAcBcEtwHYGcBcoAE6AWBDJWV0BbDdHaaAJ1gCMBXORAYUSvABs1NMBjOpaOCIBBCtXqMEhAOQAeHNkoBTAGYBeAEQA6DQD4A8gDcllSHiToAquyo5ZAehy7ppGuDoIAJqnQBtYADsAVoALACcAQAcIQDMAGwATAAM8QHxADQxwQCsSSFJkUEJMWEAjKVxcemBwfmxAQkBcSEJkdlBmTlBLQFlCXFJSXGRALqkRDgAHgBC7l4+-kGhEdHxyakZWVq5+YUNJeWV1Ut1WY3Nre0BndvdjX0DQ6OgPKyUHKikwOjQAJ6QSkIAHElBxwDxyEoWAg2OxSJgoJJPtxuJBwEhYJJ9DB4MguCjuEoEDgaOwlAAJWAAcywwh4fEoOB4v0IVDoSnh3FsPAA1pYkCYADLg8i41mUdmgAS-Mn4pSTaBE7yELAUSCoez2aVkpBaWywdgCHBafD2SDvQQTdXAdjU1VaABWSEQpHYOF+JmR3G+fwBhB4sEoPDJnMwZlgMPxBPQAaDZOAr3Y4EoMgAxHFPDhPHEVC5o7xA8GlMABO8ecXE8nCAB3LCYjn5mOF+Ol8Dl4DV2CeaAEdAJUPcWNF4CMzywfiEGKcn3-QHoJC-IhuOHR8ORgeYWCvBAJsEp9DSdOZ7O5jfoLeIYC4JO7pP72v1s8XnfX8Adrs9wj9xuKhVXnA3pW951oqZ6-tA-43p23a9t+BJur87jQFGBLPsAZieGOCBUoQSRPtuwCwBMVKAmemDfBCApkeg3y+GoajpH4JHQIx0hUjglCeESKC+ko0gjIxrxEEQHiYr8YyNuR6D2M+SD2BMPKwPY7GcUSCZElQShaJA2HUd8MnbnJClKSpXEINpuk-vKEEqLASjsJ4MgAN7EkQSgAL55vm4HACorCEL4ABy4CCOgADKODIOgABKShUnQbqUBJ3nWcAhgcbAJLxpFPBYFWfhkioLHoNQNLFYIkCMW4FBCMl0Y+YiuIAeKkpWX+Dr8HAKgsmQDDgGBqWjpl7DAOAKgqAKyHoKUoAgMAoC+DQbiTCgWw7AURQHBUVQ1MsUSxIkKRxGkVRrXcvSlP0gzDMctR5GcTQtG0QQjAA3KACDVpQvhkrASB0MoaimUSb0QAwMYaSYr1AA
+https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL
+https://opendata.comune.bologna.it/explore/dataset/codici-avviamento-postale-cap/map/?flg=it-it&disjunctive.cap&location=12,44.4577,11.39935&basemap=jawg.streets
+
+https://opendata.comune.bologna.it/api/explore/v2.1/catalog/datasets/codici-avviamento-postale-cap/records?limit=20
+
+https://kafka.apache.org/documentation
