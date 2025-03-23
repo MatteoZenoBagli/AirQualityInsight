@@ -5,7 +5,6 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./app:/usr/src/app
       - ./services/graphql/package.json:/usr/src/app/package.json
       - ./services/graphql/package-lock.json:/usr/src/app/package-lock.json
       - /usr/src/app/node_modules
@@ -16,8 +15,6 @@ services:
   sensor:
     build: services/sensor
     container_name: sensor
-    volumes:
-      - ./data:/data
     depends_on:
       - mongodb
       - kafka
@@ -81,6 +78,8 @@ services:
 
 networks:
   sensors-network:
+    driver: bridge
+  app-network:
     driver: bridge
 
 volumes:
