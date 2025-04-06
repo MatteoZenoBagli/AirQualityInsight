@@ -1,17 +1,21 @@
 from config import SENSOR_CONFIG
 from datetime import datetime
+from kafka import KafkaProducer
 from pymongo import MongoClient
+import json
+import logging
 import numpy as np
+import os
 import random
 import sys
-from kafka import KafkaProducer
-import json
 import time
-import logging
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+kafka_broker = os.environ.get('KAFKA_BROKER', 'kafka:9092')
+kafka_topic = os.environ.get('KAFKA_TOPIC', 'messages')
 
 class AirQualitySensor:
     def __init__(self, sensor, config):
@@ -54,6 +58,7 @@ class AirQualitySensor:
         self.last_co2 = new_co2
 
         return {
+            'sensor_id': self.sensor['sensor_id'],
             'timestamp': datetime.now().isoformat(),
             'temperature': round(temp, 2),
             'humidity': round(humidity, 2),
@@ -65,81 +70,48 @@ class AirQualitySensor:
         }
 
     def run(self):
-        print(f"Starting air quality sensor simulation for sensor «{self.sensor['name']}»...")
+        logger.info(f"Starting air quality sensor simulation for sensor «{self.sensor['name']}»...")
 
         try:
             while True:
                 reading = self.generate_reading()
-                print(f"Recorded: Temp: {reading['temperature']}°C, "
-                      f"Humidity: {reading['humidity']}%, "
-                      f"CO2: {reading['co2']} ppm, "
-                      f"PM2.5: {reading['pm25']} µg/m³")
+                # TODO Insert into db
+                send_message(producer, reading)
                 time.sleep(self.config['sampling_rate'])
         except KeyboardInterrupt:
-            print("\nStopping sensor simulation...")
-
-def json_serializer(data):
-    """Serialize data to JSON format"""
-    return json.dumps(data).encode('utf-8')
+            logger.error("\nStopping sensor simulation...")
 
 def create_producer():
     """Creates and returns a Kafka producer"""
     try:
-        # Note: We use kafka:29092 here because that's the internal Docker network address
+        # Note: We use kafka:9092 here because that's the internal Docker network address
         producer = KafkaProducer(
-            bootstrap_servers=['kafka:29092'],
-            value_serializer=json_serializer,
-            acks='all',               # Wait for all replicas to acknowledge
-            retries=3,                # Number of retries if produce request fails
-            batch_size=16384,         # Batch size in bytes
-            linger_ms=10,             # Wait time to batch messages
-            request_timeout_ms=30000  # Request timeout
+            bootstrap_servers=[kafka_broker],
+            value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+            acks='all',
+            retries=5,
+            retry_backoff_ms=1000,
+            request_timeout_ms=30000
         )
+
+        logger.info(f"Producer connected to Kafka {kafka_broker}, topic: {kafka_topic}")
+
         return producer
     except Exception as e:
         logger.error(f"Error creating Kafka producer: {e}")
         raise
 
-def send_message(producer, topic, message, key=None):
+def send_message(producer, message):
     """Send a message to a Kafka topic"""
-    # Send the message to the specified topic
-    # If key is provided, it will be used for partitioning
-    future = producer.send(topic, value=message, key=key.encode() if key else None)
+
+    future = producer.send(kafka_topic, value=message)
 
     try:
         # Block until the message is sent (or timeout)
         record_metadata = future.get(timeout=10)
-        print(f"Message sent to {record_metadata.topic} partition {record_metadata.partition} offset {record_metadata.offset}")
+        logger.info(f"Message sent to {record_metadata.topic} partition {record_metadata.partition} offset {record_metadata.offset}")
     except Exception as e:
-        print(f"Failed to send message: {e}")
-
-def produce_messages(producer, topic_name="measurements"):
-    """Produces sample messages to the specified Kafka topic"""
-    try:
-        for i in range(1, 11):
-            data = {
-                "message_id": i,
-                "content": f"This is message {i}",
-                "timestamp": time.time()
-            }
-
-            # Send data to Kafka
-            future = producer.send(topic_name, value=data)
-
-            # Wait for the message to be delivered
-            record_metadata = future.get(timeout=10)
-
-            logger.info(f"Message {i} sent to {record_metadata.topic} at partition {record_metadata.partition}, offset {record_metadata.offset}")
-
-            # Sleep for a second
-            time.sleep(1)
-    except Exception as e:
-        logger.error(f"Error producing messages: {e}")
-    finally:
-        # Flush and close the producer
-        producer.flush()
-        producer.close()
-        logger.info("Producer closed")
+        logger.error(f"Failed to send message: {e}")
 
 def get_sensors_from_db():
     """ Obtain all sensors from database """
@@ -150,7 +122,7 @@ def get_sensors_from_db():
     count = sensors_collection.count_documents({})
 
     if count == 0:
-        print("The measurements collection is empty.")
+        logger.info("The measurements collection is empty.")
         client.close()
         sys.exit(0)
 
@@ -161,15 +133,20 @@ def get_sensors_from_db():
     return all_sensors
 
 if __name__ == "__main__":
-
     try:
         # Create a Kafka producer
         producer = create_producer()
-        produce_messages(producer)
+
+        # Get sensor list from db
+        all_sensors = get_sensors_from_db()
+
+        # TODO Make measurement for each sensor as container
+        for _sensor in all_sensors:
+            sensor = AirQualitySensor(_sensor, SENSOR_CONFIG)
+            sensor.run()
     except Exception as e:
         logger.error(f"Application error: {e}")
-
-    # all_sensors = get_sensors_from_db()
-    # for _sensor in all_sensors:
-    #     sensor = AirQualitySensor(_sensor, SENSOR_CONFIG)
-    #     sensor.run()
+    finally:
+        producer.flush()
+        producer.close()
+        logger.info("Producer closed")
