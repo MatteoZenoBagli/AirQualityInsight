@@ -1,0 +1,27 @@
+{
+  "name": "air-quality-insight-server",
+  "version": "1.0.0",
+  "description": "Simulation project of a sensor system to monitor air quality, with data sent to a server for real-time analysis and visualization.",
+  "private": true,
+  "author": "Bagli Matteo Zeno",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.11.0",
+    "kafkajs": "^2.2.4",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
