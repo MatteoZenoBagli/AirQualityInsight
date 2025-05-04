@@ -19,18 +19,34 @@ export default {
             error: false,
             loading: ref(false),
             show: {
+                sensorLocations: false,
                 postalCodeBoundaries: false,
             },
             data: {
                 sensorLocations: [],
                 postalCodeBoundaries: [],
             },
-            geojsonLayers: {
+            layers: {
+                sensorLocations: [],
                 postalCodeBoundaries: [],
             },
         };
     },
     methods: {
+        async loadData(filename) {
+            this.loading = true;
+
+            try {
+                const path = `/data/${filename}`;
+                const response = await fetch(path);
+                if (!response.ok) throw new Error("Failed to load data");
+                return response.json();
+            } catch (err) {
+                console.error(err);
+            } finally {
+                this.loading = false;
+            }
+        },
         // Initialization of OpenStreetMap's map
         initMap() {
             // Leaflet's interactive map
@@ -105,11 +121,29 @@ export default {
                 "sensor_locations.json"
             );
             if (!sensorLocations) throw "Data not provided";
-            this.data.sensorLocations = sensorLocations;
-            // for (const sensorLocation of sensorLocations)
-            //     L.marker([sensorLocation.lat, sensorLocation.lng])
-            //         .addTo(map)
-            //         .bindPopup(sensorLocation.desc);
+            this.data.sensorLocations = sensorLocations.slice(0, 50); // TODO REMOVE LIMIT
+            // this.data.sensorLocations = sensorLocations;
+        },
+        async drawSensorLocations() {
+            if (!this.data.sensorLocations)
+                return console.error("Data not provided");
+
+            for (const sensorLocation of this.data.sensorLocations) {
+                const marker = L.marker([
+                    sensorLocation.lat,
+                    sensorLocation.lng,
+                ]);
+                if (sensorLocation.desc) marker.bindPopup(sensorLocation.desc);
+                marker.addTo(this.map);
+
+                this.layers.sensorLocations.push(marker);
+            }
+        },
+        clearSensorLocations() {
+            for (const layer of this.layers.sensorLocations)
+                if (this.map) this.map.removeLayer(layer);
+
+            this.layers.sensorLocations = [];
         },
         async populatePostalCodeBoundaries() {
             const postalCodeBoundaries = await this.loadData("caps.geojson");
@@ -225,41 +259,32 @@ export default {
                     onEachFeature,
                 }).addTo(this.map);
 
-                this.geojsonLayers.postalCodeBoundaries.push(geojsonLayer);
-            }
-        },
-        async loadData(filename) {
-            this.loading = true;
-
-            try {
-                const path = `/data/${filename}`;
-                const response = await fetch(path);
-                if (!response.ok) throw new Error("Failed to load data");
-                return response.json();
-            } catch (err) {
-                console.error(err);
-            } finally {
-                this.loading = false;
+                this.layers.postalCodeBoundaries.push(geojsonLayer);
             }
         },
         clearPostalCodeBoundaries() {
-            for (const layer of this.geojsonLayers.postalCodeBoundaries) {
-                if (!this.map) continue;
+            for (const layer of this.layers.postalCodeBoundaries)
+                if (this.map) this.map.removeLayer(layer);
 
-                this.map.removeLayer(layer);
-            }
-
-            this.geojsonLayers.postalCodeBoundaries = [];
+            this.layers.postalCodeBoundaries = [];
         },
         togglePostalCodeBoundaries() {
             this.show.postalCodeBoundaries = !this.show.postalCodeBoundaries;
             if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
             else this.clearPostalCodeBoundaries();
         },
+        toggleSensorLocations() {
+            this.show.sensorLocations = !this.show.sensorLocations;
+            if (this.show.sensorLocations) this.drawSensorLocations();
+            else this.clearSensorLocations();
+        },
     },
     async mounted() {
         this.initMap();
-        // this.populateSensorLocations();
+
+        await this.populateSensorLocations();
+        if (this.show.sensorLocations) this.drawSensorLocations();
+
         await this.populatePostalCodeBoundaries();
         if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
     },
@@ -304,6 +329,17 @@ export default {
                 </pre>
                 <button class="copy-btn" id="coordinates-copy-btn">
                     Copia
+                </button>
+                <button
+                    class="toggle-btn"
+                    @click="toggleSensorLocations"
+                    :class="{ active: show.sensorLocations }"
+                >
+                    {{
+                        show.sensorLocations
+                            ? "Nascondi sensori"
+                            : "Mostra sensori"
+                    }}
                 </button>
                 <button
                     class="toggle-btn"
