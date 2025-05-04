@@ -18,13 +18,23 @@ export default {
             map: null,
             error: false,
             loading: ref(false),
+            show: {
+                postalCodeBoundaries: false,
+            },
+            data: {
+                sensorLocations: [],
+                postalCodeBoundaries: [],
+            },
+            geojsonLayers: {
+                postalCodeBoundaries: [],
+            },
         };
     },
     methods: {
         // Initialization of OpenStreetMap's map
         initMap() {
             // Leaflet's interactive map
-            map = L.map("map").setView(
+            this.map = L.map("map").setView(
                 [this.center.lat, this.center.lng],
                 this.zoom
             );
@@ -34,26 +44,26 @@ export default {
                 attribution:
                     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                 maxZoom: 19,
-            }).addTo(map);
+            }).addTo(this.map);
 
             let currentLat, currentLng;
 
-            function updateCurrentCoordinates() {
-                const newCenter = map.getCenter();
+            const updateCurrentCoordinates = () => {
+                const newCenter = this.map.getCenter();
                 currentLat = newCenter.lat.toFixed(4);
                 currentLng = newCenter.lng.toFixed(4);
-            }
+            };
 
             updateCurrentCoordinates();
 
             // Update map's coordinates on move
-            map.on("moveend", () => {
+            this.map.on("moveend", () => {
                 updateCurrentCoordinates();
-                center.value = {
+                this.center = {
                     lat: currentLat,
                     lng: currentLng,
                 };
-                zoom.value = map.getZoom();
+                this.zoom = this.map.getZoom();
             });
 
             const coordinatesCopyBtn = document.getElementById(
@@ -91,18 +101,27 @@ export default {
             });
         },
         async populateSensorLocations() {
-            const sensorLocations = await loadData("sensor_locations.json");
+            const sensorLocations = await this.loadData(
+                "sensor_locations.json"
+            );
             if (!sensorLocations) throw "Data not provided";
-
-            for (const sensorLocation of sensorLocations)
-                L.marker([sensorLocation.lat, sensorLocation.lng])
-                    .addTo(map)
-                    .bindPopup(sensorLocation.desc);
+            this.data.sensorLocations = sensorLocations;
+            // for (const sensorLocation of sensorLocations)
+            //     L.marker([sensorLocation.lat, sensorLocation.lng])
+            //         .addTo(map)
+            //         .bindPopup(sensorLocation.desc);
+        },
+        async populatePostalCodeBoundaries() {
+            const postalCodeBoundaries = await this.loadData("caps.geojson");
+            if (!postalCodeBoundaries) throw "Data not provided";
+            this.data.postalCodeBoundaries = postalCodeBoundaries.features;
         },
         async drawPostalCodeBoundaries() {
             // Postal Code Boundaries of the Municipality of Bologna
-            const postalCodeBoundaries = await loadData("caps.geojson");
-            if (!postalCodeBoundaries) throw "Data not provided";
+            if (!this.data.postalCodeBoundaries)
+                return console.error("Data not provided");
+
+            this.clearPostalCodeBoundaries();
 
             let geojsonLayer;
 
@@ -151,9 +170,9 @@ export default {
                     layer.bringToFront();
             }
 
-            function resetFeatureStyle(layer) {
+            const resetFeatureStyle = (layer) => {
                 geojsonLayer.resetStyle(layer);
-            }
+            };
 
             function style(feature) {
                 const cap = feature.properties.cap;
@@ -199,16 +218,18 @@ export default {
                 });
             }
 
-            for (const feature of postalCodeBoundaries.features) {
+            for (const feature of this.data.postalCodeBoundaries) {
                 geojsonLayer = L.geoJSON(feature, {
                     style,
                     pointToLayer,
                     onEachFeature,
-                }).addTo(map);
+                }).addTo(this.map);
+
+                this.geojsonLayers.postalCodeBoundaries.push(geojsonLayer);
             }
         },
         async loadData(filename) {
-            loading.value = true;
+            this.loading = true;
 
             try {
                 const path = `/data/${filename}`;
@@ -218,15 +239,29 @@ export default {
             } catch (err) {
                 console.error(err);
             } finally {
-                loading.value = false;
+                this.loading = false;
             }
         },
+        clearPostalCodeBoundaries() {
+            for (const layer of this.geojsonLayers.postalCodeBoundaries) {
+                if (!this.map) continue;
+
+                this.map.removeLayer(layer);
+            }
+
+            this.geojsonLayers.postalCodeBoundaries = [];
+        },
+        togglePostalCodeBoundaries() {
+            this.show.postalCodeBoundaries = !this.show.postalCodeBoundaries;
+            if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
+            else this.clearPostalCodeBoundaries();
+        },
     },
-    mounted() {
-        console.log("ciao");
+    async mounted() {
         this.initMap();
-        // populateSensorLocations();
-        // drawPostalCodeBoundaries();
+        // this.populateSensorLocations();
+        await this.populatePostalCodeBoundaries();
+        if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
     },
 };
 </script>
@@ -249,7 +284,7 @@ export default {
         <div class="map-container">
             <div v-if="loading" class="loading-overlay">
                 <img
-                    src="./assets/loading-spinner.svg"
+                    src="../loading-spinner.svg"
                     alt="Loading..."
                     class="loading-gif"
                 />
@@ -269,6 +304,17 @@ export default {
                 </pre>
                 <button class="copy-btn" id="coordinates-copy-btn">
                     Copia
+                </button>
+                <button
+                    class="toggle-btn"
+                    @click="togglePostalCodeBoundaries"
+                    :class="{ active: show.postalCodeBoundaries }"
+                >
+                    {{
+                        show.postalCodeBoundaries
+                            ? "Nascondi CAP"
+                            : "Mostra CAP"
+                    }}
                 </button>
             </div>
         </div>
@@ -328,7 +374,7 @@ export default {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 9999;
+    z-index: 999;
     background: white;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -392,16 +438,36 @@ export default {
     }
 }
 
-.copy-btn {
-    background-color: #4caf50;
+@mixin button-base {
     width: 100%;
-    color: white;
     border: none;
     border-radius: 0.25rem;
     margin-top: 0.5rem;
     padding: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+// Button hover effect
+@mixin button-hover {
+    &:hover {
+        background-color: #dfdfdf;
+    }
+}
+
+// Basic toggle button
+.toggle-btn {
+    @include button-base;
+    @include button-hover;
+}
+
+// Copy button with additional states
+.copy-btn {
+    @include button-base;
+    @include button-hover;
+
+    background-color: #4caf50;
+    color: white;
 
     &:hover {
         background-color: #45a049;

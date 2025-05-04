@@ -3,7 +3,7 @@
         <h1>Dashboard</h1>
 
         <div class="dashboard">
-            <!-- <div class="dashboard-component map-container">
+            <div class="dashboard-component map-component-container">
                 <div class="component-header">
                     <h2>Map</h2>
                     <div>
@@ -16,9 +16,9 @@
                     :markers="mapMarkers"
                     @marker-click="handleMarkerClick"
                 />
-            </div> -->
+            </div>
 
-            <div class="dashboard-component table-container">
+            <div class="dashboard-component table-component-container">
                 <div class="component-header">
                     <h2>Last {{ this.maxMessages }} measurements received</h2>
                     <div>
@@ -34,7 +34,7 @@
                 />
             </div>
 
-            <div class="dashboard-component log-container">
+            <div class="dashboard-component log-component-container">
                 <div class="component-header">
                     <h2>System Log</h2>
                     <div>
@@ -70,13 +70,13 @@ export default {
             tableColumns: [
                 { key: "sensor_id", label: "Sensor ID" },
                 { key: "timestamp", label: "Timestamp" },
-                { key: "temperature", label: "Temperature" },
-                { key: "humidity", label: "Humidity" },
-                { key: "pressure", label: "Pressure" },
-                { key: "pm25", label: "PM25" },
-                { key: "pm10", label: "PM10" },
-                { key: "voc", label: "VOC" },
-                { key: "co2", label: "CO2" },
+                { key: "temperature", label: "Temperature (°C)" },
+                { key: "humidity", label: "Humidity (%)" },
+                { key: "pressure", label: "Pressure (hPa)" },
+                { key: "pm25", label: "PM25 (µg/m³)" },
+                { key: "pm10", label: "PM10 (µg/m³)" },
+                { key: "voc", label: "VOC (ppm)" },
+                { key: "co2", label: "CO2 (ppm)" },
             ],
             tableData: [],
             logEntries: []
@@ -184,30 +184,30 @@ body {
     }
 }
 
-.map-container {
+.map-component-container {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     min-height: 500px;
 }
 
-.table-container {
+.table-component-container {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
 
-.log-container {
+.log-component-container {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     max-height: 220px;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .component-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #eee;
 }
 
@@ -215,14 +215,14 @@ body {
     background-color: #4caf50;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 14px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 0.5rem;
 
     &:hover {
         background-color: #45a049;
@@ -242,21 +242,21 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .map-container,
-    .table-container,
-    .log-container {
+    .map-component-container,
+    .table-component-container,
+    .log-component-container {
         grid-column: 1;
     }
 
-    .map-container {
+    .map-component-container {
         grid-row: 1;
     }
 
-    .table-container {
+    .table-component-container {
         grid-row: 2;
     }
 
-    .log-container {
+    .log-component-container {
         grid-row: 3;
     }
 }
