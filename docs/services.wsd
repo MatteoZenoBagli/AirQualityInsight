@@ -1,57 +1,42 @@
 @startuml
 !theme plain
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam ArrowColor #666666
-skinparam componentStyle rectangle
+
+title "Services architecture"
 
 ' Custom styling
-skinparam component {
-    BorderColor #2C3E50
-    FontColor #2C3E50
-    BackgroundColor #ECF0F1
-    ArrowColor #7F8C8D
+skinparam {
     BorderThickness 2
-}
-
-skinparam database {
-    BorderColor #2C3E50
-    FontColor #2C3E50
-    BackgroundColor #D5EAF2
-}
-
-skinparam queue {
-    BorderColor #2C3E50
-    FontColor #2C3E50
-    BackgroundColor #FFE5CC
+    TitleBorderRoundCorner 15
+    Padding 5
+    backgroundColor white
+    defaultFontName Arial
+    ArrowColor #666666
+    componentStyle rectangle
 }
 
 ' Components
-[Client Applications] as client #E8F6F3
-[Python Sensor\nSimulator] as sensor #E8F6F3
-queue "Apache Kafka" as kafka
-[Apache Zookeeper] as zookeeper #FFE5CC
-[Node Express Server] as express #D5EAF2
-[GraphQL API] as graphql #D5EAF2
-database "MongoDB" as mongodb
+component "Python Sensor\nSimulator" as sensor #918EF4
+queue "Apache Kafka" as kafka #6F9CEB
+component "Node Express Server\nGraphQL API" as server #306BAC
+database "MongoDB" as mongodb #30409C
+component "Client Applications" as client #98B9F2
 
 ' Relations
-client --> express
-express --> client
-sensor --> kafka
-zookeeper --> kafka
-kafka --> express
-express --> graphql
-graphql --> express
-graphql --> mongodb
-mongodb --> graphql
+sensor -down-> kafka
+kafka -down-> server
+server -down-> mongodb
+mongodb -up-> server
+server -left-> client
+client -right-> server
 
 legend right
-  |= Component |= Type |
-  |<#FFE5CC> Kafka/Zookeeper | Message Broker |
-  |<#E8F6F3> Client/Sensor | Frontend/Data Source |
-  |<#D5EAF2> Express/GraphQL | API Services |
-  |<#D5EAF2> MongoDB | Database |
+    Legend:
+    |= Component                      |= Type             |
+    |<#918EF4> Sensor                 | Data Source       |
+    |<#6F9CEB> Kafka                  | Message Broker    |
+    |<#98B9F2> Dashboard              | Frontend          |
+    |<#306BAC> Express Server/GraphQL | API Services      |
+    |<#30409C> MongoDB                | Database          |
 endlegend
 
 @enduml
