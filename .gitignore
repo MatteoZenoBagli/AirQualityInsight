@@ -11,6 +11,3 @@ logs/
 # Docker
 .docker/
 docker-compose.override.yml
-
-# Data
-data

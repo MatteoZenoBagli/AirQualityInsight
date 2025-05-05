@@ -22,16 +22,19 @@ export default {
                 sensorLocations: false,
                 postalCodeBoundaries: false,
                 neighborhoods: false,
+                zones: false,
             },
             data: {
                 sensorLocations: [],
                 postalCodeBoundaries: [],
                 neighborhoods: [],
+                zones: [],
             },
             layers: {
                 sensorLocations: [],
                 postalCodeBoundaries: [],
                 neighborhoods: [],
+                zones: [],
             },
         };
     },
@@ -119,309 +122,253 @@ export default {
                     });
             });
         },
-        async populateSensorLocations() {
-            const sensorLocations = await this.loadData(
-                "sensor_locations.json"
-            );
-            if (!sensorLocations) throw "Data not provided";
-            this.data.sensorLocations = sensorLocations.slice(0, 50); // TODO REMOVE LIMIT
-            // this.data.sensorLocations = sensorLocations;
+        toggleLayer(layer, hideOrEvent = false) {
+            const hide = hideOrEvent instanceof Event ? false : hideOrEvent;
+
+            this.show[layer] = !this.show[layer];
+            if (hide) this.show[layer] = false;
+
+            const exclusiveGroups = {
+                postalCodeBoundaries: ["neighborhoods", "zones"],
+                neighborhoods: ["postalCodeBoundaries", "zones"],
+                zones: ["postalCodeBoundaries", "neighborhoods"],
+            };
+
+            if (this.show[layer]) {
+                this.drawLayer(layer);
+                if (exclusiveGroups[layer])
+                    for (const otherLayer of exclusiveGroups[layer])
+                        this.toggleLayer(otherLayer, true);
+            } else this.clearLayer(layer);
         },
-        async drawSensorLocations() {
-            if (!this.data.sensorLocations)
-                return console.error("Data not provided");
+        clearLayer(layer) {
+            for (const l of this.layers[layer])
+                if (this.map) this.map.removeLayer(l);
 
-            for (const sensorLocation of this.data.sensorLocations) {
-                const marker = L.marker([
-                    sensorLocation.lat,
-                    sensorLocation.lng,
-                ]);
-                if (sensorLocation.desc) marker.bindPopup(sensorLocation.desc);
-                marker.addTo(this.map);
+            this.layers[layer] = [];
+        },
+        async populateLayer(layer) {
+            const dataFile = {
+                sensorLocations: "sensor_locations.json",
+                postalCodeBoundaries: "caps.geojson",
+                neighborhoods: "neighborhoods.geojson",
+                zones: "zones.geojson",
+            };
 
-                this.layers.sensorLocations.push(marker);
+            const data = await this.loadData(dataFile[layer]);
+            if (!data) throw "Data not provided";
+
+            if ("sensorLocations" === layer) {
+                this.data[layer] = data.slice(0, 50); // TODO REMOVE LIMIT
+                // this.data.sensorLocations = sensorLocations;
+                return;
             }
-        },
-        clearSensorLocations() {
-            for (const layer of this.layers.sensorLocations)
-                if (this.map) this.map.removeLayer(layer);
 
-            this.layers.sensorLocations = [];
+            this.data[layer] = data.features;
         },
-        async populatePostalCodeBoundaries() {
-            const postalCodeBoundaries = await this.loadData("caps.geojson");
-            if (!postalCodeBoundaries) throw "Data not provided";
-            this.data.postalCodeBoundaries = postalCodeBoundaries.features;
-        },
-        async drawPostalCodeBoundaries() {
-            // Postal Code Boundaries of the Municipality of Bologna
-            if (!this.data.postalCodeBoundaries)
-                return console.error("Data not provided");
+        async drawLayer(layer) {
+            if (!this.data[layer]) return console.error("Data not provided");
 
-            this.clearPostalCodeBoundaries();
+            if ("sensorLocations" === layer) {
+                for (const sensorLocation of this.data[layer]) {
+                    const marker = L.marker([
+                        sensorLocation.lat,
+                        sensorLocation.lng,
+                    ]);
+                    if (sensorLocation.desc)
+                        marker.bindPopup(sensorLocation.desc);
+                    marker.addTo(this.map);
+
+                    this.layers[layer].push(marker);
+                }
+                return;
+            }
+
+            this.clearLayer(layer);
 
             let geojsonLayer;
 
-            function getColor(cap) {
-                const colors = {
-                    40121: "#ff7800", // Pure FF7800 (Base Color)
-                    40122: "#ff8519", // Slightly lighter
-                    40123: "#ff9232", // Light orange
-                    40124: "#ff9f4c", // Pale orange
-                    40125: "#ffac66", // Very pale orange
-                    40126: "#ff6a00", // Slightly darker
-                    40127: "#ff5c00", // Darker orange
-                    40128: "#ff4e00", // Deep orange
-                    40129: "#ff4000", // Very deep orange
-                    40131: "#eb7000", // Muted orange
-                    40132: "#d66600", // Brownish orange
-                    40133: "#c25d00", // Dark brownish orange
-                    40134: "#ffb680", // Light peachy orange
-                    40135: "#ffc499", // Very light peachy orange
-                    40136: "#ff8f38", // Soft orange
-                    40137: "#ff6200", // Bright orange-red
-                    40138: "#e56e00", // Earthy orange
-                    40139: "#ff9a47", // Pastel orange
-                    40141: "#cc6200", // Deep earthy orange
-                };
-                return colors[cap] || "#ff7800";
-            }
-
-            function highlightFeature(feature, layer) {
+            const highlightFeature = (feature, layer) => {
                 if (!feature.properties) return;
-                if (!feature.properties.cap) return;
 
-                const cap = feature.properties.cap;
-                layer.bindPopup(`<b>CAP:</b> ${cap}`).openPopup();
+                const value = feature.properties[config.propertyKey];
+                const displayValue = config.displayKey
+                    ? feature.properties[config.displayKey]
+                    : value;
+
+                layer
+                    .bindPopup(`<b>${config.labelKey}:</b> ${displayValue}`)
+                    .openPopup();
 
                 layer.setStyle({
-                    color: getColor(cap),
+                    color: getColor(value),
                     weight: 3,
                     opacity: 1,
-                    fillColor: getColor(cap),
+                    fillColor: getColor(value),
                     fillOpacity: 0.5,
                 });
 
-                /** @see https://leafletjs.com/reference.html#divoverlay-bringtofront */
                 if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
                     layer.bringToFront();
-            }
+            };
+
+            const createStyle = (feature) => {
+                const value = feature.properties[config.propertyKey];
+                return {
+                    color: getColor(value),
+                    weight: 2,
+                    opacity: 0.5,
+                    fillColor: getColor(value),
+                    fillOpacity: 0.2,
+                };
+            };
+
+            const pointToLayer = (feature, lat_lng) => {
+                const value = feature.properties[config.propertyKey];
+                return L.circleMarker(lat_lng, {
+                    radius: 8,
+                    color: "#000",
+                    weight: 3,
+                    opacity: 1,
+                    fillColor: getColor(value),
+                    fillOpacity: 0.5,
+                });
+            };
+            const colors = this.getOrangeColorPalette();
+            const config = this.getLayerConfig(layer, colors);
+            const getColor = (value) => {
+                return config.colorMap[value] || colors.baseOrange;
+            };
 
             const resetFeatureStyle = (layer) => {
                 geojsonLayer.resetStyle(layer);
             };
 
-            function style(feature) {
-                const cap = feature.properties.cap;
-
-                return {
-                    color: getColor(cap),
-                    weight: 2,
-                    opacity: 0.5,
-                    fillColor: getColor(cap),
-                    fillOpacity: 0.2,
-                };
-            }
-
-            function pointToLayer(feature, latlng) {
-                const cap = feature.properties.cap;
-                return L.circleMarker(latlng, {
-                    radius: 8,
-                    color: "#000",
-                    weight: 3,
-                    opacity: 1,
-                    fillColor: getColor(cap),
-                    fillOpacity: 0.5,
-                });
-            }
-
             function onEachFeature(feature, layer) {
                 layer.on({
-                    mouseover: function () {
-                        highlightFeature(feature, layer);
-                    },
-                    mouseout: function () {
-                        resetFeatureStyle(layer);
-                    },
-                    click: function () {
-                        highlightFeature(feature, layer);
-
-                        /**
-                         * Sets a map view that contains the given geographical bounds with the maximum zoom level possible.
-                         * @see https://leafletjs.com/reference.html#map-fitbounds
-                         */
-                        // map.fitBounds(layer.getBounds());
-                    },
+                    mouseover: () => highlightFeature(feature, layer),
+                    mouseout: () => resetFeatureStyle(layer),
+                    click: () => highlightFeature(feature, layer),
                 });
             }
 
-            for (const feature of this.data.postalCodeBoundaries) {
+            for (const feature of this.data[layer]) {
                 geojsonLayer = L.geoJSON(feature, {
-                    style,
+                    style: createStyle,
                     pointToLayer,
                     onEachFeature,
                 }).addTo(this.map);
 
-                this.layers.postalCodeBoundaries.push(geojsonLayer);
+                this.layers[layer].push(geojsonLayer);
             }
         },
-        clearPostalCodeBoundaries() {
-            for (const layer of this.layers.postalCodeBoundaries)
-                if (this.map) this.map.removeLayer(layer);
-
-            this.layers.postalCodeBoundaries = [];
+        getDisplayName(key) {
+            const displayNames = {
+                sensorLocations: "sensori",
+                postalCodeBoundaries: "CAP",
+                neighborhoods: "Quartieri",
+                zones: "Zone",
+            };
+            return displayNames[key] || key;
         },
-        togglePostalCodeBoundaries() {
-            this.show.postalCodeBoundaries = !this.show.postalCodeBoundaries;
-            if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
-            else this.clearPostalCodeBoundaries();
+        getOrangeColorPalette() {
+            return {
+                veryLightPeachyOrange: "#ffc499",
+                lightPeachyOrange: "#ffb680",
+                veryPaleOrange: "#ffac66",
+                paleOrange: "#ff9f4c",
+                pastelOrange: "#ff9a47",
+                lightOrange: "#ff9232",
+                softOrange: "#ff8f38",
+                slightlyLighter: "#ff8519",
+                baseOrange: "#ff7800",
+                slightlyDarker: "#ff6a00",
+                brightOrangeRed: "#ff6200",
+                darkerOrange: "#ff5c00",
+                deepOrange: "#ff4e00",
+                veryDeepOrange: "#ff4000",
+                mutedOrange: "#eb7000",
+                earthyOrange: "#e56e00",
+                brownishOrange: "#d66600",
+                deepEarthyOrange: "#cc6200",
+                darkBrownishOrange: "#c25d00",
+            };
         },
-        toggleSensorLocations() {
-            this.show.sensorLocations = !this.show.sensorLocations;
-            if (this.show.sensorLocations) this.drawSensorLocations();
-            else this.clearSensorLocations();
-        },
-        async populateNeighborhoods() {
-            const neighborhoods = await this.loadData("neighborhoods.geojson");
-            if (!neighborhoods) throw "Data not provided";
-            console.log(neighborhoods)
-            this.data.neighborhoods = neighborhoods.features;
-        },
-        async drawNeighborhoods() {
-            // Postal Code Boundaries of the Municipality of Bologna
-            if (!this.data.neighborhoods)
-                return console.error("Data not provided");
-
-            this.clearNeighborhoods();
-
-            let geojsonLayer;
-
-            function getColor(cap) {
-                const colors = {
-                    40121: "#ff7800", // Pure FF7800 (Base Color)
-                    40122: "#ff8519", // Slightly lighter
-                    40123: "#ff9232", // Light orange
-                    40124: "#ff9f4c", // Pale orange
-                    40125: "#ffac66", // Very pale orange
-                    40126: "#ff6a00", // Slightly darker
-                    40127: "#ff5c00", // Darker orange
-                    40128: "#ff4e00", // Deep orange
-                    40129: "#ff4000", // Very deep orange
-                    40131: "#eb7000", // Muted orange
-                    40132: "#d66600", // Brownish orange
-                    40133: "#c25d00", // Dark brownish orange
-                    40134: "#ffb680", // Light peachy orange
-                    40135: "#ffc499", // Very light peachy orange
-                    40136: "#ff8f38", // Soft orange
-                    40137: "#ff6200", // Bright orange-red
-                    40138: "#e56e00", // Earthy orange
-                    40139: "#ff9a47", // Pastel orange
-                    40141: "#cc6200", // Deep earthy orange
-                };
-                return colors[cap] || "#ff7800";
-            }
-
-            function highlightFeature(feature, layer) {
-                if (!feature.properties) return;
-                if (!feature.properties.cap) return;
-
-                const cap = feature.properties.cap;
-                layer.bindPopup(`<b>CAP:</b> ${cap}`).openPopup();
-
-                layer.setStyle({
-                    color: getColor(cap),
-                    weight: 3,
-                    opacity: 1,
-                    fillColor: getColor(cap),
-                    fillOpacity: 0.5,
-                });
-
-                /** @see https://leafletjs.com/reference.html#divoverlay-bringtofront */
-                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
-                    layer.bringToFront();
-            }
-
-            const resetFeatureStyle = (layer) => {
-                geojsonLayer.resetStyle(layer);
+        getLayerConfig(layer, colors) {
+            const configs = {
+                // Postal Code Boundaries of the Municipality of Bologna
+                postalCodeBoundaries: {
+                    propertyKey: "cap",
+                    labelKey: "CAP",
+                    colorMap: {
+                        40121: colors.veryLightPeachyOrange,
+                        40122: colors.lightPeachyOrange,
+                        40123: colors.veryPaleOrange,
+                        40124: colors.paleOrange,
+                        40125: colors.pastelOrange,
+                        40126: colors.lightOrange,
+                        40127: colors.softOrange,
+                        40128: colors.slightlyLighter,
+                        40129: colors.baseOrange,
+                        40131: colors.slightlyDarker,
+                        40132: colors.brightOrangeRed,
+                        40133: colors.darkerOrange,
+                        40134: colors.deepOrange,
+                        40135: colors.veryDeepOrange,
+                        40136: colors.mutedOrange,
+                        40137: colors.earthyOrange,
+                        40138: colors.brownishOrange,
+                        40139: colors.deepEarthyOrange,
+                        40141: colors.darkBrownishOrange,
+                    },
+                },
+                // Neighborhoods of the Municipality of Bologna
+                neighborhoods: {
+                    propertyKey: "cod_quar",
+                    labelKey: "Quartiere",
+                    displayKey: "quartiere",
+                    colorMap: {
+                        11: colors.lightPeachyOrange,
+                        12: colors.paleOrange,
+                        13: colors.lightOrange,
+                        14: colors.slightlyLighter,
+                        15: colors.darkerOrange,
+                        16: colors.darkBrownishOrange,
+                    },
+                },
+                // Zones of the Municipality of Bologna
+                zones: {
+                    propertyKey: "numquart",
+                    labelKey: "Zona",
+                    displayKey: "nomezona",
+                    colorMap: {
+                        11: colors.veryPaleOrange,
+                        12: colors.pastelOrange,
+                        13: colors.softOrange,
+                        14: colors.baseOrange,
+                        15: colors.brightOrangeRed,
+                        16: colors.deepOrange,
+                    },
+                },
             };
 
-            function style(feature) {
-                const cap = feature.properties.cap;
-
-                return {
-                    color: getColor(cap),
-                    weight: 2,
-                    opacity: 0.5,
-                    fillColor: getColor(cap),
-                    fillOpacity: 0.2,
-                };
-            }
-
-            function pointToLayer(feature, latlng) {
-                const cap = feature.properties.cap;
-                return L.circleMarker(latlng, {
-                    radius: 8,
-                    color: "#000",
-                    weight: 3,
-                    opacity: 1,
-                    fillColor: getColor(cap),
-                    fillOpacity: 0.5,
-                });
-            }
-
-            function onEachFeature(feature, layer) {
-                layer.on({
-                    mouseover: function () {
-                        highlightFeature(feature, layer);
-                    },
-                    mouseout: function () {
-                        resetFeatureStyle(layer);
-                    },
-                    click: function () {
-                        highlightFeature(feature, layer);
-
-                        /**
-                         * Sets a map view that contains the given geographical bounds with the maximum zoom level possible.
-                         * @see https://leafletjs.com/reference.html#map-fitbounds
-                         */
-                        // map.fitBounds(layer.getBounds());
-                    },
-                });
-            }
-
-            for (const feature of this.data.neighborhoods) {
-                geojsonLayer = L.geoJSON(feature, {
-                    style,
-                    pointToLayer,
-                    onEachFeature,
-                }).addTo(this.map);
-
-                this.layers.neighborhoods.push(geojsonLayer);
-            }
-        },
-        clearNeighborhoods() {
-            for (const layer of this.layers.neighborhoods)
-                if (this.map) this.map.removeLayer(layer);
-
-            this.layers.neighborhoods = [];
-        },
-        toggleNeighborhoods() {
-            this.show.neighborhoods = !this.show.neighborhoods;
-            if (this.show.neighborhoods) this.drawNeighborhoods();
-            else this.clearNeighborhoods();
+            return configs[layer];
         },
     },
     async mounted() {
         this.initMap();
 
-        await this.populateSensorLocations();
-        if (this.show.sensorLocations) this.drawSensorLocations();
+        const layers = [
+            "sensorLocations",
+            "postalCodeBoundaries",
+            "neighborhoods",
+            "zones",
+        ];
 
-        await this.populatePostalCodeBoundaries();
-        if (this.show.postalCodeBoundaries) this.drawPostalCodeBoundaries();
-
-        await this.populateNeighborhoods();
-        if (this.show.neighborhoods) this.drawNeighborhoods();
+        for (const layer of layers) {
+            await this.populateLayer(layer);
+            if (this.show[layer]) this.drawLayer(layer);
+        }
     },
 };
 </script>
@@ -466,37 +413,14 @@ export default {
                     Copia
                 </button>
                 <button
+                    v-for="(value, key) in show"
+                    :key="key"
                     class="toggle-btn"
-                    @click="toggleSensorLocations"
-                    :class="{ active: show.sensorLocations }"
+                    @click="toggleLayer(key)"
+                    :class="{ active: value }"
                 >
-                    {{
-                        show.sensorLocations
-                            ? "Nascondi"
-                            : "Mostra"
-                    }} sensori
-                </button>
-                <button
-                    class="toggle-btn"
-                    @click="togglePostalCodeBoundaries"
-                    :class="{ active: show.postalCodeBoundaries }"
-                >
-                    {{
-                        show.postalCodeBoundaries
-                            ? "Nascondi"
-                            : "Mostra"
-                    }} CAP
-                </button>
-                <button
-                    class="toggle-btn"
-                    @click="toggleNeighborhoods"
-                    :class="{ active: show.neighborhoods }"
-                >
-                    {{
-                        show.postalCodeBoundaries
-                            ? "Nascondi"
-                            : "Mostra"
-                    }} Quartieri
+                    {{ value ? "Nascondi" : "Mostra" }}
+                    {{ getDisplayName(key) }}
                 </button>
             </div>
         </div>
