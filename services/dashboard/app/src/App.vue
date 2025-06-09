@@ -13,7 +13,6 @@
                     </div>
                 </div>
                 <MapComponent
-                    :markers="mapMarkers"
                     @marker-click="handleMarkerClick"
                 />
             </div>
@@ -165,15 +164,19 @@ body {
 }
 
 .app {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .dashboard {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-areas:
+        "map map map"
+        "map map map"
+        "measurements measurements log"
+        "measurements measurements log";
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
     &-component {
@@ -185,20 +188,19 @@ body {
 }
 
 .map-component-container {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    min-height: 500px;
+    grid-area: map;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .table-component-container {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-area: measurements;
+    min-width: 0;
 }
 
 .log-component-container {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    max-height: 220px;
+    grid-area: log;
     overflow-y: hidden;
 }
 

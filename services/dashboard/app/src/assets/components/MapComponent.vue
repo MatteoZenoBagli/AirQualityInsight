@@ -5,12 +5,6 @@ import { ref } from "vue";
 
 export default {
     name: "MapComponent",
-    props: {
-        markers: {
-            type: Array,
-            default: () => [],
-        },
-    },
     data() {
         return {
             center: ref({ lng: 11.3426, lat: 44.4939 }), // Piazza Maggiore, Bologna
@@ -102,7 +96,7 @@ export default {
                         // Feedback visivo che la copia è avvenuta
                         const btn = coordinatesCopyBtn;
                         const originalText = btn.textContent;
-                        btn.textContent = "Copiato!";
+                        btn.textContent = "Copied!";
                         btn.classList.add("copied");
 
                         // Ripristino del testo originale dopo 1.5 secondi
@@ -113,11 +107,11 @@ export default {
                     })
                     .catch((err) => {
                         console.error(
-                            "Errore nella copia delle coordinate: ",
+                            "Error copying coordinates: ",
                             err
                         );
                         alert(
-                            "Non è stato possibile copiare le coordinate. Prova a farlo manualmente."
+                            "Could not copy coordinates. Try doing it manually."
                         );
                     });
             });
@@ -264,10 +258,10 @@ export default {
         },
         getDisplayName(key) {
             const displayNames = {
-                sensorLocations: "sensori",
-                postalCodeBoundaries: "CAP",
-                neighborhoods: "Quartieri",
-                zones: "Zone",
+                sensorLocations: "Sensors",
+                postalCodeBoundaries: "CAPs",
+                neighborhoods: "Neighborhoods",
+                zones: "Zones",
             };
             return displayNames[key] || key;
         },
@@ -375,16 +369,13 @@ export default {
 
 <template>
     <div class="map">
-        <div
-            v-for="(marker, index) in markers"
+        <!-- <div
+            v-for="(marker, index) in data.sensorLocations"
             :key="index"
             class="map-marker"
             @click="$emit('marker-click', marker)"
-        ></div>
-        <div class="map-overlay">
-            <strong>Markers: {{ markers.length }}</strong>
-        </div>
-        <div v-if="markers.length === 0" class="no-data">
+        ></div> -->
+        <div v-if="data.sensorLocations.length === 0" class="no-data">
             No markers to display
         </div>
 
@@ -401,6 +392,11 @@ export default {
                 <div class="icon"></div>
             </div>
             <div class="controls">
+                <pre>
+                    <span>Markers:</span>
+                    <span>{{ data.sensorLocations.length }}</span>
+                </pre>
+                <hr>
                 <pre>
                     <span>Latitude:</span>
                     <span>{{ this.center.lat }}</span>
@@ -419,7 +415,7 @@ export default {
                     @click="toggleLayer(key)"
                     :class="{ active: value }"
                 >
-                    {{ value ? "Nascondi" : "Mostra" }}
+                    {{ value ? "Hide" : "Show" }}
                     {{ getDisplayName(key) }}
                 </button>
             </div>
@@ -429,7 +425,7 @@ export default {
 
 <style scoped lang="scss">
 .map {
-    height: 450px;
+    height: 100%;
     background-color: #e9f7fe;
     border-radius: 6px;
     display: flex;
@@ -467,8 +463,8 @@ export default {
     font-style: italic;
 }
 .map-container {
-    height: 800px; // 100%;
-    width: 800px; // 100%;
+    height: 100%;
+    width: 100%;
 
     #map {
         height: 100%;
@@ -485,7 +481,7 @@ export default {
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    width: 9rem;
+    width: 10rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -496,6 +492,10 @@ export default {
         display: flex;
         justify-content: space-between;
         margin: 0.25rem 0;
+    }
+
+    hr {
+        width: 100%;
     }
 }
 
