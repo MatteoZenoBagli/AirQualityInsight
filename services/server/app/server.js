@@ -14,7 +14,7 @@ const express = require('express');
 const app = express();
 const server = http.createServer(app);
 
-const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost:5173';
+const corsOrigin = "*"; // process.env.CORS_ORIGIN || 'http://localhost:5173';
 
 const io = socketIo(server, { cors: { origin: corsOrigin } });
 
