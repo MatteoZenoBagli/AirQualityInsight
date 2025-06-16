@@ -10,7 +10,7 @@ services:
     env_file:
       - .env
     environment:
-      TZ: UTC
+      TZ: Europe/Rome
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
     volumes:
       - ./services/sensor/app:/app
