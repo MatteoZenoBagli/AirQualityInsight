@@ -30,6 +30,7 @@ export default {
                 neighborhoods: [],
                 zones: [],
             },
+            gridType: 'none',
         };
     },
     methods: {
@@ -155,10 +156,15 @@ export default {
             if ("sensorLocations" === layer) {
                 this.data[layer] = data.slice(0, 50); // TODO REMOVE LIMIT
                 // this.data.sensorLocations = sensorLocations;
+                this.$emit('sensors-loaded', this.data[layer]);
                 return;
             }
 
             this.data[layer] = data.features;
+        },
+        refreshSensorData() {
+            this.data.sensorLocations = null;
+            this.$emit('sensors-loaded', this.data.sensorLocations);
         },
         async drawLayer(layer) {
             if (!this.data[layer]) return console.error("Data not provided");
@@ -172,6 +178,9 @@ export default {
                     if (sensorLocation.desc)
                         marker.bindPopup(sensorLocation.desc);
                     marker.addTo(this.map);
+                    marker.on('click', () => {
+                        this.$emit('marker-click', sensorLocation);
+                    });
 
                     this.layers[layer].push(marker);
                 }
@@ -348,6 +357,23 @@ export default {
 
             return configs[layer];
         },
+        centerOnLocation(lat, lng, zoom = 16) {
+            if (!this.map) throw 'Map not initialized';
+
+            this.map.flyTo([lat, lng], zoom, {
+                animate: true,
+                duration: 1.5 // sec
+            });
+
+            this.center = { lat: lat.toFixed(4), lng: lng.toFixed(4) };
+            this.zoom = zoom;
+        },
+        onGridChange() {
+            const mapContainer = document.querySelector('.map-container');
+            if (!mapContainer) return;
+            mapContainer.classList.remove('grid-simple', 'grid-dark', 'grid-fine', 'grid-coordinate', 'grid-crosshair', 'grid-dashed', 'grid-dots', 'grid-animated');
+            if (this.gridType !== 'none') mapContainer.classList.add(`grid-${this.gridType}`);
+        }
     },
     async mounted() {
         this.initMap();
@@ -388,6 +414,10 @@ export default {
                 />
             </div>
             <div id="map"></div>
+            <div v-if="gridType === 'simple'" class="map-grid-overlay"></div>
+            <div v-if="gridType === 'gray'" class="map-grid-overlay-gray"></div>
+            <div v-if="gridType === 'red'" class="map-grid-overlay-red"></div>
+            <div v-if="gridType === 'crosshair'" class="map-grid-overlay-crosshair"></div>
             <div class="center-marker">
                 <div class="icon"></div>
             </div>
@@ -418,6 +448,21 @@ export default {
                     {{ value ? "Hide" : "Show" }}
                     {{ getDisplayName(key) }}
                 </button>
+                <hr>
+                <div class="grid-controls">
+                    <label><strong>Grid:</strong></label>
+                    <select
+                        id="grid-select"
+                        v-model="gridType"
+                        class="grid-select"
+                        @change="onGridChange"
+                    >
+                        <option value="none">None</option>
+                        <option value="gray">Gray</option>
+                        <option value="red">Red</option>
+                        <option value="crosshair">Crosshair</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
@@ -462,6 +507,7 @@ export default {
     color: #666;
     font-style: italic;
 }
+
 .map-container {
     height: 100%;
     width: 100%;
@@ -469,6 +515,89 @@ export default {
     #map {
         height: 100%;
         width: 100%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+        background-size: 30px 30px;
+        pointer-events: none;
+        z-index: 400;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &.show-grid::before {
+        opacity: 1;
+    }
+}
+
+.map-grid-overlay-gray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 400;
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.map-grid-overlay-red {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 400;
+    background-image:
+        linear-gradient(to right, rgba(255, 0, 0, 0.4) 2px, transparent 2px),
+        linear-gradient(to bottom, rgba(255, 0, 0, 0.4) 2px, transparent 2px),
+        linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+.map-grid-overlay-crosshair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 500;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: rgba(255, 0, 0, 0.6);
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: rgba(255, 0, 0, 0.6);
+        transform: translateX(-50%);
     }
 }
 
@@ -491,11 +620,21 @@ export default {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin: 0.25rem 0;
     }
 
     hr {
         width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .grid-controls {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        select {
+            padding: 0 0.25rem;
+        }
     }
 }
 
@@ -610,5 +749,57 @@ export default {
 .loading-gif {
     width: 80px;
     height: 80px;
+}
+
+.pulsing-marker {
+    background: transparent;
+    border: none;
+}
+
+.pulse {
+    --bg-color: #ff4444;
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    position: relative;
+    animation: pulse 2s infinite;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        border-radius: 50%;
+        animation: pulse-ring 2s infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
 }
 </style>

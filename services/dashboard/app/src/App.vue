@@ -13,7 +13,9 @@
                     </div>
                 </div>
                 <MapComponent
+                    ref="mapComponent"
                     @marker-click="handleMarkerClick"
+                    @sensors-loaded="handleSensorsLoaded"
                 />
             </div>
 
@@ -27,9 +29,10 @@
                     </div>
                 </div>
                 <TableComponent
-                    :data="tableData"
-                    :columns="tableColumns"
-                    @row-click="handleRowClick"
+                    ref="measurementComponent"
+                    :data="measurementData"
+                    :columns="measurementColumns"
+                    @row-click="handleMeasurementRowClick"
                 />
             </div>
 
@@ -42,7 +45,27 @@
                         </button>
                     </div>
                 </div>
-                <LogComponent :entries="logEntries" />
+                <LogComponent
+                    ref="logComponent"
+                    :entries="logEntries"
+                />
+            </div>
+
+            <div class="dashboard-component sensors-component-container">
+                <div class="component-header">
+                    <h2>Registered sensors: {{ this.sensorData.length }}</h2>
+                    <div>
+                        <button @click="refreshSensors" class="btn">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                <TableComponent
+                    ref="sensorsComponent"
+                    :data="sensorData"
+                    :columns="sensorColumns"
+                    @row-click="handleSensorRowClick"
+                />
             </div>
         </div>
     </div>
@@ -66,7 +89,7 @@ export default {
         return {
             socket: null,
             maxMessages: 50,
-            tableColumns: [
+            measurementColumns: [
                 { key: "sensor_id", label: "Sensor ID" },
                 { key: "timestamp", label: "Timestamp" },
                 { key: "temperature", label: "Temperature (°C)" },
@@ -77,8 +100,16 @@ export default {
                 { key: "voc", label: "VOC (ppm)" },
                 { key: "co2", label: "CO2 (ppm)" },
             ],
-            tableData: [],
-            logEntries: []
+            sensorColumns: [
+                { key: 'id', label: 'ID' },
+                { key: 'lat', label: 'Latitude' },
+                { key: 'lng', label: 'Longitude' },
+                { key: 'status', label: 'Status' },
+            ],
+            measurementData: [],
+            logEntries: [],
+            sensorData: [],
+            map: null
         };
     },
     created() {
@@ -98,10 +129,10 @@ export default {
                 message.timestamp = this.formatTimestamp(
                     message.timestamp || new Date()
                 );
-                this.tableData.unshift(message);
+                this.measurementData.unshift(message);
 
-                if (this.tableData.length > this.maxMessages)
-                    this.tableData = this.tableData.slice(0, this.maxMessages);
+                if (this.measurementData.length > this.maxMessages)
+                    this.measurementData = this.measurementData.slice(0, this.maxMessages);
             });
 
             this.socket.on("connect", () => {
@@ -123,10 +154,19 @@ export default {
             return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
         },
         handleMarkerClick(marker) {
-            // TODO Highlight cursor on table and center on it
+            const sensor = this.sensorData.find(s =>
+                s.lat === marker.lat && s.lng === marker.lng
+            );
+            if (!sensor) return;
+            this.centerMapOnSensor(sensor);
+            this.addInfo(`Selected sensor from map: ${sensor.id}`);
         },
-        handleRowClick(row) {
-            // TODO Highlight cursor on map and center on it
+        handleMeasurementRowClick(row) {
+            // Center map on the sensor that sent this measurement
+            const sensor = this.sensorData.find(s => s.id === row.sensor_id);
+            if (!sensor) return this.addWarning(`Sensor ${row.sensor_id} not found in registered sensors`);
+            this.centerMapOnSensor(sensor);
+            this.addInfo(`Selected sensor: ${row.sensor_id}`);
         },
         addInfo(msg) {
             this.addLogEntry("info", msg);
@@ -151,6 +191,29 @@ export default {
                 message,
             });
         },
+        handleSensorsLoaded(sensors) {
+            this.sensorData = sensors.map(sensor => ({
+                ...sensor,
+                status: 'Active'
+            }));
+            this.addInfo(`Loaded ${sensors.length} sensors`);
+        },
+        refreshSensors() {
+            this.$refs.mapComponent.refreshSensorData();
+        },
+        centerMapOnSensor(sensor) {
+            if (!this.$refs.mapComponent) return
+            if (!sensor.lat) return;
+            if (!sensor.lng) return;
+
+            const mapContainer = document.querySelector('.dashboard-component.map-component-container');
+            mapContainer?.scrollIntoView({ behavior: 'smooth' });
+            this.$refs.mapComponent.centerOnLocation(sensor.lat, sensor.lng);
+        },
+        handleSensorRowClick(row) {
+            this.addInfo(`Selected sensor: ${row.id}`);
+            this.centerMapOnSensor(row);
+        }
     },
 };
 </script>
@@ -175,7 +238,9 @@ body {
         "map map map"
         "map map map"
         "measurements measurements log"
-        "measurements measurements log";
+        "measurements measurements log"
+        "sensors sensors sensors"
+        "sensors sensors sensors";
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
@@ -197,11 +262,22 @@ body {
 .table-component-container {
     grid-area: measurements;
     min-width: 0;
+    height: 600px;
 }
 
 .log-component-container {
     grid-area: log;
     overflow-y: hidden;
+    height: 600px;
+
+    .log-container {
+        margin-bottom: 1rem;
+        max-height: 100%;
+    }
+}
+
+.sensors-component-container {
+    grid-area: sensors;
 }
 
 .component-header {
