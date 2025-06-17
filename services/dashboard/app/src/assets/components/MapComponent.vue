@@ -7,7 +7,7 @@ export default {
     name: "MapComponent",
     data() {
         return {
-            center: ref({ lng: 11.3426, lat: 44.4939 }), // Piazza Maggiore, Bologna
+            center: ref({ lng: '11.3426000', lat: '44.4939000' }), // Piazza Maggiore, Bologna
             zoom: ref(13),
             map: null,
             error: false,
@@ -67,8 +67,8 @@ export default {
 
             const updateCurrentCoordinates = () => {
                 const newCenter = this.map.getCenter();
-                currentLat = newCenter.lat.toFixed(4);
-                currentLng = newCenter.lng.toFixed(4);
+                currentLat = newCenter.lat.toFixed(7);
+                currentLng = newCenter.lng.toFixed(7);
             };
 
             updateCurrentCoordinates();
@@ -365,7 +365,7 @@ export default {
                 duration: 1.5 // sec
             });
 
-            this.center = { lat: lat.toFixed(4), lng: lng.toFixed(4) };
+            this.center = { lat: lat.toFixed(7), lng: lng.toFixed(7) };
             this.zoom = zoom;
         },
         onGridChange() {
@@ -604,7 +604,7 @@ export default {
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    width: 10rem;
+    width: 12rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
