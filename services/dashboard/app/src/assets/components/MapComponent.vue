@@ -434,6 +434,10 @@ export default {
                     <span>Longitude:</span>
                     <span>{{ this.center.lng }}</span>
                 </pre>
+                <pre>
+                    <span>Zoom:</span>
+                    <span>{{ this.zoom }}</span>
+                </pre>
                 <button class="copy-btn" id="coordinates-copy-btn">
                     Copia
                 </button>
