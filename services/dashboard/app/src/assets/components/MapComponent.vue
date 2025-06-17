@@ -414,10 +414,9 @@ export default {
                 />
             </div>
             <div id="map"></div>
-            <div v-if="gridType === 'simple'" class="map-grid-overlay"></div>
-            <div v-if="gridType === 'gray'" class="map-grid-overlay-gray"></div>
-            <div v-if="gridType === 'red'" class="map-grid-overlay-red"></div>
-            <div v-if="gridType === 'crosshair'" class="map-grid-overlay-crosshair"></div>
+            <div v-if="gridType === 'gray'" class="map-grid-overlay map-grid-overlay--gray"></div>
+            <div v-if="gridType === 'red'" class="map-grid-overlay map-grid-overlay--red"></div>
+            <div v-if="gridType === 'crosshair'" class="map-grid-overlay map-grid-overlay--crosshair"></div>
             <div class="center-marker">
                 <div class="icon"></div>
             </div>
@@ -539,7 +538,9 @@ export default {
     }
 }
 
-.map-grid-overlay-gray {
+.map-grid-overlay {
+    --red-line-color: rgba(255, 0, 0, 0.5);
+    --gray-line-color: rgba(0, 0, 0, 0.25);
     position: absolute;
     top: 0;
     left: 0;
@@ -547,57 +548,50 @@ export default {
     bottom: 0;
     pointer-events: none;
     z-index: 400;
-    background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
-    background-size: 40px 40px;
-}
 
-.map-grid-overlay-red {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 400;
-    background-image:
-        linear-gradient(to right, rgba(255, 0, 0, 0.4) 2px, transparent 2px),
-        linear-gradient(to bottom, rgba(255, 0, 0, 0.4) 2px, transparent 2px),
-        linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-}
-
-.map-grid-overlay-crosshair {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 500;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: rgba(255, 0, 0, 0.6);
-        transform: translateY(-50%);
+    &--gray {
+        border-bottom: solid 1px var(--gray-line-color);
+        border-right: solid 1px var(--gray-line-color);
+        background-image:
+            linear-gradient(to right, var(--gray-line-color) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--gray-line-color) 1px, transparent 1px);
+        background-size: 5% 5%;
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: rgba(255, 0, 0, 0.6);
-        transform: translateX(-50%);
+    &--red {
+        border-bottom: solid 2px var(--red-line-color);
+        border-right: solid 2px var(--red-line-color);
+        background-image:
+            linear-gradient(to right, var(--red-line-color) 2px, transparent 2px),
+            linear-gradient(to bottom, var(--red-line-color) 2px, transparent 2px);
+        background-size: 10% 10%;
+    }
+
+    &--crosshair {
+        border: solid 2px var(--red-line-color);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: var(--red-line-color);
+        }
+
+        &::before {
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            transform: translateX(-50%);
+        }
     }
 }
 
