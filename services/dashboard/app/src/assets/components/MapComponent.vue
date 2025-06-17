@@ -116,6 +116,16 @@ export default {
                         );
                     });
             });
+
+            // Leaflet caches on the parent container may result in a misaligned center
+            this.map.whenReady(() => {
+                setTimeout(() => {
+                    this.map.invalidateSize();
+                }, 100);
+            });
+            window.addEventListener('resize', () => {
+                this.map.invalidateSize();
+            });
         },
         toggleLayer(layer, hideOrEvent = false) {
             const hide = hideOrEvent instanceof Event ? false : hideOrEvent;
@@ -364,9 +374,6 @@ export default {
                 animate: true,
                 duration: 1.5 // sec
             });
-
-            this.center = { lat: lat.toFixed(7), lng: lng.toFixed(7) };
-            this.zoom = zoom;
         },
         onGridChange() {
             const mapContainer = document.querySelector('.map-container');
