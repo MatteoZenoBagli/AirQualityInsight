@@ -67,22 +67,22 @@ function initMap() {
         navigator.clipboard
             .writeText(coordText)
             .then(() => {
-                // Feedback visivo che la copia è avvenuta
-                const btn = coordinatesCopyBtn;
+            // Visual feedback that copying has occurred
+            const btn = coordinatesCopyBtn;
                 const originalText = btn.textContent;
-                btn.textContent = "Copiato!";
+                btn.textContent = "Copied!";
                 btn.classList.add("copied");
 
-                // Ripristino del testo originale dopo 1.5 secondi
-                setTimeout(() => {
+            // Restore original text after 1.5 seconds
+            setTimeout(() => {
                     btn.textContent = originalText;
                     btn.classList.remove("copied");
                 }, 1.5 * 1000); // ms
             })
             .catch((err) => {
-                console.error("Errore nella copia delle coordinate: ", err);
+                console.error("Error copying coordinates: ", err);
                 alert(
-                    "Non è stato possibile copiare le coordinate. Prova a farlo manualmente."
+                    "Could not copy coordinates. Try doing it manually."
                 );
             });
     });
@@ -236,7 +236,7 @@ onMounted(async () => {
                 <span>Longitude:</span>
                 <span>{{ center.lng }}</span>
             </pre>
-            <button class="copy-btn" id="coordinates-copy-btn">Copia</button>
+            <button class="copy-btn" id="coordinates-copy-btn">Copy</button>
         </div>
     </div>
 </template>

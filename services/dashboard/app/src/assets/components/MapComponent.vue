@@ -96,13 +96,13 @@ export default {
                 navigator.clipboard
                     .writeText(coordText)
                     .then(() => {
-                        // Feedback visivo che la copia è avvenuta
+                        // Visual feedback that copying has occurred
                         const btn = coordinatesCopyBtn;
                         const originalText = btn.textContent;
                         btn.textContent = "Copied!";
                         btn.classList.add("copied");
 
-                        // Ripristino del testo originale dopo 1.5 secondi
+                        // Restore original text after 1.5 seconds
                         setTimeout(() => {
                             btn.textContent = originalText;
                             btn.classList.remove("copied");
@@ -461,7 +461,7 @@ export default {
                     <span>{{ this.zoom }}</span>
                 </pre>
                 <button class="copy-btn" id="coordinates-copy-btn">
-                    Copia
+                    Copy
                 </button>
                 <button
                     v-for="(value, key) in show"
