@@ -63,7 +63,7 @@ services:
     env_file:
       - .env
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
       VITE_SOCKET_SERVER_URL: http://localhost:3000
     volumes:
       - ./services/dashboard/app:/usr/src/app
@@ -85,7 +85,7 @@ services:
     env_file:
       - .env
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
       CORS_ORIGIN: http://localhost:5173
     volumes:
       - ./services/server/app:/usr/src/app
