@@ -31,6 +31,8 @@ export default {
                 zones: [],
             },
             gridType: 'none',
+            isHovered: ref(false),
+            isPinned: ref(false)
         };
     },
     methods: {
@@ -427,7 +429,20 @@ export default {
             <div class="center-marker">
                 <div class="icon"></div>
             </div>
-            <div class="controls">
+            <div
+                :class="['controls', { pinned: isPinned }]"
+                :aria-expanded="isHovered"
+                @mouseover="isHovered = true"
+                @mouseleave="isHovered = false"
+            >
+                <div class="tools">
+                    <h2>Controls</h2>
+                    <div
+                        class="pushpin"
+                        @click="isPinned = !isPinned"
+                        title="Pin / Unpin"
+                    ></div>
+                </div>
                 <pre>
                     <span>Markers:</span>
                     <span>{{ data.sensorLocations.length }}</span>
@@ -607,19 +622,80 @@ export default {
 }
 
 .controls {
+    width: 44px;
+    height: 44px;
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 999;
-    background: white;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    width: 12rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    transition: all 250ms ease-in-out;
+    border: 2px solid rgba(0,0,0,0.2);
+    overflow-x: hidden;
+
+    background-color: white;
+    background-clip: padding-box;
+    background-size: 24px 24px;
+    background-image: url('../pushpin.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+
+    & * {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &[aria-expanded="true"], &.pinned {
+        background: white;
+        width: 12rem;
+        height: auto;
+        & * {
+            display: inherit;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.pinned .pushpin {
+        background-color: #f0f0f0 !important;
+        transform: scale(1.1) rotate(30deg);
+    }
+
+    .tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        width: 100%;
+
+        .pushpin {
+            background-clip: padding-box;
+            background-size: 24px 24px;
+            background-image: url('../pushpin.svg');
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: #f0f0f0;
+                transform: scale(1.1) rotate(30deg);
+            }
+        }
+    }
 
     pre {
         width: 100%;
