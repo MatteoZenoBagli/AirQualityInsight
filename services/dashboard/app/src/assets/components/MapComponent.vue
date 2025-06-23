@@ -155,6 +155,21 @@ export default {
 
             this.layers[layer] = [];
         },
+        highlightSensor(sensor_id) {
+            if (!this.data.sensorLocations) return;
+
+            for (const sensor of this.data.sensorLocations)
+                if (sensor_id === sensor.id) {
+                    const markerElement = sensor.marker?.getElement();
+                    if (!markerElement) return;
+                    if (markerElement.classList.contains('pushpin-new_measurement')) return;
+                    markerElement.classList.add('pushpin-new_measurement');
+                    setTimeout(() => {
+                        markerElement.classList.remove('pushpin-new_measurement');
+                    }, 1500);
+                    break;
+                }
+        },
         async fetchSensorDataFromAPI() {
             try {
                 const apiUrl = import.meta.env.VITE_SOCKET_SERVER_URL;
@@ -235,6 +250,7 @@ export default {
                     });
 
                     this.layers[layer].push(marker);
+                    sensorLocation.marker = marker;
                 }
                 return;
             }
@@ -922,5 +938,14 @@ export default {
         transform: scale(2.5);
         opacity: 0;
     }
+}
+
+.pushpin-new_measurement {
+    animation: pushpin-blink 1s;
+}
+
+@keyframes pushpin-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.7; }
 }
 </style>

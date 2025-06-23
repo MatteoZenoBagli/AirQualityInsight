@@ -130,6 +130,7 @@ export default {
                     message.timestamp || new Date()
                 );
                 this.measurementData.unshift(message);
+                this.$refs.mapComponent.highlightSensor(message.sensor_id);
 
                 if (this.measurementData.length > this.maxMessages)
                     this.measurementData = this.measurementData.slice(0, this.maxMessages);
