@@ -7,7 +7,7 @@
                 <div class="component-header">
                     <h2>Map</h2>
                     <div>
-                        <button @click="refreshMap" class="btn">
+                        <button @click="refreshSensors" class="btn">
                             <i class="fas fa-sync-alt"></i> Refresh
                         </button>
                     </div>

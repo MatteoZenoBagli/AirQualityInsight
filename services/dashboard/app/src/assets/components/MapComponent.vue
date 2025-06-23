@@ -155,29 +155,60 @@ export default {
 
             this.layers[layer] = [];
         },
+        async fetchSensorDataFromAPI() {
+            try {
+                const apiUrl = import.meta.env.VITE_SOCKET_SERVER_URL;
+                const jsonResponse = await fetch(`${apiUrl}/api/sensors`);
+
+                if (!jsonResponse.ok)
+                    throw new Error(`HTTP error! status: ${jsonResponse.status}`);
+
+                const response = await jsonResponse.json();
+                if (!response)
+                    throw new Error(response || 'API request failed');
+
+                const sensors = response.map(sensor => ({
+                    id: sensor.sensor_id,
+                    lat: sensor.location.coordinates[1], // latitude
+                    lng: sensor.location.coordinates[0], // longitude
+                    desc: sensor.name,
+                    active: sensor.active,
+                    ip: sensor.ip,
+                    last_seen: sensor.last_seen
+                }));
+
+                this.$emit('sensors-loaded', sensors);
+                console.log(`Loaded ${sensors.length} sensors from API`);
+                return sensors;
+            } catch (error) {
+                console.error('Unable to fetch sensors from API:', error);
+            }
+        },
         async populateLayer(layer) {
             const dataFile = {
-                sensorLocations: "sensor_locations.json",
+                sensorLocations: null,
                 postalCodeBoundaries: "caps.geojson",
                 neighborhoods: "neighborhoods.geojson",
                 zones: "zones.geojson",
             };
 
-            const data = await this.loadData(dataFile[layer]);
-            if (!data) throw "Data not provided";
+            let data;
 
             if ("sensorLocations" === layer) {
-                this.data[layer] = data.slice(0, 50); // TODO REMOVE LIMIT
-                // this.data.sensorLocations = sensorLocations;
-                this.$emit('sensors-loaded', this.data[layer]);
-                return;
+                data = await this.fetchSensorDataFromAPI();
+                if (!data) throw "Data not provided";
+                this.data[layer] = data;
+            } else {
+                data = await this.loadData(dataFile[layer]);
+                if (!data) throw "Data not provided";
+                this.data[layer] = data.features;
             }
-
-            this.data[layer] = data.features;
         },
-        refreshSensorData() {
+        async refreshSensorData() {
             this.data.sensorLocations = null;
-            this.$emit('sensors-loaded', this.data.sensorLocations);
+            const data = await this.fetchSensorDataFromAPI();
+            if (!data) throw "Data not provided";
+            this.data.sensorLocations = data;
         },
         async drawLayer(layer) {
             if (!this.data[layer]) return console.error("Data not provided");
