@@ -242,13 +242,13 @@ body {
         "sensors sensors sensors"
         "sensors sensors sensors";
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 1.5rem;
 
     &-component {
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 15px;
+        padding: 1rem;
     }
 }
 
@@ -262,7 +262,7 @@ body {
 .table-component-container {
     grid-area: measurements;
     min-width: 0;
-    height: 600px;
+    height: 100%;
 }
 
 .log-component-container {
@@ -323,7 +323,7 @@ body {
     .map-component-container,
     .table-component-container,
     .log-component-container {
-        grid-column: 1;
+        grid-column: 1 / -1;
     }
 
     .map-component-container {
