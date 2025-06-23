@@ -2,6 +2,7 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { ref } from "vue";
+import pushpinSvg from '@/assets/pushpin.svg';
 
 export default {
     name: "MapComponent",
@@ -180,13 +181,21 @@ export default {
         },
         async drawLayer(layer) {
             if (!this.data[layer]) return console.error("Data not provided");
+            const pushpinIcon = L.icon({
+                iconUrl: pushpinSvg,
+                iconSize: [24, 24],
+                iconAnchor: [12, 20],
+                popupAnchor: [0, -20],
+            });
 
             if ("sensorLocations" === layer) {
                 for (const sensorLocation of this.data[layer]) {
                     const marker = L.marker([
                         sensorLocation.lat,
                         sensorLocation.lng,
-                    ]);
+                    ],
+                        { icon: pushpinIcon }
+                    );
                     if (sensorLocation.desc)
                         marker.bindPopup(sensorLocation.desc);
                     marker.addTo(this.map);
