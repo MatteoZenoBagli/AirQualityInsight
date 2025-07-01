@@ -14,7 +14,7 @@ export default {
             error: false,
             loading: ref(false),
             show: {
-                sensorLocations: false,
+                sensorLocations: true,
                 postalCodeBoundaries: false,
                 neighborhoods: false,
                 zones: false,
@@ -163,7 +163,7 @@ export default {
                     sensor.marker?.setOpacity(0.75);
                     setTimeout(() => {
                         sensor.marker?.setOpacity(1);
-                    }, 1500);
+                    }, 250);
                     break;
                 }
         },
