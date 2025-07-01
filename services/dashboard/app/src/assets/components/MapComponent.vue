@@ -160,12 +160,9 @@ export default {
 
             for (const sensor of this.data.sensorLocations)
                 if (sensor_id === sensor.id) {
-                    const markerElement = sensor.marker?.getElement();
-                    if (!markerElement) return;
-                    if (markerElement.classList.contains('pushpin-new_measurement')) return;
-                    markerElement.classList.add('pushpin-new_measurement');
+                    sensor.marker?.setOpacity(0.75);
                     setTimeout(() => {
-                        markerElement.classList.remove('pushpin-new_measurement');
+                        sensor.marker?.setOpacity(1);
                     }, 1500);
                     break;
                 }
@@ -938,14 +935,5 @@ export default {
         transform: scale(2.5);
         opacity: 0;
     }
-}
-
-.pushpin-new_measurement {
-    animation: pushpin-blink 1s;
-}
-
-@keyframes pushpin-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.7; }
 }
 </style>
