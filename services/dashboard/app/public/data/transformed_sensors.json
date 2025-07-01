@@ -1,0 +1,7002 @@
+[
+  {
+    "sensor_id": "SENSOR00001",
+    "name": "c00f941d80680980",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4976901,
+        11.3503918
+      ]
+    },
+    "ip": "192.168.1.001",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.522Z"
+  },
+  {
+    "sensor_id": "SENSOR00002",
+    "name": "ac782477c2f1488a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4942091,
+        11.3464552
+      ]
+    },
+    "ip": "192.168.1.002",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00003",
+    "name": "d967e65a9070c6c2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4914668,
+        11.3464661
+      ]
+    },
+    "ip": "192.168.1.003",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00004",
+    "name": "ff1085cd720d8883",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4871712,
+        11.3481673
+      ]
+    },
+    "ip": "192.168.1.004",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00005",
+    "name": "c01c92a4a3c1b616",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4860835,
+        11.3482852
+      ]
+    },
+    "ip": "192.168.1.005",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00006",
+    "name": "f63422766fd5be8d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4856545,
+        11.3482468
+      ]
+    },
+    "ip": "192.168.1.006",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00007",
+    "name": "a36f0eb327b3abaf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.485201,
+        11.3503156
+      ]
+    },
+    "ip": "192.168.1.007",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00008",
+    "name": "114f24434aacaebe",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4820868,
+        11.3490983
+      ]
+    },
+    "ip": "192.168.1.008",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00009",
+    "name": "5a48471b079668e3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4800298,
+        11.3490101
+      ]
+    },
+    "ip": "192.168.1.009",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00010",
+    "name": "64424bd5d1babf4f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.480458,
+        11.3479365
+      ]
+    },
+    "ip": "192.168.1.010",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00011",
+    "name": "629dc6226eff336a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4846452,
+        11.3393625
+      ]
+    },
+    "ip": "192.168.1.011",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00012",
+    "name": "986cd65108fad3a0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4834647,
+        11.3389537
+      ]
+    },
+    "ip": "192.168.1.012",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00013",
+    "name": "f2ca7f6eb03c0100",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4920727,
+        11.3520565
+      ]
+    },
+    "ip": "192.168.1.013",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00014",
+    "name": "454f9b64efc9ee6f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.489907,
+        11.3574737
+      ]
+    },
+    "ip": "192.168.1.014",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00015",
+    "name": "ae7bd05d2071225e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4947104,
+        11.3284442
+      ]
+    },
+    "ip": "192.168.1.015",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00016",
+    "name": "2f89dabd12063e50",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4954511,
+        11.3212147
+      ]
+    },
+    "ip": "192.168.1.016",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00017",
+    "name": "7925b3341f5b1e2c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4946042,
+        11.3145025
+      ]
+    },
+    "ip": "192.168.1.017",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00018",
+    "name": "0d74ff38f58467a8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.493978,
+        11.3108743
+      ]
+    },
+    "ip": "192.168.1.018",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00019",
+    "name": "d4b2f1111c735eab",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4895959,
+        11.3209252
+      ]
+    },
+    "ip": "192.168.1.019",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00020",
+    "name": "8450c914abb36a1c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5012133,
+        11.3444579
+      ]
+    },
+    "ip": "192.168.1.020",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00021",
+    "name": "f65e573a6316dd7a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4976461,
+        11.3490524
+      ]
+    },
+    "ip": "192.168.1.021",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00022",
+    "name": "5c5756d0eb1cc0df",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4996769,
+        11.3504718
+      ]
+    },
+    "ip": "192.168.1.022",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00023",
+    "name": "d1dcf39ef0f46ab4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4994809,
+        11.3512625
+      ]
+    },
+    "ip": "192.168.1.023",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00024",
+    "name": "62245e1f81f0378d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.494268,
+        11.3508053
+      ]
+    },
+    "ip": "192.168.1.024",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00025",
+    "name": "5795fe6e69a95a28",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4982128,
+        11.3559806
+      ]
+    },
+    "ip": "192.168.1.025",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00026",
+    "name": "6afa61316b51cfeb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4973991,
+        11.3475881
+      ]
+    },
+    "ip": "192.168.1.026",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00027",
+    "name": "272dc695ff638bf4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4985905,
+        11.3463651
+      ]
+    },
+    "ip": "192.168.1.027",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00028",
+    "name": "8bf459778f319073",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4988922,
+        11.3453524
+      ]
+    },
+    "ip": "192.168.1.028",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00029",
+    "name": "754213f81d59c71e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4968573,
+        11.3471837
+      ]
+    },
+    "ip": "192.168.1.029",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00030",
+    "name": "f4a39ca1071329e5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4958487,
+        11.3495872
+      ]
+    },
+    "ip": "192.168.1.030",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00031",
+    "name": "c7c9039f5d879a6a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4981174,
+        11.3565054
+      ]
+    },
+    "ip": "192.168.1.031",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00032",
+    "name": "07b1de06f9eed425",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4991863,
+        11.3525083
+      ]
+    },
+    "ip": "192.168.1.032",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00033",
+    "name": "0fe64c92166b1737",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5009862,
+        11.3563275
+      ]
+    },
+    "ip": "192.168.1.033",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00034",
+    "name": "34138e5b9d42ca4f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5043442,
+        11.3475455
+      ]
+    },
+    "ip": "192.168.1.034",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00035",
+    "name": "4626ee5df6edbf8b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5048241,
+        11.3454896
+      ]
+    },
+    "ip": "192.168.1.035",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00036",
+    "name": "836eb69fe119f6f7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5035722,
+        11.3493591
+      ]
+    },
+    "ip": "192.168.1.036",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00037",
+    "name": "7e2eb3338dd80a0e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5020376,
+        11.3525686
+      ]
+    },
+    "ip": "192.168.1.037",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00038",
+    "name": "16b17c5a82011567",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5001896,
+        11.3508748
+      ]
+    },
+    "ip": "192.168.1.038",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00039",
+    "name": "ae3930ebf904f0a8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4958302,
+        11.3370271
+      ]
+    },
+    "ip": "192.168.1.039",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00040",
+    "name": "39b92dfd1cb996ff",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5010511,
+        11.3300993
+      ]
+    },
+    "ip": "192.168.1.040",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00041",
+    "name": "4a0c56e9ce760836",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4969871,
+        11.3274971
+      ]
+    },
+    "ip": "192.168.1.041",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00042",
+    "name": "4ea849fac5c94892",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4947516,
+        11.3281975
+      ]
+    },
+    "ip": "192.168.1.042",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00043",
+    "name": "3b6165ca7701a8d1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.490476,
+        11.3294818
+      ]
+    },
+    "ip": "192.168.1.043",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00044",
+    "name": "22098f7b1ad1a170",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4901339,
+        11.3295572
+      ]
+    },
+    "ip": "192.168.1.044",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00045",
+    "name": "4f6b1ae194f54d14",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4886697,
+        11.3334393
+      ]
+    },
+    "ip": "192.168.1.045",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00046",
+    "name": "30cf34ddd0426e23",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4853248,
+        11.3481717
+      ]
+    },
+    "ip": "192.168.1.046",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00047",
+    "name": "9df1d952d26b986a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4880286,
+        11.347896
+      ]
+    },
+    "ip": "192.168.1.047",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00048",
+    "name": "20526c6304441e76",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4940883,
+        11.3569458
+      ]
+    },
+    "ip": "192.168.1.048",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00049",
+    "name": "00b21abba699698e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4885205,
+        11.3576128
+      ]
+    },
+    "ip": "192.168.1.049",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00050",
+    "name": "c8f261f86d2b92f2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4848068,
+        11.3566809
+      ]
+    },
+    "ip": "192.168.1.050",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00051",
+    "name": "1ea49fccf019ff3f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4854726,
+        11.3480146
+      ]
+    },
+    "ip": "192.168.1.051",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00052",
+    "name": "691fc2d855393a02",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4888024,
+        11.3335485
+      ]
+    },
+    "ip": "192.168.1.052",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00053",
+    "name": "bb5688e3209c5391",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4904964,
+        11.3296641
+      ]
+    },
+    "ip": "192.168.1.053",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00054",
+    "name": "5f4ae0cf4fe62463",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4990715,
+        11.3273083
+      ]
+    },
+    "ip": "192.168.1.054",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00055",
+    "name": "febbbf744eb030d7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4993146,
+        11.3274413
+      ]
+    },
+    "ip": "192.168.1.055",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00056",
+    "name": "1d882d920d256347",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5009228,
+        11.330222
+      ]
+    },
+    "ip": "192.168.1.056",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00057",
+    "name": "2bfaf3443cbd1ef2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5032465,
+        11.3348233
+      ]
+    },
+    "ip": "192.168.1.057",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00058",
+    "name": "d44a59a361c8888d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.50538,
+        11.3414337
+      ]
+    },
+    "ip": "192.168.1.058",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00059",
+    "name": "fa98a2e8463d53f4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5020354,
+        11.3395299
+      ]
+    },
+    "ip": "192.168.1.059",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00060",
+    "name": "3f936b483215966a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.50185,
+        11.3401036
+      ]
+    },
+    "ip": "192.168.1.060",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00061",
+    "name": "4f8de3eef3272bda",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5023733,
+        11.3402835
+      ]
+    },
+    "ip": "192.168.1.061",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00062",
+    "name": "4973530c2c3e8e26",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5024674,
+        11.3398313
+      ]
+    },
+    "ip": "192.168.1.062",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00063",
+    "name": "0b814ebb2d1595f6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4888883,
+        11.3403149
+      ]
+    },
+    "ip": "192.168.1.063",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00064",
+    "name": "a98ab6fa454284e9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4913228,
+        11.3401353
+      ]
+    },
+    "ip": "192.168.1.064",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00065",
+    "name": "67edd852df14c055",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.490387,
+        11.3308059
+      ]
+    },
+    "ip": "192.168.1.065",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00066",
+    "name": "db1ad65aa61e3420",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4900015,
+        11.3340753
+      ]
+    },
+    "ip": "192.168.1.066",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00067",
+    "name": "b7efba34fa3c75ba",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4902485,
+        11.3361482
+      ]
+    },
+    "ip": "192.168.1.067",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00068",
+    "name": "4d24e636505221a5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.489838,
+        11.3427151
+      ]
+    },
+    "ip": "192.168.1.068",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00069",
+    "name": "a44c454ebfef395b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5089583,
+        11.3404917
+      ]
+    },
+    "ip": "192.168.1.069",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00070",
+    "name": "98acb389db4450b5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5109635,
+        11.3472786
+      ]
+    },
+    "ip": "192.168.1.070",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00071",
+    "name": "96efe9a8d2d6c2ed",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5079046,
+        11.3483923
+      ]
+    },
+    "ip": "192.168.1.071",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00072",
+    "name": "16ed4a902a21bbf0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5077656,
+        11.3494888
+      ]
+    },
+    "ip": "192.168.1.072",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00073",
+    "name": "922b8e686d114822",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5114909,
+        11.3505114
+      ]
+    },
+    "ip": "192.168.1.073",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00074",
+    "name": "9773e1317852d080",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5108465,
+        11.3481765
+      ]
+    },
+    "ip": "192.168.1.074",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00075",
+    "name": "d48cefd0c2c440ce",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5107214,
+        11.3491058
+      ]
+    },
+    "ip": "192.168.1.075",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00076",
+    "name": "ac3721c03caacaab",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5105714,
+        11.3502073
+      ]
+    },
+    "ip": "192.168.1.076",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00077",
+    "name": "2050f94ebda0ff54",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5104345,
+        11.3512578
+      ]
+    },
+    "ip": "192.168.1.077",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00078",
+    "name": "c323653ca18d3da1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5097152,
+        11.3564248
+      ]
+    },
+    "ip": "192.168.1.078",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00079",
+    "name": "e5ef3327aa17a868",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5090823,
+        11.3455587
+      ]
+    },
+    "ip": "192.168.1.079",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00080",
+    "name": "d737463c5bcf0c56",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5086775,
+        11.3485901
+      ]
+    },
+    "ip": "192.168.1.080",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00081",
+    "name": "0b7a5f13fdce6485",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5085269,
+        11.3496791
+      ]
+    },
+    "ip": "192.168.1.081",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00082",
+    "name": "78dd141d7581f6cd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5083784,
+        11.3507347
+      ]
+    },
+    "ip": "192.168.1.082",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00083",
+    "name": "7868c168e7a8f67c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5096398,
+        11.3488339
+      ]
+    },
+    "ip": "192.168.1.083",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00084",
+    "name": "7ea0af9ae647dbd0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5094944,
+        11.3499247
+      ]
+    },
+    "ip": "192.168.1.084",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00085",
+    "name": "5089be9f5df3a67f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5093521,
+        11.350988
+      ]
+    },
+    "ip": "192.168.1.085",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00086",
+    "name": "2eb5bdbe1970d5ac",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5076981,
+        11.3402569
+      ]
+    },
+    "ip": "192.168.1.086",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00087",
+    "name": "8f8d7655953b7bdd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5069164,
+        11.3460777
+      ]
+    },
+    "ip": "192.168.1.087",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00088",
+    "name": "f3446b0a7325f265",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5072052,
+        11.3439365
+      ]
+    },
+    "ip": "192.168.1.088",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00089",
+    "name": "05aff0297365d65c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.508454,
+        11.3442715
+      ]
+    },
+    "ip": "192.168.1.089",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00090",
+    "name": "9db85cd8216f33e3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5132012,
+        11.3455019
+      ]
+    },
+    "ip": "192.168.1.090",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00091",
+    "name": "81438ca4aedb694a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5096901,
+        11.3406765
+      ]
+    },
+    "ip": "192.168.1.091",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.523Z"
+  },
+  {
+    "sensor_id": "SENSOR00092",
+    "name": "3c7e88da2dac5a67",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5091886,
+        11.3444646
+      ]
+    },
+    "ip": "192.168.1.092",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00093",
+    "name": "1d3b0114723a1b73",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5106925,
+        11.3409435
+      ]
+    },
+    "ip": "192.168.1.093",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00094",
+    "name": "5f131f33b75dd16a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5102006,
+        11.3447175
+      ]
+    },
+    "ip": "192.168.1.094",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00095",
+    "name": "011c572e05052815",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5098968,
+        11.3469564
+      ]
+    },
+    "ip": "192.168.1.095",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00096",
+    "name": "6435375315ef4f35",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5101209,
+        11.3453037
+      ]
+    },
+    "ip": "192.168.1.096",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00097",
+    "name": "6155a1dbae61430c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5082488,
+        11.345835
+      ]
+    },
+    "ip": "192.168.1.097",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00098",
+    "name": "90a9a186913e1dd2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5117682,
+        11.3412203
+      ]
+    },
+    "ip": "192.168.1.098",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00099",
+    "name": "76812e44b1b9b4b8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.511271,
+        11.3450022
+      ]
+    },
+    "ip": "192.168.1.099",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00100",
+    "name": "6f9e397ab899ef36",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5124457,
+        11.343389
+      ]
+    },
+    "ip": "192.168.1.100",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00101",
+    "name": "6564a1e41f3c3712",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5119685,
+        11.3468391
+      ]
+    },
+    "ip": "192.168.1.101",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00102",
+    "name": "7ddf2dc5259ee47c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5118819,
+        11.3475503
+      ]
+    },
+    "ip": "192.168.1.102",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00103",
+    "name": "4d0f08151c8ea5d6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5117256,
+        11.3488045
+      ]
+    },
+    "ip": "192.168.1.103",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00104",
+    "name": "c44cd8fce356e6f3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5121938,
+        11.345241
+      ]
+    },
+    "ip": "192.168.1.104",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00105",
+    "name": "504d7441d36f40e2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5159842,
+        11.3542788
+      ]
+    },
+    "ip": "192.168.1.105",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00106",
+    "name": "ea81fce0e402c89c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5004815,
+        11.3473068
+      ]
+    },
+    "ip": "192.168.1.106",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00107",
+    "name": "53fd98391d244f60",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4999496,
+        11.3440959
+      ]
+    },
+    "ip": "192.168.1.107",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00108",
+    "name": "e5442892e2ebe6bf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4994299,
+        11.3467975
+      ]
+    },
+    "ip": "192.168.1.108",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00109",
+    "name": "855adc533636c3b3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5192773,
+        11.3430311
+      ]
+    },
+    "ip": "192.168.1.109",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00110",
+    "name": "c9c5ea75f03a7c23",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5167749,
+        11.3422285
+      ]
+    },
+    "ip": "192.168.1.110",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00111",
+    "name": "88c9d16e1346d7d7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5152934,
+        11.3422865
+      ]
+    },
+    "ip": "192.168.1.111",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00112",
+    "name": "25e5b19fb65eabbb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5136532,
+        11.3420038
+      ]
+    },
+    "ip": "192.168.1.112",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00113",
+    "name": "7212468a637e0624",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4944107,
+        11.345394
+      ]
+    },
+    "ip": "192.168.1.113",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00114",
+    "name": "3e79bc486996b650",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4971685,
+        11.3460865
+      ]
+    },
+    "ip": "192.168.1.114",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00115",
+    "name": "1ce0ff0936e55d5f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4975875,
+        11.3433665
+      ]
+    },
+    "ip": "192.168.1.115",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00116",
+    "name": "129672fd89722a25",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4974172,
+        11.3448349
+      ]
+    },
+    "ip": "192.168.1.116",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00117",
+    "name": "9cdc111cfdb0f63f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4973458,
+        11.3452602
+      ]
+    },
+    "ip": "192.168.1.117",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00118",
+    "name": "a4405d5864f4c362",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5028905,
+        11.3441622
+      ]
+    },
+    "ip": "192.168.1.118",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00119",
+    "name": "dd4c35bb9ea87283",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5014164,
+        11.3435129
+      ]
+    },
+    "ip": "192.168.1.119",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00120",
+    "name": "1332dc511e58772b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4988272,
+        11.3422581
+      ]
+    },
+    "ip": "192.168.1.120",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00121",
+    "name": "7b0b099838f451d4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4977388,
+        11.3419593
+      ]
+    },
+    "ip": "192.168.1.121",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00122",
+    "name": "0da59d491d550283",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5026594,
+        11.3515897
+      ]
+    },
+    "ip": "192.168.1.122",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00123",
+    "name": "e8b0d9f5b599883c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5030324,
+        11.3506682
+      ]
+    },
+    "ip": "192.168.1.123",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00124",
+    "name": "cc33868a8f2c2973",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5026903,
+        11.3505334
+      ]
+    },
+    "ip": "192.168.1.124",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00125",
+    "name": "70f3bc94b9fb1f9f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5045212,
+        11.3410279
+      ]
+    },
+    "ip": "192.168.1.125",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00126",
+    "name": "c5c5f8a4a8b2b8f5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5040829,
+        11.3364747
+      ]
+    },
+    "ip": "192.168.1.126",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00127",
+    "name": "8ef63ddf09fedc83",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5034592,
+        11.3405414
+      ]
+    },
+    "ip": "192.168.1.127",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00128",
+    "name": "2fdfe7035f9e7bad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5038237,
+        11.3381615
+      ]
+    },
+    "ip": "192.168.1.128",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00129",
+    "name": "bce822103fcd4db8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5026519,
+        11.3376365
+      ]
+    },
+    "ip": "192.168.1.129",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00130",
+    "name": "a1f20de91dd188e4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5021441,
+        11.3374035
+      ]
+    },
+    "ip": "192.168.1.130",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00131",
+    "name": "bce8c039da532a73",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5014271,
+        11.3396118
+      ]
+    },
+    "ip": "192.168.1.131",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00132",
+    "name": "507be4f99d68d86d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5030738,
+        11.3429329
+      ]
+    },
+    "ip": "192.168.1.132",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00133",
+    "name": "daf53a5380a1ac79",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5016846,
+        11.3422647
+      ]
+    },
+    "ip": "192.168.1.133",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00134",
+    "name": "9a7a66b7734897f1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5011825,
+        11.3404533
+      ]
+    },
+    "ip": "192.168.1.134",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00135",
+    "name": "4127f5f9efff0c16",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4986431,
+        11.3355674
+      ]
+    },
+    "ip": "192.168.1.135",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00136",
+    "name": "2c4c44232ea1f4a2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.499001,
+        11.3384895
+      ]
+    },
+    "ip": "192.168.1.136",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00137",
+    "name": "3d590c90fa483c85",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4989501,
+        11.3393576
+      ]
+    },
+    "ip": "192.168.1.137",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00138",
+    "name": "edd25ed04217626c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5009981,
+        11.3409291
+      ]
+    },
+    "ip": "192.168.1.138",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00139",
+    "name": "7f612c20b588434a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4989038,
+        11.3398434
+      ]
+    },
+    "ip": "192.168.1.139",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00140",
+    "name": "b786eb1e15571838",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4922384,
+        11.3516392
+      ]
+    },
+    "ip": "192.168.1.140",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00141",
+    "name": "105abd09e4111b95",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4899419,
+        11.3503137
+      ]
+    },
+    "ip": "192.168.1.141",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00142",
+    "name": "f5cc35f8513c5df9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4937628,
+        11.3506352
+      ]
+    },
+    "ip": "192.168.1.142",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00143",
+    "name": "32917c458ef8a8f0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4928092,
+        11.3500463
+      ]
+    },
+    "ip": "192.168.1.143",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00144",
+    "name": "0de0dc4c526ebcde",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4860766,
+        11.3580777
+      ]
+    },
+    "ip": "192.168.1.144",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00145",
+    "name": "65021cc0a4c642fd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4942005,
+        11.3571917
+      ]
+    },
+    "ip": "192.168.1.145",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00146",
+    "name": "1195994070b43717",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4902448,
+        11.3499935
+      ]
+    },
+    "ip": "192.168.1.146",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00147",
+    "name": "9c0ec244c18f852c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5003536,
+        11.3478096
+      ]
+    },
+    "ip": "192.168.1.147",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00148",
+    "name": "0157c76d4654c4c0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4981997,
+        11.3567365
+      ]
+    },
+    "ip": "192.168.1.148",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00149",
+    "name": "86fbd99e319b8d1b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4937063,
+        11.3464408
+      ]
+    },
+    "ip": "192.168.1.149",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00150",
+    "name": "eb8f27c87ffbc55b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4947898,
+        11.3568829
+      ]
+    },
+    "ip": "192.168.1.150",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00151",
+    "name": "c877af09ed6aff58",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4931986,
+        11.3358428
+      ]
+    },
+    "ip": "192.168.1.151",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00152",
+    "name": "635552fba0664e67",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4906442,
+        11.3508723
+      ]
+    },
+    "ip": "192.168.1.152",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00153",
+    "name": "d7cc64de2cae4d3a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4944271,
+        11.3494202
+      ]
+    },
+    "ip": "192.168.1.153",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00154",
+    "name": "4e8415db10f6f6fa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.493105,
+        11.3492545
+      ]
+    },
+    "ip": "192.168.1.154",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00155",
+    "name": "abf16d6659855cf8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4944438,
+        11.3492182
+      ]
+    },
+    "ip": "192.168.1.155",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00156",
+    "name": "c2f6172adcb9cf48",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4914677,
+        11.3458863
+      ]
+    },
+    "ip": "192.168.1.156",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00157",
+    "name": "b192dabaf076cce0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4913888,
+        11.3441353
+      ]
+    },
+    "ip": "192.168.1.157",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00158",
+    "name": "8afc8fe552d99d66",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4912881,
+        11.3417409
+      ]
+    },
+    "ip": "192.168.1.158",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00159",
+    "name": "b3fe4aa11b5a0ae5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4915727,
+        11.3390125
+      ]
+    },
+    "ip": "192.168.1.159",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00160",
+    "name": "ff277b83f1a9096d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.492113,
+        11.3378376
+      ]
+    },
+    "ip": "192.168.1.160",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00161",
+    "name": "c4b089bfce16b5fc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4927459,
+        11.3356155
+      ]
+    },
+    "ip": "192.168.1.161",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00162",
+    "name": "c56888d7a358729a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4900257,
+        11.3344442
+      ]
+    },
+    "ip": "192.168.1.162",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00163",
+    "name": "160419aeb1e77474",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4918316,
+        11.3362397
+      ]
+    },
+    "ip": "192.168.1.163",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00164",
+    "name": "4f5881344b8803b0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4938157,
+        11.3329912
+      ]
+    },
+    "ip": "192.168.1.164",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00165",
+    "name": "d62dc541f098bb82",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4913675,
+        11.3436781
+      ]
+    },
+    "ip": "192.168.1.165",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00166",
+    "name": "b74fdea90591296f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4907114,
+        11.3437188
+      ]
+    },
+    "ip": "192.168.1.166",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00167",
+    "name": "901b8493fd7cfbee",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4906725,
+        11.3441132
+      ]
+    },
+    "ip": "192.168.1.167",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00168",
+    "name": "16c373521279ee80",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4904453,
+        11.3436194
+      ]
+    },
+    "ip": "192.168.1.168",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00169",
+    "name": "21b38a84b4066a18",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4884785,
+        11.3398834
+      ]
+    },
+    "ip": "192.168.1.169",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00170",
+    "name": "891c66c42a1e310e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4882404,
+        11.3406998
+      ]
+    },
+    "ip": "192.168.1.170",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00171",
+    "name": "cb92efe5157d199e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4874408,
+        11.3440315
+      ]
+    },
+    "ip": "192.168.1.171",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00172",
+    "name": "0eff78c475d2685c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4873492,
+        11.3445596
+      ]
+    },
+    "ip": "192.168.1.172",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00173",
+    "name": "08fa543dd458b82e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4883129,
+        11.3436649
+      ]
+    },
+    "ip": "192.168.1.173",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00174",
+    "name": "ba54a0ccf1df9b16",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4880516,
+        11.3440283
+      ]
+    },
+    "ip": "192.168.1.174",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00175",
+    "name": "3d7b6ca441def6fa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4869807,
+        11.3447886
+      ]
+    },
+    "ip": "192.168.1.175",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00176",
+    "name": "dcb0b3e921bfb381",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4860288,
+        11.3463216
+      ]
+    },
+    "ip": "192.168.1.176",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00177",
+    "name": "adb6e88c3426a2c3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4884544,
+        11.347705
+      ]
+    },
+    "ip": "192.168.1.177",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00178",
+    "name": "14096b203cf6e9d9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4863792,
+        11.3505945
+      ]
+    },
+    "ip": "192.168.1.178",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00179",
+    "name": "e1b35cedcc4a883f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.487,
+        11.3532652
+      ]
+    },
+    "ip": "192.168.1.179",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00180",
+    "name": "a46ea4368a67e355",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4888772,
+        11.3547493
+      ]
+    },
+    "ip": "192.168.1.180",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00181",
+    "name": "ba49da41d2058d42",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4905559,
+        11.3559576
+      ]
+    },
+    "ip": "192.168.1.181",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00182",
+    "name": "ec37d7bf853b92a2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4908774,
+        11.3551234
+      ]
+    },
+    "ip": "192.168.1.182",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00183",
+    "name": "983aa5d6ab51a662",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4940162,
+        11.3566205
+      ]
+    },
+    "ip": "192.168.1.183",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00184",
+    "name": "b759f628bf734bde",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.491246,
+        11.3541347
+      ]
+    },
+    "ip": "192.168.1.184",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00185",
+    "name": "acc72040bfb4a7cf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4940881,
+        11.3532341
+      ]
+    },
+    "ip": "192.168.1.185",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00186",
+    "name": "c04f05007c3c0749",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4809994,
+        11.3621439
+      ]
+    },
+    "ip": "192.168.1.186",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00187",
+    "name": "51a2acd7b8a9ee16",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4757649,
+        11.3672258
+      ]
+    },
+    "ip": "192.168.1.187",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00188",
+    "name": "f2b063c24c288933",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4899091,
+        11.3576829
+      ]
+    },
+    "ip": "192.168.1.188",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.524Z"
+  },
+  {
+    "sensor_id": "SENSOR00189",
+    "name": "2c338b27509d3ac9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4873565,
+        11.3644061
+      ]
+    },
+    "ip": "192.168.1.189",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00190",
+    "name": "8fab52ed58ab9296",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4866425,
+        11.3663241
+      ]
+    },
+    "ip": "192.168.1.190",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00191",
+    "name": "532f9fc5ddcc7c0f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4940025,
+        11.3572124
+      ]
+    },
+    "ip": "192.168.1.191",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00192",
+    "name": "4f28d77523ee2a8e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4925239,
+        11.3659663
+      ]
+    },
+    "ip": "192.168.1.192",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00193",
+    "name": "7f5a696218093db2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4925952,
+        11.3665684
+      ]
+    },
+    "ip": "192.168.1.193",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00194",
+    "name": "030aeefc54726854",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4929789,
+        11.3707326
+      ]
+    },
+    "ip": "192.168.1.194",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00195",
+    "name": "b5bff7a7f85828c6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4985627,
+        11.3566925
+      ]
+    },
+    "ip": "192.168.1.195",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00196",
+    "name": "0bc4a556f8802a64",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4996296,
+        11.3591992
+      ]
+    },
+    "ip": "192.168.1.196",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00197",
+    "name": "103b5a095e8ba57c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5040721,
+        11.3655569
+      ]
+    },
+    "ip": "192.168.1.197",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00198",
+    "name": "9086bdb3e3c68a1b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.497914,
+        11.3309222
+      ]
+    },
+    "ip": "192.168.1.198",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00199",
+    "name": "43e32a009000b077",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5047699,
+        11.3378263
+      ]
+    },
+    "ip": "192.168.1.199",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00200",
+    "name": "b4d2ea6bf3c98df7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.502084,
+        11.3190205
+      ]
+    },
+    "ip": "192.168.1.200",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00201",
+    "name": "736345c1aa43fda6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.502953,
+        11.3165759
+      ]
+    },
+    "ip": "192.168.1.201",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00202",
+    "name": "161e3e408c435119",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5033644,
+        11.3154209
+      ]
+    },
+    "ip": "192.168.1.202",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00203",
+    "name": "7bad4b1a60e10fd6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5055962,
+        11.309263
+      ]
+    },
+    "ip": "192.168.1.203",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00204",
+    "name": "0462f764befdc84a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5072652,
+        11.3042946
+      ]
+    },
+    "ip": "192.168.1.204",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00205",
+    "name": "a9a97e43900efad1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5075119,
+        11.3031812
+      ]
+    },
+    "ip": "192.168.1.205",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00206",
+    "name": "6353ecf611529387",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5080149,
+        11.3008361
+      ]
+    },
+    "ip": "192.168.1.206",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00207",
+    "name": "dddc2c345509649b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5122375,
+        11.2876005
+      ]
+    },
+    "ip": "192.168.1.207",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00208",
+    "name": "c55e83445e72c767",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5050736,
+        11.3973965
+      ]
+    },
+    "ip": "192.168.1.208",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00209",
+    "name": "76daf86ed22a13a1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5049935,
+        11.3975153
+      ]
+    },
+    "ip": "192.168.1.209",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00210",
+    "name": "db18ee6b694476d1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5046828,
+        11.397104
+      ]
+    },
+    "ip": "192.168.1.210",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00211",
+    "name": "a579598c6311e1f0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5047809,
+        11.3969684
+      ]
+    },
+    "ip": "192.168.1.211",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00212",
+    "name": "bf0610efc0399629",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5049943,
+        11.3969808
+      ]
+    },
+    "ip": "192.168.1.212",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00213",
+    "name": "e42b0856680fd026",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5050732,
+        11.3970956
+      ]
+    },
+    "ip": "192.168.1.213",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00214",
+    "name": "ad890eb28ab40a3f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.506773,
+        11.4137641
+      ]
+    },
+    "ip": "192.168.1.214",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00215",
+    "name": "28bb56afc848549f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.503193,
+        11.3421738
+      ]
+    },
+    "ip": "192.168.1.215",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00216",
+    "name": "2b808867b989402c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5050423,
+        11.3383708
+      ]
+    },
+    "ip": "192.168.1.216",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00217",
+    "name": "f448269143e96acc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5018709,
+        11.3335656
+      ]
+    },
+    "ip": "192.168.1.217",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00218",
+    "name": "f8f609318d37e681",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4990169,
+        11.3378986
+      ]
+    },
+    "ip": "192.168.1.218",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00219",
+    "name": "98d77fac5567649a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4981363,
+        11.3389877
+      ]
+    },
+    "ip": "192.168.1.219",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00220",
+    "name": "52a3e124d3afa18a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4957969,
+        11.3391291
+      ]
+    },
+    "ip": "192.168.1.220",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00221",
+    "name": "3e75c10689b874a5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4941259,
+        11.3386545
+      ]
+    },
+    "ip": "192.168.1.221",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00222",
+    "name": "d25154e05d849d4c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4913805,
+        11.3398699
+      ]
+    },
+    "ip": "192.168.1.222",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00223",
+    "name": "5db8afcb1ef26f75",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4909034,
+        11.3394117
+      ]
+    },
+    "ip": "192.168.1.223",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00224",
+    "name": "e8993ca79fe602eb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4901479,
+        11.3391211
+      ]
+    },
+    "ip": "192.168.1.224",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00225",
+    "name": "4ec93c45edc727bb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4901616,
+        11.356979
+      ]
+    },
+    "ip": "192.168.1.225",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00226",
+    "name": "b2168301db9cb321",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.488488,
+        11.3570537
+      ]
+    },
+    "ip": "192.168.1.226",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00227",
+    "name": "885f3f07c28bfb6f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4905328,
+        11.3466088
+      ]
+    },
+    "ip": "192.168.1.227",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00228",
+    "name": "162fc7b1e4f4ccfa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.489831,
+        11.3493742
+      ]
+    },
+    "ip": "192.168.1.228",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00229",
+    "name": "68dfcf96c2c444ec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4861117,
+        11.3427415
+      ]
+    },
+    "ip": "192.168.1.229",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00230",
+    "name": "f9bca4df15e5028e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4863922,
+        11.3403265
+      ]
+    },
+    "ip": "192.168.1.230",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00231",
+    "name": "36dc10dbf935a7bf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4964475,
+        11.3302617
+      ]
+    },
+    "ip": "192.168.1.231",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00232",
+    "name": "12435d1633a8208d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4950949,
+        11.3367023
+      ]
+    },
+    "ip": "192.168.1.232",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00233",
+    "name": "eba76fc96f5862d7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4926723,
+        11.3323008
+      ]
+    },
+    "ip": "192.168.1.233",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00234",
+    "name": "e4f330ac80fd0787",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4900498,
+        11.3322787
+      ]
+    },
+    "ip": "192.168.1.234",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00235",
+    "name": "6e5261c4ec77a461",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.48883,
+        11.3178589
+      ]
+    },
+    "ip": "192.168.1.235",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00236",
+    "name": "528ae23f988f91cc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4901327,
+        11.3108625
+      ]
+    },
+    "ip": "192.168.1.236",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00237",
+    "name": "5d4a84b1226e0e24",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4906349,
+        11.3080074
+      ]
+    },
+    "ip": "192.168.1.237",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00238",
+    "name": "ac68f81da8e5eba5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4945654,
+        11.3141157
+      ]
+    },
+    "ip": "192.168.1.238",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.525Z"
+  },
+  {
+    "sensor_id": "SENSOR00239",
+    "name": "af27153818502b51",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4947463,
+        11.3144284
+      ]
+    },
+    "ip": "192.168.1.239",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00240",
+    "name": "bb7621baec75a5e4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4944844,
+        11.3143062
+      ]
+    },
+    "ip": "192.168.1.240",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00241",
+    "name": "a817cf4f6f17db9e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4945196,
+        11.314434
+      ]
+    },
+    "ip": "192.168.1.241",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00242",
+    "name": "d3dc0472c23efe35",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5026194,
+        11.333176
+      ]
+    },
+    "ip": "192.168.1.242",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00243",
+    "name": "209f06fce2cffe52",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5091579,
+        11.3292188
+      ]
+    },
+    "ip": "192.168.1.243",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00244",
+    "name": "3f06103851da9aaa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5094361,
+        11.3425976
+      ]
+    },
+    "ip": "192.168.1.244",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00245",
+    "name": "d28a8a365b0a4f0c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5104416,
+        11.3428606
+      ]
+    },
+    "ip": "192.168.1.245",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00246",
+    "name": "5345e331de97a297",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5113513,
+        11.3514949
+      ]
+    },
+    "ip": "192.168.1.246",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00247",
+    "name": "152709713a0615a7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5183146,
+        11.3562122
+      ]
+    },
+    "ip": "192.168.1.247",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00248",
+    "name": "8a36cde9b46dc003",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5185318,
+        11.3563821
+      ]
+    },
+    "ip": "192.168.1.248",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00249",
+    "name": "6b6f289319ac119d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5191601,
+        11.3567871
+      ]
+    },
+    "ip": "192.168.1.249",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00250",
+    "name": "0d549b33604e82dc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5196184,
+        11.3570508
+      ]
+    },
+    "ip": "192.168.1.250",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00251",
+    "name": "adc05e94a2f3acb6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.522932,
+        11.3593938
+      ]
+    },
+    "ip": "192.168.1.251",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00252",
+    "name": "f4ab00bfe23ba4d3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5253646,
+        11.36186
+      ]
+    },
+    "ip": "192.168.1.252",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00253",
+    "name": "5bfb5782453439b8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5106336,
+        11.3567897
+      ]
+    },
+    "ip": "192.168.1.253",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00254",
+    "name": "516c9fa636e4d7e0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5068122,
+        11.4140846
+      ]
+    },
+    "ip": "192.168.1.254",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00255",
+    "name": "e004dbfb67bdcf2e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5069107,
+        11.41418
+      ]
+    },
+    "ip": "192.168.1.255",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00256",
+    "name": "3aef6ce07d9306bc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5071878,
+        11.4140559
+      ]
+    },
+    "ip": "192.168.2.001",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00257",
+    "name": "99ac474c860a38eb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5071911,
+        11.4137156
+      ]
+    },
+    "ip": "192.168.2.002",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00258",
+    "name": "7bb6a0dd457c3ff8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4964467,
+        11.3929616
+      ]
+    },
+    "ip": "192.168.2.003",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00259",
+    "name": "d32f827aae233a9f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4978145,
+        11.3938404
+      ]
+    },
+    "ip": "192.168.2.004",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00260",
+    "name": "2d6b27b9810ef33e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4980865,
+        11.3936973
+      ]
+    },
+    "ip": "192.168.2.005",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00261",
+    "name": "84024eeb4beab2f7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4976131,
+        11.3930919
+      ]
+    },
+    "ip": "192.168.2.006",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00262",
+    "name": "80ac59156ccabb2e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4974774,
+        11.3932569
+      ]
+    },
+    "ip": "192.168.2.007",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00263",
+    "name": "ccec03d7b00408a3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4974539,
+        11.3933893
+      ]
+    },
+    "ip": "192.168.2.008",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00264",
+    "name": "eafc61b105ca18ab",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4975305,
+        11.3936634
+      ]
+    },
+    "ip": "192.168.2.009",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00265",
+    "name": "3f7d08933d00dda0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4993443,
+        11.3949742
+      ]
+    },
+    "ip": "192.168.2.010",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00266",
+    "name": "d5c36ed27ed74e9a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4934483,
+        11.3079867
+      ]
+    },
+    "ip": "192.168.2.011",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00267",
+    "name": "072efa786c9f6d42",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4934601,
+        11.3078896
+      ]
+    },
+    "ip": "192.168.2.012",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00268",
+    "name": "d6083e306a1fd1ca",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4931959,
+        11.3058162
+      ]
+    },
+    "ip": "192.168.2.013",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00269",
+    "name": "1197d818e7e9393d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4913402,
+        11.305627
+      ]
+    },
+    "ip": "192.168.2.014",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00270",
+    "name": "551914d8d93382e0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4902883,
+        11.3091303
+      ]
+    },
+    "ip": "192.168.2.015",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00271",
+    "name": "27f22c0dcf69744b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4917861,
+        11.3111938
+      ]
+    },
+    "ip": "192.168.2.016",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00272",
+    "name": "7fc981fd2b571ee1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4975403,
+        11.3161575
+      ]
+    },
+    "ip": "192.168.2.017",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00273",
+    "name": "c0c9b00c2fd62694",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5011606,
+        11.3216309
+      ]
+    },
+    "ip": "192.168.2.018",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00274",
+    "name": "1bd9d439f3f22c9c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4995952,
+        11.3205815
+      ]
+    },
+    "ip": "192.168.2.019",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00275",
+    "name": "6f2f31089c8b774a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5003384,
+        11.3210754
+      ]
+    },
+    "ip": "192.168.2.020",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00276",
+    "name": "f370e706fe3cd3c2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4973139,
+        11.3180534
+      ]
+    },
+    "ip": "192.168.2.021",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00277",
+    "name": "cf087261d51e4890",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5012601,
+        11.3184873
+      ]
+    },
+    "ip": "192.168.2.022",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00278",
+    "name": "cb25c5e724a1b54f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5006333,
+        11.3202576
+      ]
+    },
+    "ip": "192.168.2.023",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00279",
+    "name": "ee9c466c77e4dc87",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4998873,
+        11.3197671
+      ]
+    },
+    "ip": "192.168.2.024",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00280",
+    "name": "ab07a54a566fe522",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5005122,
+        11.3180228
+      ]
+    },
+    "ip": "192.168.2.025",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00281",
+    "name": "5254d04a5eb9012d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4991158,
+        11.3191952
+      ]
+    },
+    "ip": "192.168.2.026",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00282",
+    "name": "b946fdb0247ebd9b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4996463,
+        11.3174656
+      ]
+    },
+    "ip": "192.168.2.027",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00283",
+    "name": "bb61d3ee7d6a45ad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4982422,
+        11.3186762
+      ]
+    },
+    "ip": "192.168.2.028",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00284",
+    "name": "aa0b4cbda6122489",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4987874,
+        11.3169225
+      ]
+    },
+    "ip": "192.168.2.029",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00285",
+    "name": "25037191bce7042e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4979925,
+        11.3195038
+      ]
+    },
+    "ip": "192.168.2.030",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00286",
+    "name": "6f185f9b219bbbd1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4988468,
+        11.3200802
+      ]
+    },
+    "ip": "192.168.2.031",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00287",
+    "name": "d60c91602b525cd4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5000176,
+        11.3220408
+      ]
+    },
+    "ip": "192.168.2.032",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00288",
+    "name": "1e8835cc2e080b93",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4991849,
+        11.3217403
+      ]
+    },
+    "ip": "192.168.2.033",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00289",
+    "name": "938c106c612e2f90",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4995053,
+        11.3145246
+      ]
+    },
+    "ip": "192.168.2.034",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00290",
+    "name": "555e22d8fe70d3cd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4978444,
+        11.3135328
+      ]
+    },
+    "ip": "192.168.2.035",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00291",
+    "name": "1824f3872337688b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4984116,
+        11.3214795
+      ]
+    },
+    "ip": "192.168.2.036",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00292",
+    "name": "1c12c8983f1dda5d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5013478,
+        11.3156261
+      ]
+    },
+    "ip": "192.168.2.037",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00293",
+    "name": "2ed23ca63cf5efa6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4962575,
+        11.3153522
+      ]
+    },
+    "ip": "192.168.2.038",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00294",
+    "name": "18be0f35c31c097a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4949901,
+        11.3260332
+      ]
+    },
+    "ip": "192.168.2.039",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.526Z"
+  },
+  {
+    "sensor_id": "SENSOR00295",
+    "name": "05f200a71b1ee0c4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4950567,
+        11.3254036
+      ]
+    },
+    "ip": "192.168.2.040",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00296",
+    "name": "c7c907ebe367a22a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4970561,
+        11.3236771
+      ]
+    },
+    "ip": "192.168.2.041",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00297",
+    "name": "3c7cc9d6c367ad56",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4954397,
+        11.3214691
+      ]
+    },
+    "ip": "192.168.2.042",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00298",
+    "name": "75ff79c3e7c790b8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.497134,
+        11.3218337
+      ]
+    },
+    "ip": "192.168.2.043",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00299",
+    "name": "d52c7383280a6251",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.495431,
+        11.3208458
+      ]
+    },
+    "ip": "192.168.2.044",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00300",
+    "name": "6967fe6084e55cac",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4952312,
+        11.3184573
+      ]
+    },
+    "ip": "192.168.2.045",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00301",
+    "name": "628e8a391b09ad9b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4952931,
+        11.3232136
+      ]
+    },
+    "ip": "192.168.2.046",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00302",
+    "name": "b86565cd559df5e0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4966509,
+        11.3175926
+      ]
+    },
+    "ip": "192.168.2.047",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00303",
+    "name": "5a54267f532b5807",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4952076,
+        11.3176574
+      ]
+    },
+    "ip": "192.168.2.048",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00304",
+    "name": "723a8118b3349498",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4955546,
+        11.3149035
+      ]
+    },
+    "ip": "192.168.2.049",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00305",
+    "name": "642c319951f0dad3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4958991,
+        11.3176285
+      ]
+    },
+    "ip": "192.168.2.050",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00306",
+    "name": "3e74cc6031c2a45f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4977446,
+        11.3134909
+      ]
+    },
+    "ip": "192.168.2.051",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00307",
+    "name": "1c94580e7fa7bc3b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4959507,
+        11.3123882
+      ]
+    },
+    "ip": "192.168.2.052",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00308",
+    "name": "f08a13228fa0ae41",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4969036,
+        11.3129839
+      ]
+    },
+    "ip": "192.168.2.053",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00309",
+    "name": "aa01fd9c8db448a5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4969416,
+        11.3157654
+      ]
+    },
+    "ip": "192.168.2.054",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00310",
+    "name": "262d6f2805686760",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4949716,
+        11.3262012
+      ]
+    },
+    "ip": "192.168.2.055",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00311",
+    "name": "2011125588444e95",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4934175,
+        11.3267231
+      ]
+    },
+    "ip": "192.168.2.056",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00312",
+    "name": "e5aeab1ed7978d5f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4919393,
+        11.3272334
+      ]
+    },
+    "ip": "192.168.2.057",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00313",
+    "name": "136962a16a460be9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4903795,
+        11.3276068
+      ]
+    },
+    "ip": "192.168.2.058",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00314",
+    "name": "8e6f7255a7cec15b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4916887,
+        11.3258266
+      ]
+    },
+    "ip": "192.168.2.059",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00315",
+    "name": "58a83bdc298281e2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.490299,
+        11.3260516
+      ]
+    },
+    "ip": "192.168.2.060",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00316",
+    "name": "461f62f3b99bf2aa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4937802,
+        11.3285042
+      ]
+    },
+    "ip": "192.168.2.061",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00317",
+    "name": "833c907eda396065",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4931505,
+        11.3253623
+      ]
+    },
+    "ip": "192.168.2.062",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00318",
+    "name": "fa2ba9e288745560",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4929843,
+        11.3245956
+      ]
+    },
+    "ip": "192.168.2.063",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00319",
+    "name": "95b6e02938383bec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4948242,
+        11.3276081
+      ]
+    },
+    "ip": "192.168.2.064",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00320",
+    "name": "0d74d2ca1e776b24",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4935186,
+        11.3272388
+      ]
+    },
+    "ip": "192.168.2.065",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00321",
+    "name": "7dfe2033229e1d1d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4927055,
+        11.3224867
+      ]
+    },
+    "ip": "192.168.2.066",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00322",
+    "name": "ff7d0f9c450ab10f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4924734,
+        11.3230621
+      ]
+    },
+    "ip": "192.168.2.067",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00323",
+    "name": "1a48e5050c43c895",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4921887,
+        11.3247442
+      ]
+    },
+    "ip": "192.168.2.068",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00324",
+    "name": "8f9e2954d6e6c38e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4923229,
+        11.3256224
+      ]
+    },
+    "ip": "192.168.2.069",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00325",
+    "name": "8e11a06a32ed42ad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4922686,
+        11.3237543
+      ]
+    },
+    "ip": "192.168.2.070",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00326",
+    "name": "482168dc75343258",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4912052,
+        11.3231225
+      ]
+    },
+    "ip": "192.168.2.071",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00327",
+    "name": "12a27bcfc4e2e937",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4922476,
+        11.328998
+      ]
+    },
+    "ip": "192.168.2.072",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00328",
+    "name": "74fe57b41d316333",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4934128,
+        11.3229402
+      ]
+    },
+    "ip": "192.168.2.073",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00329",
+    "name": "2858ad534e67ca06",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4918695,
+        11.3125538
+      ]
+    },
+    "ip": "192.168.2.074",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00330",
+    "name": "09592185fb43d1aa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4920188,
+        11.3167135
+      ]
+    },
+    "ip": "192.168.2.075",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00331",
+    "name": "d1648d044c926851",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4917223,
+        11.317898
+      ]
+    },
+    "ip": "192.168.2.076",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00332",
+    "name": "33ab67919fb5a689",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4915646,
+        11.3185783
+      ]
+    },
+    "ip": "192.168.2.077",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00333",
+    "name": "e554e335fea4a532",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4912943,
+        11.3196547
+      ]
+    },
+    "ip": "192.168.2.078",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00334",
+    "name": "5d4a7fbcb1773757",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4908429,
+        11.321442
+      ]
+    },
+    "ip": "192.168.2.079",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00335",
+    "name": "25055706474f85dd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4953884,
+        11.3204768
+      ]
+    },
+    "ip": "192.168.2.080",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00336",
+    "name": "f828945a88134cb3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4953075,
+        11.3196595
+      ]
+    },
+    "ip": "192.168.2.081",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00337",
+    "name": "1bebc765c9ca1b22",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4903033,
+        11.3172179
+      ]
+    },
+    "ip": "192.168.2.082",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00338",
+    "name": "387aebe3c5143482",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4905717,
+        11.3180918
+      ]
+    },
+    "ip": "192.168.2.083",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00339",
+    "name": "92f67f29a51e2466",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4910317,
+        11.3195112
+      ]
+    },
+    "ip": "192.168.2.084",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00340",
+    "name": "df53873f0dec4c72",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4931336,
+        11.3133494
+      ]
+    },
+    "ip": "192.168.2.085",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00341",
+    "name": "84a2d65d65b95b0f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4932585,
+        11.3149817
+      ]
+    },
+    "ip": "192.168.2.086",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00342",
+    "name": "9946ba1889331b4c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4933188,
+        11.3157179
+      ]
+    },
+    "ip": "192.168.2.087",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00343",
+    "name": "fa9670590a307f7f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4920641,
+        11.3157097
+      ]
+    },
+    "ip": "192.168.2.088",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00344",
+    "name": "d52410be8e13679b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4908747,
+        11.315332
+      ]
+    },
+    "ip": "192.168.2.089",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00345",
+    "name": "b2899e87eba05404",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4904096,
+        11.3151053
+      ]
+    },
+    "ip": "192.168.2.090",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00346",
+    "name": "1dca951fdd5f9e7e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4932176,
+        11.3144503
+      ]
+    },
+    "ip": "192.168.2.091",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00347",
+    "name": "1b20b4b5918f2a51",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4939616,
+        11.3151606
+      ]
+    },
+    "ip": "192.168.2.092",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00348",
+    "name": "faf272e99a03cb46",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4948829,
+        11.3155318
+      ]
+    },
+    "ip": "192.168.2.093",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00349",
+    "name": "29b7caa6ad3d3a60",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4920285,
+        11.3150193
+      ]
+    },
+    "ip": "192.168.2.094",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00350",
+    "name": "1c1eef792cecafbb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4935046,
+        11.3187834
+      ]
+    },
+    "ip": "192.168.2.095",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00351",
+    "name": "ae610f855601b9c4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4962919,
+        11.366868
+      ]
+    },
+    "ip": "192.168.2.096",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00352",
+    "name": "613ce77717c2c440",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.493131,
+        11.3604723
+      ]
+    },
+    "ip": "192.168.2.097",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00353",
+    "name": "f3d8f3a974465f1c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4968965,
+        11.3112935
+      ]
+    },
+    "ip": "192.168.2.098",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00354",
+    "name": "754f41573d4f8b84",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4933932,
+        11.3659339
+      ]
+    },
+    "ip": "192.168.2.099",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00355",
+    "name": "eea95153c395f22b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5002239,
+        11.3063149
+      ]
+    },
+    "ip": "192.168.2.100",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00356",
+    "name": "6af1a530f87ee244",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5013604,
+        11.30425
+      ]
+    },
+    "ip": "192.168.2.101",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00357",
+    "name": "ab6e7beb4e0a2277",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5008076,
+        11.3035207
+      ]
+    },
+    "ip": "192.168.2.102",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00358",
+    "name": "46f2ce9e0267885e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4996939,
+        11.3056907
+      ]
+    },
+    "ip": "192.168.2.103",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00359",
+    "name": "82cbcdb9db50bdcd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5006027,
+        11.3110046
+      ]
+    },
+    "ip": "192.168.2.104",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00360",
+    "name": "84f2e1b81ea83ac1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5032549,
+        11.3128622
+      ]
+    },
+    "ip": "192.168.2.105",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00361",
+    "name": "758b326d5b2097d1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5017826,
+        11.3118158
+      ]
+    },
+    "ip": "192.168.2.106",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00362",
+    "name": "d9f5f9771508ee69",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.507558,
+        11.310748
+      ]
+    },
+    "ip": "192.168.2.107",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00363",
+    "name": "c6a07449ed801b8f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5076543,
+        11.3111632
+      ]
+    },
+    "ip": "192.168.2.108",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00364",
+    "name": "c121b1ec1a0988e4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5078159,
+        11.3112525
+      ]
+    },
+    "ip": "192.168.2.109",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00365",
+    "name": "a1ff4ff8c00f725b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5080509,
+        11.3111409
+      ]
+    },
+    "ip": "192.168.2.110",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00366",
+    "name": "3baecb367e91c588",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5081335,
+        11.3108785
+      ]
+    },
+    "ip": "192.168.2.111",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00367",
+    "name": "457cc8ddae0a4f94",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5077059,
+        11.3104926
+      ]
+    },
+    "ip": "192.168.2.112",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00368",
+    "name": "febf45ec4d8f8512",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5055629,
+        11.309372
+      ]
+    },
+    "ip": "192.168.2.113",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00369",
+    "name": "64fee1af8c4e821e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4993056,
+        11.3327431
+      ]
+    },
+    "ip": "192.168.2.114",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00370",
+    "name": "c4f72fe15ff942d3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4987533,
+        11.3326252
+      ]
+    },
+    "ip": "192.168.2.115",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00371",
+    "name": "5ed497a71fa474cf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5002616,
+        11.3337069
+      ]
+    },
+    "ip": "192.168.2.116",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00372",
+    "name": "20a464e64809dcc4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5004251,
+        11.331776
+      ]
+    },
+    "ip": "192.168.2.117",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00373",
+    "name": "556d2356c91087b7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5005437,
+        11.3303535
+      ]
+    },
+    "ip": "192.168.2.118",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00374",
+    "name": "dcbc401747bd546d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4908069,
+        11.3660876
+      ]
+    },
+    "ip": "192.168.2.119",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00375",
+    "name": "fac1cd289d422e0e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4882407,
+        11.3733732
+      ]
+    },
+    "ip": "192.168.2.120",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00376",
+    "name": "bbf1a49e65fa3f74",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.491363,
+        11.3643679
+      ]
+    },
+    "ip": "192.168.2.121",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00377",
+    "name": "0e61a82bd64a18a5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4863235,
+        11.3395787
+      ]
+    },
+    "ip": "192.168.2.122",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00378",
+    "name": "9d846483438056d7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4860411,
+        11.3584759
+      ]
+    },
+    "ip": "192.168.2.123",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00379",
+    "name": "0760cbbbfa3277c7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4855039,
+        11.3615958
+      ]
+    },
+    "ip": "192.168.2.124",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00380",
+    "name": "10d397c70e45ff39",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4845405,
+        11.3624121
+      ]
+    },
+    "ip": "192.168.2.125",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00381",
+    "name": "148029d31c5e900e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4841124,
+        11.3634894
+      ]
+    },
+    "ip": "192.168.2.126",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00382",
+    "name": "b750bf5b1a9c1e6c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4832551,
+        11.3657732
+      ]
+    },
+    "ip": "192.168.2.127",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00383",
+    "name": "0212a72c94c9bede",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4827306,
+        11.3672023
+      ]
+    },
+    "ip": "192.168.2.128",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00384",
+    "name": "e33bac326d11e1b8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4822173,
+        11.3685326
+      ]
+    },
+    "ip": "192.168.2.129",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00385",
+    "name": "83b6e88f96d4f96b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4821708,
+        11.368653
+      ]
+    },
+    "ip": "192.168.2.130",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00386",
+    "name": "e4a64fdec80d1ff2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4813697,
+        11.3706977
+      ]
+    },
+    "ip": "192.168.2.131",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00387",
+    "name": "e531a12442ebdf1a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4861999,
+        11.3636833
+      ]
+    },
+    "ip": "192.168.2.132",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00388",
+    "name": "c583ba8c81956986",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4821072,
+        11.3609351
+      ]
+    },
+    "ip": "192.168.2.133",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00389",
+    "name": "90327c4617862df0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4819138,
+        11.3602684
+      ]
+    },
+    "ip": "192.168.2.134",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00390",
+    "name": "3faa6c33eb80f6f9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4837343,
+        11.3644538
+      ]
+    },
+    "ip": "192.168.2.135",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00391",
+    "name": "682e3e6059b79477",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4861789,
+        11.3675661
+      ]
+    },
+    "ip": "192.168.2.136",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00392",
+    "name": "b8ea5687e1e826d0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4801208,
+        11.3637115
+      ]
+    },
+    "ip": "192.168.2.137",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00393",
+    "name": "2a6796dc2b3fee89",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.485637,
+        11.3691075
+      ]
+    },
+    "ip": "192.168.2.138",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00394",
+    "name": "6667b1e5f110abbc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4838334,
+        11.3679212
+      ]
+    },
+    "ip": "192.168.2.139",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00395",
+    "name": "e34a62c1bf353016",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4813614,
+        11.366276
+      ]
+    },
+    "ip": "192.168.2.140",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00396",
+    "name": "544b9f446e1b7916",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4803727,
+        11.3656079
+      ]
+    },
+    "ip": "192.168.2.141",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00397",
+    "name": "813cfdd0a5402a5d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4794806,
+        11.3650089
+      ]
+    },
+    "ip": "192.168.2.142",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00398",
+    "name": "afdd658606f943dd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4850864,
+        11.3705011
+      ]
+    },
+    "ip": "192.168.2.143",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00399",
+    "name": "3abf3dcceb55c4fd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4839071,
+        11.3696661
+      ]
+    },
+    "ip": "192.168.2.144",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00400",
+    "name": "d2a26512a5f29c7d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4833264,
+        11.3692753
+      ]
+    },
+    "ip": "192.168.2.145",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00401",
+    "name": "5b152484bbf24cec",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4807279,
+        11.3677087
+      ]
+    },
+    "ip": "192.168.2.146",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00402",
+    "name": "17bc5905dac96bbc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.480372,
+        11.3674626
+      ]
+    },
+    "ip": "192.168.2.147",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00403",
+    "name": "0690404074fec7f4",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4788045,
+        11.3663999
+      ]
+    },
+    "ip": "192.168.2.148",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00404",
+    "name": "08af2380c2509cee",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4779033,
+        11.3657751
+      ]
+    },
+    "ip": "192.168.2.149",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00405",
+    "name": "d623ead71bbcc6a5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4849604,
+        11.3668296
+      ]
+    },
+    "ip": "192.168.2.150",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00406",
+    "name": "01a032c410af60a3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4854356,
+        11.3655843
+      ]
+    },
+    "ip": "192.168.2.151",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00407",
+    "name": "a820d53eb156daa0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4833044,
+        11.3675741
+      ]
+    },
+    "ip": "192.168.2.152",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00408",
+    "name": "0e953e9dffc5ae37",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4855586,
+        11.3632887
+      ]
+    },
+    "ip": "192.168.2.153",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00409",
+    "name": "ce0a3d7e6330eafb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4852264,
+        11.36431
+      ]
+    },
+    "ip": "192.168.2.154",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00410",
+    "name": "d9223c9ea94cf242",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4849257,
+        11.3652587
+      ]
+    },
+    "ip": "192.168.2.155",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00411",
+    "name": "0ac25c9f5cc8400a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4827902,
+        11.3689202
+      ]
+    },
+    "ip": "192.168.2.156",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00412",
+    "name": "56f8e7bb5f122f4e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4821975,
+        11.3631527
+      ]
+    },
+    "ip": "192.168.2.157",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00413",
+    "name": "41113ad48177f6b6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4816517,
+        11.3647445
+      ]
+    },
+    "ip": "192.168.2.158",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00414",
+    "name": "716c5bbe010bc78d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4811641,
+        11.3661418
+      ]
+    },
+    "ip": "192.168.2.159",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00415",
+    "name": "b03649d482d4daac",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4823812,
+        11.3622849
+      ]
+    },
+    "ip": "192.168.2.160",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00416",
+    "name": "30597deeab8252de",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4829241,
+        11.3637761
+      ]
+    },
+    "ip": "192.168.2.161",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00417",
+    "name": "9560cdd4fb23d2aa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4819047,
+        11.3666455
+      ]
+    },
+    "ip": "192.168.2.162",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00418",
+    "name": "5bfd5fb23dd62bfe",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.480378,
+        11.3665906
+      ]
+    },
+    "ip": "192.168.2.163",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00419",
+    "name": "422875d84020ebdd",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.478998,
+        11.3656415
+      ]
+    },
+    "ip": "192.168.2.164",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00420",
+    "name": "5e9fb35f5ffdf37b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4779793,
+        11.3685865
+      ]
+    },
+    "ip": "192.168.2.165",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00421",
+    "name": "01bf4cdc9d7edf29",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4772437,
+        11.3678242
+      ]
+    },
+    "ip": "192.168.2.166",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00422",
+    "name": "daaead24f9e3b301",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4766947,
+        11.3667376
+      ]
+    },
+    "ip": "192.168.2.167",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.527Z"
+  },
+  {
+    "sensor_id": "SENSOR00423",
+    "name": "2ccf246c6cbe92e9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4767036,
+        11.368676
+      ]
+    },
+    "ip": "192.168.2.168",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00424",
+    "name": "b516dfb918f9613d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4779664,
+        11.3668952
+      ]
+    },
+    "ip": "192.168.2.169",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00425",
+    "name": "8d5dac7e5a3b2d6b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4784475,
+        11.3673757
+      ]
+    },
+    "ip": "192.168.2.170",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00426",
+    "name": "d7660b13b6facd66",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4775475,
+        11.3660837
+      ]
+    },
+    "ip": "192.168.2.171",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00427",
+    "name": "216498940200abe7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4776255,
+        11.3695431
+      ]
+    },
+    "ip": "192.168.2.172",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00428",
+    "name": "e761ea63195b914c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4772709,
+        11.3705035
+      ]
+    },
+    "ip": "192.168.2.173",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00429",
+    "name": "e66c94f0f52a5b67",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5036056,
+        11.3325835
+      ]
+    },
+    "ip": "192.168.2.174",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00430",
+    "name": "175b8bb098592d16",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5096908,
+        11.3289352
+      ]
+    },
+    "ip": "192.168.2.175",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00431",
+    "name": "1f7efc15963d012a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5131376,
+        11.3273348
+      ]
+    },
+    "ip": "192.168.2.176",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00432",
+    "name": "0ac67ef93d16344e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5134881,
+        11.3274664
+      ]
+    },
+    "ip": "192.168.2.177",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00433",
+    "name": "83806db1dca80390",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5175496,
+        11.3283015
+      ]
+    },
+    "ip": "192.168.2.178",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00434",
+    "name": "69810736786b9a4e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5171557,
+        11.3282095
+      ]
+    },
+    "ip": "192.168.2.179",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00435",
+    "name": "daad6bae7402297e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5171191,
+        11.3284495
+      ]
+    },
+    "ip": "192.168.2.180",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00436",
+    "name": "5fa39f86d1405db9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5172267,
+        11.3286593
+      ]
+    },
+    "ip": "192.168.2.181",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00437",
+    "name": "70d4b02e3051fc36",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5175084,
+        11.3285862
+      ]
+    },
+    "ip": "192.168.2.182",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00438",
+    "name": "9875caced0c0f6de",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.519848,
+        11.3290389
+      ]
+    },
+    "ip": "192.168.2.183",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00439",
+    "name": "e6344a39368bc7bb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.521542,
+        11.3294866
+      ]
+    },
+    "ip": "192.168.2.184",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00440",
+    "name": "182b0f98cd0dbfd6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5168682,
+        11.3248315
+      ]
+    },
+    "ip": "192.168.2.185",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00441",
+    "name": "bcd7c8c938f32bf7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5180094,
+        11.3241961
+      ]
+    },
+    "ip": "192.168.2.186",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00442",
+    "name": "1cdee99a8eeb781c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5190144,
+        11.3226457
+      ]
+    },
+    "ip": "192.168.2.187",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00443",
+    "name": "1f6c5b3244ce8de1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5243964,
+        11.3183371
+      ]
+    },
+    "ip": "192.168.2.188",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00444",
+    "name": "b2a0f4f1f3c3e0a7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5022314,
+        11.3253115
+      ]
+    },
+    "ip": "192.168.2.189",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00445",
+    "name": "fc8e32a3880a4c31",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5051306,
+        11.3298543
+      ]
+    },
+    "ip": "192.168.2.190",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00446",
+    "name": "b213b7a226ae2915",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.504116,
+        11.3295268
+      ]
+    },
+    "ip": "192.168.2.191",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00447",
+    "name": "cea6949a41989d27",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5050092,
+        11.3306046
+      ]
+    },
+    "ip": "192.168.2.192",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00448",
+    "name": "da33a6c429c816f2",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5039807,
+        11.3302724
+      ]
+    },
+    "ip": "192.168.2.193",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00449",
+    "name": "d32fe7000def0abb",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5052403,
+        11.3291606
+      ]
+    },
+    "ip": "192.168.2.194",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00450",
+    "name": "e28077a42fedcd5f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5049005,
+        11.3312969
+      ]
+    },
+    "ip": "192.168.2.195",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00451",
+    "name": "6dfaf651c9b50ea7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5048192,
+        11.331824
+      ]
+    },
+    "ip": "192.168.2.196",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00452",
+    "name": "a449737411ac1a0a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5038665,
+        11.3309743
+      ]
+    },
+    "ip": "192.168.2.197",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00453",
+    "name": "853c66fff4c8e80c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5034488,
+        11.3257529
+      ]
+    },
+    "ip": "192.168.2.198",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00454",
+    "name": "db9ab12dbf73488e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5030832,
+        11.3279756
+      ]
+    },
+    "ip": "192.168.2.199",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00455",
+    "name": "40485672cfe9ed75",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5026435,
+        11.3305692
+      ]
+    },
+    "ip": "192.168.2.200",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00456",
+    "name": "e339939908d10bc0",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5023235,
+        11.3326144
+      ]
+    },
+    "ip": "192.168.2.201",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00457",
+    "name": "af159e1945b1748f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.504045,
+        11.3298863
+      ]
+    },
+    "ip": "192.168.2.202",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00458",
+    "name": "f68766ea3e1b8cad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5028261,
+        11.3294943
+      ]
+    },
+    "ip": "192.168.2.203",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00459",
+    "name": "d2f8fb1753343820",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5018356,
+        11.3275697
+      ]
+    },
+    "ip": "192.168.2.204",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00460",
+    "name": "fdb13f87c435ab0e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5007956,
+        11.3272274
+      ]
+    },
+    "ip": "192.168.2.205",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00461",
+    "name": "8343a8ed044d98b5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5014234,
+        11.3301732
+      ]
+    },
+    "ip": "192.168.2.206",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00462",
+    "name": "c557b61d4b6caf9b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5013412,
+        11.3306738
+      ]
+    },
+    "ip": "192.168.2.207",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00463",
+    "name": "dea6715f4ee01ce6",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5020345,
+        11.3248676
+      ]
+    },
+    "ip": "192.168.2.208",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00464",
+    "name": "cbc36dd647d8affa",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5012378,
+        11.3245895
+      ]
+    },
+    "ip": "192.168.2.209",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00465",
+    "name": "89eec6c2afc719ba",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5041399,
+        11.3362258
+      ]
+    },
+    "ip": "192.168.2.210",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00466",
+    "name": "4d5af04ef6158ef1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5032759,
+        11.3345119
+      ]
+    },
+    "ip": "192.168.2.211",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00467",
+    "name": "bc3c321623f8e52e",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5055693,
+        11.334263
+      ]
+    },
+    "ip": "192.168.2.212",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00468",
+    "name": "deac0feb75391b66",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5045064,
+        11.333939
+      ]
+    },
+    "ip": "192.168.2.213",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00469",
+    "name": "c2a3b09e317d7030",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4940594,
+        11.3396254
+      ]
+    },
+    "ip": "192.168.2.214",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00470",
+    "name": "962d700f815fea0c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4952537,
+        11.3403575
+      ]
+    },
+    "ip": "192.168.2.215",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00471",
+    "name": "439f0d8f1726ebf5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4945744,
+        11.3408918
+      ]
+    },
+    "ip": "192.168.2.216",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00472",
+    "name": "55540f7679a1b4ed",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4946684,
+        11.340172
+      ]
+    },
+    "ip": "192.168.2.217",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00473",
+    "name": "2b92c1e0968c16af",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4974498,
+        11.3480483
+      ]
+    },
+    "ip": "192.168.2.218",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00474",
+    "name": "9e80851b9f3c31ad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4963697,
+        11.348497
+      ]
+    },
+    "ip": "192.168.2.219",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00475",
+    "name": "a3ee517cb4d7f6e8",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4936388,
+        11.3479078
+      ]
+    },
+    "ip": "192.168.2.220",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00476",
+    "name": "abd45d0aa659f4bf",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4944794,
+        11.3484511
+      ]
+    },
+    "ip": "192.168.2.221",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00477",
+    "name": "61e0ca6f5081e4b7",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4933862,
+        11.3741234
+      ]
+    },
+    "ip": "192.168.2.222",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00478",
+    "name": "9b8d669e7461b44b",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4933621,
+        11.3730777
+      ]
+    },
+    "ip": "192.168.2.223",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00479",
+    "name": "b2613a0b63469080",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.4959567,
+        11.3626526
+      ]
+    },
+    "ip": "192.168.2.224",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00480",
+    "name": "10e0818a80141ec9",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5164857,
+        11.3476785
+      ]
+    },
+    "ip": "192.168.2.225",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00481",
+    "name": "568d88d84df53d50",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.516889,
+        11.3391573
+      ]
+    },
+    "ip": "192.168.2.226",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00482",
+    "name": "461aebbebff33211",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5190111,
+        11.3393172
+      ]
+    },
+    "ip": "192.168.2.227",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00483",
+    "name": "93822e233c348958",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5183171,
+        11.3407444
+      ]
+    },
+    "ip": "192.168.2.228",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00484",
+    "name": "d8ef4044a40d928f",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5169415,
+        11.3377696
+      ]
+    },
+    "ip": "192.168.2.229",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00485",
+    "name": "3706e75de97afcd5",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5168347,
+        11.3406369
+      ]
+    },
+    "ip": "192.168.2.230",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00486",
+    "name": "b58e8d1f298456d1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5176871,
+        11.3406916
+      ]
+    },
+    "ip": "192.168.2.231",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00487",
+    "name": "aa93fa515f138df3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5177851,
+        11.3418628
+      ]
+    },
+    "ip": "192.168.2.232",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00488",
+    "name": "b4106b54f1e3535d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5199922,
+        11.3404032
+      ]
+    },
+    "ip": "192.168.2.233",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00489",
+    "name": "0d9189ae0c9c0afc",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5184699,
+        11.3413567
+      ]
+    },
+    "ip": "192.168.2.234",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00490",
+    "name": "affd5c95f7be35ad",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5188932,
+        11.3410794
+      ]
+    },
+    "ip": "192.168.2.235",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00491",
+    "name": "0026e03782ccc357",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5188041,
+        11.3425734
+      ]
+    },
+    "ip": "192.168.2.236",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00492",
+    "name": "a55a1874055223df",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5202006,
+        11.3436251
+      ]
+    },
+    "ip": "192.168.2.237",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00493",
+    "name": "ea363060fb8c6c39",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5205522,
+        11.3401194
+      ]
+    },
+    "ip": "192.168.2.238",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00494",
+    "name": "6d51991bae00738c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5352488,
+        11.348954
+      ]
+    },
+    "ip": "192.168.2.239",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00495",
+    "name": "08bc1ef75c52aa6c",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5358443,
+        11.347217
+      ]
+    },
+    "ip": "192.168.2.240",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00496",
+    "name": "f3a887bf4f22bf1a",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5380685,
+        11.3477296
+      ]
+    },
+    "ip": "192.168.2.241",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00497",
+    "name": "0742a4501909583d",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5023204,
+        11.3527751
+      ]
+    },
+    "ip": "192.168.2.242",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00498",
+    "name": "eb5f43eb4ea3d3ea",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.503617,
+        11.3496257
+      ]
+    },
+    "ip": "192.168.2.243",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00499",
+    "name": "317341d5dcc01735",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5478864,
+        11.3567664
+      ]
+    },
+    "ip": "192.168.2.244",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  },
+  {
+    "sensor_id": "SENSOR00500",
+    "name": "26eb7fae4c15cdc3",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        44.5361462,
+        11.3553725
+      ]
+    },
+    "ip": "192.168.2.245",
+    "active": true,
+    "last_seen": "2025-07-01T06:26:10.528Z"
+  }
+]
