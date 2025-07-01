@@ -183,7 +183,7 @@ export default {
                     id: sensor.sensor_id,
                     lat: sensor.location.coordinates[1], // latitude
                     lng: sensor.location.coordinates[0], // longitude
-                    desc: sensor.name,
+                    desc: sensor.sensor_id, //sensor.name,
                     active: sensor.active,
                     ip: sensor.ip,
                     last_seen: sensor.last_seen
@@ -462,10 +462,10 @@ export default {
             :key="index"
             class="map-marker"
             @click="$emit('marker-click', marker)"
-        ></div> -->
+        ></div>
         <div v-if="data.sensorLocations.length === 0" class="no-data">
             No markers to display
-        </div>
+        </div>-->
 
         <div class="map-container">
             <div v-if="loading" class="loading-overlay">

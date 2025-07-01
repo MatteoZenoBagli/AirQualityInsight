@@ -1,5 +1,16 @@
+// Funzione helper
+function printSection(title) {
+    print('='.repeat(50));
+    print(title);
+    print('='.repeat(50));
+}
+
+const reset = true;
+
 // Sensordata database
 db = db.getSiblingDB('sensordata');
+
+printSection('Creating collections');
 
 // Sensors collection
 db.createCollection("sensors", {
@@ -42,8 +53,7 @@ db.createCollection("sensors", {
             },
             active: {
                bsonType: "bool",
-               description: "Whether the sensor is currently active",
-               default: true
+               description: "Whether the sensor is currently active"
             },
             last_seen: {
                bsonType: "date",
@@ -102,8 +112,29 @@ db.createCollection("measurements", {
    }
 });
 
+if (reset) {
+   printSection('Cleaning existing data');
+   db.sensors.deleteMany({});
+   db.measurements.deleteMany({});
+
+   try {
+      print('Loading sensor data...');
+      const sensors = JSON.parse(fs.readFileSync('sensor_locations.json', 'utf8'));
+      print(`Found ${sensors.length} sensors in JSON`);
+
+       db.sensors.insertMany(sensors);
+       print(`Inserted ${sensors.length} sensors`);
+   } catch (error) {
+       print(`Error loading sensors: ${error.message}`);
+   }
+}
+
+printSection('Creating indexes');
+
 // Indexes
 db.sensors.createIndex({ "sensor_id": 1 }, { unique: true });
 db.sensors.createIndex({ "location": "2dsphere" });
 db.measurements.createIndex({ "sensor_id": 1, "timestamp": -1 });
 db.measurements.createIndex({ "timestamp": -1 });
+
+printSection('Initialization complete');

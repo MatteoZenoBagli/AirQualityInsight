@@ -35,11 +35,10 @@ const transformedSensors = originalData.slice(0, SENSOR_LIMIT).map((sensor, inde
         name: hex,
         location: {
             type: "Point",
-            coordinates: [sensor.lat, sensor.lng]
+            coordinates: [sensor.lng, sensor.lat]
         },
         ip: generateUniqueIP(index),
-        active: true, // Math.random() > 0.1, // activates 90% of the sensors
-        last_seen: new Date().toISOString()
+        active: true // Math.random() > 0.1, // activates 90% of the sensors
     };
 });
 

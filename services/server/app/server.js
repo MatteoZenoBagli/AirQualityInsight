@@ -28,7 +28,7 @@ app.use(
 const port = process.env.PORT || 3000;
 
 const kafka_broker = process.env.KAFKA_BROKER || 'kafka:9092';
-const kafka_topic = process.env.KAFKA_TOPIC || 'messages';
+const kafka_topic = process.env.KAFKA_TOPIC || 'measurements';
 
 const kafka = new Kafka({
     clientId: 'node-consumer',
