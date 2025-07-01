@@ -6,6 +6,7 @@ import logging
 import os
 import sys
 import time
+import threading
 from air_quality_sensor import AirQualitySensor
 
 # Set up logging
@@ -49,12 +50,12 @@ def send_message(producer, message):
     try:
         # Block until the message is sent (or timeout)
         record_metadata = future.get(timeout=10)
-        logger.info(f"Message sent to {record_metadata.topic} partition {record_metadata.partition} offset {record_metadata.offset}")
+        logger.info(f"Message sent from {message['sensor_id']} to {record_metadata.topic} partition {record_metadata.partition} offset {record_metadata.offset}")
     except Exception as e:
-        logger.error(f"Failed to send message: {e}")
+        logger.error(f"Failed to send message from {message.get('sensor_id', 'unknown')}: {e}")
 
 def get_sensors_from_db(limit=None):
-    """ Obtain all sensors from database """
+    """Obtain all sensors from database"""
     client = MongoClient(MONGO_URI)
     db = client[DB_NAME]
     sensors_collection = db[COLLECTION_NAME]
@@ -66,18 +67,19 @@ def get_sensors_from_db(limit=None):
         client.close()
         sys.exit(0)
 
+    logger.info(f"Found {count} sensors.")
+
     query = sensors_collection.find()
 
     if limit is not None and limit > 0:
         query = query.limit(limit)
 
     all_sensors = list(query)
-
     client.close()
-
     return all_sensors
 
-def read_from_sensor(sensor):
+def read_from_sensor(sensor, producer):
+    """Read from a single sensor in a continuous loop"""
     logger.info(f"Starting air quality sensor simulation for sensor «{sensor.get_name()}»...")
 
     try:
@@ -86,7 +88,9 @@ def read_from_sensor(sensor):
             send_message(producer, reading)
             time.sleep(sensor.config['sampling_rate'])
     except KeyboardInterrupt:
-        logger.error("\nStopping sensor simulation...")
+        logger.info(f"Stopping sensor simulation for «{sensor.get_name()}»...")
+    except Exception as e:
+        logger.error(f"Error in sensor «{sensor.get_name()}»: {e}")
 
 if __name__ == "__main__":
     try:
@@ -94,12 +98,33 @@ if __name__ == "__main__":
         producer = create_producer()
 
         # Get sensor list from db
-        all_sensors = get_sensors_from_db(1)
+        all_sensors = get_sensors_from_db()
 
-        # TODO Make measurement for each sensor as container
+        # Create and start a thread for each sensor
+        threads = []
+
         for _sensor in all_sensors:
             sensor = AirQualitySensor(_sensor, SENSOR_CONFIG)
-            read_from_sensor(sensor)
+
+            # Create a thread for this sensor
+            thread = threading.Thread(
+                target=read_from_sensor,
+                args=(sensor, producer),
+                name=f"Sensor-{sensor.sensor['sensor_id']}"
+            )
+            thread.daemon = True  # Thread will close when main program closes
+            thread.start()
+            threads.append(thread)
+
+            logger.info(f"Started thread for sensor «{sensor.get_name()}»")
+
+        # Wait for all threads to complete (they won't unless interrupted)
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            logger.info("Shutting down all sensors...")
+
     except Exception as e:
         logger.error(f"Application error: {e}")
     finally:
