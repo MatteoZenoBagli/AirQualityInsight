@@ -63,6 +63,20 @@ const runConsumer = async () => {
         await consumer.connect();
         console.log(`Kafka consumer connected to ${kafka_broker}`);
 
+        const admin = kafka.admin();
+        await admin.connect();
+
+        const topics = await admin.listTopics();
+        console.log('Available topics:', topics);
+
+        if (!topics.includes(kafka_topic)) {
+            console.error(`Topic '${kafka_topic}' does not exist. Available topics:`, topics);
+            await admin.disconnect();
+            return;
+        }
+
+        await admin.disconnect();
+
         await consumer.subscribe({ topic: kafka_topic, fromBeginning: false });
         console.log(`Subscribed to topic: ${kafka_topic}`);
 

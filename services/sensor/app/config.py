@@ -1,5 +1,5 @@
 SENSOR_CONFIG = {
-    'sampling_rate': 1,  # seconds (def. 60)
+    'sampling_rate': 10,  # seconds (def. 60)
     'data_file': '/data/air_quality_data.csv',
 
     # Sensor ranges

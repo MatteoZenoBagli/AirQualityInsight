@@ -1,6 +1,7 @@
 from config import SENSOR_CONFIG
 from kafka import KafkaProducer
 from pymongo import MongoClient
+import random
 import json
 import logging
 import os
@@ -86,7 +87,8 @@ def read_from_sensor(sensor, producer):
         while True:
             reading = sensor.generate_reading()
             send_message(producer, reading)
-            time.sleep(sensor.config['sampling_rate'])
+            # Adding random seed to mix measurement times
+            time.sleep(sensor.config['sampling_rate'] * random.uniform(0, 5))
     except KeyboardInterrupt:
         logger.info(f"Stopping sensor simulation for «{sensor.get_name()}»...")
     except Exception as e:
