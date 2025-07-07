@@ -11,3 +11,6 @@ logs/
 # Docker
 .docker/
 docker-compose.override.yml
+
+# npm
+**/package-lock.json
