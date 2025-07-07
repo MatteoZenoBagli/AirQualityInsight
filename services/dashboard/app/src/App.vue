@@ -186,6 +186,7 @@ export default {
     },
     refreshSensors() {
       this.$refs.mapComponent.refreshSensorData();
+      this.addInfo('Refreshed sensors');
     },
     centerMapOnSensor(sensor) {
       if (!this.$refs.mapComponent) return
