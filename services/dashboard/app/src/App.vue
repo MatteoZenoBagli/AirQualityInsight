@@ -6,9 +6,12 @@
       <div class="dashboard-component map-component-container">
         <div class="component-header">
           <h2>Map</h2>
-          <div>
+          <div class="component-header-buttons">
             <button @click="refreshSensors" class="btn">
               <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button @click="handleActiveSensors" :class="['btn', { 'btn-danger': this.activeSensors }]">
+              <i :class="['fas', { 'fa-stop': this.activeSensors, 'fa-play': !this.activeSensors}]"></i> {{ this.activeSensors ? 'Stop' : 'Start' }}
             </button>
           </div>
         </div>
@@ -94,7 +97,8 @@ export default {
       measurementData: [],
       logEntries: [],
       sensorData: [],
-      map: null
+      map: null,
+      activeSensors: true,
     };
   },
   created() {
@@ -109,6 +113,7 @@ export default {
       this.socket = io(serverUrl);
 
       this.socket.on("kafka-message", (message) => {
+        if (!this.activeSensors) return;
         this.addInfo("Received new measurement");
 
         message.timestamp = this.formatTimestamp(
@@ -187,6 +192,11 @@ export default {
     refreshSensors() {
       this.$refs.mapComponent.refreshSensorData();
       this.addInfo('Refreshed sensors');
+    },
+    handleActiveSensors() {
+      if (this.activeSensors) this.addInfo('Stopped sensors data  reception');
+      else this.addInfo('Started sensors data  reception');
+      this.activeSensors = !this.activeSensors;
     },
     centerMapOnSensor(sensor) {
       if (!this.$refs.mapComponent) return
@@ -274,6 +284,11 @@ body {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #eee;
+}
+
+.component-header-buttons {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .btn {
