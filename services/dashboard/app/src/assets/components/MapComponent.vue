@@ -14,6 +14,7 @@ export default {
       map: null,
       heatLayer: null,
       selectedParameter: 'pm25',
+      maxHeatLatLng: 1000,
       error: false,
       loading: ref(false),
       show: {
@@ -42,6 +43,12 @@ export default {
         pm10: { good: 25, moderate: 50, poor: 90 },
         voc: { good: 1, moderate: 3, poor: 5 },
         co2: { good: 400, moderate: 800, poor: 1200 }
+      },
+      heatLatLng: {
+        pm25: [],
+        pm10: [],
+        voc: [],
+        co2: [],
       }
     };
   },
@@ -186,13 +193,21 @@ export default {
       this.layers[layer] = [];
     },
     registerNewMeasurement(data) {
-      if (!this.data.sensorLocations) return;
+      if (!this.data.sensorLocations?.length) return;
 
       for (const sensor of this.data.sensorLocations)
         if (data.sensor_id === sensor.id) {
           this.highlightSensor(sensor);
+          // TODO Handle selected parameter change
           const intensity = this.getIntensity(data[this.selectedParameter], this.selectedParameter)
-          this.heatLayer.addLatLng([sensor.lat, sensor.lng, intensity]);
+          const latLng = [sensor.lat, sensor.lng, intensity];
+
+          this.heatLatLng[this.selectedParameter].unshift(latLng);
+
+          if (this.heatLatLng[this.selectedParameter].length > this.maxHeatLatLng)
+            this.heatLatLng[this.selectedParameter] = this.heatLatLng[this.selectedParameter].slice(0, this.maxHeatLatLng);
+
+          this.heatLayer.setLatLngs(this.heatLatLng[this.selectedParameter]);
           break;
         }
     },
@@ -532,7 +547,7 @@ export default {
         </div>
         <pre>
           <span>Markers:</span>
-          <span>{{ data.sensorLocations.length }}</span>
+          <span>{{ this.data.sensorLocations?.length }}</span>
         </pre>
         <hr>
         <pre>
