@@ -12,9 +12,10 @@ export default {
       center: ref({ lng: '11.3426000', lat: '44.4939000' }), // Piazza Maggiore, Bologna
       zoom: ref(13),
       map: null,
+      measurements: ['pm25', 'pm10', 'voc', 'co2'],
       heatLayer: null,
-      selectedParameter: 'pm25',
-      maxHeatLatLng: 1000,
+      selectedMeasurement: 'pm25',
+      maxHeatLatLng: 250,
       error: false,
       loading: ref(false),
       show: {
@@ -198,18 +199,20 @@ export default {
       for (const sensor of this.data.sensorLocations)
         if (data.sensor_id === sensor.id) {
           this.highlightSensor(sensor);
-          // TODO Handle selected parameter change
-          const intensity = this.getIntensity(data[this.selectedParameter], this.selectedParameter)
-          const latLng = [sensor.lat, sensor.lng, intensity];
 
-          this.heatLatLng[this.selectedParameter].unshift(latLng);
-
-          if (this.heatLatLng[this.selectedParameter].length > this.maxHeatLatLng)
-            this.heatLatLng[this.selectedParameter] = this.heatLatLng[this.selectedParameter].slice(0, this.maxHeatLatLng);
-
-          this.heatLayer.setLatLngs(this.heatLatLng[this.selectedParameter]);
+          for (const measurement of this.measurements) {
+            const intensity = this.getIntensity(data[measurement], measurement);
+            const latLng = [sensor.lat, sensor.lng, intensity];
+            this.heatLatLng[measurement].unshift(latLng);
+            if (this.heatLatLng[measurement].length > this.maxHeatLatLng)
+              this.heatLatLng[measurement] = this.heatLatLng[measurement].slice(0, this.maxHeatLatLng);
+          }
+          this.updateHeatmap();
           break;
         }
+    },
+    updateHeatmap() {
+      this.heatLayer.setLatLngs(this.heatLatLng[this.selectedMeasurement]);
     },
     highlightSensor(sensor) {
       sensor.marker?.setOpacity(0.75);
@@ -571,6 +574,32 @@ export default {
           {{ getDisplayName(key) }}
         </button>
         <hr>
+        <div class="measurements-controls">
+          <label><strong>Measurement:</strong></label>
+          <select v-model="selectedMeasurement" @change="updateHeatmap">
+            <option value="pm25">PM2.5</option>
+            <option value="pm10">PM10</option>
+            <option value="voc">VOC</option>
+            <option value="co2">CO2</option>
+          </select>
+        </div>
+        <p>Limit of measurements:</p>
+        <div class="measurements-controls">
+          <input
+            id="parameter-slider"
+            type="range"
+            v-model="this.maxHeatLatLng"
+            :min="50"
+            :max="1000"
+            step="10"
+          />
+          <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng }}</span>
+        </div>
+          <div class="measurements-controls">
+            <p>Current measurements:</p>
+            <p>{{ this.heatLatLng[this.selectedMeasurement].length }}</p>
+          </div>
+        <hr>
         <div class="grid-controls">
           <label><strong>Grid:</strong></label>
           <select id="grid-select" v-model="gridType" class="grid-select" @change="onGridChange">
@@ -748,7 +777,7 @@ export default {
   &[aria-expanded="true"],
   &.pinned {
     background: white;
-    width: 12rem;
+    width: 15rem;
     height: auto;
 
     & * {
@@ -802,6 +831,15 @@ export default {
     margin: 0.5rem 0;
   }
 
+  .measurements-controls + p {
+    margin-top: 1rem;
+  }
+
+  .measurements-controls .help {
+    cursor: help;
+  }
+
+  .measurements-controls,
   .grid-controls {
     display: flex;
     justify-content: space-between;
