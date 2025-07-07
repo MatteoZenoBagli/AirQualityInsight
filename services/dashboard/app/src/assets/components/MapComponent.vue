@@ -1,5 +1,6 @@
 <script>
 import L from "leaflet";
+import 'leaflet.heat';
 import "leaflet/dist/leaflet.css";
 import { ref } from "vue";
 import pushpinSvg from '@/assets/pushpin.svg';
@@ -11,6 +12,8 @@ export default {
       center: ref({ lng: '11.3426000', lat: '44.4939000' }), // Piazza Maggiore, Bologna
       zoom: ref(13),
       map: null,
+      heatLayer: null,
+      selectedParameter: 'pm25',
       error: false,
       loading: ref(false),
       show: {
@@ -33,7 +36,13 @@ export default {
       },
       gridType: 'none',
       isHovered: ref(false),
-      isPinned: ref(false)
+      isPinned: ref(false),
+      thresholds: {
+        pm25: { good: 15, moderate: 35, poor: 55 },
+        pm10: { good: 25, moderate: 50, poor: 90 },
+        voc: { good: 1, moderate: 3, poor: 5 },
+        co2: { good: 400, moderate: 800, poor: 1200 }
+      }
     };
   },
   methods: {
@@ -129,7 +138,28 @@ export default {
       window.addEventListener('resize', () => {
         this.map.invalidateSize();
       });
+
+      this.heatLayer = L.heatLayer([], {
+        radius: 30,
+        blur: 25,
+        maxZoom: 17,
+        gradient: {
+          0.2: '#00ff00',  // Green - good quality
+          0.4: '#ffff00',  // Yellow - moderate
+          0.6: '#ff8000',  // Orange - low
+          1.0: '#ff0000'   // Red - bad
+        }
+      }).addTo(this.map);
     },
+    getIntensity(value, parameter) {
+      const threshold = this.thresholds[parameter]
+
+      if (value <= threshold.good) return 0.2
+      if (value <= threshold.moderate) return 0.4
+      if (value <= threshold.poor) return 0.7
+      return 1.0
+    },
+
     toggleLayer(layer, hideOrEvent = false) {
       const hide = hideOrEvent instanceof Event ? false : hideOrEvent;
 
@@ -155,17 +185,22 @@ export default {
 
       this.layers[layer] = [];
     },
-    highlightSensor(sensor_id) {
+    registerNewMeasurement(data) {
       if (!this.data.sensorLocations) return;
 
       for (const sensor of this.data.sensorLocations)
-        if (sensor_id === sensor.id) {
-          sensor.marker?.setOpacity(0.75);
-          setTimeout(() => {
-            sensor.marker?.setOpacity(1);
-          }, 250);
+        if (data.sensor_id === sensor.id) {
+          this.highlightSensor(sensor);
+          const intensity = this.getIntensity(data[this.selectedParameter], this.selectedParameter)
+          this.heatLayer.addLatLng([sensor.lat, sensor.lng, intensity]);
           break;
         }
+    },
+    highlightSensor(sensor) {
+      sensor.marker?.setOpacity(0.75);
+      setTimeout(() => {
+        sensor.marker?.setOpacity(1);
+      }, 250);
     },
     async fetchSensorDataFromAPI() {
       try {
