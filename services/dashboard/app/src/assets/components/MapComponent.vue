@@ -468,7 +468,16 @@ export default {
     onGridChange() {
       const mapContainer = document.querySelector('.map-container');
       if (!mapContainer) return;
-      mapContainer.classList.remove('grid-simple', 'grid-dark', 'grid-fine', 'grid-coordinate', 'grid-crosshair', 'grid-dashed', 'grid-dots', 'grid-animated');
+      mapContainer.classList.remove(
+        'grid-simple',
+        'grid-dark',
+        'grid-fine',
+        'grid-coordinate',
+        'grid-crosshair',
+        'grid-dashed',
+        'grid-dots',
+        'grid-animated'
+      );
       if (this.gridType !== 'none') mapContainer.classList.add(`grid-${this.gridType}`);
     }
   },
@@ -492,15 +501,17 @@ export default {
 
 <template>
   <div class="map">
-    <!-- <div
-            v-for="(marker, index) in data.sensorLocations"
-            :key="index"
-            class="map-marker"
-            @click="$emit('marker-click', marker)"
-        ></div>
-        <div v-if="data.sensorLocations.length === 0" class="no-data">
-            No markers to display
-        </div>-->
+    <!--
+    <div
+      v-for="(marker, index) in data.sensorLocations"
+      :key="index"
+      class="map-marker"
+      @click="$emit('marker-click', marker)"
+    ></div>
+    <div v-if="data.sensorLocations.length === 0" class="no-data">
+      No markers to display
+    </div>
+    -->
 
     <div class="map-container">
       <div v-if="loading" class="loading-overlay">
@@ -520,22 +531,22 @@ export default {
           <div class="pushpin" @click="isPinned = !isPinned" title="Pin / Unpin"></div>
         </div>
         <pre>
-                    <span>Markers:</span>
-                    <span>{{ data.sensorLocations.length }}</span>
-                </pre>
+          <span>Markers:</span>
+          <span>{{ data.sensorLocations.length }}</span>
+        </pre>
         <hr>
         <pre>
-                    <span>Latitude:</span>
-                    <span>{{ this.center.lat }}</span>
-                </pre>
+          <span>Latitude:</span>
+          <span>{{ this.center.lat }}</span>
+        </pre>
         <pre>
-                    <span>Longitude:</span>
-                    <span>{{ this.center.lng }}</span>
-                </pre>
+          <span>Longitude:</span>
+          <span>{{ this.center.lng }}</span>
+        </pre>
         <pre>
-                    <span>Zoom:</span>
-                    <span>{{ this.zoom }}</span>
-                </pre>
+          <span>Zoom:</span>
+          <span>{{ this.zoom }}</span>
+        </pre>
         <button class="copy-btn" id="coordinates-copy-btn">
           Copy
         </button>
