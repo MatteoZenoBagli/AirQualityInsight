@@ -70,7 +70,7 @@ services:
     networks:
       - app-network
     working_dir: /usr/src/app
-    command: sh -c "npm run dev"
+    command: sh -c "npm i && npm run dev"
 
   server:
     image: node:18-alpine
@@ -92,7 +92,7 @@ services:
     networks:
       - app-network
     working_dir: /usr/src/app
-    command: sh -c "npm run dev"
+    command: sh -c "npm i && npm run dev"
 
 networks:
   sensors-network:
