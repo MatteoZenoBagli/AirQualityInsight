@@ -20,16 +20,16 @@
 - [ X ] 3.3. Create logic for saving data to MongoDB
 - [ X ] 3.4. Implement REST API for frontend
 - [ X ] 3.5. Develop endpoints for geolocated data
-- [  ] 3.6. Implement aggregation logic for heatmap
+- [ X ] 3.6. Implement aggregation logic for heatmap
 
 ## PHASE 4: FRONTEND DEVELOPMENT
 - [ X ] 4.1. Set up Vite + Vue project
-- [  ] 4.2. Integrate maps library (Leaflet/Mapbox)
-- [  ] 4.3. Implement heatmap component
-- [  ] 4.4. Develop UI for temporal filters
-- [  ] 4.5. Create main control panel
-- [  ] 4.6. Implement real-time visualization
+- [ X ] 4.2. Integrate maps library (Leaflet/Mapbox)
+- [ X ] 4.3. Implement heatmap component
+- [ X ] 4.4. Develop UI for temporal filters
+- [ X ] 4.5. Create main control panel
+- [ X ] 4.6. Implement real-time visualization
 
 ## PHASE 5: INTEGRATION AND TESTING
-- [  ] 5.1. Connect all components
-- [  ] 5.2. Test complete data flow
+- [ X ] 5.1. Connect all components
+- [ X ] 5.2. Test complete data flow
