@@ -23,18 +23,21 @@ export default {
         postalCodeBoundaries: false,
         neighborhoods: false,
         zones: false,
+        ztl: false,
       },
       data: {
         sensorLocations: [],
         postalCodeBoundaries: [],
         neighborhoods: [],
         zones: [],
+        ztl: [],
       },
       layers: {
         sensorLocations: [],
         postalCodeBoundaries: [],
         neighborhoods: [],
         zones: [],
+        ztl: [],
       },
       gridType: 'none',
       isHovered: ref(false),
@@ -175,9 +178,10 @@ export default {
       if (hide) this.show[layer] = false;
 
       const exclusiveGroups = {
-        postalCodeBoundaries: ["neighborhoods", "zones"],
-        neighborhoods: ["postalCodeBoundaries", "zones"],
-        zones: ["postalCodeBoundaries", "neighborhoods"],
+        postalCodeBoundaries: ["neighborhoods", "zones", "ztl"],
+        neighborhoods: ["postalCodeBoundaries", "zones", "ztl"],
+        zones: ["postalCodeBoundaries", "neighborhoods", "ztl"],
+        ztl: ["neighborhoods", "zones", "postalCodeBoundaries", "neighborhoods"]
       };
 
       if (this.show[layer]) {
@@ -255,6 +259,7 @@ export default {
         postalCodeBoundaries: "caps.geojson",
         neighborhoods: "neighborhoods.geojson",
         zones: "zones.geojson",
+        ztl: "ztl.geojson",
       };
 
       let data;
@@ -389,6 +394,7 @@ export default {
         postalCodeBoundaries: "CAPs",
         neighborhoods: "Neighborhoods",
         zones: "Zones",
+        ztl: "ZTL",
       };
       return displayNames[key] || key;
     },
@@ -471,6 +477,12 @@ export default {
             16: colors.deepOrange,
           },
         },
+        ztl: {
+          propertyKey: "@id",
+          labelKey: "ZTL",
+          displayKey: "alt_name",
+          colorMap: {}
+        }
       };
 
       return configs[layer];
@@ -507,6 +519,7 @@ export default {
       "postalCodeBoundaries",
       "neighborhoods",
       "zones",
+      "ztl",
     ];
 
     for (const layer of layers) {
