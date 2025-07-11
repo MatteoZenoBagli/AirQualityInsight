@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overpass Node Filter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <overpass-node-filter>
+      <div class="container">
+        <h1>Overpass Node Filter</h1>
+
+        <div class="input-group">
+          <label for="cityName">City name:</label>
+          <input
+            type="text"
+            id="cityName"
+            placeholder="Bologna"
+            value="Bologna"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="minDistance">Minimum distance (meters):</label>
+          <input type="number" id="minDistance" value="50" min="1" max="5000" />
+        </div>
+
+        <div class="code-container">
+          <button id="copyBtn" class="copy-btn">Copy</button>
+          <pre id="queryPreview"></pre>
+        </div>
+
+        <div id="map"></div>
+
+        <button id="fetchBtn">
+          Submit request
+        </button>
+
+        <div id="loading" class="hidden">
+          <div class="spinner"></div>
+          <p data-msg></p>
+        </div>
+
+        <div id="results"></div>
+      </div>
+    </overpass-node-filter>
+
+    <script type="text/javascript" src="./script.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </body>
+</html>
