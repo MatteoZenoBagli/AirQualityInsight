@@ -15,7 +15,12 @@
             </button>
           </div>
         </div>
-        <MapComponent ref="mapComponent" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded" />
+        <MapComponent
+          ref="mapComponent"
+          @marker-click="handleMarkerClick"
+          @sensors-loaded="handleSensorsLoaded"
+          @measurements-cleared="handleMeasurementsCleared"
+        />
       </div>
 
       <div class="dashboard-component table-component-container">
@@ -184,7 +189,9 @@ export default {
     refreshTable() {
       this.addInfo('Refreshed measurements table');
     },
-
+    handleMeasurementsCleared(count) {
+      this.addInfo(`Cleared ${count} measurements from map`);
+    },
     handleActiveSensors() {
       if (this.activeSensors) this.addInfo('Stopped sensors data reception');
       else this.addInfo('Started sensors data reception');

@@ -509,6 +509,12 @@ export default {
         'grid-animated'
       );
       if (this.gridType !== 'none') mapContainer.classList.add(`grid-${this.gridType}`);
+    },
+    clearMeasurements() {
+      const count = this.heatLatLng[this.selectedMeasurement].length;
+      for (const measurement of this.measurements) this.heatLatLng[measurement] = [];
+      this.updateHeatmap();
+      this.$emit('measurements-cleared', count);
     }
   },
   async mounted() {
@@ -608,10 +614,13 @@ export default {
           />
           <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng }}</span>
         </div>
-          <div class="measurements-controls">
-            <p>Current measurements:</p>
-            <p>{{ this.heatLatLng[this.selectedMeasurement].length }}</p>
-          </div>
+        <div class="measurements-controls">
+          <p>Current measurements:</p>
+          <p>{{ this.heatLatLng[this.selectedMeasurement].length }}</p>
+        </div>
+        <button @click="clearMeasurements" class="btn btn-danger clear-measurements">
+          <i class="fas fa-trash"></i> Clear
+        </button>
         <hr>
         <div class="grid-controls">
           <label><strong>Grid:</strong></label>
@@ -1032,5 +1041,12 @@ export default {
     transform: scale(2.5);
     opacity: 0;
   }
+}
+
+.clear-measurements {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
