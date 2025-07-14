@@ -68,7 +68,7 @@ export default {
       } catch (err) {
         console.error(err);
       } finally {
-        // this.loading = false;
+        this.loading = false;
       }
     },
     // Initialization of OpenStreetMap's map
