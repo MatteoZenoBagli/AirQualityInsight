@@ -10,6 +10,7 @@
       <div class="log-content">
         <span class="log-timestamp">{{ entry.timestamp }}</span>
         <span class="log-message">{{ entry.message }}</span>
+        <span v-if="entry.count && entry.count > 1" class="log-counter">({{ entry.count }})</span>
       </div>
     </div>
   </div>
@@ -49,11 +50,25 @@ export default {
         now.getMinutes()
       ).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
 
+
+      const existingEntryIndex = this.entries.findIndex(entry =>
+        entry.timestamp === timestamp &&
+        entry.type === type &&
+        entry.message === message
+      );
+
+      if (existingEntryIndex !== -1) {
+        this.entries[existingEntryIndex].count = (this.entries[existingEntryIndex].count || 1) + 1;
+        return
+      }
+
       this.entries.unshift({
         type,
         timestamp,
         message,
+        count: 1
       });
+
       if (this.entries.length > this.maxEntries)
         this.entries = this.entries.slice(0, this.maxEntries);
     }
@@ -69,7 +84,7 @@ export default {
   }
 
   &-entry {
-    padding: 8px 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
     display: flex;
     align-items: flex-start;
@@ -77,7 +92,7 @@ export default {
     &.empty {
       color: #666;
       font-style: italic;
-      padding: 15px 0;
+      padding: 1rem 0;
       text-align: center;
       justify-content: center;
     }
@@ -85,7 +100,7 @@ export default {
 
   &-icon {
     margin-right: 10px;
-    width: 24px;
+    width: 1.5rem;
     text-align: center;
     padding-top: 2px;
   }
@@ -96,7 +111,20 @@ export default {
 
   &-timestamp {
     font-weight: bold;
-    margin-right: 8px;
+    margin-right: 0.5rem;
+  }
+
+  &-message {
+    margin-right: 0.5rem;
+  }
+
+  &-counter {
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9em;
+    background-color: #f0f0f0;
+    padding: 0.125rem 0.5rem;
+    border-radius: 12px;
   }
 
   &-info {
