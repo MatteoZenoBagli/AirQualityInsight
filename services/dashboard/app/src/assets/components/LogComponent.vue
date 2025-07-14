@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       entries: [],
-      maxEntries: 250
+      maxEntries: 25
     };
   },
   methods: {
