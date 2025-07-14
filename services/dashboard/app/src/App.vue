@@ -124,7 +124,7 @@ export default {
           message.timestamp || new Date()
         );
         this.measurementData.unshift(message);
-        this.$refs.mapComponent.registerNewMeasurement(message);
+        this.$refs.mapComponent?.registerNewMeasurement(message);
 
         if (this.measurementData.length > this.maxMessages)
           this.measurementData = this.measurementData.slice(0, this.maxMessages);
@@ -183,7 +183,7 @@ export default {
       this.addInfo(`Loaded ${sensors.length} sensors`);
     },
     refreshSensors() {
-      this.$refs.mapComponent.refreshSensorData();
+      this.$refs.mapComponent?.refreshSensorData();
       this.addInfo('Refreshed sensors');
     },
     refreshTable() {
@@ -204,7 +204,7 @@ export default {
 
       const mapContainer = document.querySelector('.dashboard-component.map-component-container');
       mapContainer?.scrollIntoView({ behavior: 'smooth' });
-      this.$refs.mapComponent.centerOnLocation(sensor.lat, sensor.lng);
+      this.$refs.mapComponent?.centerOnLocation(sensor.lat, sensor.lng);
     },
     handleSensorRowClick(row) {
       this.addInfo(`Selected sensor: ${row.id}`);
