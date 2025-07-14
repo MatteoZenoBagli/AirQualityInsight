@@ -18,11 +18,10 @@
 <script>
 export default {
   name: "LogComponent",
-  props: {
-    entries: {
-      type: Array,
-      default: () => [],
-    },
+  data() {
+    return {
+      entries: []
+    };
   },
   methods: {
     getIconClass(type) {
@@ -31,6 +30,30 @@ export default {
       if ("error" === type) return "fas fa-times-circle";
       return "fas fa-info-circle";
     },
+    addInfo(message) {
+      this.addLogEntry("info", message);
+    },
+    addWarning(message) {
+      this.addLogEntry("warning", message);
+    },
+    addError(message) {
+      this.addLogEntry("error", message);
+    },
+    clearLog() {
+      this.entries = [];
+    },
+    addLogEntry(type, message) {
+      const now = new Date();
+      const timestamp = `${now.getHours()}:${String(
+        now.getMinutes()
+      ).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
+
+      this.entries.unshift({
+        type,
+        timestamp,
+        message,
+      });
+    }
   },
 };
 </script>

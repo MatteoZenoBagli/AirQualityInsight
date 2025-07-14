@@ -40,7 +40,7 @@
             </button>
           </div>
         </div>
-        <LogComponent ref="logComponent" :entries="logEntries" />
+        <LogComponent ref="logComponent" />
       </div>
 
       <div class="dashboard-component sensors-component-container">
@@ -95,7 +95,6 @@ export default {
         { key: 'status', label: 'Status' },
       ],
       measurementData: [],
-      logEntries: [],
       sensorData: [],
       map: null,
       activeSensors: true,
@@ -160,27 +159,16 @@ export default {
       this.addInfo(`Selected sensor: ${row.sensor_id}`);
     },
     addInfo(msg) {
-      this.addLogEntry("info", msg);
+      this.$refs.logComponent?.addInfo(msg);
     },
     addWarning(msg) {
-      this.addLogEntry("warning", msg);
+      this.$refs.logComponent?.addWarning(msg);
     },
     addError(msg) {
-      this.addLogEntry("error", msg);
+      this.$refs.logComponent?.addError(msg);
     },
     clearLog() {
-      this.logEntries = [];
-    },
-    addLogEntry(type, message) {
-      const now = new Date();
-      const timestamp = `${now.getHours()}:${String(
-        now.getMinutes()
-      ).padStart(2, "0")}:${String(now.getSeconds()).padStart(2, "0")}`;
-      this.logEntries.unshift({
-        type,
-        timestamp,
-        message,
-      });
+      this.$refs.logComponent?.clearLog();
     },
     handleSensorsLoaded(sensors) {
       this.sensorData = sensors.map(sensor => ({
@@ -193,9 +181,13 @@ export default {
       this.$refs.mapComponent.refreshSensorData();
       this.addInfo('Refreshed sensors');
     },
+    refreshTable() {
+      this.addInfo('Refreshed measurements table');
+    },
+
     handleActiveSensors() {
-      if (this.activeSensors) this.addInfo('Stopped sensors data  reception');
-      else this.addInfo('Started sensors data  reception');
+      if (this.activeSensors) this.addInfo('Stopped sensors data reception');
+      else this.addInfo('Started sensors data reception');
       this.activeSensors = !this.activeSensors;
     },
     centerMapOnSensor(sensor) {
