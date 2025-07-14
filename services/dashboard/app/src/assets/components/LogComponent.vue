@@ -20,7 +20,8 @@ export default {
   name: "LogComponent",
   data() {
     return {
-      entries: []
+      entries: [],
+      maxEntries: 250
     };
   },
   methods: {
@@ -53,6 +54,8 @@ export default {
         timestamp,
         message,
       });
+      if (this.entries.length > this.maxEntries)
+        this.entries = this.entries.slice(0, this.maxEntries);
     }
   },
 };

@@ -38,7 +38,13 @@
 
       <div class="dashboard-component log-component-container">
         <div class="component-header">
-          <h2>System Log</h2>
+          <h2>
+            System Log
+            <i
+              class="fas fa-info-circle"
+              :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"
+            ></i>
+          </h2>
           <div>
             <button @click="clearLog" class="btn btn-danger">
               <i class="fas fa-trash"></i> Clear
@@ -269,6 +275,10 @@ body {
   .log-container {
     margin-bottom: 1rem;
     max-height: 100%;
+  }
+
+  .fa-info-circle {
+    cursor: pointer;
   }
 }
 
