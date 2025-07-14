@@ -20,13 +20,15 @@ services:
     command: sh -c "pip install --no-cache-dir -r requirements.txt && python sensor_simulation.py"
 
   mongodb:
-    build: services/mongodb
+    image: mongo:latest
     container_name: air-quality-map-mongodb
     ports:
       - 27017:27017
     environment:
       MONGO_INITDB_DATABASE: sensordata
     volumes:
+      - ./services/mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+      - ./services/mongodb/sensor_locations.json:/docker-entrypoint-initdb.d/sensor_locations.json
       - mongodb_data:/data/db
     networks:
       - sensors-network

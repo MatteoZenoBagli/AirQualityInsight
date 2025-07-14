@@ -1,4 +1,3 @@
-// Funzione helper
 function printSection(title) {
   print("=".repeat(50));
   print(title);
@@ -122,6 +121,28 @@ db.createCollection("measurements", {
   },
 });
 
+function generateIPAddresses(i) {
+  return [
+    192, // Math.floor(i / (256**3)) % 256;
+    168, // Math.floor(i / (256**2)) % 256;
+    Math.floor(i / 256) % 256,
+    i % 256,
+  ].join('.');
+}
+
+function toSensorId(n, digits = 5) {
+  return "SENSOR" + n.toString().padStart(digits, "0");
+}
+
+function randomHex(length = 16) {
+  const chars = "0123456789abcdef";
+  let result = "";
+  for (let i = 0; i < length; i++)
+    result += chars[Math.floor(Math.random() * chars.length)];
+  return result;
+}
+const fs = require('fs');
+
 if (reset) {
   printSection("Cleaning existing data");
   db.sensors.deleteMany({});
@@ -129,12 +150,25 @@ if (reset) {
 
   try {
     print("Loading sensor data...");
-    const sensors = JSON.parse(
-      fs.readFileSync("sensor_locations.json", "utf8")
-    );
+    const data = JSON.parse(fs.readFileSync("/docker-entrypoint-initdb.d/sensor_locations.json", "utf8"));
+    const sensors = data.elements;
     print(`Found ${sensors.length} sensors in JSON`);
 
-    db.sensors.insertMany(sensors);
+    for (let i = 1; i <= sensors.length; i++) {
+      const { lon, lat } = sensors[i];
+      const entry = {
+        sensor_id: toSensorId(i),
+        name: randomHex(),
+        location: {
+          type: "Point",
+          coordinates: [lon, lat],
+        },
+        ip: generateIPAddresses(i),
+        active: true,
+      };
+      console.log(entry)
+      db.sensors.insertOne(entry);
+    }
     print(`Inserted ${sensors.length} sensors`);
   } catch (error) {
     print(`Error loading sensors: ${error.message}`);

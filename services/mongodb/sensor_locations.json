@@ -1,6502 +1,2919 @@
-[
-  {
-    "sensor_id": "SENSOR00001",
-    "name": "fe0ec436c1791650",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3503918,
-        44.4976901
-      ]
-    },
-    "ip": "192.168.1.001",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00002",
-    "name": "8469123601490d1c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3464552,
-        44.4942091
-      ]
-    },
-    "ip": "192.168.1.002",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00003",
-    "name": "02a17608fbc3645f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3464661,
-        44.4914668
-      ]
-    },
-    "ip": "192.168.1.003",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00004",
-    "name": "f42556085f1a9e67",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3481673,
-        44.4871712
-      ]
-    },
-    "ip": "192.168.1.004",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00005",
-    "name": "b6e9498b07416b8d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3482852,
-        44.4860835
-      ]
-    },
-    "ip": "192.168.1.005",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00006",
-    "name": "41b774b8c3ebfd26",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3482468,
-        44.4856545
-      ]
-    },
-    "ip": "192.168.1.006",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00007",
-    "name": "efd46efc9639ef29",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3503156,
-        44.485201
-      ]
-    },
-    "ip": "192.168.1.007",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00008",
-    "name": "ee5b58219d01bb1a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3490983,
-        44.4820868
-      ]
-    },
-    "ip": "192.168.1.008",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00009",
-    "name": "c47b4c6961191a85",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3490101,
-        44.4800298
-      ]
-    },
-    "ip": "192.168.1.009",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00010",
-    "name": "c9c352dc112e3fb9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3479365,
-        44.480458
-      ]
-    },
-    "ip": "192.168.1.010",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00011",
-    "name": "9b24f079799dff15",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3393625,
-        44.4846452
-      ]
-    },
-    "ip": "192.168.1.011",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00012",
-    "name": "0af9ac68f267aba1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3389537,
-        44.4834647
-      ]
-    },
-    "ip": "192.168.1.012",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00013",
-    "name": "1b98bbfa14019118",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3520565,
-        44.4920727
-      ]
-    },
-    "ip": "192.168.1.013",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00014",
-    "name": "65bc5abde31eaa6e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3574737,
-        44.489907
-      ]
-    },
-    "ip": "192.168.1.014",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00015",
-    "name": "9bac2c60b51f9d85",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3284442,
-        44.4947104
-      ]
-    },
-    "ip": "192.168.1.015",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00016",
-    "name": "c4b3978ffd245ddd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3212147,
-        44.4954511
-      ]
-    },
-    "ip": "192.168.1.016",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00017",
-    "name": "984d009e7dcc82b8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3145025,
-        44.4946042
-      ]
-    },
-    "ip": "192.168.1.017",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00018",
-    "name": "0e2925b4141ea5a9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3108743,
-        44.493978
-      ]
-    },
-    "ip": "192.168.1.018",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00019",
-    "name": "c799d2518dbb1fa2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3209252,
-        44.4895959
-      ]
-    },
-    "ip": "192.168.1.019",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00020",
-    "name": "7ad7b5915c8aa84b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3444579,
-        44.5012133
-      ]
-    },
-    "ip": "192.168.1.020",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00021",
-    "name": "17c9bcc0158fd2da",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3490524,
-        44.4976461
-      ]
-    },
-    "ip": "192.168.1.021",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00022",
-    "name": "4154cdab509c3af3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3504718,
-        44.4996769
-      ]
-    },
-    "ip": "192.168.1.022",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00023",
-    "name": "befe8726e9986500",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3512625,
-        44.4994809
-      ]
-    },
-    "ip": "192.168.1.023",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00024",
-    "name": "4d9c0592f2858f65",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3508053,
-        44.494268
-      ]
-    },
-    "ip": "192.168.1.024",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00025",
-    "name": "f96d09755bf0fbd8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3559806,
-        44.4982128
-      ]
-    },
-    "ip": "192.168.1.025",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00026",
-    "name": "c1b18d29fa3b26f9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3475881,
-        44.4973991
-      ]
-    },
-    "ip": "192.168.1.026",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00027",
-    "name": "61dea88e78996653",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3463651,
-        44.4985905
-      ]
-    },
-    "ip": "192.168.1.027",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00028",
-    "name": "2938cdb1d101b93a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3453524,
-        44.4988922
-      ]
-    },
-    "ip": "192.168.1.028",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00029",
-    "name": "6e1080eab8dba2fc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3471837,
-        44.4968573
-      ]
-    },
-    "ip": "192.168.1.029",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00030",
-    "name": "93e79a5a21a8f905",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3495872,
-        44.4958487
-      ]
-    },
-    "ip": "192.168.1.030",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00031",
-    "name": "5a0f19edb11e70fa",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3565054,
-        44.4981174
-      ]
-    },
-    "ip": "192.168.1.031",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00032",
-    "name": "ccccc95dbac71520",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3525083,
-        44.4991863
-      ]
-    },
-    "ip": "192.168.1.032",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00033",
-    "name": "b3444940a0eda484",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3563275,
-        44.5009862
-      ]
-    },
-    "ip": "192.168.1.033",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00034",
-    "name": "0a495c06a2345bde",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3475455,
-        44.5043442
-      ]
-    },
-    "ip": "192.168.1.034",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00035",
-    "name": "8f3d49a6e7e6bee4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3454896,
-        44.5048241
-      ]
-    },
-    "ip": "192.168.1.035",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00036",
-    "name": "b48a59ef03797edb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3493591,
-        44.5035722
-      ]
-    },
-    "ip": "192.168.1.036",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00037",
-    "name": "7c72ad73095b4577",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3525686,
-        44.5020376
-      ]
-    },
-    "ip": "192.168.1.037",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00038",
-    "name": "a8985e97cfdb6bd4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3508748,
-        44.5001896
-      ]
-    },
-    "ip": "192.168.1.038",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00039",
-    "name": "118cdb178d434b63",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3370271,
-        44.4958302
-      ]
-    },
-    "ip": "192.168.1.039",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00040",
-    "name": "bf6604b6101cc980",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3300993,
-        44.5010511
-      ]
-    },
-    "ip": "192.168.1.040",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00041",
-    "name": "1286f338f05eca2e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3274971,
-        44.4969871
-      ]
-    },
-    "ip": "192.168.1.041",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00042",
-    "name": "6e5092b91e65c27c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3281975,
-        44.4947516
-      ]
-    },
-    "ip": "192.168.1.042",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00043",
-    "name": "b83cd576e95da952",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3294818,
-        44.490476
-      ]
-    },
-    "ip": "192.168.1.043",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00044",
-    "name": "15fcd18db6faa79c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3295572,
-        44.4901339
-      ]
-    },
-    "ip": "192.168.1.044",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00045",
-    "name": "f2e179549de9a794",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3334393,
-        44.4886697
-      ]
-    },
-    "ip": "192.168.1.045",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00046",
-    "name": "88e09797e1da7f63",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3481717,
-        44.4853248
-      ]
-    },
-    "ip": "192.168.1.046",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00047",
-    "name": "8f6b0e28e95fb9e8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.347896,
-        44.4880286
-      ]
-    },
-    "ip": "192.168.1.047",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00048",
-    "name": "cbba0f05b33e8d6a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3569458,
-        44.4940883
-      ]
-    },
-    "ip": "192.168.1.048",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00049",
-    "name": "cb27e935d2507581",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3576128,
-        44.4885205
-      ]
-    },
-    "ip": "192.168.1.049",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00050",
-    "name": "42cbede616538d20",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3566809,
-        44.4848068
-      ]
-    },
-    "ip": "192.168.1.050",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00051",
-    "name": "8e4fe2cc16e6c21f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3480146,
-        44.4854726
-      ]
-    },
-    "ip": "192.168.1.051",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00052",
-    "name": "12fbb443f096d560",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3335485,
-        44.4888024
-      ]
-    },
-    "ip": "192.168.1.052",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00053",
-    "name": "13c9bbf548836fa8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3296641,
-        44.4904964
-      ]
-    },
-    "ip": "192.168.1.053",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00054",
-    "name": "f264a9a97fec658a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3273083,
-        44.4990715
-      ]
-    },
-    "ip": "192.168.1.054",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00055",
-    "name": "e9d5d1155b8d5ad0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3274413,
-        44.4993146
-      ]
-    },
-    "ip": "192.168.1.055",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00056",
-    "name": "37c97cb8a61f9496",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.330222,
-        44.5009228
-      ]
-    },
-    "ip": "192.168.1.056",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00057",
-    "name": "4a1d839bc8c802c5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3348233,
-        44.5032465
-      ]
-    },
-    "ip": "192.168.1.057",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00058",
-    "name": "d8ce24da68bcedb6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3414337,
-        44.50538
-      ]
-    },
-    "ip": "192.168.1.058",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00059",
-    "name": "19e89bdf4a35d033",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3395299,
-        44.5020354
-      ]
-    },
-    "ip": "192.168.1.059",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00060",
-    "name": "a06b7d077276f47e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3401036,
-        44.50185
-      ]
-    },
-    "ip": "192.168.1.060",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00061",
-    "name": "37247d8b8b7a2c9c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3402835,
-        44.5023733
-      ]
-    },
-    "ip": "192.168.1.061",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00062",
-    "name": "e6448544909fb180",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3398313,
-        44.5024674
-      ]
-    },
-    "ip": "192.168.1.062",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00063",
-    "name": "911ef0999ad9a1d3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3403149,
-        44.4888883
-      ]
-    },
-    "ip": "192.168.1.063",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00064",
-    "name": "473c22a1390122ad",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3401353,
-        44.4913228
-      ]
-    },
-    "ip": "192.168.1.064",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00065",
-    "name": "e94ece8c5069e7aa",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3308059,
-        44.490387
-      ]
-    },
-    "ip": "192.168.1.065",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00066",
-    "name": "e2a466772d38eaaa",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3340753,
-        44.4900015
-      ]
-    },
-    "ip": "192.168.1.066",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00067",
-    "name": "a63422b83c86fbbc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3361482,
-        44.4902485
-      ]
-    },
-    "ip": "192.168.1.067",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00068",
-    "name": "8ba5fa3050e2afb8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3427151,
-        44.489838
-      ]
-    },
-    "ip": "192.168.1.068",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00069",
-    "name": "a8d842bf33bb56c8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3404917,
-        44.5089583
-      ]
-    },
-    "ip": "192.168.1.069",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00070",
-    "name": "f07bd4aeba1b0429",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3472786,
-        44.5109635
-      ]
-    },
-    "ip": "192.168.1.070",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00071",
-    "name": "eabb4c8cff4240e8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3483923,
-        44.5079046
-      ]
-    },
-    "ip": "192.168.1.071",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00072",
-    "name": "b15132b334763c72",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3494888,
-        44.5077656
-      ]
-    },
-    "ip": "192.168.1.072",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00073",
-    "name": "8caf91d758c06e7e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3505114,
-        44.5114909
-      ]
-    },
-    "ip": "192.168.1.073",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00074",
-    "name": "eaf295ebed9b5616",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3481765,
-        44.5108465
-      ]
-    },
-    "ip": "192.168.1.074",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00075",
-    "name": "52f9024196355de9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3491058,
-        44.5107214
-      ]
-    },
-    "ip": "192.168.1.075",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00076",
-    "name": "5a9bfb88bc3f4966",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3502073,
-        44.5105714
-      ]
-    },
-    "ip": "192.168.1.076",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00077",
-    "name": "fe3a8bc4dea6d51e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3512578,
-        44.5104345
-      ]
-    },
-    "ip": "192.168.1.077",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00078",
-    "name": "3967de26980815cd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3564248,
-        44.5097152
-      ]
-    },
-    "ip": "192.168.1.078",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00079",
-    "name": "016b1519d1a2d4f5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3455587,
-        44.5090823
-      ]
-    },
-    "ip": "192.168.1.079",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00080",
-    "name": "fc6782afad23a9d1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3485901,
-        44.5086775
-      ]
-    },
-    "ip": "192.168.1.080",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00081",
-    "name": "6cf365c58b4a6ec8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3496791,
-        44.5085269
-      ]
-    },
-    "ip": "192.168.1.081",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00082",
-    "name": "11c25fe04705745a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3507347,
-        44.5083784
-      ]
-    },
-    "ip": "192.168.1.082",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00083",
-    "name": "e8ad72d5cff1df3d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3488339,
-        44.5096398
-      ]
-    },
-    "ip": "192.168.1.083",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00084",
-    "name": "ab0109d3b18b1473",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3499247,
-        44.5094944
-      ]
-    },
-    "ip": "192.168.1.084",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00085",
-    "name": "fda3024c5d9857cf",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.350988,
-        44.5093521
-      ]
-    },
-    "ip": "192.168.1.085",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00086",
-    "name": "ff14f8cf1c5eb4ba",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3402569,
-        44.5076981
-      ]
-    },
-    "ip": "192.168.1.086",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00087",
-    "name": "49b90bb622584b02",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3460777,
-        44.5069164
-      ]
-    },
-    "ip": "192.168.1.087",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00088",
-    "name": "a8f13fa6267878f7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3439365,
-        44.5072052
-      ]
-    },
-    "ip": "192.168.1.088",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00089",
-    "name": "e7f70d0d44892554",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3442715,
-        44.508454
-      ]
-    },
-    "ip": "192.168.1.089",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00090",
-    "name": "5aa318a7cae65a4c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3455019,
-        44.5132012
-      ]
-    },
-    "ip": "192.168.1.090",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00091",
-    "name": "0d4a298afb4cf472",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3406765,
-        44.5096901
-      ]
-    },
-    "ip": "192.168.1.091",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00092",
-    "name": "dd518e0251f2fc4b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3444646,
-        44.5091886
-      ]
-    },
-    "ip": "192.168.1.092",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00093",
-    "name": "ba5cc8d90d399ff6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3409435,
-        44.5106925
-      ]
-    },
-    "ip": "192.168.1.093",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00094",
-    "name": "337fa95cb77f3b9a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3447175,
-        44.5102006
-      ]
-    },
-    "ip": "192.168.1.094",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00095",
-    "name": "38337394ea07b558",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3469564,
-        44.5098968
-      ]
-    },
-    "ip": "192.168.1.095",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00096",
-    "name": "6dd50270b418a6df",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3453037,
-        44.5101209
-      ]
-    },
-    "ip": "192.168.1.096",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00097",
-    "name": "ae9d2e003120be1d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.345835,
-        44.5082488
-      ]
-    },
-    "ip": "192.168.1.097",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00098",
-    "name": "c6935d72b7e0e06a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3412203,
-        44.5117682
-      ]
-    },
-    "ip": "192.168.1.098",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00099",
-    "name": "0029040f2144f7d2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3450022,
-        44.511271
-      ]
-    },
-    "ip": "192.168.1.099",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00100",
-    "name": "334a23a4c1b81650",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.343389,
-        44.5124457
-      ]
-    },
-    "ip": "192.168.1.100",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00101",
-    "name": "e566d52890aae561",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3468391,
-        44.5119685
-      ]
-    },
-    "ip": "192.168.1.101",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00102",
-    "name": "4300f5696e717ba6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3475503,
-        44.5118819
-      ]
-    },
-    "ip": "192.168.1.102",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00103",
-    "name": "49e0e3828c17821d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3488045,
-        44.5117256
-      ]
-    },
-    "ip": "192.168.1.103",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00104",
-    "name": "d6e106428b7ded0f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.345241,
-        44.5121938
-      ]
-    },
-    "ip": "192.168.1.104",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00105",
-    "name": "06909a2802ef8146",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3542788,
-        44.5159842
-      ]
-    },
-    "ip": "192.168.1.105",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00106",
-    "name": "6204a5c0407e8487",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3473068,
-        44.5004815
-      ]
-    },
-    "ip": "192.168.1.106",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00107",
-    "name": "028ab882d3698ca4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3440959,
-        44.4999496
-      ]
-    },
-    "ip": "192.168.1.107",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00108",
-    "name": "0394f64c07d38985",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3467975,
-        44.4994299
-      ]
-    },
-    "ip": "192.168.1.108",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00109",
-    "name": "03950444c3a55c32",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3430311,
-        44.5192773
-      ]
-    },
-    "ip": "192.168.1.109",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00110",
-    "name": "16a8fa10227ca707",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3422285,
-        44.5167749
-      ]
-    },
-    "ip": "192.168.1.110",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00111",
-    "name": "96a24f1bbce43b98",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3422865,
-        44.5152934
-      ]
-    },
-    "ip": "192.168.1.111",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00112",
-    "name": "c02b95d6420dec1b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3420038,
-        44.5136532
-      ]
-    },
-    "ip": "192.168.1.112",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00113",
-    "name": "5fb36f4cdd7d6761",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.345394,
-        44.4944107
-      ]
-    },
-    "ip": "192.168.1.113",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00114",
-    "name": "2844b809f4e405ec",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3460865,
-        44.4971685
-      ]
-    },
-    "ip": "192.168.1.114",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00115",
-    "name": "b21fe62362b7e829",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3433665,
-        44.4975875
-      ]
-    },
-    "ip": "192.168.1.115",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00116",
-    "name": "26b971784220709f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3448349,
-        44.4974172
-      ]
-    },
-    "ip": "192.168.1.116",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00117",
-    "name": "aa06ac99f121f8d5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3452602,
-        44.4973458
-      ]
-    },
-    "ip": "192.168.1.117",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00118",
-    "name": "b0ed499ae0bb3490",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3441622,
-        44.5028905
-      ]
-    },
-    "ip": "192.168.1.118",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00119",
-    "name": "a3d84a274eedba59",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3435129,
-        44.5014164
-      ]
-    },
-    "ip": "192.168.1.119",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00120",
-    "name": "e202753be1506aae",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3422581,
-        44.4988272
-      ]
-    },
-    "ip": "192.168.1.120",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00121",
-    "name": "09aded6b7a64599c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3419593,
-        44.4977388
-      ]
-    },
-    "ip": "192.168.1.121",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00122",
-    "name": "f3a1d67741b2bd0f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3515897,
-        44.5026594
-      ]
-    },
-    "ip": "192.168.1.122",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00123",
-    "name": "3f81ce13add66c81",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3506682,
-        44.5030324
-      ]
-    },
-    "ip": "192.168.1.123",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00124",
-    "name": "e85a7c01f5505c50",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3505334,
-        44.5026903
-      ]
-    },
-    "ip": "192.168.1.124",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00125",
-    "name": "d649e868d7c5ca27",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3410279,
-        44.5045212
-      ]
-    },
-    "ip": "192.168.1.125",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00126",
-    "name": "fab67db9792248c9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3364747,
-        44.5040829
-      ]
-    },
-    "ip": "192.168.1.126",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00127",
-    "name": "4266e97bf13337a8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3405414,
-        44.5034592
-      ]
-    },
-    "ip": "192.168.1.127",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00128",
-    "name": "5b70101083add39a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3381615,
-        44.5038237
-      ]
-    },
-    "ip": "192.168.1.128",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00129",
-    "name": "3f9e8d4058eb2ad4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3376365,
-        44.5026519
-      ]
-    },
-    "ip": "192.168.1.129",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00130",
-    "name": "9983503d4bc5a8ea",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3374035,
-        44.5021441
-      ]
-    },
-    "ip": "192.168.1.130",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00131",
-    "name": "d64f84fde581d51c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3396118,
-        44.5014271
-      ]
-    },
-    "ip": "192.168.1.131",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00132",
-    "name": "cf8315608ff96b8d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3429329,
-        44.5030738
-      ]
-    },
-    "ip": "192.168.1.132",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00133",
-    "name": "c6073cfa5e861106",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3422647,
-        44.5016846
-      ]
-    },
-    "ip": "192.168.1.133",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00134",
-    "name": "be5eb4ee7b12c634",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3404533,
-        44.5011825
-      ]
-    },
-    "ip": "192.168.1.134",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00135",
-    "name": "6d4c29aca9b3986f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3355674,
-        44.4986431
-      ]
-    },
-    "ip": "192.168.1.135",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00136",
-    "name": "f3db37ed500c35e4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3384895,
-        44.499001
-      ]
-    },
-    "ip": "192.168.1.136",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00137",
-    "name": "daf962472c4b713a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3393576,
-        44.4989501
-      ]
-    },
-    "ip": "192.168.1.137",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00138",
-    "name": "717acc93ffd0c6e2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3409291,
-        44.5009981
-      ]
-    },
-    "ip": "192.168.1.138",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00139",
-    "name": "82bc2c12911650d9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3398434,
-        44.4989038
-      ]
-    },
-    "ip": "192.168.1.139",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00140",
-    "name": "32951f34e43d8967",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3516392,
-        44.4922384
-      ]
-    },
-    "ip": "192.168.1.140",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00141",
-    "name": "4c0b5ccaf53e3e3d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3503137,
-        44.4899419
-      ]
-    },
-    "ip": "192.168.1.141",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00142",
-    "name": "a9e95196e134b19a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3506352,
-        44.4937628
-      ]
-    },
-    "ip": "192.168.1.142",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00143",
-    "name": "7ab4be4587e371b2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3500463,
-        44.4928092
-      ]
-    },
-    "ip": "192.168.1.143",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00144",
-    "name": "4276bb68aa900209",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3580777,
-        44.4860766
-      ]
-    },
-    "ip": "192.168.1.144",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00145",
-    "name": "9afc16b348f94b9f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3571917,
-        44.4942005
-      ]
-    },
-    "ip": "192.168.1.145",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00146",
-    "name": "f7e61e53c00c64cb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3499935,
-        44.4902448
-      ]
-    },
-    "ip": "192.168.1.146",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00147",
-    "name": "2d39fba2c8d7cb7e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3478096,
-        44.5003536
-      ]
-    },
-    "ip": "192.168.1.147",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00148",
-    "name": "084ff4fac3accee9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3567365,
-        44.4981997
-      ]
-    },
-    "ip": "192.168.1.148",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00149",
-    "name": "36895a5644a812d9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3464408,
-        44.4937063
-      ]
-    },
-    "ip": "192.168.1.149",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00150",
-    "name": "368107a72db89c54",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3568829,
-        44.4947898
-      ]
-    },
-    "ip": "192.168.1.150",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00151",
-    "name": "8a09e3d0776baaab",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3358428,
-        44.4931986
-      ]
-    },
-    "ip": "192.168.1.151",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00152",
-    "name": "1f25c6c6df635a90",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3508723,
-        44.4906442
-      ]
-    },
-    "ip": "192.168.1.152",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00153",
-    "name": "e3b685829f367c50",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3494202,
-        44.4944271
-      ]
-    },
-    "ip": "192.168.1.153",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00154",
-    "name": "bf08cff63cf92b5b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3492545,
-        44.493105
-      ]
-    },
-    "ip": "192.168.1.154",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00155",
-    "name": "b652301236a08be8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3492182,
-        44.4944438
-      ]
-    },
-    "ip": "192.168.1.155",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00156",
-    "name": "97126b242ec4f493",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3458863,
-        44.4914677
-      ]
-    },
-    "ip": "192.168.1.156",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00157",
-    "name": "efc8e9e328c2ac25",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3441353,
-        44.4913888
-      ]
-    },
-    "ip": "192.168.1.157",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00158",
-    "name": "e81ae1e039bf5539",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3417409,
-        44.4912881
-      ]
-    },
-    "ip": "192.168.1.158",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00159",
-    "name": "2deb30468a0bfc9b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3390125,
-        44.4915727
-      ]
-    },
-    "ip": "192.168.1.159",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00160",
-    "name": "455bf76bbb25c4d9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3378376,
-        44.492113
-      ]
-    },
-    "ip": "192.168.1.160",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00161",
-    "name": "46895ffb9ac4c5eb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3356155,
-        44.4927459
-      ]
-    },
-    "ip": "192.168.1.161",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00162",
-    "name": "7f39b8d5973ab731",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3344442,
-        44.4900257
-      ]
-    },
-    "ip": "192.168.1.162",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00163",
-    "name": "322436f9c1207a85",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3362397,
-        44.4918316
-      ]
-    },
-    "ip": "192.168.1.163",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00164",
-    "name": "cad9b6d8dbbe01de",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3329912,
-        44.4938157
-      ]
-    },
-    "ip": "192.168.1.164",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00165",
-    "name": "a861e972d3777d9f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3436781,
-        44.4913675
-      ]
-    },
-    "ip": "192.168.1.165",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00166",
-    "name": "9fae5c87bcfae456",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3437188,
-        44.4907114
-      ]
-    },
-    "ip": "192.168.1.166",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00167",
-    "name": "79be738914782560",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3441132,
-        44.4906725
-      ]
-    },
-    "ip": "192.168.1.167",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00168",
-    "name": "43fcdc549ccffd55",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3436194,
-        44.4904453
-      ]
-    },
-    "ip": "192.168.1.168",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00169",
-    "name": "f9d0d788ca057556",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3398834,
-        44.4884785
-      ]
-    },
-    "ip": "192.168.1.169",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00170",
-    "name": "a36c1e0439379ab5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3406998,
-        44.4882404
-      ]
-    },
-    "ip": "192.168.1.170",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00171",
-    "name": "c9c30deb917da11b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3440315,
-        44.4874408
-      ]
-    },
-    "ip": "192.168.1.171",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00172",
-    "name": "d05e1af40787b128",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3445596,
-        44.4873492
-      ]
-    },
-    "ip": "192.168.1.172",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00173",
-    "name": "53861ea0818d8616",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3436649,
-        44.4883129
-      ]
-    },
-    "ip": "192.168.1.173",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00174",
-    "name": "435c4a0170e0a0fb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3440283,
-        44.4880516
-      ]
-    },
-    "ip": "192.168.1.174",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00175",
-    "name": "ef52679929247ba7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3447886,
-        44.4869807
-      ]
-    },
-    "ip": "192.168.1.175",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00176",
-    "name": "3cf0ba4f7ac8d840",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3463216,
-        44.4860288
-      ]
-    },
-    "ip": "192.168.1.176",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00177",
-    "name": "e9b2ee4e12ba3bc1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.347705,
-        44.4884544
-      ]
-    },
-    "ip": "192.168.1.177",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00178",
-    "name": "04faf93a685e688f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3505945,
-        44.4863792
-      ]
-    },
-    "ip": "192.168.1.178",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00179",
-    "name": "bbc35bf20a19a97a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3532652,
-        44.487
-      ]
-    },
-    "ip": "192.168.1.179",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00180",
-    "name": "5596b59de9b150ed",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3547493,
-        44.4888772
-      ]
-    },
-    "ip": "192.168.1.180",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00181",
-    "name": "8c8538f0d376ad08",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3559576,
-        44.4905559
-      ]
-    },
-    "ip": "192.168.1.181",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00182",
-    "name": "a24adab1ad75eea7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3551234,
-        44.4908774
-      ]
-    },
-    "ip": "192.168.1.182",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00183",
-    "name": "1009154bac128655",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3566205,
-        44.4940162
-      ]
-    },
-    "ip": "192.168.1.183",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00184",
-    "name": "034b893d71ed7d37",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3541347,
-        44.491246
-      ]
-    },
-    "ip": "192.168.1.184",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00185",
-    "name": "e75c787f9ef9be10",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3532341,
-        44.4940881
-      ]
-    },
-    "ip": "192.168.1.185",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00186",
-    "name": "3239fb61e9effe5f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3621439,
-        44.4809994
-      ]
-    },
-    "ip": "192.168.1.186",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00187",
-    "name": "762b070c79daddb5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3672258,
-        44.4757649
-      ]
-    },
-    "ip": "192.168.1.187",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00188",
-    "name": "64d0d13964b0d72a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3576829,
-        44.4899091
-      ]
-    },
-    "ip": "192.168.1.188",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00189",
-    "name": "cdd938549e23a053",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3644061,
-        44.4873565
-      ]
-    },
-    "ip": "192.168.1.189",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00190",
-    "name": "6490e3c9e441c2ad",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3663241,
-        44.4866425
-      ]
-    },
-    "ip": "192.168.1.190",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00191",
-    "name": "28de753ed95dd6ed",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3572124,
-        44.4940025
-      ]
-    },
-    "ip": "192.168.1.191",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00192",
-    "name": "4667c861ea79a389",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3659663,
-        44.4925239
-      ]
-    },
-    "ip": "192.168.1.192",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00193",
-    "name": "6deac1a0270dbd70",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3665684,
-        44.4925952
-      ]
-    },
-    "ip": "192.168.1.193",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00194",
-    "name": "b6cd48c882c2ec84",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3707326,
-        44.4929789
-      ]
-    },
-    "ip": "192.168.1.194",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00195",
-    "name": "4f3119fb45c6620f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3566925,
-        44.4985627
-      ]
-    },
-    "ip": "192.168.1.195",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00196",
-    "name": "99828ff341ba1336",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3591992,
-        44.4996296
-      ]
-    },
-    "ip": "192.168.1.196",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00197",
-    "name": "9bc08124c1f11454",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3655569,
-        44.5040721
-      ]
-    },
-    "ip": "192.168.1.197",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00198",
-    "name": "159424bb10368254",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3309222,
-        44.497914
-      ]
-    },
-    "ip": "192.168.1.198",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00199",
-    "name": "82a334b3f34b3320",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3378263,
-        44.5047699
-      ]
-    },
-    "ip": "192.168.1.199",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00200",
-    "name": "74e2ff96e114d8d7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3190205,
-        44.502084
-      ]
-    },
-    "ip": "192.168.1.200",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00201",
-    "name": "337783e67c2dfb3e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3165759,
-        44.502953
-      ]
-    },
-    "ip": "192.168.1.201",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00202",
-    "name": "e6a9f1d4097db85f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3154209,
-        44.5033644
-      ]
-    },
-    "ip": "192.168.1.202",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00203",
-    "name": "5753cef22400bab8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.309263,
-        44.5055962
-      ]
-    },
-    "ip": "192.168.1.203",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00204",
-    "name": "7581de15db704acb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3042946,
-        44.5072652
-      ]
-    },
-    "ip": "192.168.1.204",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00205",
-    "name": "d33029eb4a853540",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3031812,
-        44.5075119
-      ]
-    },
-    "ip": "192.168.1.205",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00206",
-    "name": "066b7a9dcc60abf0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3008361,
-        44.5080149
-      ]
-    },
-    "ip": "192.168.1.206",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00207",
-    "name": "80d9446759bdac97",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.2876005,
-        44.5122375
-      ]
-    },
-    "ip": "192.168.1.207",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00208",
-    "name": "a79842f822be2aef",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3973965,
-        44.5050736
-      ]
-    },
-    "ip": "192.168.1.208",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00209",
-    "name": "9e6c38074b45faea",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3975153,
-        44.5049935
-      ]
-    },
-    "ip": "192.168.1.209",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00210",
-    "name": "c7e8d28d9626d2d5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.397104,
-        44.5046828
-      ]
-    },
-    "ip": "192.168.1.210",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00211",
-    "name": "214a2e79adc51d88",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3969684,
-        44.5047809
-      ]
-    },
-    "ip": "192.168.1.211",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00212",
-    "name": "c87985192b67cd0c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3969808,
-        44.5049943
-      ]
-    },
-    "ip": "192.168.1.212",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00213",
-    "name": "66cd294472978c80",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3970956,
-        44.5050732
-      ]
-    },
-    "ip": "192.168.1.213",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00214",
-    "name": "26f6eda203d1a29c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.4137641,
-        44.506773
-      ]
-    },
-    "ip": "192.168.1.214",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00215",
-    "name": "9ac6765583977013",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3421738,
-        44.503193
-      ]
-    },
-    "ip": "192.168.1.215",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00216",
-    "name": "40eae734b40b05c4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3383708,
-        44.5050423
-      ]
-    },
-    "ip": "192.168.1.216",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00217",
-    "name": "45c5ad5aa71b7ed4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3335656,
-        44.5018709
-      ]
-    },
-    "ip": "192.168.1.217",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00218",
-    "name": "72d473506202f276",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3378986,
-        44.4990169
-      ]
-    },
-    "ip": "192.168.1.218",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00219",
-    "name": "707b2bdc6c2a60af",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3389877,
-        44.4981363
-      ]
-    },
-    "ip": "192.168.1.219",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00220",
-    "name": "bbd6ce1ae4550f63",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3391291,
-        44.4957969
-      ]
-    },
-    "ip": "192.168.1.220",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00221",
-    "name": "a9524ed75953ccbc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3386545,
-        44.4941259
-      ]
-    },
-    "ip": "192.168.1.221",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00222",
-    "name": "37cb4d4999296a92",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3398699,
-        44.4913805
-      ]
-    },
-    "ip": "192.168.1.222",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00223",
-    "name": "2c74403f697fa987",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3394117,
-        44.4909034
-      ]
-    },
-    "ip": "192.168.1.223",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00224",
-    "name": "61a7c841a6874248",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3391211,
-        44.4901479
-      ]
-    },
-    "ip": "192.168.1.224",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00225",
-    "name": "47cf40c90d317fd1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.356979,
-        44.4901616
-      ]
-    },
-    "ip": "192.168.1.225",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00226",
-    "name": "8312b449ab949f8a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3570537,
-        44.488488
-      ]
-    },
-    "ip": "192.168.1.226",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00227",
-    "name": "5e019de1601cbefa",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3466088,
-        44.4905328
-      ]
-    },
-    "ip": "192.168.1.227",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00228",
-    "name": "3718ddf343c0f0fd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3493742,
-        44.489831
-      ]
-    },
-    "ip": "192.168.1.228",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00229",
-    "name": "72b25b92665a1434",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3427415,
-        44.4861117
-      ]
-    },
-    "ip": "192.168.1.229",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00230",
-    "name": "215a5c4be49d61b1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3403265,
-        44.4863922
-      ]
-    },
-    "ip": "192.168.1.230",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00231",
-    "name": "2e7d375ce0a39ace",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3302617,
-        44.4964475
-      ]
-    },
-    "ip": "192.168.1.231",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00232",
-    "name": "15301bc6591fe451",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3367023,
-        44.4950949
-      ]
-    },
-    "ip": "192.168.1.232",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00233",
-    "name": "99e252caf650e089",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3323008,
-        44.4926723
-      ]
-    },
-    "ip": "192.168.1.233",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00234",
-    "name": "c8b28e3e71b2363e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3322787,
-        44.4900498
-      ]
-    },
-    "ip": "192.168.1.234",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00235",
-    "name": "59a076065f11b53d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3178589,
-        44.48883
-      ]
-    },
-    "ip": "192.168.1.235",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00236",
-    "name": "6a5a654965ffcc6f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3108625,
-        44.4901327
-      ]
-    },
-    "ip": "192.168.1.236",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00237",
-    "name": "13163f528769f219",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3080074,
-        44.4906349
-      ]
-    },
-    "ip": "192.168.1.237",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00238",
-    "name": "b1c9d0fd38e0eb52",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3141157,
-        44.4945654
-      ]
-    },
-    "ip": "192.168.1.238",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00239",
-    "name": "6095d10c3c47dcbd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3144284,
-        44.4947463
-      ]
-    },
-    "ip": "192.168.1.239",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00240",
-    "name": "86ffb13c528c9909",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3143062,
-        44.4944844
-      ]
-    },
-    "ip": "192.168.1.240",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00241",
-    "name": "846d75fdd03d77f6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.314434,
-        44.4945196
-      ]
-    },
-    "ip": "192.168.1.241",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00242",
-    "name": "bad6a80a7eb086a3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.333176,
-        44.5026194
-      ]
-    },
-    "ip": "192.168.1.242",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00243",
-    "name": "51abac05811c02ae",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3292188,
-        44.5091579
-      ]
-    },
-    "ip": "192.168.1.243",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00244",
-    "name": "c0ed8008c3712961",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3425976,
-        44.5094361
-      ]
-    },
-    "ip": "192.168.1.244",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00245",
-    "name": "f3cd143e89720d78",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3428606,
-        44.5104416
-      ]
-    },
-    "ip": "192.168.1.245",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00246",
-    "name": "375abbe8d3bd473d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3514949,
-        44.5113513
-      ]
-    },
-    "ip": "192.168.1.246",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00247",
-    "name": "ccbcafe694b4b81f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3562122,
-        44.5183146
-      ]
-    },
-    "ip": "192.168.1.247",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00248",
-    "name": "169b2562b0609f6d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3563821,
-        44.5185318
-      ]
-    },
-    "ip": "192.168.1.248",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00249",
-    "name": "07ddb26d3731da4d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3567871,
-        44.5191601
-      ]
-    },
-    "ip": "192.168.1.249",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00250",
-    "name": "14178aed1f153d85",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3570508,
-        44.5196184
-      ]
-    },
-    "ip": "192.168.1.250",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00251",
-    "name": "817f0f97cd6a541c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3593938,
-        44.522932
-      ]
-    },
-    "ip": "192.168.1.251",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00252",
-    "name": "4fda6194e7b80516",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.36186,
-        44.5253646
-      ]
-    },
-    "ip": "192.168.1.252",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00253",
-    "name": "f1ccd85752dac4a4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3567897,
-        44.5106336
-      ]
-    },
-    "ip": "192.168.1.253",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00254",
-    "name": "dc936b425b2305e5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.4140846,
-        44.5068122
-      ]
-    },
-    "ip": "192.168.1.254",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00255",
-    "name": "6e91dcc955b17a23",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.41418,
-        44.5069107
-      ]
-    },
-    "ip": "192.168.1.255",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00256",
-    "name": "71d6a8bb80fd4b6c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.4140559,
-        44.5071878
-      ]
-    },
-    "ip": "192.168.2.001",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00257",
-    "name": "150196b31f570d0d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.4137156,
-        44.5071911
-      ]
-    },
-    "ip": "192.168.2.002",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00258",
-    "name": "621e4a3ddd4320b2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3929616,
-        44.4964467
-      ]
-    },
-    "ip": "192.168.2.003",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00259",
-    "name": "48b285141177d178",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3938404,
-        44.4978145
-      ]
-    },
-    "ip": "192.168.2.004",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00260",
-    "name": "6a98a0c28b98b4bb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3936973,
-        44.4980865
-      ]
-    },
-    "ip": "192.168.2.005",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00261",
-    "name": "895f2edecd4227f1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3930919,
-        44.4976131
-      ]
-    },
-    "ip": "192.168.2.006",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00262",
-    "name": "e7fb55f54a737c3f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3932569,
-        44.4974774
-      ]
-    },
-    "ip": "192.168.2.007",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00263",
-    "name": "9d2ccee799f20083",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3933893,
-        44.4974539
-      ]
-    },
-    "ip": "192.168.2.008",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00264",
-    "name": "21dc99e47f813b60",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3936634,
-        44.4975305
-      ]
-    },
-    "ip": "192.168.2.009",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00265",
-    "name": "53426c1ce922a858",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3949742,
-        44.4993443
-      ]
-    },
-    "ip": "192.168.2.010",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00266",
-    "name": "a3929ff12937482e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3079867,
-        44.4934483
-      ]
-    },
-    "ip": "192.168.2.011",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00267",
-    "name": "4e44fbfb95e0392b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3078896,
-        44.4934601
-      ]
-    },
-    "ip": "192.168.2.012",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00268",
-    "name": "95ddb6c7fc8e7b40",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3058162,
-        44.4931959
-      ]
-    },
-    "ip": "192.168.2.013",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00269",
-    "name": "b21e894314c3352f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.305627,
-        44.4913402
-      ]
-    },
-    "ip": "192.168.2.014",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00270",
-    "name": "347f7ff25aa0ea32",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3091303,
-        44.4902883
-      ]
-    },
-    "ip": "192.168.2.015",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00271",
-    "name": "72db3d1b0ec9d2e7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3111938,
-        44.4917861
-      ]
-    },
-    "ip": "192.168.2.016",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00272",
-    "name": "895cce17a5733133",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3161575,
-        44.4975403
-      ]
-    },
-    "ip": "192.168.2.017",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00273",
-    "name": "360dd99ee250571e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3216309,
-        44.5011606
-      ]
-    },
-    "ip": "192.168.2.018",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00274",
-    "name": "418e588a16a66840",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3205815,
-        44.4995952
-      ]
-    },
-    "ip": "192.168.2.019",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00275",
-    "name": "6cbe4dda79d9c8ae",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3210754,
-        44.5003384
-      ]
-    },
-    "ip": "192.168.2.020",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00276",
-    "name": "5357620a923bba60",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3180534,
-        44.4973139
-      ]
-    },
-    "ip": "192.168.2.021",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00277",
-    "name": "8307f8f4e0c13043",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3184873,
-        44.5012601
-      ]
-    },
-    "ip": "192.168.2.022",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00278",
-    "name": "5b77e540eab658d9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3202576,
-        44.5006333
-      ]
-    },
-    "ip": "192.168.2.023",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00279",
-    "name": "1925d8f4b50592a9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3197671,
-        44.4998873
-      ]
-    },
-    "ip": "192.168.2.024",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00280",
-    "name": "3795ff795de4dab0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3180228,
-        44.5005122
-      ]
-    },
-    "ip": "192.168.2.025",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00281",
-    "name": "2cfa0b25fd19cac3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3191952,
-        44.4991158
-      ]
-    },
-    "ip": "192.168.2.026",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00282",
-    "name": "6c83757d83518350",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3174656,
-        44.4996463
-      ]
-    },
-    "ip": "192.168.2.027",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00283",
-    "name": "5c9a86622bcb725b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3186762,
-        44.4982422
-      ]
-    },
-    "ip": "192.168.2.028",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00284",
-    "name": "28d381471143783f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3169225,
-        44.4987874
-      ]
-    },
-    "ip": "192.168.2.029",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00285",
-    "name": "11dcc84773ddc778",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3195038,
-        44.4979925
-      ]
-    },
-    "ip": "192.168.2.030",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00286",
-    "name": "879faf3c7a362f70",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3200802,
-        44.4988468
-      ]
-    },
-    "ip": "192.168.2.031",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00287",
-    "name": "d5ba901ade8a4459",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3220408,
-        44.5000176
-      ]
-    },
-    "ip": "192.168.2.032",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00288",
-    "name": "037d3db048af9e8e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3217403,
-        44.4991849
-      ]
-    },
-    "ip": "192.168.2.033",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00289",
-    "name": "9afcc72559806694",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3145246,
-        44.4995053
-      ]
-    },
-    "ip": "192.168.2.034",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00290",
-    "name": "aa84f04f612595e2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3135328,
-        44.4978444
-      ]
-    },
-    "ip": "192.168.2.035",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00291",
-    "name": "4ee04c640b6914e9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3214795,
-        44.4984116
-      ]
-    },
-    "ip": "192.168.2.036",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00292",
-    "name": "7d5eb604285bd986",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3156261,
-        44.5013478
-      ]
-    },
-    "ip": "192.168.2.037",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00293",
-    "name": "73988fb31902fe33",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3153522,
-        44.4962575
-      ]
-    },
-    "ip": "192.168.2.038",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00294",
-    "name": "6d52d464cbfe30eb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3260332,
-        44.4949901
-      ]
-    },
-    "ip": "192.168.2.039",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00295",
-    "name": "f727114980339e9d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3254036,
-        44.4950567
-      ]
-    },
-    "ip": "192.168.2.040",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00296",
-    "name": "db1578eb843c7ac2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3236771,
-        44.4970561
-      ]
-    },
-    "ip": "192.168.2.041",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00297",
-    "name": "1c3e9a13926be9e1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3214691,
-        44.4954397
-      ]
-    },
-    "ip": "192.168.2.042",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00298",
-    "name": "d4f2ffd98eafe8f0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3218337,
-        44.497134
-      ]
-    },
-    "ip": "192.168.2.043",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00299",
-    "name": "69d16ee3fde23a0c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3208458,
-        44.495431
-      ]
-    },
-    "ip": "192.168.2.044",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00300",
-    "name": "0342eb9246a970c8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3184573,
-        44.4952312
-      ]
-    },
-    "ip": "192.168.2.045",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00301",
-    "name": "7c8b31a38974f0e0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3232136,
-        44.4952931
-      ]
-    },
-    "ip": "192.168.2.046",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00302",
-    "name": "9e365c28a47512f1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3175926,
-        44.4966509
-      ]
-    },
-    "ip": "192.168.2.047",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00303",
-    "name": "a06aa68844e9e284",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3176574,
-        44.4952076
-      ]
-    },
-    "ip": "192.168.2.048",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00304",
-    "name": "b98d421c22ddb034",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3149035,
-        44.4955546
-      ]
-    },
-    "ip": "192.168.2.049",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00305",
-    "name": "ae66158575c5a970",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3176285,
-        44.4958991
-      ]
-    },
-    "ip": "192.168.2.050",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00306",
-    "name": "9fd38f457b82b4c0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3134909,
-        44.4977446
-      ]
-    },
-    "ip": "192.168.2.051",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00307",
-    "name": "b87926217075aba8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3123882,
-        44.4959507
-      ]
-    },
-    "ip": "192.168.2.052",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00308",
-    "name": "12068cefd3fe8195",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3129839,
-        44.4969036
-      ]
-    },
-    "ip": "192.168.2.053",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00309",
-    "name": "1cc635e5e9730bbb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3157654,
-        44.4969416
-      ]
-    },
-    "ip": "192.168.2.054",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00310",
-    "name": "eac50820d1785c7e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3262012,
-        44.4949716
-      ]
-    },
-    "ip": "192.168.2.055",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00311",
-    "name": "8415bebce3418be3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3267231,
-        44.4934175
-      ]
-    },
-    "ip": "192.168.2.056",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00312",
-    "name": "68902aeea814b749",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3272334,
-        44.4919393
-      ]
-    },
-    "ip": "192.168.2.057",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00313",
-    "name": "3eeebdab73130e56",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3276068,
-        44.4903795
-      ]
-    },
-    "ip": "192.168.2.058",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00314",
-    "name": "b5e403e9e750f935",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3258266,
-        44.4916887
-      ]
-    },
-    "ip": "192.168.2.059",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00315",
-    "name": "8e1620db1f344ced",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3260516,
-        44.490299
-      ]
-    },
-    "ip": "192.168.2.060",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00316",
-    "name": "ad7dfddaba538c99",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3285042,
-        44.4937802
-      ]
-    },
-    "ip": "192.168.2.061",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00317",
-    "name": "eb8e3c13536e69ba",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3253623,
-        44.4931505
-      ]
-    },
-    "ip": "192.168.2.062",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00318",
-    "name": "604aadc3de253630",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3245956,
-        44.4929843
-      ]
-    },
-    "ip": "192.168.2.063",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00319",
-    "name": "8d050c5dd84f45ef",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3276081,
-        44.4948242
-      ]
-    },
-    "ip": "192.168.2.064",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00320",
-    "name": "48a99e87a5239d9d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3272388,
-        44.4935186
-      ]
-    },
-    "ip": "192.168.2.065",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00321",
-    "name": "2499353b481583be",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3224867,
-        44.4927055
-      ]
-    },
-    "ip": "192.168.2.066",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00322",
-    "name": "88d594d0e3680926",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3230621,
-        44.4924734
-      ]
-    },
-    "ip": "192.168.2.067",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00323",
-    "name": "6d78c347672303c8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3247442,
-        44.4921887
-      ]
-    },
-    "ip": "192.168.2.068",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00324",
-    "name": "31424d39212fc6ca",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3256224,
-        44.4923229
-      ]
-    },
-    "ip": "192.168.2.069",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00325",
-    "name": "73f6a694dbe56796",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3237543,
-        44.4922686
-      ]
-    },
-    "ip": "192.168.2.070",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00326",
-    "name": "35e42cdee9d05f06",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3231225,
-        44.4912052
-      ]
-    },
-    "ip": "192.168.2.071",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00327",
-    "name": "61da491fa64861e8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.328998,
-        44.4922476
-      ]
-    },
-    "ip": "192.168.2.072",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00328",
-    "name": "9fea3a3e4fb40426",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3229402,
-        44.4934128
-      ]
-    },
-    "ip": "192.168.2.073",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00329",
-    "name": "36ff9410859a3315",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3125538,
-        44.4918695
-      ]
-    },
-    "ip": "192.168.2.074",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00330",
-    "name": "49081c48a2908a18",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3167135,
-        44.4920188
-      ]
-    },
-    "ip": "192.168.2.075",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00331",
-    "name": "91959528062fcca8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.317898,
-        44.4917223
-      ]
-    },
-    "ip": "192.168.2.076",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00332",
-    "name": "64e8444549a18741",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3185783,
-        44.4915646
-      ]
-    },
-    "ip": "192.168.2.077",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00333",
-    "name": "75b88ab14670f1d4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3196547,
-        44.4912943
-      ]
-    },
-    "ip": "192.168.2.078",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00334",
-    "name": "f5268a073e6b4eea",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.321442,
-        44.4908429
-      ]
-    },
-    "ip": "192.168.2.079",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00335",
-    "name": "e029ff047aabb513",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3204768,
-        44.4953884
-      ]
-    },
-    "ip": "192.168.2.080",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00336",
-    "name": "5de82ac1da52b4f6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3196595,
-        44.4953075
-      ]
-    },
-    "ip": "192.168.2.081",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00337",
-    "name": "754a467232510109",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3172179,
-        44.4903033
-      ]
-    },
-    "ip": "192.168.2.082",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00338",
-    "name": "748b07ea9439e3a8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3180918,
-        44.4905717
-      ]
-    },
-    "ip": "192.168.2.083",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00339",
-    "name": "f58417505d6e8aec",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3195112,
-        44.4910317
-      ]
-    },
-    "ip": "192.168.2.084",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00340",
-    "name": "1aea00bf39344c48",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3133494,
-        44.4931336
-      ]
-    },
-    "ip": "192.168.2.085",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00341",
-    "name": "a3b46d03a351dc24",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3149817,
-        44.4932585
-      ]
-    },
-    "ip": "192.168.2.086",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00342",
-    "name": "d79ab2fced540394",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3157179,
-        44.4933188
-      ]
-    },
-    "ip": "192.168.2.087",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00343",
-    "name": "2a39467c61ccc434",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3157097,
-        44.4920641
-      ]
-    },
-    "ip": "192.168.2.088",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00344",
-    "name": "519c2378e227db12",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.315332,
-        44.4908747
-      ]
-    },
-    "ip": "192.168.2.089",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00345",
-    "name": "d155195e20da5557",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3151053,
-        44.4904096
-      ]
-    },
-    "ip": "192.168.2.090",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00346",
-    "name": "f678194059b3585e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3144503,
-        44.4932176
-      ]
-    },
-    "ip": "192.168.2.091",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00347",
-    "name": "247af38312e3d12a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3151606,
-        44.4939616
-      ]
-    },
-    "ip": "192.168.2.092",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00348",
-    "name": "8da85df4df8df215",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3155318,
-        44.4948829
-      ]
-    },
-    "ip": "192.168.2.093",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00349",
-    "name": "be484e2cd6fe0710",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3150193,
-        44.4920285
-      ]
-    },
-    "ip": "192.168.2.094",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00350",
-    "name": "171d180fd55f3365",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3187834,
-        44.4935046
-      ]
-    },
-    "ip": "192.168.2.095",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00351",
-    "name": "da12859bfd35aa03",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.366868,
-        44.4962919
-      ]
-    },
-    "ip": "192.168.2.096",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00352",
-    "name": "faac6b5e1c09af41",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3604723,
-        44.493131
-      ]
-    },
-    "ip": "192.168.2.097",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00353",
-    "name": "5bdc15faf1bb7c72",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3112935,
-        44.4968965
-      ]
-    },
-    "ip": "192.168.2.098",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00354",
-    "name": "fd56684c6a98c28b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3659339,
-        44.4933932
-      ]
-    },
-    "ip": "192.168.2.099",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00355",
-    "name": "4f4cc22739baf7d0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3063149,
-        44.5002239
-      ]
-    },
-    "ip": "192.168.2.100",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00356",
-    "name": "30df50a3c110ea4a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.30425,
-        44.5013604
-      ]
-    },
-    "ip": "192.168.2.101",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00357",
-    "name": "3ee256f55b49c098",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3035207,
-        44.5008076
-      ]
-    },
-    "ip": "192.168.2.102",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00358",
-    "name": "d7d0bfa7806065f1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3056907,
-        44.4996939
-      ]
-    },
-    "ip": "192.168.2.103",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00359",
-    "name": "ace16ea6ece956f5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3110046,
-        44.5006027
-      ]
-    },
-    "ip": "192.168.2.104",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00360",
-    "name": "4aec2a49c3d0128e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3128622,
-        44.5032549
-      ]
-    },
-    "ip": "192.168.2.105",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00361",
-    "name": "2d64a50f55fdcd1f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3118158,
-        44.5017826
-      ]
-    },
-    "ip": "192.168.2.106",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00362",
-    "name": "8a7cd5f5958b96b0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.310748,
-        44.507558
-      ]
-    },
-    "ip": "192.168.2.107",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00363",
-    "name": "9c8817f07ccdabea",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3111632,
-        44.5076543
-      ]
-    },
-    "ip": "192.168.2.108",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00364",
-    "name": "f53170acf091eacf",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3112525,
-        44.5078159
-      ]
-    },
-    "ip": "192.168.2.109",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00365",
-    "name": "8168fbe54c6797f5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3111409,
-        44.5080509
-      ]
-    },
-    "ip": "192.168.2.110",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00366",
-    "name": "3aa8c11292d9d842",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3108785,
-        44.5081335
-      ]
-    },
-    "ip": "192.168.2.111",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00367",
-    "name": "1b450cd7c6d46112",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3104926,
-        44.5077059
-      ]
-    },
-    "ip": "192.168.2.112",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00368",
-    "name": "572227d82d21609c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.309372,
-        44.5055629
-      ]
-    },
-    "ip": "192.168.2.113",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00369",
-    "name": "227880a899f5e57f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3327431,
-        44.4993056
-      ]
-    },
-    "ip": "192.168.2.114",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00370",
-    "name": "50089f8ff87dffa3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3326252,
-        44.4987533
-      ]
-    },
-    "ip": "192.168.2.115",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00371",
-    "name": "ff6f8c1d6266cd8a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3337069,
-        44.5002616
-      ]
-    },
-    "ip": "192.168.2.116",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00372",
-    "name": "3527f3f2ddf822b2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.331776,
-        44.5004251
-      ]
-    },
-    "ip": "192.168.2.117",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00373",
-    "name": "d859dbc5e62989d6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3303535,
-        44.5005437
-      ]
-    },
-    "ip": "192.168.2.118",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00374",
-    "name": "4e703da9bbbfdef6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3660876,
-        44.4908069
-      ]
-    },
-    "ip": "192.168.2.119",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00375",
-    "name": "1135113b19134cb3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3733732,
-        44.4882407
-      ]
-    },
-    "ip": "192.168.2.120",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00376",
-    "name": "9854ccbd4250510a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3643679,
-        44.491363
-      ]
-    },
-    "ip": "192.168.2.121",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00377",
-    "name": "fab13bcd74a6937a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3395787,
-        44.4863235
-      ]
-    },
-    "ip": "192.168.2.122",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00378",
-    "name": "853394abc21eea27",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3584759,
-        44.4860411
-      ]
-    },
-    "ip": "192.168.2.123",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00379",
-    "name": "82278bf2d83d73b7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3615958,
-        44.4855039
-      ]
-    },
-    "ip": "192.168.2.124",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00380",
-    "name": "24ad2814c9aaeef7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3624121,
-        44.4845405
-      ]
-    },
-    "ip": "192.168.2.125",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00381",
-    "name": "7f0e9d053f1f4b3d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3634894,
-        44.4841124
-      ]
-    },
-    "ip": "192.168.2.126",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00382",
-    "name": "e76d2fae24587777",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3657732,
-        44.4832551
-      ]
-    },
-    "ip": "192.168.2.127",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00383",
-    "name": "4d02d7ebf808e3b0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3672023,
-        44.4827306
-      ]
-    },
-    "ip": "192.168.2.128",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00384",
-    "name": "31a4041b93915470",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3685326,
-        44.4822173
-      ]
-    },
-    "ip": "192.168.2.129",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00385",
-    "name": "1b6fd1880887bf6c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.368653,
-        44.4821708
-      ]
-    },
-    "ip": "192.168.2.130",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00386",
-    "name": "8ba614d242030393",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3706977,
-        44.4813697
-      ]
-    },
-    "ip": "192.168.2.131",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00387",
-    "name": "985ba95e0da6240f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3636833,
-        44.4861999
-      ]
-    },
-    "ip": "192.168.2.132",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00388",
-    "name": "9a7d85f1aed51b13",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3609351,
-        44.4821072
-      ]
-    },
-    "ip": "192.168.2.133",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00389",
-    "name": "bcceacb9e64a2de8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3602684,
-        44.4819138
-      ]
-    },
-    "ip": "192.168.2.134",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00390",
-    "name": "88887b5ae0bcb197",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3644538,
-        44.4837343
-      ]
-    },
-    "ip": "192.168.2.135",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00391",
-    "name": "14f669bc3310ec24",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3675661,
-        44.4861789
-      ]
-    },
-    "ip": "192.168.2.136",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00392",
-    "name": "3bc7eb2a948afaa3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3637115,
-        44.4801208
-      ]
-    },
-    "ip": "192.168.2.137",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00393",
-    "name": "7dce2801fed2c010",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3691075,
-        44.485637
-      ]
-    },
-    "ip": "192.168.2.138",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00394",
-    "name": "5eb003c792cf71cb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3679212,
-        44.4838334
-      ]
-    },
-    "ip": "192.168.2.139",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00395",
-    "name": "7de3f828c6ff1d12",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.366276,
-        44.4813614
-      ]
-    },
-    "ip": "192.168.2.140",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00396",
-    "name": "7e6439bb244280f8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3656079,
-        44.4803727
-      ]
-    },
-    "ip": "192.168.2.141",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00397",
-    "name": "bb8f33fb024b0ec5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3650089,
-        44.4794806
-      ]
-    },
-    "ip": "192.168.2.142",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00398",
-    "name": "4af54b6cfbcc145a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3705011,
-        44.4850864
-      ]
-    },
-    "ip": "192.168.2.143",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00399",
-    "name": "b911666b2743bc33",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3696661,
-        44.4839071
-      ]
-    },
-    "ip": "192.168.2.144",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00400",
-    "name": "54754b7221acb015",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3692753,
-        44.4833264
-      ]
-    },
-    "ip": "192.168.2.145",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00401",
-    "name": "30d6b4c0964daa77",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3677087,
-        44.4807279
-      ]
-    },
-    "ip": "192.168.2.146",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00402",
-    "name": "1c5f615123c594da",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3674626,
-        44.480372
-      ]
-    },
-    "ip": "192.168.2.147",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00403",
-    "name": "dc36c72abdba7dbc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3663999,
-        44.4788045
-      ]
-    },
-    "ip": "192.168.2.148",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00404",
-    "name": "5ee4fb6b77ca8931",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3657751,
-        44.4779033
-      ]
-    },
-    "ip": "192.168.2.149",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00405",
-    "name": "a8af2f94be43cd7e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3668296,
-        44.4849604
-      ]
-    },
-    "ip": "192.168.2.150",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00406",
-    "name": "3c6b62f2dca17623",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3655843,
-        44.4854356
-      ]
-    },
-    "ip": "192.168.2.151",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00407",
-    "name": "b450b6d4c5e7e8f5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3675741,
-        44.4833044
-      ]
-    },
-    "ip": "192.168.2.152",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00408",
-    "name": "0df43c3a76ee8dc4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3632887,
-        44.4855586
-      ]
-    },
-    "ip": "192.168.2.153",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00409",
-    "name": "324d2e17ceaa2bad",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.36431,
-        44.4852264
-      ]
-    },
-    "ip": "192.168.2.154",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00410",
-    "name": "9830c30c07a74489",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3652587,
-        44.4849257
-      ]
-    },
-    "ip": "192.168.2.155",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00411",
-    "name": "11cc68a18dcf05bd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3689202,
-        44.4827902
-      ]
-    },
-    "ip": "192.168.2.156",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00412",
-    "name": "d557feb77f209838",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3631527,
-        44.4821975
-      ]
-    },
-    "ip": "192.168.2.157",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00413",
-    "name": "4a39fb0170b64055",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3647445,
-        44.4816517
-      ]
-    },
-    "ip": "192.168.2.158",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00414",
-    "name": "63230c4045db21dc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3661418,
-        44.4811641
-      ]
-    },
-    "ip": "192.168.2.159",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00415",
-    "name": "56fb0eaa2b667cb0",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3622849,
-        44.4823812
-      ]
-    },
-    "ip": "192.168.2.160",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00416",
-    "name": "6465eba2f4240f1b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3637761,
-        44.4829241
-      ]
-    },
-    "ip": "192.168.2.161",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00417",
-    "name": "a45ab7c964d223de",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3666455,
-        44.4819047
-      ]
-    },
-    "ip": "192.168.2.162",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00418",
-    "name": "c2c834286211a398",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3665906,
-        44.480378
-      ]
-    },
-    "ip": "192.168.2.163",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00419",
-    "name": "3ed3a134165a23a9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3656415,
-        44.478998
-      ]
-    },
-    "ip": "192.168.2.164",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00420",
-    "name": "8efa0fec218f03bd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3685865,
-        44.4779793
-      ]
-    },
-    "ip": "192.168.2.165",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00421",
-    "name": "5eea6283a04f31d4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3678242,
-        44.4772437
-      ]
-    },
-    "ip": "192.168.2.166",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00422",
-    "name": "5a176943b57d253d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3667376,
-        44.4766947
-      ]
-    },
-    "ip": "192.168.2.167",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00423",
-    "name": "71debda4b8076c8a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.368676,
-        44.4767036
-      ]
-    },
-    "ip": "192.168.2.168",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00424",
-    "name": "9261fbeaee40877f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3668952,
-        44.4779664
-      ]
-    },
-    "ip": "192.168.2.169",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00425",
-    "name": "c1234029c53339db",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3673757,
-        44.4784475
-      ]
-    },
-    "ip": "192.168.2.170",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00426",
-    "name": "86df49cd3eb7ab1d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3660837,
-        44.4775475
-      ]
-    },
-    "ip": "192.168.2.171",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00427",
-    "name": "af0f009e743764fc",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3695431,
-        44.4776255
-      ]
-    },
-    "ip": "192.168.2.172",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00428",
-    "name": "bea46711d9035a2d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3705035,
-        44.4772709
-      ]
-    },
-    "ip": "192.168.2.173",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00429",
-    "name": "e94b7d344f794e24",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3325835,
-        44.5036056
-      ]
-    },
-    "ip": "192.168.2.174",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00430",
-    "name": "8a874cb495bc8bb4",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3289352,
-        44.5096908
-      ]
-    },
-    "ip": "192.168.2.175",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00431",
-    "name": "55cc6c20d94d0384",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3273348,
-        44.5131376
-      ]
-    },
-    "ip": "192.168.2.176",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00432",
-    "name": "88c7f1e1989af6e9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3274664,
-        44.5134881
-      ]
-    },
-    "ip": "192.168.2.177",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00433",
-    "name": "f1b16eea517aec6d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3283015,
-        44.5175496
-      ]
-    },
-    "ip": "192.168.2.178",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00434",
-    "name": "db351b1814d29345",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3282095,
-        44.5171557
-      ]
-    },
-    "ip": "192.168.2.179",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00435",
-    "name": "1ae9b44af36c9715",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3284495,
-        44.5171191
-      ]
-    },
-    "ip": "192.168.2.180",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00436",
-    "name": "96f39480444cdc87",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3286593,
-        44.5172267
-      ]
-    },
-    "ip": "192.168.2.181",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00437",
-    "name": "31889f6098bc8b14",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3285862,
-        44.5175084
-      ]
-    },
-    "ip": "192.168.2.182",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00438",
-    "name": "954c2ce049b042dd",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3290389,
-        44.519848
-      ]
-    },
-    "ip": "192.168.2.183",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00439",
-    "name": "2649b89d0e220821",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3294866,
-        44.521542
-      ]
-    },
-    "ip": "192.168.2.184",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00440",
-    "name": "8d7b8f6d5f16fc5d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3248315,
-        44.5168682
-      ]
-    },
-    "ip": "192.168.2.185",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00441",
-    "name": "ad97497b508772d2",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3241961,
-        44.5180094
-      ]
-    },
-    "ip": "192.168.2.186",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00442",
-    "name": "1b435b7280583e47",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3226457,
-        44.5190144
-      ]
-    },
-    "ip": "192.168.2.187",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00443",
-    "name": "ae6bd1ad6b65a378",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3183371,
-        44.5243964
-      ]
-    },
-    "ip": "192.168.2.188",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00444",
-    "name": "9284f42d8c983641",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3253115,
-        44.5022314
-      ]
-    },
-    "ip": "192.168.2.189",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00445",
-    "name": "e8dd030de4b81a63",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3298543,
-        44.5051306
-      ]
-    },
-    "ip": "192.168.2.190",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00446",
-    "name": "2b9d16be32455476",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3295268,
-        44.504116
-      ]
-    },
-    "ip": "192.168.2.191",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00447",
-    "name": "5355ffe2eda82f28",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3306046,
-        44.5050092
-      ]
-    },
-    "ip": "192.168.2.192",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00448",
-    "name": "b4d8235c6e35e33b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3302724,
-        44.5039807
-      ]
-    },
-    "ip": "192.168.2.193",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00449",
-    "name": "c8ed242386787fa6",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3291606,
-        44.5052403
-      ]
-    },
-    "ip": "192.168.2.194",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00450",
-    "name": "788b1cad233839a8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3312969,
-        44.5049005
-      ]
-    },
-    "ip": "192.168.2.195",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00451",
-    "name": "d5fd2b4644f99005",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.331824,
-        44.5048192
-      ]
-    },
-    "ip": "192.168.2.196",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00452",
-    "name": "389d7cddf5fd54be",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3309743,
-        44.5038665
-      ]
-    },
-    "ip": "192.168.2.197",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00453",
-    "name": "fd5858f963328e4e",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3257529,
-        44.5034488
-      ]
-    },
-    "ip": "192.168.2.198",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00454",
-    "name": "fee3ea773044464a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3279756,
-        44.5030832
-      ]
-    },
-    "ip": "192.168.2.199",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00455",
-    "name": "b2392e8329c06d20",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3305692,
-        44.5026435
-      ]
-    },
-    "ip": "192.168.2.200",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00456",
-    "name": "61ef57db0a079a1d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3326144,
-        44.5023235
-      ]
-    },
-    "ip": "192.168.2.201",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00457",
-    "name": "7b6280f826a6e654",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3298863,
-        44.504045
-      ]
-    },
-    "ip": "192.168.2.202",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00458",
-    "name": "5542d325bc86a3be",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3294943,
-        44.5028261
-      ]
-    },
-    "ip": "192.168.2.203",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00459",
-    "name": "c7d83c2ad073f1f7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3275697,
-        44.5018356
-      ]
-    },
-    "ip": "192.168.2.204",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00460",
-    "name": "774ab2426f4bfeb7",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3272274,
-        44.5007956
-      ]
-    },
-    "ip": "192.168.2.205",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00461",
-    "name": "15e9387050a2661c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3301732,
-        44.5014234
-      ]
-    },
-    "ip": "192.168.2.206",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00462",
-    "name": "be7314a1d6207750",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3306738,
-        44.5013412
-      ]
-    },
-    "ip": "192.168.2.207",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00463",
-    "name": "afeb2b2ee68cca7d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3248676,
-        44.5020345
-      ]
-    },
-    "ip": "192.168.2.208",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00464",
-    "name": "416da7baadd4091c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3245895,
-        44.5012378
-      ]
-    },
-    "ip": "192.168.2.209",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00465",
-    "name": "537d53624ddcfaef",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3362258,
-        44.5041399
-      ]
-    },
-    "ip": "192.168.2.210",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00466",
-    "name": "4a06765867b33470",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3345119,
-        44.5032759
-      ]
-    },
-    "ip": "192.168.2.211",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00467",
-    "name": "849759ad5cea0fde",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.334263,
-        44.5055693
-      ]
-    },
-    "ip": "192.168.2.212",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00468",
-    "name": "03363f2d8e773b32",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.333939,
-        44.5045064
-      ]
-    },
-    "ip": "192.168.2.213",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00469",
-    "name": "99b9614ba036e33a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3396254,
-        44.4940594
-      ]
-    },
-    "ip": "192.168.2.214",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00470",
-    "name": "043457e40fe33d09",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3403575,
-        44.4952537
-      ]
-    },
-    "ip": "192.168.2.215",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00471",
-    "name": "c3de4ac001c4aa32",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3408918,
-        44.4945744
-      ]
-    },
-    "ip": "192.168.2.216",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00472",
-    "name": "e81080a9427b8a25",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.340172,
-        44.4946684
-      ]
-    },
-    "ip": "192.168.2.217",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00473",
-    "name": "5cc66428774fc218",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3480483,
-        44.4974498
-      ]
-    },
-    "ip": "192.168.2.218",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00474",
-    "name": "833e920013d28217",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.348497,
-        44.4963697
-      ]
-    },
-    "ip": "192.168.2.219",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00475",
-    "name": "6d4937909f39388c",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3479078,
-        44.4936388
-      ]
-    },
-    "ip": "192.168.2.220",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00476",
-    "name": "b6f666af5f906a1f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3484511,
-        44.4944794
-      ]
-    },
-    "ip": "192.168.2.221",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00477",
-    "name": "904565220c4fdb16",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3741234,
-        44.4933862
-      ]
-    },
-    "ip": "192.168.2.222",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00478",
-    "name": "d8840bb55dea287a",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3730777,
-        44.4933621
-      ]
-    },
-    "ip": "192.168.2.223",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00479",
-    "name": "2e35d307dd87c401",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3626526,
-        44.4959567
-      ]
-    },
-    "ip": "192.168.2.224",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00480",
-    "name": "1b1250101fc9cdeb",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3476785,
-        44.5164857
-      ]
-    },
-    "ip": "192.168.2.225",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00481",
-    "name": "8637c9d82b0f99d1",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3391573,
-        44.516889
-      ]
-    },
-    "ip": "192.168.2.226",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00482",
-    "name": "cd1b6c014474d010",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3393172,
-        44.5190111
-      ]
-    },
-    "ip": "192.168.2.227",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00483",
-    "name": "2d9df36492caab6b",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3407444,
-        44.5183171
-      ]
-    },
-    "ip": "192.168.2.228",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00484",
-    "name": "3f8b95a2faf9ad4f",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3377696,
-        44.5169415
-      ]
-    },
-    "ip": "192.168.2.229",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00485",
-    "name": "bd820dd43c59c5f9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3406369,
-        44.5168347
-      ]
-    },
-    "ip": "192.168.2.230",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00486",
-    "name": "fb9663e4da14a83d",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3406916,
-        44.5176871
-      ]
-    },
-    "ip": "192.168.2.231",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00487",
-    "name": "aa7ccc5dc0e8de32",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3418628,
-        44.5177851
-      ]
-    },
-    "ip": "192.168.2.232",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00488",
-    "name": "53e92a10f16bb169",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3404032,
-        44.5199922
-      ]
-    },
-    "ip": "192.168.2.233",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00489",
-    "name": "ad2aac6e168c2d49",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3413567,
-        44.5184699
-      ]
-    },
-    "ip": "192.168.2.234",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00490",
-    "name": "c9a5d2d6b9263447",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3410794,
-        44.5188932
-      ]
-    },
-    "ip": "192.168.2.235",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00491",
-    "name": "c93ef5006ff79bc5",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3425734,
-        44.5188041
-      ]
-    },
-    "ip": "192.168.2.236",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00492",
-    "name": "d5f29d6142083fed",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3436251,
-        44.5202006
-      ]
-    },
-    "ip": "192.168.2.237",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00493",
-    "name": "f8fd1f7caeff9319",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3401194,
-        44.5205522
-      ]
-    },
-    "ip": "192.168.2.238",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00494",
-    "name": "e1a5ab0f41c4c8b3",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.348954,
-        44.5352488
-      ]
-    },
-    "ip": "192.168.2.239",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00495",
-    "name": "679bc3809dd50ce8",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.347217,
-        44.5358443
-      ]
-    },
-    "ip": "192.168.2.240",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00496",
-    "name": "443b30f9d535b666",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3477296,
-        44.5380685
-      ]
-    },
-    "ip": "192.168.2.241",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00497",
-    "name": "4883f1b6c48598f9",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3527751,
-        44.5023204
-      ]
-    },
-    "ip": "192.168.2.242",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00498",
-    "name": "f73439576ca85cab",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3496257,
-        44.503617
-      ]
-    },
-    "ip": "192.168.2.243",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00499",
-    "name": "881971f742595796",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3567664,
-        44.5478864
-      ]
-    },
-    "ip": "192.168.2.244",
-    "active": true
-  },
-  {
-    "sensor_id": "SENSOR00500",
-    "name": "0cf8e2392256cd65",
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        11.3553725,
-        44.5361462
-      ]
-    },
-    "ip": "192.168.2.245",
-    "active": true
-  }
-]
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.7 375dc00a",
+  "elements": [
+    {
+      "type": "node",
+      "id": 82550595,
+      "lat": 44.4914668,
+      "lon": 11.3464661,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 82550601,
+      "lat": 44.4856545,
+      "lon": 11.3482468
+    },
+    {
+      "type": "node",
+      "id": 82550616,
+      "lat": 44.480458,
+      "lon": 11.3479365
+    },
+    {
+      "type": "node",
+      "id": 82550636,
+      "lat": 44.4846452,
+      "lon": 11.3393625
+    },
+    {
+      "type": "node",
+      "id": 102265551,
+      "lat": 44.4923376,
+      "lon": 11.3513486
+    },
+    {
+      "type": "node",
+      "id": 244223273,
+      "lat": 44.4954511,
+      "lon": 11.3212147
+    },
+    {
+      "type": "node",
+      "id": 244223277,
+      "lat": 44.493978,
+      "lon": 11.3108743,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 244223479,
+      "lat": 44.4895959,
+      "lon": 11.3209252,
+      "tags": {
+        "highway": "traffic_signals",
+        "traffic_signals": "signal",
+        "traffic_signals:direction": "forward"
+      }
+    },
+    {
+      "type": "node",
+      "id": 245980367,
+      "lat": 44.4996912,
+      "lon": 11.3504892,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250704266,
+      "lat": 44.4982128,
+      "lon": 11.3559806
+    },
+    {
+      "type": "node",
+      "id": 250715900,
+      "lat": 44.5034941,
+      "lon": 11.349921
+    },
+    {
+      "type": "node",
+      "id": 250734651,
+      "lat": 44.5010589,
+      "lon": 11.3300851
+    },
+    {
+      "type": "node",
+      "id": 250734660,
+      "lat": 44.4901339,
+      "lon": 11.3295572
+    },
+    {
+      "type": "node",
+      "id": 250734679,
+      "lat": 44.4886697,
+      "lon": 11.3334393,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250734683,
+      "lat": 44.4859741,
+      "lon": 11.3424087
+    },
+    {
+      "type": "node",
+      "id": 250734855,
+      "lat": 44.4885205,
+      "lon": 11.3576128
+    },
+    {
+      "type": "node",
+      "id": 250734858,
+      "lat": 44.4848068,
+      "lon": 11.3566809
+    },
+    {
+      "type": "node",
+      "id": 250734917,
+      "lat": 44.4995046,
+      "lon": 11.3275359
+    },
+    {
+      "type": "node",
+      "id": 250734971,
+      "lat": 44.5019135,
+      "lon": 11.3402473
+    },
+    {
+      "type": "node",
+      "id": 250735019,
+      "lat": 44.4888883,
+      "lon": 11.3403149
+    },
+    {
+      "type": "node",
+      "id": 250735045,
+      "lat": 44.4913228,
+      "lon": 11.3401353
+    },
+    {
+      "type": "node",
+      "id": 250735096,
+      "lat": 44.4902485,
+      "lon": 11.3361482
+    },
+    {
+      "type": "node",
+      "id": 250761694,
+      "lat": 44.5089583,
+      "lon": 11.3404917
+    },
+    {
+      "type": "node",
+      "id": 250761907,
+      "lat": 44.5079046,
+      "lon": 11.3483923
+    },
+    {
+      "type": "node",
+      "id": 250761933,
+      "lat": 44.5107214,
+      "lon": 11.3491058
+    },
+    {
+      "type": "node",
+      "id": 250762060,
+      "lat": 44.5072052,
+      "lon": 11.3439365
+    },
+    {
+      "type": "node",
+      "id": 250762235,
+      "lat": 44.511271,
+      "lon": 11.3450022
+    },
+    {
+      "type": "node",
+      "id": 250762485,
+      "lat": 44.5170138,
+      "lon": 11.3317091
+    },
+    {
+      "type": "node",
+      "id": 250762497,
+      "lat": 44.5122897,
+      "lon": 11.3515365
+    },
+    {
+      "type": "node",
+      "id": 250762499,
+      "lat": 44.5151393,
+      "lon": 11.3531953
+    },
+    {
+      "type": "node",
+      "id": 250762776,
+      "lat": 44.5004815,
+      "lon": 11.3473068,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250762843,
+      "lat": 44.4999496,
+      "lon": 11.3440959
+    },
+    {
+      "type": "node",
+      "id": 250762891,
+      "lat": 44.5192773,
+      "lon": 11.3430311
+    },
+    {
+      "type": "node",
+      "id": 250762897,
+      "lat": 44.5167749,
+      "lon": 11.3422285,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250762901,
+      "lat": 44.5136532,
+      "lon": 11.3420038
+    },
+    {
+      "type": "node",
+      "id": 250762995,
+      "lat": 44.4944107,
+      "lon": 11.345394
+    },
+    {
+      "type": "node",
+      "id": 250763104,
+      "lat": 44.4975875,
+      "lon": 11.3433665
+    },
+    {
+      "type": "node",
+      "id": 250763479,
+      "lat": 44.5045212,
+      "lon": 11.3410279,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250763483,
+      "lat": 44.5040829,
+      "lon": 11.3364747
+    },
+    {
+      "type": "node",
+      "id": 250763571,
+      "lat": 44.499001,
+      "lon": 11.3384895,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250763742,
+      "lat": 44.4899419,
+      "lon": 11.3503137,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 250763893,
+      "lat": 44.4912188,
+      "lon": 11.3575393
+    },
+    {
+      "type": "node",
+      "id": 251153175,
+      "lat": 44.4947898,
+      "lon": 11.3568829,
+      "tags": {
+        "highway": "traffic_signals",
+        "traffic_signals": "signal",
+        "traffic_signals:direction": "forward"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251623733,
+      "lat": 44.4931986,
+      "lon": 11.3358428,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251623842,
+      "lat": 44.4956117,
+      "lon": 11.3369235
+    },
+    {
+      "type": "node",
+      "id": 251844761,
+      "lat": 44.4944271,
+      "lon": 11.3494202
+    },
+    {
+      "type": "node",
+      "id": 251845370,
+      "lat": 44.494242,
+      "lon": 11.3307379
+    },
+    {
+      "type": "node",
+      "id": 251845730,
+      "lat": 44.4904453,
+      "lon": 11.3436194
+    },
+    {
+      "type": "node",
+      "id": 251845811,
+      "lat": 44.4880516,
+      "lon": 11.3440283
+    },
+    {
+      "type": "node",
+      "id": 251845906,
+      "lat": 44.487,
+      "lon": 11.3532652
+    },
+    {
+      "type": "node",
+      "id": 251846426,
+      "lat": 44.491246,
+      "lon": 11.3541347
+    },
+    {
+      "type": "node",
+      "id": 251883875,
+      "lat": 44.4809994,
+      "lon": 11.3621439
+    },
+    {
+      "type": "node",
+      "id": 251883883,
+      "lat": 44.4757649,
+      "lon": 11.3672258
+    },
+    {
+      "type": "node",
+      "id": 251884399,
+      "lat": 44.4873565,
+      "lon": 11.3644061
+    },
+    {
+      "type": "node",
+      "id": 251884558,
+      "lat": 44.4926984,
+      "lon": 11.3689438
+    },
+    {
+      "type": "node",
+      "id": 251884983,
+      "lat": 44.5040721,
+      "lon": 11.3655569
+    },
+    {
+      "type": "node",
+      "id": 251885508,
+      "lat": 44.5011796,
+      "lon": 11.333983
+    },
+    {
+      "type": "node",
+      "id": 251885572,
+      "lat": 44.497914,
+      "lon": 11.3309222,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251885862,
+      "lat": 44.502084,
+      "lon": 11.3190205
+    },
+    {
+      "type": "node",
+      "id": 251886381,
+      "lat": 44.5033644,
+      "lon": 11.3154209
+    },
+    {
+      "type": "node",
+      "id": 251886387,
+      "lat": 44.5060141,
+      "lon": 11.3079773
+    },
+    {
+      "type": "node",
+      "id": 251886391,
+      "lat": 44.5080156,
+      "lon": 11.3008374
+    },
+    {
+      "type": "node",
+      "id": 251886395,
+      "lat": 44.5093008,
+      "lon": 11.2946903
+    },
+    {
+      "type": "node",
+      "id": 251889322,
+      "lat": 44.506773,
+      "lon": 11.4137641
+    },
+    {
+      "type": "node",
+      "id": 251889332,
+      "lat": 44.5066664,
+      "lon": 11.4228827
+    },
+    {
+      "type": "node",
+      "id": 251896051,
+      "lat": 44.4940712,
+      "lon": 11.3537464
+    },
+    {
+      "type": "node",
+      "id": 251899492,
+      "lat": 44.4902146,
+      "lon": 11.3244619
+    },
+    {
+      "type": "node",
+      "id": 251899495,
+      "lat": 44.48883,
+      "lon": 11.3178589,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251899503,
+      "lat": 44.4901327,
+      "lon": 11.3108625,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251901938,
+      "lat": 44.4947587,
+      "lon": 11.3141969
+    },
+    {
+      "type": "node",
+      "id": 251909607,
+      "lat": 44.5183146,
+      "lon": 11.3562122
+    },
+    {
+      "type": "node",
+      "id": 251909616,
+      "lat": 44.522932,
+      "lon": 11.3593938
+    },
+    {
+      "type": "node",
+      "id": 251909621,
+      "lat": 44.5253646,
+      "lon": 11.36186
+    },
+    {
+      "type": "node",
+      "id": 251993446,
+      "lat": 44.4981365,
+      "lon": 11.3935181
+    },
+    {
+      "type": "node",
+      "id": 252059739,
+      "lat": 44.4931959,
+      "lon": 11.3058162
+    },
+    {
+      "type": "node",
+      "id": 252104568,
+      "lat": 44.4995952,
+      "lon": 11.3205815,
+      "tags": {
+        "traffic_calming": "hump"
+      }
+    },
+    {
+      "type": "node",
+      "id": 252104634,
+      "lat": 44.4973139,
+      "lon": 11.3180534
+    },
+    {
+      "type": "node",
+      "id": 252105264,
+      "lat": 44.4995053,
+      "lon": 11.3145246
+    },
+    {
+      "type": "node",
+      "id": 252105642,
+      "lat": 44.4949901,
+      "lon": 11.3260332,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Andrea Costa",
+        "network": "TPER",
+        "network:wikidata": "Q3997843",
+        "network:wikipedia": "it:Trasporto Passeggeri Emilia-Romagna",
+        "operator": "TPER",
+        "public_transport": "stop_position",
+        "ref": "7102",
+        "source": "http://www.tper.it/azienda/tper-open-data",
+        "trolleybus": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 252105807,
+      "lat": 44.497068,
+      "lon": 11.3236791
+    },
+    {
+      "type": "node",
+      "id": 252107932,
+      "lat": 44.4929843,
+      "lon": 11.3245956
+    },
+    {
+      "type": "node",
+      "id": 252108385,
+      "lat": 44.4920667,
+      "lon": 11.3164791
+    },
+    {
+      "type": "node",
+      "id": 252117475,
+      "lat": 44.4962919,
+      "lon": 11.366868
+    },
+    {
+      "type": "node",
+      "id": 252118425,
+      "lat": 44.4933932,
+      "lon": 11.3659339
+    },
+    {
+      "type": "node",
+      "id": 252119524,
+      "lat": 44.5017826,
+      "lon": 11.3118158
+    },
+    {
+      "type": "node",
+      "id": 252155724,
+      "lat": 44.4908069,
+      "lon": 11.3660876
+    },
+    {
+      "type": "node",
+      "id": 252162547,
+      "lat": 44.4803308,
+      "lon": 11.3367117
+    },
+    {
+      "type": "node",
+      "id": 252164472,
+      "lat": 44.4857914,
+      "lon": 11.360672
+    },
+    {
+      "type": "node",
+      "id": 252164588,
+      "lat": 44.4841124,
+      "lon": 11.3634894
+    },
+    {
+      "type": "node",
+      "id": 252164592,
+      "lat": 44.4822173,
+      "lon": 11.3685326
+    },
+    {
+      "type": "node",
+      "id": 252164785,
+      "lat": 44.4861789,
+      "lon": 11.3675661
+    },
+    {
+      "type": "node",
+      "id": 252164873,
+      "lat": 44.4803727,
+      "lon": 11.3656079
+    },
+    {
+      "type": "node",
+      "id": 252164883,
+      "lat": 44.4850864,
+      "lon": 11.3705011
+    },
+    {
+      "type": "node",
+      "id": 252164905,
+      "lat": 44.4779033,
+      "lon": 11.3657751
+    },
+    {
+      "type": "node",
+      "id": 252165363,
+      "lat": 44.4776255,
+      "lon": 11.3695431
+    },
+    {
+      "type": "node",
+      "id": 252166506,
+      "lat": 44.5096908,
+      "lon": 11.3289352
+    },
+    {
+      "type": "node",
+      "id": 252166596,
+      "lat": 44.5320649,
+      "lon": 11.3358616
+    },
+    {
+      "type": "node",
+      "id": 252166600,
+      "lat": 44.519848,
+      "lon": 11.3290389
+    },
+    {
+      "type": "node",
+      "id": 252166612,
+      "lat": 44.5272166,
+      "lon": 11.3324619
+    },
+    {
+      "type": "node",
+      "id": 252166947,
+      "lat": 44.5142238,
+      "lon": 11.3266079
+    },
+    {
+      "type": "node",
+      "id": 252166955,
+      "lat": 44.5168682,
+      "lon": 11.3248315
+    },
+    {
+      "type": "node",
+      "id": 252166982,
+      "lat": 44.5243964,
+      "lon": 11.3183371
+    },
+    {
+      "type": "node",
+      "id": 252166999,
+      "lat": 44.530835,
+      "lon": 11.3140524
+    },
+    {
+      "type": "node",
+      "id": 252167109,
+      "lat": 44.5045671,
+      "lon": 11.3267035
+    },
+    {
+      "type": "node",
+      "id": 252167117,
+      "lat": 44.5022314,
+      "lon": 11.3253115
+    },
+    {
+      "type": "node",
+      "id": 252167254,
+      "lat": 44.5039807,
+      "lon": 11.3302724
+    },
+    {
+      "type": "node",
+      "id": 252169103,
+      "lat": 44.495156,
+      "lon": 11.3410141
+    },
+    {
+      "type": "node",
+      "id": 252237034,
+      "lat": 44.4931755,
+      "lon": 11.3765943
+    },
+    {
+      "type": "node",
+      "id": 252237332,
+      "lat": 44.4944325,
+      "lon": 11.3727574
+    },
+    {
+      "type": "node",
+      "id": 252269513,
+      "lat": 44.5164857,
+      "lon": 11.3476785,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 252269762,
+      "lat": 44.5169415,
+      "lon": 11.3377696
+    },
+    {
+      "type": "node",
+      "id": 252270811,
+      "lat": 44.5352488,
+      "lon": 11.348954
+    },
+    {
+      "type": "node",
+      "id": 252654951,
+      "lat": 44.5368894,
+      "lon": 11.3693305
+    },
+    {
+      "type": "node",
+      "id": 252654967,
+      "lat": 44.5180575,
+      "lon": 11.3605081
+    },
+    {
+      "type": "node",
+      "id": 253220786,
+      "lat": 44.5229982,
+      "lon": 11.2866999
+    },
+    {
+      "type": "node",
+      "id": 253266177,
+      "lat": 44.5048384,
+      "lon": 11.4022502
+    },
+    {
+      "type": "node",
+      "id": 253281626,
+      "lat": 44.5267594,
+      "lon": 11.3500311
+    },
+    {
+      "type": "node",
+      "id": 253281636,
+      "lat": 44.5423546,
+      "lon": 11.3605263
+    },
+    {
+      "type": "node",
+      "id": 253455312,
+      "lat": 44.493285,
+      "lon": 11.384747
+    },
+    {
+      "type": "node",
+      "id": 253648635,
+      "lat": 44.5003865,
+      "lon": 11.3784837
+    },
+    {
+      "type": "node",
+      "id": 253891975,
+      "lat": 44.4987609,
+      "lon": 11.3639548
+    },
+    {
+      "type": "node",
+      "id": 253892088,
+      "lat": 44.4992333,
+      "lon": 11.3748056
+    },
+    {
+      "type": "node",
+      "id": 254006139,
+      "lat": 44.484153,
+      "lon": 11.3802597
+    },
+    {
+      "type": "node",
+      "id": 254006899,
+      "lat": 44.489687,
+      "lon": 11.3785833
+    },
+    {
+      "type": "node",
+      "id": 254180468,
+      "lat": 44.5123416,
+      "lon": 11.4124142
+    },
+    {
+      "type": "node",
+      "id": 254180851,
+      "lat": 44.5125935,
+      "lon": 11.4031065
+    },
+    {
+      "type": "node",
+      "id": 254180865,
+      "lat": 44.509242,
+      "lon": 11.4001471
+    },
+    {
+      "type": "node",
+      "id": 254394099,
+      "lat": 44.4866471,
+      "lon": 11.3764237
+    },
+    {
+      "type": "node",
+      "id": 254394455,
+      "lat": 44.4831483,
+      "lon": 11.3755919
+    },
+    {
+      "type": "node",
+      "id": 254546940,
+      "lat": 44.4963326,
+      "lon": 11.4086232
+    },
+    {
+      "type": "node",
+      "id": 254548386,
+      "lat": 44.4896809,
+      "lon": 11.3983933,
+      "tags": {
+        "maxspeed": "30",
+        "traffic_calming": "table"
+      }
+    },
+    {
+      "type": "node",
+      "id": 254635783,
+      "lat": 44.5099569,
+      "lon": 11.2773881
+    },
+    {
+      "type": "node",
+      "id": 254751947,
+      "lat": 44.4831666,
+      "lon": 11.3831136
+    },
+    {
+      "type": "node",
+      "id": 254751953,
+      "lat": 44.4811999,
+      "lon": 11.3811957
+    },
+    {
+      "type": "node",
+      "id": 254781553,
+      "lat": 44.5335145,
+      "lon": 11.2682356
+    },
+    {
+      "type": "node",
+      "id": 254896289,
+      "lat": 44.5133576,
+      "lon": 11.4209528
+    },
+    {
+      "type": "node",
+      "id": 254896293,
+      "lat": 44.5119695,
+      "lon": 11.4161214
+    },
+    {
+      "type": "node",
+      "id": 255102787,
+      "lat": 44.5297079,
+      "lon": 11.3338881
+    },
+    {
+      "type": "node",
+      "id": 255333009,
+      "lat": 44.5059637,
+      "lon": 11.3732889
+    },
+    {
+      "type": "node",
+      "id": 255523833,
+      "lat": 44.4949011,
+      "lon": 11.4017297
+    },
+    {
+      "type": "node",
+      "id": 255530301,
+      "lat": 44.5260828,
+      "lon": 11.2969505
+    },
+    {
+      "type": "node",
+      "id": 255530326,
+      "lat": 44.5234825,
+      "lon": 11.2961854
+    },
+    {
+      "type": "node",
+      "id": 255530661,
+      "lat": 44.5202952,
+      "lon": 11.2944107
+    },
+    {
+      "type": "node",
+      "id": 255604530,
+      "lat": 44.4962123,
+      "lon": 11.3701713
+    },
+    {
+      "type": "node",
+      "id": 256375183,
+      "lat": 44.4918758,
+      "lon": 11.2633765
+    },
+    {
+      "type": "node",
+      "id": 256405337,
+      "lat": 44.5071156,
+      "lon": 11.4183882
+    },
+    {
+      "type": "node",
+      "id": 256408663,
+      "lat": 44.4908282,
+      "lon": 11.4170446
+    },
+    {
+      "type": "node",
+      "id": 256818081,
+      "lat": 44.5405293,
+      "lon": 11.3576168
+    },
+    {
+      "type": "node",
+      "id": 257070426,
+      "lat": 44.5008477,
+      "lon": 11.3957036
+    },
+    {
+      "type": "node",
+      "id": 257082775,
+      "lat": 44.4752092,
+      "lon": 11.3970668
+    },
+    {
+      "type": "node",
+      "id": 257087089,
+      "lat": 44.5178412,
+      "lon": 11.3644149
+    },
+    {
+      "type": "node",
+      "id": 257360580,
+      "lat": 44.5075996,
+      "lon": 11.2820537
+    },
+    {
+      "type": "node",
+      "id": 258507576,
+      "lat": 44.4734244,
+      "lon": 11.3689537
+    },
+    {
+      "type": "node",
+      "id": 258983791,
+      "lat": 44.5159357,
+      "lon": 11.2795781
+    },
+    {
+      "type": "node",
+      "id": 258983792,
+      "lat": 44.5174724,
+      "lon": 11.2752239
+    },
+    {
+      "type": "node",
+      "id": 262413259,
+      "lat": 44.4760796,
+      "lon": 11.3768159
+    },
+    {
+      "type": "node",
+      "id": 262413355,
+      "lat": 44.4794989,
+      "lon": 11.3786879
+    },
+    {
+      "type": "node",
+      "id": 262557449,
+      "lat": 44.5474809,
+      "lon": 11.3476185
+    },
+    {
+      "type": "node",
+      "id": 262702036,
+      "lat": 44.4882672,
+      "lon": 11.3732868,
+      "tags": {
+        "crossing": "marked",
+        "crossing:markings": "yes",
+        "highway": "crossing",
+        "kerb": "lowered",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 266397878,
+      "lat": 44.5025017,
+      "lon": 11.2909814
+    },
+    {
+      "type": "node",
+      "id": 268078562,
+      "lat": 44.4817349,
+      "lon": 11.3934094
+    },
+    {
+      "type": "node",
+      "id": 268079233,
+      "lat": 44.4713015,
+      "lon": 11.3861921
+    },
+    {
+      "type": "node",
+      "id": 268079257,
+      "lat": 44.4628412,
+      "lon": 11.3795151
+    },
+    {
+      "type": "node",
+      "id": 268079308,
+      "lat": 44.4599103,
+      "lon": 11.3746659
+    },
+    {
+      "type": "node",
+      "id": 268079683,
+      "lat": 44.45948,
+      "lon": 11.3701426
+    },
+    {
+      "type": "node",
+      "id": 268081289,
+      "lat": 44.4708515,
+      "lon": 11.3772942
+    },
+    {
+      "type": "node",
+      "id": 268236346,
+      "lat": 44.4909485,
+      "lon": 11.3070511
+    },
+    {
+      "type": "node",
+      "id": 268236449,
+      "lat": 44.4912586,
+      "lon": 11.3033927
+    },
+    {
+      "type": "node",
+      "id": 268245133,
+      "lat": 44.4932241,
+      "lon": 11.2941144
+    },
+    {
+      "type": "node",
+      "id": 268245838,
+      "lat": 44.4961289,
+      "lon": 11.2888539
+    },
+    {
+      "type": "node",
+      "id": 268245901,
+      "lat": 44.493523,
+      "lon": 11.2876735
+    },
+    {
+      "type": "node",
+      "id": 268247139,
+      "lat": 44.4908647,
+      "lon": 11.282357
+    },
+    {
+      "type": "node",
+      "id": 268247278,
+      "lat": 44.4898973,
+      "lon": 11.2895442,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 268684287,
+      "lat": 44.4886383,
+      "lon": 11.3686842
+    },
+    {
+      "type": "node",
+      "id": 269335922,
+      "lat": 44.5035057,
+      "lon": 11.3611531
+    },
+    {
+      "type": "node",
+      "id": 269337705,
+      "lat": 44.4909528,
+      "lon": 11.3714739
+    },
+    {
+      "type": "node",
+      "id": 269876069,
+      "lat": 44.5140886,
+      "lon": 11.3473709
+    },
+    {
+      "type": "node",
+      "id": 272880025,
+      "lat": 44.5241283,
+      "lon": 11.410547,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 272880028,
+      "lat": 44.5258815,
+      "lon": 11.4052334
+    },
+    {
+      "type": "node",
+      "id": 272881167,
+      "lat": 44.5162209,
+      "lon": 11.399525
+    },
+    {
+      "type": "node",
+      "id": 272882225,
+      "lat": 44.5084577,
+      "lon": 11.3701528
+    },
+    {
+      "type": "node",
+      "id": 272882234,
+      "lat": 44.5110674,
+      "lon": 11.3715196
+    },
+    {
+      "type": "node",
+      "id": 274212951,
+      "lat": 44.5016942,
+      "lon": 11.373684
+    },
+    {
+      "type": "node",
+      "id": 274859632,
+      "lat": 44.5213519,
+      "lon": 11.2640076
+    },
+    {
+      "type": "node",
+      "id": 279181977,
+      "lat": 44.5303742,
+      "lon": 11.3543619
+    },
+    {
+      "type": "node",
+      "id": 279204312,
+      "lat": 44.5291981,
+      "lon": 11.351536
+    },
+    {
+      "type": "node",
+      "id": 280255403,
+      "lat": 44.4997525,
+      "lon": 11.2957125
+    },
+    {
+      "type": "node",
+      "id": 280256258,
+      "lat": 44.4996473,
+      "lon": 11.3025984
+    },
+    {
+      "type": "node",
+      "id": 280257176,
+      "lat": 44.5018868,
+      "lon": 11.2973605
+    },
+    {
+      "type": "node",
+      "id": 280264062,
+      "lat": 44.5109254,
+      "lon": 11.3121569
+    },
+    {
+      "type": "node",
+      "id": 280500219,
+      "lat": 44.5189932,
+      "lon": 11.2708393
+    },
+    {
+      "type": "node",
+      "id": 280694774,
+      "lat": 44.5077713,
+      "lon": 11.2543261
+    },
+    {
+      "type": "node",
+      "id": 280695344,
+      "lat": 44.5068686,
+      "lon": 11.2578371
+    },
+    {
+      "type": "node",
+      "id": 280697039,
+      "lat": 44.5145513,
+      "lon": 11.2677919
+    },
+    {
+      "type": "node",
+      "id": 280828266,
+      "lat": 44.488797,
+      "lon": 11.3874767
+    },
+    {
+      "type": "node",
+      "id": 283046709,
+      "lat": 44.4667206,
+      "lon": 11.3007221,
+      "tags": {
+        "ele": "250"
+      }
+    },
+    {
+      "type": "node",
+      "id": 283046777,
+      "lat": 44.4735283,
+      "lon": 11.3094084
+    },
+    {
+      "type": "node",
+      "id": 283046794,
+      "lat": 44.4773903,
+      "lon": 11.3096981
+    },
+    {
+      "type": "node",
+      "id": 283046849,
+      "lat": 44.4844704,
+      "lon": 11.3142567
+    },
+    {
+      "type": "node",
+      "id": 287523644,
+      "lat": 44.4681165,
+      "lon": 11.392711
+    },
+    {
+      "type": "node",
+      "id": 287524526,
+      "lat": 44.465678,
+      "lon": 11.375669
+    },
+    {
+      "type": "node",
+      "id": 288657757,
+      "lat": 44.4483156,
+      "lon": 11.3594511
+    },
+    {
+      "type": "node",
+      "id": 289062252,
+      "lat": 44.4888393,
+      "lon": 11.298055
+    },
+    {
+      "type": "node",
+      "id": 290036595,
+      "lat": 44.5465037,
+      "lon": 11.3564866
+    },
+    {
+      "type": "node",
+      "id": 290040182,
+      "lat": 44.549684,
+      "lon": 11.3621505
+    },
+    {
+      "type": "node",
+      "id": 292608434,
+      "lat": 44.5096205,
+      "lon": 11.384032
+    },
+    {
+      "type": "node",
+      "id": 292608448,
+      "lat": 44.5082587,
+      "lon": 11.3941984
+    },
+    {
+      "type": "node",
+      "id": 292608585,
+      "lat": 44.5088374,
+      "lon": 11.3625408,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 292608601,
+      "lat": 44.5126973,
+      "lon": 11.3579854,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 292608614,
+      "lat": 44.5078185,
+      "lon": 11.388629
+    },
+    {
+      "type": "node",
+      "id": 292735612,
+      "lat": 44.4511924,
+      "lon": 11.2962913
+    },
+    {
+      "type": "node",
+      "id": 292735654,
+      "lat": 44.44421,
+      "lon": 11.3009678
+    },
+    {
+      "type": "node",
+      "id": 293629180,
+      "lat": 44.5220714,
+      "lon": 11.3439047
+    },
+    {
+      "type": "node",
+      "id": 293760108,
+      "lat": 44.5438731,
+      "lon": 11.355955
+    },
+    {
+      "type": "node",
+      "id": 294149879,
+      "lat": 44.5199142,
+      "lon": 11.2424974
+    },
+    {
+      "type": "node",
+      "id": 294149892,
+      "lat": 44.5079552,
+      "lon": 11.2352531
+    },
+    {
+      "type": "node",
+      "id": 294257472,
+      "lat": 44.4997675,
+      "lon": 11.2743177
+    },
+    {
+      "type": "node",
+      "id": 294266289,
+      "lat": 44.5129854,
+      "lon": 11.3176996
+    },
+    {
+      "type": "node",
+      "id": 295903818,
+      "lat": 44.4757397,
+      "lon": 11.3612118
+    },
+    {
+      "type": "node",
+      "id": 296253269,
+      "lat": 44.5174709,
+      "lon": 11.3281414
+    },
+    {
+      "type": "node",
+      "id": 296307988,
+      "lat": 44.5192797,
+      "lon": 11.3243292
+    },
+    {
+      "type": "node",
+      "id": 296308102,
+      "lat": 44.5215802,
+      "lon": 11.3253814
+    },
+    {
+      "type": "node",
+      "id": 296315894,
+      "lat": 44.5140703,
+      "lon": 11.3118791
+    },
+    {
+      "type": "node",
+      "id": 296317417,
+      "lat": 44.5114264,
+      "lon": 11.2985445
+    },
+    {
+      "type": "node",
+      "id": 296317530,
+      "lat": 44.5141915,
+      "lon": 11.3014693
+    },
+    {
+      "type": "node",
+      "id": 297210801,
+      "lat": 44.4800836,
+      "lon": 11.3701754
+    },
+    {
+      "type": "node",
+      "id": 297431441,
+      "lat": 44.4729231,
+      "lon": 11.365243
+    },
+    {
+      "type": "node",
+      "id": 297797100,
+      "lat": 44.4681452,
+      "lon": 11.3708143
+    },
+    {
+      "type": "node",
+      "id": 297798702,
+      "lat": 44.4706255,
+      "lon": 11.3709198
+    },
+    {
+      "type": "node",
+      "id": 298376301,
+      "lat": 44.5288231,
+      "lon": 11.3668829
+    },
+    {
+      "type": "node",
+      "id": 299081221,
+      "lat": 44.5282144,
+      "lon": 11.2441086
+    },
+    {
+      "type": "node",
+      "id": 300468485,
+      "lat": 44.4697715,
+      "lon": 11.3608155
+    },
+    {
+      "type": "node",
+      "id": 300588102,
+      "lat": 44.4812787,
+      "lon": 11.3583787
+    },
+    {
+      "type": "node",
+      "id": 300588110,
+      "lat": 44.4787411,
+      "lon": 11.3553693
+    },
+    {
+      "type": "node",
+      "id": 301811653,
+      "lat": 44.5367064,
+      "lon": 11.3572228
+    },
+    {
+      "type": "node",
+      "id": 301865821,
+      "lat": 44.513733,
+      "lon": 11.367921
+    },
+    {
+      "type": "node",
+      "id": 301868309,
+      "lat": 44.5209593,
+      "lon": 11.3482457
+    },
+    {
+      "type": "node",
+      "id": 301892485,
+      "lat": 44.4766944,
+      "lon": 11.3576753
+    },
+    {
+      "type": "node",
+      "id": 307441584,
+      "lat": 44.4617101,
+      "lon": 11.3563155
+    },
+    {
+      "type": "node",
+      "id": 307441605,
+      "lat": 44.457324,
+      "lon": 11.3528419
+    },
+    {
+      "type": "node",
+      "id": 307441637,
+      "lat": 44.4489415,
+      "lon": 11.3404424
+    },
+    {
+      "type": "node",
+      "id": 310799698,
+      "lat": 44.4770146,
+      "lon": 11.3448526
+    },
+    {
+      "type": "node",
+      "id": 310799863,
+      "lat": 44.4643545,
+      "lon": 11.3426901
+    },
+    {
+      "type": "node",
+      "id": 311050950,
+      "lat": 44.5087344,
+      "lon": 11.3325416
+    },
+    {
+      "type": "node",
+      "id": 313197777,
+      "lat": 44.5255591,
+      "lon": 11.3454304
+    },
+    {
+      "type": "node",
+      "id": 313197781,
+      "lat": 44.524494,
+      "lon": 11.3491948
+    },
+    {
+      "type": "node",
+      "id": 316293745,
+      "lat": 44.5008561,
+      "lon": 11.2692432
+    },
+    {
+      "type": "node",
+      "id": 336571111,
+      "lat": 44.5312563,
+      "lon": 11.3471534
+    },
+    {
+      "type": "node",
+      "id": 336574587,
+      "lat": 44.5369134,
+      "lon": 11.351445
+    },
+    {
+      "type": "node",
+      "id": 336773716,
+      "lat": 44.4761345,
+      "lon": 11.3359637
+    },
+    {
+      "type": "node",
+      "id": 336774247,
+      "lat": 44.466651,
+      "lon": 11.331883
+    },
+    {
+      "type": "node",
+      "id": 336774378,
+      "lat": 44.4639117,
+      "lon": 11.3280915
+    },
+    {
+      "type": "node",
+      "id": 336774436,
+      "lat": 44.4617903,
+      "lon": 11.325557,
+      "tags": {
+        "ele": "245"
+      }
+    },
+    {
+      "type": "node",
+      "id": 336774663,
+      "lat": 44.454226,
+      "lon": 11.318174,
+      "tags": {
+        "ele": "245"
+      }
+    },
+    {
+      "type": "node",
+      "id": 336774906,
+      "lat": 44.4479798,
+      "lon": 11.3154502,
+      "tags": {
+        "ele": "270"
+      }
+    },
+    {
+      "type": "node",
+      "id": 336775295,
+      "lat": 44.4411072,
+      "lon": 11.3078868
+    },
+    {
+      "type": "node",
+      "id": 336775399,
+      "lat": 44.4381072,
+      "lon": 11.309514
+    },
+    {
+      "type": "node",
+      "id": 336775532,
+      "lat": 44.434913,
+      "lon": 11.313619
+    },
+    {
+      "type": "node",
+      "id": 336775645,
+      "lat": 44.431647,
+      "lon": 11.31245
+    },
+    {
+      "type": "node",
+      "id": 336775799,
+      "lat": 44.428824,
+      "lon": 11.315203
+    },
+    {
+      "type": "node",
+      "id": 338017305,
+      "lat": 44.4560892,
+      "lon": 11.3497129,
+      "tags": {
+        "check_date": "2024-01-20",
+        "description:it": "CAI 900-902",
+        "hiking": "yes",
+        "information": "guidepost",
+        "operator": "CAI Bologna",
+        "operator:website": "https://www.caibo.it/",
+        "source": "survey:CAI",
+        "source:ref": "9224002",
+        "tourism": "information",
+        "wikimedia_commons": "File:CAI 900 (via Monte Donato - via di Jola).jpg"
+      }
+    },
+    {
+      "type": "node",
+      "id": 341937053,
+      "lat": 44.4583591,
+      "lon": 11.3482336,
+      "tags": {
+        "check_date": "2024-12-28",
+        "description:it": "CAI 902",
+        "hiking": "yes",
+        "information": "guidepost",
+        "operator": "CAI Bologna",
+        "operator:website": "https://www.caibo.it/",
+        "source": "survey:CAI",
+        "source:ref": "9224002",
+        "tourism": "information",
+        "wikimedia_commons": "File:CAI 902 (via Santa Liberata - via Gaibara).jpg"
+      }
+    },
+    {
+      "type": "node",
+      "id": 341937921,
+      "lat": 44.4493906,
+      "lon": 11.343918
+    },
+    {
+      "type": "node",
+      "id": 342184856,
+      "lat": 44.4870131,
+      "lon": 11.3381545
+    },
+    {
+      "type": "node",
+      "id": 344025423,
+      "lat": 44.5100736,
+      "lon": 11.3539647
+    },
+    {
+      "type": "node",
+      "id": 344025437,
+      "lat": 44.5142605,
+      "lon": 11.3721544
+    },
+    {
+      "type": "node",
+      "id": 359972119,
+      "lat": 44.4928001,
+      "lon": 11.3618371
+    },
+    {
+      "type": "node",
+      "id": 382402392,
+      "lat": 44.5117482,
+      "lon": 11.2387013
+    },
+    {
+      "type": "node",
+      "id": 382402399,
+      "lat": 44.5023851,
+      "lon": 11.2508723
+    },
+    {
+      "type": "node",
+      "id": 385074817,
+      "lat": 44.5269,
+      "lon": 11.2476213
+    },
+    {
+      "type": "node",
+      "id": 387452664,
+      "lat": 44.5240254,
+      "lon": 11.3302799
+    },
+    {
+      "type": "node",
+      "id": 387456435,
+      "lat": 44.5256005,
+      "lon": 11.326997
+    },
+    {
+      "type": "node",
+      "id": 387533929,
+      "lat": 44.501509,
+      "lon": 11.3573431
+    },
+    {
+      "type": "node",
+      "id": 388434179,
+      "lat": 44.464565,
+      "lon": 11.3820712
+    },
+    {
+      "type": "node",
+      "id": 394918928,
+      "lat": 44.5019427,
+      "lon": 11.352529
+    },
+    {
+      "type": "node",
+      "id": 399802336,
+      "lat": 44.4969817,
+      "lon": 11.327725
+    },
+    {
+      "type": "node",
+      "id": 410721515,
+      "lat": 44.4998092,
+      "lon": 11.359914
+    },
+    {
+      "type": "node",
+      "id": 410752846,
+      "lat": 44.4662107,
+      "lon": 11.3790108
+    },
+    {
+      "type": "node",
+      "id": 419638725,
+      "lat": 44.4896521,
+      "lon": 11.3148001
+    },
+    {
+      "type": "node",
+      "id": 440947035,
+      "lat": 44.5512718,
+      "lon": 11.3563116
+    },
+    {
+      "type": "node",
+      "id": 441413102,
+      "lat": 44.4890175,
+      "lon": 11.4225033
+    },
+    {
+      "type": "node",
+      "id": 444404773,
+      "lat": 44.532853,
+      "lon": 11.3704091
+    },
+    {
+      "type": "node",
+      "id": 444404786,
+      "lat": 44.515794,
+      "lon": 11.3950643
+    },
+    {
+      "type": "node",
+      "id": 445349191,
+      "lat": 44.5046438,
+      "lon": 11.3463302
+    },
+    {
+      "type": "node",
+      "id": 476913379,
+      "lat": 44.506908,
+      "lon": 11.3577321
+    },
+    {
+      "type": "node",
+      "id": 491119512,
+      "lat": 44.5073897,
+      "lon": 11.3762839
+    },
+    {
+      "type": "node",
+      "id": 491181752,
+      "lat": 44.5088706,
+      "lon": 11.3789082
+    },
+    {
+      "type": "node",
+      "id": 496977581,
+      "lat": 44.5135077,
+      "lon": 11.3821333
+    },
+    {
+      "type": "node",
+      "id": 496977642,
+      "lat": 44.5188279,
+      "lon": 11.381144
+    },
+    {
+      "type": "node",
+      "id": 496977674,
+      "lat": 44.5226086,
+      "lon": 11.3808625
+    },
+    {
+      "type": "node",
+      "id": 496977704,
+      "lat": 44.5245923,
+      "lon": 11.3790888
+    },
+    {
+      "type": "node",
+      "id": 504661607,
+      "lat": 44.5000292,
+      "lon": 11.3705091
+    },
+    {
+      "type": "node",
+      "id": 505731645,
+      "lat": 44.5216124,
+      "lon": 11.3908164
+    },
+    {
+      "type": "node",
+      "id": 505742711,
+      "lat": 44.5168582,
+      "lon": 11.3888426
+    },
+    {
+      "type": "node",
+      "id": 505757483,
+      "lat": 44.51448,
+      "lon": 11.3893915,
+      "tags": {
+        "highway": "traffic_signals"
+      }
+    },
+    {
+      "type": "node",
+      "id": 505757611,
+      "lat": 44.511373,
+      "lon": 11.3910965
+    },
+    {
+      "type": "node",
+      "id": 506075046,
+      "lat": 44.5310874,
+      "lon": 11.3672106
+    },
+    {
+      "type": "node",
+      "id": 506075059,
+      "lat": 44.5320568,
+      "lon": 11.3745823
+    },
+    {
+      "type": "node",
+      "id": 506752305,
+      "lat": 44.4459208,
+      "lon": 11.2964813,
+      "tags": {
+        "ele": "190"
+      }
+    },
+    {
+      "type": "node",
+      "id": 506790605,
+      "lat": 44.4489421,
+      "lon": 11.3234522,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Lastre",
+        "network": "TPER",
+        "network:wikidata": "Q3997843",
+        "public_transport": "stop_position",
+        "ref": "8174"
+      }
+    },
+    {
+      "type": "node",
+      "id": 507040912,
+      "lat": 44.5388187,
+      "lon": 11.3930293
+    },
+    {
+      "type": "node",
+      "id": 507042614,
+      "lat": 44.5335227,
+      "lon": 11.3889649
+    },
+    {
+      "type": "node",
+      "id": 507042642,
+      "lat": 44.5289526,
+      "lon": 11.3972783
+    },
+    {
+      "type": "node",
+      "id": 510159852,
+      "lat": 44.5128141,
+      "lon": 11.286521
+    },
+    {
+      "type": "node",
+      "id": 512111010,
+      "lat": 44.5368742,
+      "lon": 11.4027023
+    },
+    {
+      "type": "node",
+      "id": 513924183,
+      "lat": 44.5065866,
+      "lon": 11.3650345
+    },
+    {
+      "type": "node",
+      "id": 517388463,
+      "lat": 44.5053549,
+      "lon": 11.4056423
+    },
+    {
+      "type": "node",
+      "id": 537752800,
+      "lat": 44.5016712,
+      "lon": 11.3650927
+    },
+    {
+      "type": "node",
+      "id": 566993047,
+      "lat": 44.516577,
+      "lon": 11.3715809
+    },
+    {
+      "type": "node",
+      "id": 579378962,
+      "lat": 44.5055677,
+      "lon": 11.3014147
+    },
+    {
+      "type": "node",
+      "id": 622112975,
+      "lat": 44.5275161,
+      "lon": 11.2644431
+    },
+    {
+      "type": "node",
+      "id": 627730545,
+      "lat": 44.4697786,
+      "lon": 11.3834397
+    },
+    {
+      "type": "node",
+      "id": 627730558,
+      "lat": 44.4683919,
+      "lon": 11.3767684
+    },
+    {
+      "type": "node",
+      "id": 628635060,
+      "lat": 44.4683623,
+      "lon": 11.3809323
+    },
+    {
+      "type": "node",
+      "id": 632700067,
+      "lat": 44.4650889,
+      "lon": 11.3708406
+    },
+    {
+      "type": "node",
+      "id": 632931456,
+      "lat": 44.4554826,
+      "lon": 11.3685123
+    },
+    {
+      "type": "node",
+      "id": 697810610,
+      "lat": 44.4864562,
+      "lon": 11.3866702
+    },
+    {
+      "type": "node",
+      "id": 710706153,
+      "lat": 44.5039652,
+      "lon": 11.389067
+    },
+    {
+      "type": "node",
+      "id": 791746346,
+      "lat": 44.5259504,
+      "lon": 11.3658715
+    },
+    {
+      "type": "node",
+      "id": 802936110,
+      "lat": 44.5326435,
+      "lon": 11.231751
+    },
+    {
+      "type": "node",
+      "id": 853112468,
+      "lat": 44.4767175,
+      "lon": 11.3831166
+    },
+    {
+      "type": "node",
+      "id": 854918531,
+      "lat": 44.4787659,
+      "lon": 11.3869856
+    },
+    {
+      "type": "node",
+      "id": 854941784,
+      "lat": 44.4795674,
+      "lon": 11.3837612
+    },
+    {
+      "type": "node",
+      "id": 854967102,
+      "lat": 44.4733793,
+      "lon": 11.3837841
+    },
+    {
+      "type": "node",
+      "id": 855500710,
+      "lat": 44.4761121,
+      "lon": 11.3896848
+    },
+    {
+      "type": "node",
+      "id": 855501069,
+      "lat": 44.4764757,
+      "lon": 11.3865044
+    },
+    {
+      "type": "node",
+      "id": 855501176,
+      "lat": 44.4733408,
+      "lon": 11.3876841
+    },
+    {
+      "type": "node",
+      "id": 859085307,
+      "lat": 44.4711905,
+      "lon": 11.3894505
+    },
+    {
+      "type": "node",
+      "id": 859085311,
+      "lat": 44.4736649,
+      "lon": 11.392255
+    },
+    {
+      "type": "node",
+      "id": 859085323,
+      "lat": 44.4761557,
+      "lon": 11.3937489
+    },
+    {
+      "type": "node",
+      "id": 920083627,
+      "lat": 44.5093451,
+      "lon": 11.2847599
+    },
+    {
+      "type": "node",
+      "id": 921190223,
+      "lat": 44.5028689,
+      "lon": 11.278285
+    },
+    {
+      "type": "node",
+      "id": 921190224,
+      "lat": 44.5048933,
+      "lon": 11.2812815
+    },
+    {
+      "type": "node",
+      "id": 921197984,
+      "lat": 44.5025416,
+      "lon": 11.3074581
+    },
+    {
+      "type": "node",
+      "id": 921197991,
+      "lat": 44.5036053,
+      "lon": 11.2997526
+    },
+    {
+      "type": "node",
+      "id": 921197999,
+      "lat": 44.5071275,
+      "lon": 11.3047194
+    },
+    {
+      "type": "node",
+      "id": 921198062,
+      "lat": 44.5005491,
+      "lon": 11.2776926
+    },
+    {
+      "type": "node",
+      "id": 963606111,
+      "lat": 44.512895,
+      "lon": 11.3867802
+    },
+    {
+      "type": "node",
+      "id": 1016606770,
+      "lat": 44.519844,
+      "lon": 11.3999879
+    },
+    {
+      "type": "node",
+      "id": 1023651779,
+      "lat": 44.496319,
+      "lon": 11.294758
+    },
+    {
+      "type": "node",
+      "id": 1101734578,
+      "lat": 44.5216263,
+      "lon": 11.4244164
+    },
+    {
+      "type": "node",
+      "id": 1131127772,
+      "lat": 44.4747367,
+      "lon": 11.3799904
+    },
+    {
+      "type": "node",
+      "id": 1131460598,
+      "lat": 44.4890211,
+      "lon": 11.3832648
+    },
+    {
+      "type": "node",
+      "id": 1132132889,
+      "lat": 44.494015,
+      "lon": 11.3910751
+    },
+    {
+      "type": "node",
+      "id": 1132494457,
+      "lat": 44.4825728,
+      "lon": 11.3885388
+    },
+    {
+      "type": "node",
+      "id": 1133044347,
+      "lat": 44.4805867,
+      "lon": 11.3444687
+    },
+    {
+      "type": "node",
+      "id": 1134545216,
+      "lat": 44.4518806,
+      "lon": 11.3634379
+    },
+    {
+      "type": "node",
+      "id": 1137774406,
+      "lat": 44.4975857,
+      "lon": 11.4162137
+    },
+    {
+      "type": "node",
+      "id": 1139476567,
+      "lat": 44.5257723,
+      "lon": 11.4182321
+    },
+    {
+      "type": "node",
+      "id": 1139838049,
+      "lat": 44.4626277,
+      "lon": 11.3707846
+    },
+    {
+      "type": "node",
+      "id": 1145692893,
+      "lat": 44.5048103,
+      "lon": 11.3955526
+    },
+    {
+      "type": "node",
+      "id": 1170364476,
+      "lat": 44.4827028,
+      "lon": 11.3488649
+    },
+    {
+      "type": "node",
+      "id": 1170364484,
+      "lat": 44.4807647,
+      "lon": 11.3515456
+    },
+    {
+      "type": "node",
+      "id": 1213453885,
+      "lat": 44.462996,
+      "lon": 11.3754637
+    },
+    {
+      "type": "node",
+      "id": 1215905813,
+      "lat": 44.4605348,
+      "lon": 11.3469133
+    },
+    {
+      "type": "node",
+      "id": 1246187179,
+      "lat": 44.5116092,
+      "lon": 11.2909958
+    },
+    {
+      "type": "node",
+      "id": 1247629321,
+      "lat": 44.4931854,
+      "lon": 11.2996229
+    },
+    {
+      "type": "node",
+      "id": 1314033630,
+      "lat": 44.5370481,
+      "lon": 11.3608905
+    },
+    {
+      "type": "node",
+      "id": 1334457527,
+      "lat": 44.49122,
+      "lon": 11.3896819
+    },
+    {
+      "type": "node",
+      "id": 1358296195,
+      "lat": 44.504123,
+      "lon": 11.3689917
+    },
+    {
+      "type": "node",
+      "id": 1358296254,
+      "lat": 44.5103963,
+      "lon": 11.359505
+    },
+    {
+      "type": "node",
+      "id": 1363278482,
+      "lat": 44.5290188,
+      "lon": 11.4201053
+    },
+    {
+      "type": "node",
+      "id": 1366513688,
+      "lat": 44.4537124,
+      "lon": 11.3662346
+    },
+    {
+      "type": "node",
+      "id": 1510325525,
+      "lat": 44.4945107,
+      "lon": 11.3976165
+    },
+    {
+      "type": "node",
+      "id": 1531568949,
+      "lat": 44.4970814,
+      "lon": 11.4131049
+    },
+    {
+      "type": "node",
+      "id": 1617740407,
+      "lat": 44.5213262,
+      "lon": 11.3626521
+    },
+    {
+      "type": "node",
+      "id": 1618738193,
+      "lat": 44.4968343,
+      "lon": 11.3340191
+    },
+    {
+      "type": "node",
+      "id": 1618802033,
+      "lat": 44.508243,
+      "lon": 11.3517396
+    },
+    {
+      "type": "node",
+      "id": 1629526771,
+      "lat": 44.5339357,
+      "lon": 11.3544144
+    },
+    {
+      "type": "node",
+      "id": 1629526772,
+      "lat": 44.5341643,
+      "lon": 11.3586049
+    },
+    {
+      "type": "node",
+      "id": 1629872111,
+      "lat": 44.5143944,
+      "lon": 11.3081619
+    },
+    {
+      "type": "node",
+      "id": 1629872408,
+      "lat": 44.5159965,
+      "lon": 11.3208996
+    },
+    {
+      "type": "node",
+      "id": 1629872809,
+      "lat": 44.5214817,
+      "lon": 11.3215508
+    },
+    {
+      "type": "node",
+      "id": 1630598428,
+      "lat": 44.5080134,
+      "lon": 11.310525
+    },
+    {
+      "type": "node",
+      "id": 1631041306,
+      "lat": 44.5132314,
+      "lon": 11.4074313
+    },
+    {
+      "type": "node",
+      "id": 1642507094,
+      "lat": 44.5217144,
+      "lon": 11.4045759
+    },
+    {
+      "type": "node",
+      "id": 1668948848,
+      "lat": 44.5475908,
+      "lon": 11.368574
+    },
+    {
+      "type": "node",
+      "id": 1689426695,
+      "lat": 44.5305468,
+      "lon": 11.3792889
+    },
+    {
+      "type": "node",
+      "id": 1690224658,
+      "lat": 44.5295841,
+      "lon": 11.3599506
+    },
+    {
+      "type": "node",
+      "id": 1694666351,
+      "lat": 44.5190337,
+      "lon": 11.263418
+    },
+    {
+      "type": "node",
+      "id": 1703139072,
+      "lat": 44.5451624,
+      "lon": 11.3773841
+    },
+    {
+      "type": "node",
+      "id": 1704100485,
+      "lat": 44.5161423,
+      "lon": 11.4254397
+    },
+    {
+      "type": "node",
+      "id": 1725394226,
+      "lat": 44.4422214,
+      "lon": 11.3039988
+    },
+    {
+      "type": "node",
+      "id": 1742046330,
+      "lat": 44.5141881,
+      "lon": 11.3383261
+    },
+    {
+      "type": "node",
+      "id": 1784608887,
+      "lat": 44.5086169,
+      "lon": 11.2977983,
+      "tags": {
+        "traffic_calming": "table"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1825391434,
+      "lat": 44.5048359,
+      "lon": 11.3114595
+    },
+    {
+      "type": "node",
+      "id": 1825768625,
+      "lat": 44.5246161,
+      "lon": 11.2545281
+    },
+    {
+      "type": "node",
+      "id": 1826002965,
+      "lat": 44.4936157,
+      "lon": 11.380314
+    },
+    {
+      "type": "node",
+      "id": 1926186270,
+      "lat": 44.4924011,
+      "lon": 11.2602064
+    },
+    {
+      "type": "node",
+      "id": 2038149550,
+      "lat": 44.4839294,
+      "lon": 11.3946909
+    },
+    {
+      "type": "node",
+      "id": 2099883362,
+      "lat": 44.5427612,
+      "lon": 11.3445013
+    },
+    {
+      "type": "node",
+      "id": 2101596963,
+      "lat": 44.5372855,
+      "lon": 11.3169595
+    },
+    {
+      "type": "node",
+      "id": 2101615967,
+      "lat": 44.5448992,
+      "lon": 11.320455,
+      "tags": {
+        "highway": "traffic_signals",
+        "traffic_signals": "traffic_lights",
+        "traffic_signals:direction": "both"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2101631639,
+      "lat": 44.535501,
+      "lon": 11.3650519
+    },
+    {
+      "type": "node",
+      "id": 2119904477,
+      "lat": 44.498709,
+      "lon": 11.3099543
+    },
+    {
+      "type": "node",
+      "id": 2135921286,
+      "lat": 44.5343676,
+      "lon": 11.3405649
+    },
+    {
+      "type": "node",
+      "id": 2138714586,
+      "lat": 44.523509,
+      "lon": 11.2574676
+    },
+    {
+      "type": "node",
+      "id": 2156600955,
+      "lat": 44.4995701,
+      "lon": 11.2902892
+    },
+    {
+      "type": "node",
+      "id": 2158181788,
+      "lat": 44.5166209,
+      "lon": 11.2932679
+    },
+    {
+      "type": "node",
+      "id": 2168770839,
+      "lat": 44.5269086,
+      "lon": 11.4012646
+    },
+    {
+      "type": "node",
+      "id": 2168785116,
+      "lat": 44.5316017,
+      "lon": 11.3870167
+    },
+    {
+      "type": "node",
+      "id": 2211360017,
+      "lat": 44.5400882,
+      "lon": 11.3713822
+    },
+    {
+      "type": "node",
+      "id": 2371302255,
+      "lat": 44.528089,
+      "lon": 11.3158625
+    },
+    {
+      "type": "node",
+      "id": 2391806093,
+      "lat": 44.4718273,
+      "lon": 11.3423866
+    },
+    {
+      "type": "node",
+      "id": 2476925730,
+      "lat": 44.5062391,
+      "lon": 11.3167708
+    },
+    {
+      "type": "node",
+      "id": 2488808074,
+      "lat": 44.5332248,
+      "lon": 11.3153384
+    },
+    {
+      "type": "node",
+      "id": 2562007734,
+      "lat": 44.5067599,
+      "lon": 11.4276541
+    },
+    {
+      "type": "node",
+      "id": 2597441060,
+      "lat": 44.4630123,
+      "lon": 11.3988982
+    },
+    {
+      "type": "node",
+      "id": 2614978597,
+      "lat": 44.4842435,
+      "lon": 11.421528
+    },
+    {
+      "type": "node",
+      "id": 2630647702,
+      "lat": 44.4919469,
+      "lon": 11.3998638
+    },
+    {
+      "type": "node",
+      "id": 2650138479,
+      "lat": 44.4710234,
+      "lon": 11.3948409
+    },
+    {
+      "type": "node",
+      "id": 2728718998,
+      "lat": 44.5058188,
+      "lon": 11.3326508
+    },
+    {
+      "type": "node",
+      "id": 3442652214,
+      "lat": 44.476539,
+      "lon": 11.3728948
+    },
+    {
+      "type": "node",
+      "id": 3710900567,
+      "lat": 44.4607243,
+      "lon": 11.299872
+    },
+    {
+      "type": "node",
+      "id": 3846541989,
+      "lat": 44.5152193,
+      "lon": 11.304274
+    },
+    {
+      "type": "node",
+      "id": 3849307792,
+      "lat": 44.4736299,
+      "lon": 11.4002852
+    },
+    {
+      "type": "node",
+      "id": 3854006242,
+      "lat": 44.5083175,
+      "lon": 11.3357744
+    },
+    {
+      "type": "node",
+      "id": 4396878748,
+      "lat": 44.4542414,
+      "lon": 11.2978038
+    },
+    {
+      "type": "node",
+      "id": 4396878786,
+      "lat": 44.448825,
+      "lon": 11.2964982
+    },
+    {
+      "type": "node",
+      "id": 4523145489,
+      "lat": 44.5139701,
+      "lon": 11.262183,
+      "tags": {
+        "highway": "mini_roundabout"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4635983762,
+      "lat": 44.4948764,
+      "lon": 11.3602876
+    },
+    {
+      "type": "node",
+      "id": 4665009863,
+      "lat": 44.5461961,
+      "lon": 11.3625618
+    },
+    {
+      "type": "node",
+      "id": 5049724199,
+      "lat": 44.4961375,
+      "lon": 11.2979471
+    },
+    {
+      "type": "node",
+      "id": 5334966517,
+      "lat": 44.4541769,
+      "lon": 11.3717417
+    },
+    {
+      "type": "node",
+      "id": 5609774786,
+      "lat": 44.4651053,
+      "lon": 11.3600874
+    },
+    {
+      "type": "node",
+      "id": 5806163810,
+      "lat": 44.5349615,
+      "lon": 11.2754739
+    },
+    {
+      "type": "node",
+      "id": 5806180981,
+      "lat": 44.5360909,
+      "lon": 11.2712174
+    },
+    {
+      "type": "node",
+      "id": 5859137638,
+      "lat": 44.5390776,
+      "lon": 11.3438583
+    },
+    {
+      "type": "node",
+      "id": 5869424910,
+      "lat": 44.531872,
+      "lon": 11.2385839
+    },
+    {
+      "type": "node",
+      "id": 6143365843,
+      "lat": 44.4614963,
+      "lon": 11.3436325
+    },
+    {
+      "type": "node",
+      "id": 6344599259,
+      "lat": 44.5531866,
+      "lon": 11.3442305
+    },
+    {
+      "type": "node",
+      "id": 6391897901,
+      "lat": 44.525502,
+      "lon": 11.2423686
+    },
+    {
+      "type": "node",
+      "id": 6417870323,
+      "lat": 44.5114756,
+      "lon": 11.2733553
+    },
+    {
+      "type": "node",
+      "id": 6434264985,
+      "lat": 44.4725033,
+      "lon": 11.3604287
+    },
+    {
+      "type": "node",
+      "id": 6862614752,
+      "lat": 44.5157829,
+      "lon": 11.3594835
+    },
+    {
+      "type": "node",
+      "id": 8115030813,
+      "lat": 44.5119104,
+      "lon": 11.3084796
+    },
+    {
+      "type": "node",
+      "id": 8120717033,
+      "lat": 44.493222,
+      "lon": 11.3879632
+    },
+    {
+      "type": "node",
+      "id": 9927834692,
+      "lat": 44.48605,
+      "lon": 11.4089105
+    },
+    {
+      "type": "node",
+      "id": 10184594555,
+      "lat": 44.5051545,
+      "lon": 11.2526479
+    },
+    {
+      "type": "node",
+      "id": 10846634268,
+      "lat": 44.5223198,
+      "lon": 11.2610772
+    },
+    {
+      "type": "node",
+      "id": 10876591917,
+      "lat": 44.4920736,
+      "lon": 11.3126824
+    },
+    {
+      "type": "node",
+      "id": 10951678060,
+      "lat": 44.52818,
+      "lon": 11.3465466
+    },
+    {
+      "type": "node",
+      "id": 11041959757,
+      "lat": 44.5294993,
+      "lon": 11.2405077
+    },
+    {
+      "type": "node",
+      "id": 11406209348,
+      "lat": 44.5272322,
+      "lon": 11.3940553
+    },
+    {
+      "type": "node",
+      "id": 11408286319,
+      "lat": 44.5273841,
+      "lon": 11.3891411
+    },
+    {
+      "type": "node",
+      "id": 11467287984,
+      "lat": 44.5140567,
+      "lon": 11.2919873
+    },
+    {
+      "type": "node",
+      "id": 11854170723,
+      "lat": 44.516283,
+      "lon": 11.265108
+    },
+    {
+      "type": "node",
+      "id": 11940583147,
+      "lat": 44.494068,
+      "lon": 11.3945013
+    },
+    {
+      "type": "node",
+      "id": 11950046229,
+      "lat": 44.4224384,
+      "lon": 11.3155005
+    },
+    {
+      "type": "node",
+      "id": 11950046249,
+      "lat": 44.4254871,
+      "lon": 11.3156538
+    },
+    {
+      "type": "node",
+      "id": 12012805911,
+      "lat": 44.4974149,
+      "lon": 11.2558176
+    },
+    {
+      "type": "node",
+      "id": 12012805919,
+      "lat": 44.497182,
+      "lon": 11.2520198
+    },
+    {
+      "type": "node",
+      "id": 12012805927,
+      "lat": 44.4966095,
+      "lon": 11.2485989
+    },
+    {
+      "type": "node",
+      "id": 12082362413,
+      "lat": 44.4714939,
+      "lon": 11.3372253
+    },
+    {
+      "type": "node",
+      "id": 12082362418,
+      "lat": 44.4589766,
+      "lon": 11.3227047
+    },
+    {
+      "type": "node",
+      "id": 12082362424,
+      "lat": 44.4566263,
+      "lon": 11.3203335
+    },
+    {
+      "type": "node",
+      "id": 12532868295,
+      "lat": 44.5272921,
+      "lon": 11.3017743
+    },
+    {
+      "type": "node",
+      "id": 12966307751,
+      "lat": 44.5348485,
+      "lon": 11.4012625
+    },
+    {
+      "type": "node",
+      "id": 12966307790,
+      "lat": 44.5362297,
+      "lon": 11.3911487
+    },
+    {
+      "type": "node",
+      "id": 12966317318,
+      "lat": 44.5413518,
+      "lon": 11.3943686
+    }
+  ]
+}
