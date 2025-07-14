@@ -68,7 +68,7 @@ export default {
       } catch (err) {
         console.error(err);
       } finally {
-        this.loading = false;
+        // this.loading = false;
       }
     },
     // Initialization of OpenStreetMap's map
@@ -540,7 +540,7 @@ export default {
   <div class="map">
     <div class="map-container">
       <div v-if="loading" class="loading-overlay">
-        <img src="../loading-spinner.svg" alt="Loading..." class="loading-gif" />
+        <div class="spinner"></div>
       </div>
       <div id="map"></div>
       <div v-if="gridType === 'gray'" class="map-grid-overlay map-grid-overlay--gray"></div>
@@ -968,6 +968,21 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  .spinner {
+    border: 0.25rem solid #f3f3f3;
+    border-top: 0.25rem solid #007bff;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 }
 
 .loading-gif {
