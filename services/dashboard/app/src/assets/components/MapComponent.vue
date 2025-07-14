@@ -538,18 +538,6 @@ export default {
 
 <template>
   <div class="map">
-    <!--
-    <div
-      v-for="(marker, index) in data.sensorLocations"
-      :key="index"
-      class="map-marker"
-      @click="$emit('marker-click', marker)"
-    ></div>
-    <div v-if="data.sensorLocations.length === 0" class="no-data">
-      No markers to display
-    </div>
-    -->
-
     <div class="map-container">
       <div v-if="loading" class="loading-overlay">
         <img src="../loading-spinner.svg" alt="Loading..." class="loading-gif" />
