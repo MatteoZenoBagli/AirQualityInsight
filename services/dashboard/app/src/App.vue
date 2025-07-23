@@ -56,14 +56,14 @@
 
       <div class="dashboard-component sensors-component-container">
         <div class="component-header">
-          <h2>Registered sensors: {{ this.sensorData.length }}</h2>
+          <h2>Registered sensors: {{ this.sensorData.size }}</h2>
           <div>
             <button @click="refreshSensors" class="btn">
               <i class="fas fa-sync-alt"></i> Refresh
             </button>
           </div>
         </div>
-        <TableComponent ref="sensorsComponent" :data="sensorData" :columns="sensorColumns"
+        <TableComponent ref="sensorsComponent" :data="sensorData.values()" :columns="sensorColumns"
           @row-click="handleSensorRowClick" />
       </div>
     </div>
@@ -155,16 +155,13 @@ export default {
       return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
     },
     handleMarkerClick(marker) {
-      const sensor = this.sensorData.find(s =>
-        s.lat === marker.lat && s.lng === marker.lng
-      );
-      if (!sensor) return;
-      this.centerMapOnSensor(sensor);
-      this.addInfo(`Selected sensor from map: ${sensor.id}`);
+      if (!marker) return;
+      this.centerMapOnSensor(marker);
+      this.addInfo(`Selected sensor from map: ${marker.id}`);
     },
     handleMeasurementRowClick(row) {
       // Center map on the sensor that sent this measurement
-      const sensor = this.sensorData.find(s => s.id === row.sensor_id);
+      const sensor = this.sensorData.get(row.sensor_id);
       if (!sensor) return this.addWarning(`Sensor ${row.sensor_id} not found in registered sensors`);
       this.centerMapOnSensor(sensor);
       this.addInfo(`Selected sensor: ${row.sensor_id}`);
@@ -182,11 +179,8 @@ export default {
       this.$refs.logComponent?.clearLog();
     },
     handleSensorsLoaded(sensors) {
-      this.sensorData = sensors.map(sensor => ({
-        ...sensor,
-        status: 'Active'
-      }));
-      this.addInfo(`Loaded ${sensors.length} sensors`);
+      this.sensorData = sensors;
+      this.addInfo(`Loaded ${sensors.size} sensors`);
     },
     refreshSensors() {
       this.$refs.mapComponent?.refreshSensorData();

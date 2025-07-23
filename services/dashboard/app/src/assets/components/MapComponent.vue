@@ -198,23 +198,22 @@ export default {
       this.layers[layer] = [];
     },
     registerNewMeasurement(data) {
-      if (!this.data.sensorLocations?.length) return;
+      if (!this.data.sensorLocations?.size) return;
 
-      for (const sensor of this.data.sensorLocations)
-        if (data.sensor_id === sensor.id) {
-          this.highlightSensor(sensor);
+      const sensor = this.data.sensorLocations.get(data.sensor_id);
+      if (!sensor) return;
 
-          for (const measurement of this.measurements) {
-            const intensity = this.getIntensity(data[measurement], measurement);
-            const latLng = [sensor.lat, sensor.lng, intensity];
-            this.heatLatLng[measurement].unshift(latLng);
-            if (this.heatLatLng[measurement].length > this.maxHeatLatLng)
-              this.heatLatLng[measurement] = this.heatLatLng[measurement].slice(0, this.maxHeatLatLng);
-          }
-          this.updateHeatmap();
-          break;
-        }
-    },
+      this.highlightSensor(sensor);
+
+      for (const measurement of this.measurements) {
+        const intensity = this.getIntensity(data[measurement], measurement);
+        const latLng = [sensor.lat, sensor.lng, intensity];
+        this.heatLatLng[measurement].unshift(latLng);
+        if (this.heatLatLng[measurement].length > this.maxHeatLatLng)
+          this.heatLatLng[measurement] = this.heatLatLng[measurement].slice(0, this.maxHeatLatLng);
+      }
+      this.updateHeatmap();
+  },
     updateHeatmap() {
       this.heatLayer.setLatLngs(this.heatLatLng[this.selectedMeasurement]);
     },
@@ -236,18 +235,50 @@ export default {
         if (!response)
           throw new Error(response || 'API request failed');
 
-        const sensors = response.map(sensor => ({
-          id: sensor.sensor_id,
-          lat: sensor.location.coordinates[1], // latitude
-          lng: sensor.location.coordinates[0], // longitude
-          desc: sensor.sensor_id, //sensor.name,
-          active: sensor.active,
-          ip: sensor.ip,
-          last_seen: sensor.last_seen
-        }));
+        const sensors = new Map(
+          response.map(sensor => [
+            sensor.sensor_id,
+            {
+              id: sensor.sensor_id,
+              lat: sensor.location.coordinates[1], // latitude
+              lng: sensor.location.coordinates[0], // longitude
+              desc: sensor.sensor_id, //sensor.name,
+              active: sensor.active,
+              status: sensor.active ? 'Active' : 'Inactive',
+              ip: sensor.ip,
+              last_seen: sensor.last_seen,
+              measurements: {
+                'pm25': {
+                  stats: {
+                    avg: null,
+                  },
+                  data: []
+                },
+                'pm10': {
+                  stats: {
+                    avg: null,
+                  },
+                  data: []
+                },
+                'voc': {
+                  stats: {
+                    avg: null,
+                  },
+                  data: []
+                },
+                'co2': {
+                  stats: {
+                    avg: null,
+                  },
+                  data: []
+                }
+              }
+            }
+          ]
+        ));
 
         this.$emit('sensors-loaded', sensors);
-        console.log(`Loaded ${sensors.length} sensors from API`);
+        console.log(`Loaded ${sensors.size} sensors from API`);
         return sensors;
       } catch (error) {
         console.error('Unable to fetch sensors from API:', error);
@@ -290,7 +321,7 @@ export default {
       });
 
       if ("sensorLocations" === layer) {
-        for (const sensorLocation of this.data[layer]) {
+        for (const sensorLocation of this.data[layer].values()) {
           const marker = L.marker([
             sensorLocation.lat,
             sensorLocation.lng,
@@ -557,7 +588,7 @@ export default {
         </div>
         <pre>
           <span>Markers:</span>
-          <span>{{ this.data.sensorLocations?.length }}</span>
+          <span>{{ this.data.sensorLocations?.size }}</span>
         </pre>
         <hr>
         <pre>
