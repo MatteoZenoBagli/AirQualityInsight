@@ -12,7 +12,24 @@ export default {
       center: ref({ lng: '11.3426000', lat: '44.4939000' }), // Piazza Maggiore, Bologna
       zoom: ref(13),
       map: null,
-      measurements: ['pm25', 'pm10', 'voc', 'co2'],
+      measurementTypes: [
+        'pm25',
+        'pm10',
+        'voc',
+        'co2',
+        'temperature',
+        'humidity',
+        'pressure'
+      ],
+      measurementLabels: {
+        pm25: 'PM2.5',
+        pm10: 'PM10',
+        voc: 'VOC',
+        co2: 'CO2',
+        temperature: 'Temperature',
+        humidity: 'Humidity',
+        pressure: 'Pressure'
+      },
       heatLayer: null,
       selectedMeasurement: 'pm25',
       maxHeatLatLng: 250,
@@ -46,13 +63,19 @@ export default {
         pm25: { good: 15, moderate: 35, poor: 55 },
         pm10: { good: 25, moderate: 50, poor: 90 },
         voc: { good: 1, moderate: 3, poor: 5 },
-        co2: { good: 400, moderate: 800, poor: 1200 }
+        co2: { good: 400, moderate: 800, poor: 1200 },
+        temperature: { good: [18, 24], moderate: [15, 28] },
+        humidity: { good: [40, 60], moderate: [30, 70] },
+        pressure: { good: [1013, 1023], moderate: [1005, 1030] }
       },
       heatLatLng: {
         pm25: [],
         pm10: [],
         voc: [],
         co2: [],
+        temperature: [],
+        humidity: [],
+        pressure: [],
       }
     };
   },
@@ -205,15 +228,23 @@ export default {
 
       this.highlightSensor(sensor);
 
-      for (const measurement of this.measurements) {
-        const intensity = this.getIntensity(data[measurement], measurement);
+      for (const measurementType of this.measurementTypes) {
+        const intensity = this.getIntensity(data[measurementType], measurementType);
         const latLng = [sensor.lat, sensor.lng, intensity];
-        this.heatLatLng[measurement].unshift(latLng);
-        if (this.heatLatLng[measurement].length > this.maxHeatLatLng)
-          this.heatLatLng[measurement] = this.heatLatLng[measurement].slice(0, this.maxHeatLatLng);
+
+        sensor.measurements[measurementType].data.unshift(latLng);
+        if (sensor.measurements[measurementType].data.length > this.maxHeatLatLng)
+          sensor.measurements[measurementType].data = sensor.measurements[measurementType].data.slice(0, this.maxHeatLatLng);
+
+        const sum = sensor.measurements[measurementType].data.reduce((acc, item) => acc + parseFloat(item || 0), 0);
+        sensor.measurements[measurementType].avg = (sum / sensor.measurements[measurementType].data.length).toFixed(2);
+
+        this.heatLatLng[measurementType].unshift(latLng);
+        if (this.heatLatLng[measurementType].length > this.maxHeatLatLng)
+          this.heatLatLng[measurementType] = this.heatLatLng[measurementType].slice(0, this.maxHeatLatLng);
       }
       this.updateHeatmap();
-  },
+    },
     updateHeatmap() {
       this.heatLayer.setLatLngs(this.heatLatLng[this.selectedMeasurement]);
     },
@@ -247,35 +278,15 @@ export default {
               status: sensor.active ? 'Active' : 'Inactive',
               ip: sensor.ip,
               last_seen: sensor.last_seen,
-              measurements: {
-                'pm25': {
-                  stats: {
-                    avg: null,
-                  },
-                  data: []
-                },
-                'pm10': {
-                  stats: {
-                    avg: null,
-                  },
-                  data: []
-                },
-                'voc': {
-                  stats: {
-                    avg: null,
-                  },
-                  data: []
-                },
-                'co2': {
-                  stats: {
-                    avg: null,
-                  },
-                  data: []
-                }
-              }
+              measurements: Object.fromEntries(
+                this.measurementTypes.map(type => [
+                  type,
+                  { stats: { avg: null }, data: [] }
+                ])
+              )
             }
           ]
-        ));
+          ));
 
         this.$emit('sensors-loaded', sensors);
         console.log(`Loaded ${sensors.size} sensors from API`);
@@ -543,7 +554,7 @@ export default {
     },
     clearMeasurements() {
       const count = this.heatLatLng[this.selectedMeasurement].length;
-      for (const measurement of this.measurements) this.heatLatLng[measurement] = [];
+      for (const measurementType of this.measurementTypes) this.heatLatLng[measurementType] = [];
       this.updateHeatmap();
       this.$emit('measurements-cleared', count);
     }
@@ -615,23 +626,16 @@ export default {
         <div class="measurements-controls">
           <label><strong>Measurement:</strong></label>
           <select v-model="selectedMeasurement" @change="updateHeatmap">
-            <option value="pm25">PM2.5</option>
-            <option value="pm10">PM10</option>
-            <option value="voc">VOC</option>
-            <option value="co2">CO2</option>
+            <option v-for="type in this.measurementTypes" :key="type" :value="type">
+              {{ this.measurementLabels[type] }}
+            </option>
           </select>
         </div>
         <p>Limit of measurements:</p>
         <div class="measurements-controls">
-          <input
-            id="parameter-slider"
-            type="range"
-            v-model="this.maxHeatLatLng"
-            :min="50"
-            :max="1000"
-            step="10"
-          />
-          <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng }}</span>
+          <input id="parameter-slider" type="range" v-model="this.maxHeatLatLng" :min="50" :max="1000" step="10" />
+          <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng
+          }}</span>
         </div>
         <div class="measurements-controls">
           <p>Current measurements:</p>
@@ -872,7 +876,7 @@ export default {
     margin: 0.5rem 0;
   }
 
-  .measurements-controls + p {
+  .measurements-controls+p {
     margin-top: 1rem;
   }
 
@@ -1011,8 +1015,13 @@ export default {
   }
 
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
