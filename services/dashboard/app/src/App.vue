@@ -286,6 +286,12 @@ body {
   grid-area: sensors;
 }
 
+.table-component-container tbody tr,
+.sensors-component-container tbody tr {
+  font-family: monospace;
+  font-size: 14px;
+}
+
 .component-header {
   display: flex;
   justify-content: space-between;
