@@ -758,7 +758,7 @@ export default {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 999;
+  z-index: 9999;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
