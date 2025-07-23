@@ -129,9 +129,21 @@ export default {
         message.timestamp = this.formatTimestamp(
           message.timestamp || new Date()
         );
-        this.measurementData.unshift(message);
         this.$refs.mapComponent?.registerNewMeasurement(message);
 
+        const formattedData = {
+          sensor_id: message.sensor_id,
+          timestamp: message.timestamp,
+          temperature: parseFloat(message.temperature).toFixed(2),
+          humidity: parseFloat(message.humidity).toFixed(2),
+          pressure: parseFloat(message.pressure).toFixed(2),
+          pm25: parseFloat(message.pm25).toFixed(2),
+          pm10: parseFloat(message.pm10).toFixed(2),
+          voc: parseFloat(message.voc).toFixed(2),
+          co2: parseFloat(message.co2).toFixed(2)
+        };
+
+        this.measurementData.unshift(formattedData);
         if (this.measurementData.length > this.maxMessages)
           this.measurementData = this.measurementData.slice(0, this.maxMessages);
       });
