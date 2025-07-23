@@ -230,20 +230,32 @@ export default {
 
       for (const measurementType of this.measurementTypes) {
         const intensity = this.getIntensity(data[measurementType], measurementType);
+
+        const measurement = sensor.measurements[measurementType];
+        measurement.data.unshift(intensity);
+        if (measurement.data.length > this.maxHeatLatLng)
+          measurement.data = measurement.data.slice(0, this.maxHeatLatLng);
+
+        measurement.stats = this.calculateStats(measurement.data);
+
         const latLng = [sensor.lat, sensor.lng, intensity];
-
-        sensor.measurements[measurementType].data.unshift(latLng);
-        if (sensor.measurements[measurementType].data.length > this.maxHeatLatLng)
-          sensor.measurements[measurementType].data = sensor.measurements[measurementType].data.slice(0, this.maxHeatLatLng);
-
-        const sum = sensor.measurements[measurementType].data.reduce((acc, item) => acc + parseFloat(item || 0), 0);
-        sensor.measurements[measurementType].avg = (sum / sensor.measurements[measurementType].data.length).toFixed(2);
-
         this.heatLatLng[measurementType].unshift(latLng);
         if (this.heatLatLng[measurementType].length > this.maxHeatLatLng)
           this.heatLatLng[measurementType] = this.heatLatLng[measurementType].slice(0, this.maxHeatLatLng);
       }
       this.updateHeatmap();
+    },
+    calculateStats(values) {
+      const sorted = [...values].sort((a, b) => a - b);
+      const mean = values.reduce((a, b) => a + b) / values.length;
+
+      return {
+        mean: mean.toFixed(2),
+        median: sorted[Math.floor(sorted.length / 2)],
+        min: Math.min(...values),
+        max: Math.max(...values),
+        range: Math.max(...values) - Math.min(...values)
+      };
     },
     updateHeatmap() {
       this.heatLayer.setLatLngs(this.heatLatLng[this.selectedMeasurement]);
@@ -281,7 +293,7 @@ export default {
               measurements: Object.fromEntries(
                 this.measurementTypes.map(type => [
                   type,
-                  { stats: { avg: null }, data: [] }
+                  { stats: null, data: [] }
                 ])
               )
             }
