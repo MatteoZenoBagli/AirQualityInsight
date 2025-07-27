@@ -139,7 +139,7 @@ export default {
           min: -15,
           max: 35,
           measurement_unit: '°C',
-          info: this.createInfoIcon('Measures ambient air temperature, typically expressed in degrees Celsius or Fahrenheit, indicating thermal conditions in the monitored environment.')
+          info: this.createInfoIcon('Measures ambient air temperature, expressed in degrees Celsius, indicating thermal conditions in the monitored environment.')
         },
         {
           measurement: 'Humidity',
@@ -153,7 +153,7 @@ export default {
           min: 980,
           max: 1020,
           measurement_unit: 'hPa',
-          info: this.createInfoIcon('Monitors atmospheric pressure, usually measured in hPa (hectopascals) or mmHg, indicating air pressure changes that can affect weather patterns.')
+          info: this.createInfoIcon('Monitors atmospheric pressure, usually measured in hPa (hectopascals), indicating air pressure changes that can affect weather patterns.')
         },
         {
           measurement: 'PM2.5',
