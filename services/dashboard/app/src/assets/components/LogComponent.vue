@@ -79,15 +79,17 @@ export default {
 <style scoped lang="scss">
 .log {
   &-container {
-    height: 100%;
     overflow-y: auto;
   }
 
   &-entry {
     padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
     display: flex;
     align-items: flex-start;
+
+    &:not(:last-of-type)  {
+      border-bottom: 1px solid #eee;
+    }
 
     &.empty {
       color: #666;
