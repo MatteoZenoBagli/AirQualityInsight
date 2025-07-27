@@ -64,9 +64,9 @@ export default {
         pm10: { good: 25, moderate: 50, poor: 90 },
         voc: { good: 1, moderate: 3, poor: 5 },
         co2: { good: 400, moderate: 800, poor: 1200 },
-        temperature: { good: [18, 24], moderate: [15, 28] },
-        humidity: { good: [40, 60], moderate: [30, 70] },
-        pressure: { good: [1013, 1023], moderate: [1005, 1030] }
+        temperature: { good: [18, 24], moderate: [15, 28], poor: [10, 35] },
+        humidity: { good: [40, 60], moderate: [30, 70], poor: [20, 80] },
+        pressure: { good: [1013, 1023], moderate: [1005, 1030], poor: [995, 1040] }
       },
       heatLatLng: {
         pm25: [],
@@ -186,14 +186,23 @@ export default {
       }).addTo(this.map);
     },
     getIntensity(value, parameter) {
-      const threshold = this.thresholds[parameter]
+      const threshold = this.thresholds[parameter];
 
-      if (value <= threshold.good) return 0.2
-      if (value <= threshold.moderate) return 0.4
-      if (value <= threshold.poor) return 0.7
-      return 1.0
+      if (Array.isArray(threshold.good)){
+        const [minGood, maxGood] = threshold.good;
+        const [minModerate, maxModerate] = threshold.moderate;
+        const [minPoor, maxPoor] = threshold.poor;
+        if (minGood <= value && maxGood >= value) return 0.2;
+        if (minModerate <= value && maxModerate >= value) return 0.4;
+        if (minPoor <= value && maxPoor >= value) return 0.7;
+        return 1.0;
+      }
+
+      if (value <= threshold.good) return 0.2;
+      if (value <= threshold.moderate) return 0.4;
+      if (value <= threshold.poor) return 0.7;
+      return 1.0;
     },
-
     toggleLayer(layer, hideOrEvent = false) {
       const hide = hideOrEvent instanceof Event ? false : hideOrEvent;
 
@@ -834,7 +843,7 @@ export default {
   &[aria-expanded="true"],
   &.pinned {
     background: white;
-    width: 15rem;
+    width: 18rem;
     height: auto;
 
     & * {
@@ -904,6 +913,14 @@ export default {
 
     select {
       padding: 0 0.25rem;
+    }
+  }
+
+  .measurements-controls {
+    gap: 1rem;
+
+    #parameter-slider {
+      width: 100%;
     }
   }
 }
