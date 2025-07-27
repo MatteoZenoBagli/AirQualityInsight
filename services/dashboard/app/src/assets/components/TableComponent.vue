@@ -71,6 +71,10 @@ td {
 }
 
 th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 2px solid #dee2e6;
   background-color: #f9f9f9;
   font-weight: 600;
 }
