@@ -14,10 +14,10 @@
           { measurement: 'VOC',         min : 0,    max: 3,     measurement_unit: 'ppm' },
           { measurement: 'CO2',         min : 400,  max: 2000,  measurement_unit: 'ppm' },
         ]" :columns="[
-          { key: 'measurement', label: 'Measurement' },
-          { key: 'min', label: 'Min' },
-          { key: 'max', label: 'Max' },
-          { key: 'measurement_unit', label: 'Measurement unit' },
+          { key: 'measurement',       label: 'Measurement' },
+          { key: 'min',               label: 'Min' },
+          { key: 'max',               label: 'Max' },
+          { key: 'measurement_unit',  label: 'Measurement unit' },
         ]"></TableComponent>
       </div>
 
@@ -326,6 +326,18 @@ body {
 .sensors-component-container tbody tr {
   font-family: monospace;
   font-size: 14px;
+}
+
+.info-component-container thead tr,
+.table-component-container thead tr,
+.sensors-component-container thead tr {
+  background-color: #f0f0f0;
+}
+
+.info-component-container tbody tr:nth-child(even),
+.table-component-container tbody tr:nth-child(even),
+.sensors-component-container tbody tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
 .component-header {
