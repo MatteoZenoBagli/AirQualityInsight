@@ -1,24 +1,50 @@
 <template>
   <div class="app">
-    <h1>Dashboard</h1>
+    <h1>AirQualityInsight - Dashboard</h1>
 
     <div class="dashboard">
       <div class="dashboard-component info-component-container">
-        <h2>Measurement ranges</h2>
-        <TableComponent ref="measurementComponent" :data="[
-          { measurement: 'Temperature', min : -15,  max: 35,    measurement_unit: '°C' },
-          { measurement: 'Humidity',    min : 30,   max: 100,   measurement_unit: '%' },
-          { measurement: 'Pressure',    min : 980,  max: 1020,  measurement_unit: 'hPa' },
-          { measurement: 'PM2.5',       min : 0,    max: 50,    measurement_unit: 'µg/m³' },
-          { measurement: 'PM10',        min : 0,    max: 100,   measurement_unit: 'µg/m³' },
-          { measurement: 'VOC',         min : 0,    max: 3,     measurement_unit: 'ppm' },
-          { measurement: 'CO2',         min : 400,  max: 2000,  measurement_unit: 'ppm' },
-        ]" :columns="[
-          { key: 'measurement',       label: 'Measurement' },
-          { key: 'min',               label: 'Min' },
-          { key: 'max',               label: 'Max' },
-          { key: 'measurement_unit',  label: 'Measurement unit' },
-        ]"></TableComponent>
+        <div class="description">
+          <h2>Description</h2>
+          <p>
+            Simulation project of a sensor system to monitor air quality,
+            with data sent to a server for real-time analysis and visualization.
+          </p>
+          <p>
+            The system simulates a network of sensors,
+            such as Raspberry Pi,
+            capable of measuring air quality.
+            These measurements will be sent to a server,
+            which will analyze them
+            and present the data in real-time on a dedicated dashboard.
+          </p>
+          <p>
+            The case study subject is the city of Bologna, the sensors are displaced into his boundaries.
+          </p>
+          <p class="project-link">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/MatteoZenoBagli/AirQualityInsight">GitHub's project page link</a>
+          </p>
+        </div>
+        <div class="measurement-ranges">
+          <h2>Measurement ranges</h2>
+          <TableComponent ref="measurementComponent" :data="infoMeasurementData" :columns="infoMeasurementColumns"></TableComponent>
+        </div>
+        <div class="how-to-use-it">
+          <h2>How to use it</h2>
+          <ul>
+            <li>The map displays a collection of sensors indicated by red pushpins.</li>
+            <li>Clicking on a sensor will show its name.</li>
+            <li>Collected live measurements are displayed in a table below the map, and clicking on a row will navigate to the corresponding sensor on the map.</li>
+            <li>The map shows collected measurements as a heatmap based on the selected measurement type.</li>
+            <li>You can choose from available options in the control panel.</li>
+            <li>The control panel opens by clicking the red pushpin in the top right corner of the map.</li>
+            <li>Opening the panel provides information such as the number of registered sensors and collected measurements.</li>
+            <li>You can select the measurement type to display and any layers to overlay.</li>
+            <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the map.</li>
+            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest ones following a FIFO (first in, first out) system.</li>
+          </ul>
+        </div>
       </div>
 
       <div class="dashboard-component map-component-container">
@@ -29,16 +55,13 @@
               <i class="fas fa-sync-alt"></i> Refresh
             </button>
             <button @click="handleActiveSensors" :class="['btn', { 'btn-danger': this.activeSensors }]">
-              <i :class="['fas', { 'fa-stop': this.activeSensors, 'fa-play': !this.activeSensors}]"></i> {{ this.activeSensors ? 'Stop' : 'Start' }}
+              <i :class="['fas', { 'fa-stop': this.activeSensors, 'fa-play': !this.activeSensors }]"></i> {{
+                this.activeSensors ? 'Stop' : 'Start' }}
             </button>
           </div>
         </div>
-        <MapComponent
-          ref="mapComponent"
-          @marker-click="handleMarkerClick"
-          @sensors-loaded="handleSensorsLoaded"
-          @measurements-cleared="handleMeasurementsCleared"
-        />
+        <MapComponent ref="mapComponent" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
+          @measurements-cleared="handleMeasurementsCleared" />
       </div>
 
       <div class="dashboard-component table-component-container">
@@ -58,10 +81,7 @@
         <div class="component-header">
           <h2>
             System Log
-            <i
-              class="fas fa-info-circle"
-              :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"
-            ></i>
+            <i class="fas fa-info-circle" :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"></i>
           </h2>
           <div>
             <button @click="clearLog" class="btn btn-danger">
@@ -106,6 +126,64 @@ export default {
     return {
       socket: null,
       maxMessages: 50,
+      infoMeasurementColumns: [
+        { key: 'measurement',       label: 'Measurement' },
+        { key: 'min',               label: 'Min',               center: true },
+        { key: 'max',               label: 'Max',               center: true },
+        { key: 'measurement_unit',  label: 'Measurement unit',  center: true,  },
+        { key: 'info',              label: 'Info',              center: true, html: true }
+      ],
+      infoMeasurementData: [
+        {
+          measurement: 'Temperature',
+          min: -15,
+          max: 35,
+          measurement_unit: '°C',
+          info: this.createInfoIcon('Measures ambient air temperature, typically expressed in degrees Celsius or Fahrenheit, indicating thermal conditions in the monitored environment.')
+        },
+        {
+          measurement: 'Humidity',
+          min: 30,
+          max: 100,
+          measurement_unit: '%',
+          info: this.createInfoIcon('Records relative humidity levels as a percentage, showing the amount of moisture present in the air compared to maximum capacity at current temperature.')
+        },
+        {
+          measurement: 'Pressure',
+          min: 980,
+          max: 1020,
+          measurement_unit: 'hPa',
+          info: this.createInfoIcon('Monitors atmospheric pressure, usually measured in hPa (hectopascals) or mmHg, indicating air pressure changes that can affect weather patterns.')
+        },
+        {
+          measurement: 'PM2.5',
+          min: 0,
+          max: 50,
+          measurement_unit: 'µg/m³',
+          info: this.createInfoIcon('Detects fine particulate matter with diameter ≤2.5 micrometers, measuring dangerous airborne particles that can penetrate deep into lungs and bloodstream.')
+        },
+        {
+          measurement: 'PM10',
+          min: 0,
+          max: 100,
+          measurement_unit: 'µg/m³',
+          info: this.createInfoIcon('Measures coarse particulate matter with diameter ≤10 micrometers, monitoring larger airborne particles that can cause respiratory irritation.')
+        },
+        {
+          measurement: 'VOC',
+          min: 0,
+          max: 3,
+          measurement_unit: 'ppm',
+          info: this.createInfoIcon('Volatile Organic Compounds detection, measuring gaseous chemicals from various sources that can affect indoor air quality and human health.')
+        },
+        {
+          measurement: 'CO2',
+          min: 400,
+          max: 2000,
+          measurement_unit: 'ppm',
+          info: this.createInfoIcon('Carbon dioxide concentration measurement in parts per million (ppm), indicating air quality and ventilation effectiveness in enclosed spaces.')
+          },
+      ],
       measurementColumns: [
         { key: "sensor_id", label: "Sensor ID" },
         { key: "timestamp", label: "Timestamp" },
@@ -239,6 +317,9 @@ export default {
     handleSensorRowClick(row) {
       this.addInfo(`Selected sensor: ${row.id}`);
       this.centerMapOnSensor(row);
+    },
+    createInfoIcon(title) {
+      return `<i class="fas fa-info-circle" title="${title}"></i>`
     }
   },
 };
@@ -283,9 +364,32 @@ body {
   grid-area: info;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 
-  ul li {
-    list-style: none;
+  .description,
+  .measurement-ranges,
+  .how-to-use-it {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .description .project-link {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .measurement-ranges .table-wrapper {
+    height: auto;
+  }
+
+  .how-to-use-it ul {
+    margin-left: 1rem;
   }
 }
 

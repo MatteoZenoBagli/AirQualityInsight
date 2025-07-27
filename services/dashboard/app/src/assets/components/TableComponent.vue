@@ -3,15 +3,16 @@
     <table>
       <thead>
         <tr>
-          <th v-for="column in columns" :key="column.key">
+          <th v-for="column in columns" :key="column.key" :class="{ 'text-center': column.center }">
             {{ column.label }}
           </th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(row, index) in data" :key="index" @click="$emit('row-click', row)" class="table-row">
-          <td v-for="column in columns" :key="column.key">
-            {{ row[column.key] }}
+          <td v-for="column in columns" :key="column.key" :class="{ 'text-center': column.center }">
+            <span v-if="column.html" v-html="row[column.key]"></span>
+            <span v-else>{{ row[column.key] }}</span>
           </td>
         </tr>
       </tbody>
@@ -63,6 +64,10 @@ td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #eee;
+
+  &.text-center {
+    text-align: center;
+  }
 }
 
 th {
