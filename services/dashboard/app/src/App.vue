@@ -64,7 +64,7 @@
           @measurements-cleared="handleMeasurementsCleared" />
       </div>
 
-      <div class="dashboard-component table-component-container">
+      <div class="dashboard-component measurements-component-container">
         <div class="component-header">
           <h2>Last {{ this.maxMessages }} measurements received</h2>
           <div>
@@ -75,6 +75,12 @@
         </div>
         <TableComponent ref="measurementComponent" :data="measurementData" :columns="measurementColumns"
           @row-click="handleMeasurementRowClick" />
+      </div>
+
+      <div class="dashboard-component stats-component-container">
+        <div class="component-header">
+          <h2>Statistics</h2>
+        </div>
       </div>
 
       <div class="dashboard-component log-component-container">
@@ -345,8 +351,10 @@ body {
     "info info info"
     "map map map"
     "map map map"
-    "measurements measurements log"
-    "measurements measurements log"
+    "measurements measurements measurements"
+    "measurements measurements measurements"
+    "stats stats log"
+    "stats stats log"
     "sensors sensors sensors"
     "sensors sensors sensors";
   grid-template-columns: repeat(3, 1fr);
@@ -400,8 +408,14 @@ body {
   flex-direction: column;
 }
 
-.table-component-container {
+.measurements-component-container {
   grid-area: measurements;
+  min-width: 0;
+  height: 100%;
+}
+
+.stats-component-container {
+  grid-area: stats;
   min-width: 0;
   height: 100%;
 }
@@ -426,20 +440,20 @@ body {
 }
 
 .info-component-container tbody tr,
-.table-component-container tbody tr,
+.measurements-component-container tbody tr,
 .sensors-component-container tbody tr {
   font-family: monospace;
   font-size: 14px;
 }
 
 .info-component-container thead tr,
-.table-component-container thead tr,
+.measurements-component-container thead tr,
 .sensors-component-container thead tr {
   background-color: #f0f0f0;
 }
 
 .info-component-container tbody tr:nth-child(even),
-.table-component-container tbody tr:nth-child(even),
+.measurements-component-container tbody tr:nth-child(even),
 .sensors-component-container tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
@@ -490,7 +504,7 @@ body {
   }
 
   .map-component-container,
-  .table-component-container,
+  .measurements-component-container,
   .log-component-container {
     grid-column: 1 / -1;
   }
@@ -499,7 +513,7 @@ body {
     grid-row: 1;
   }
 
-  .table-component-container {
+  .measurements-component-container {
     grid-row: 2;
   }
 
