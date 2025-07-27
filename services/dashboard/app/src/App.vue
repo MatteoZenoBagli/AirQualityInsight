@@ -3,6 +3,24 @@
     <h1>Dashboard</h1>
 
     <div class="dashboard">
+      <div class="dashboard-component info-component-container">
+        <h2>Measurement ranges</h2>
+        <TableComponent ref="measurementComponent" :data="[
+          { measurement: 'Temperature', min : -15,  max: 35,    measurement_unit: '°C' },
+          { measurement: 'Humidity',    min : 30,   max: 100,   measurement_unit: '%' },
+          { measurement: 'Pressure',    min : 980,  max: 1020,  measurement_unit: 'hPa' },
+          { measurement: 'PM2.5',       min : 0,    max: 50,    measurement_unit: 'µg/m³' },
+          { measurement: 'PM10',        min : 0,    max: 100,   measurement_unit: 'µg/m³' },
+          { measurement: 'VOC',         min : 0,    max: 3,     measurement_unit: 'ppm' },
+          { measurement: 'CO2',         min : 400,  max: 2000,  measurement_unit: 'ppm' },
+        ]" :columns="[
+          { key: 'measurement', label: 'Measurement' },
+          { key: 'min', label: 'Min' },
+          { key: 'max', label: 'Max' },
+          { key: 'measurement_unit', label: 'Measurement unit' },
+        ]"></TableComponent>
+      </div>
+
       <div class="dashboard-component map-component-container">
         <div class="component-header">
           <h2>Map</h2>
@@ -243,6 +261,7 @@ body {
 .dashboard {
   display: grid;
   grid-template-areas:
+    "info info info"
     "map map map"
     "map map map"
     "measurements measurements log"
@@ -257,6 +276,16 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
+  }
+}
+
+.info-component-container {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+
+  ul li {
+    list-style: none;
   }
 }
 
@@ -292,6 +321,7 @@ body {
   grid-area: sensors;
 }
 
+.info-component-container tbody tr,
 .table-component-container tbody tr,
 .sensors-component-container tbody tr {
   font-family: monospace;
