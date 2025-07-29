@@ -28,21 +28,31 @@
         </div>
         <div class="measurement-ranges">
           <h2>Measurement ranges</h2>
-          <TableComponent ref="measurementComponent" :data="infoMeasurementData" :columns="infoMeasurementColumns"></TableComponent>
+          <TableComponent ref="measurementComponent" :data="infoMeasurementData" :columns="infoMeasurementColumns" />
+          <p>
+            The table above explains what types of measurements are collected and how they are interpreted.
+            It shows the measurement name, the unit of measurement, the sampling interval, and 3 indicators that represent the quality of the obtained measurement:
+            the closer the measurement value is to the quality thresholds, the better the value.
+            If you hover the cursor over the information label, a brief description of the measure is displayed.
+          </p>
         </div>
         <div class="how-to-use-it">
           <h2>How to use it</h2>
           <ul>
             <li>The map displays a collection of sensors indicated by red pushpins.</li>
             <li>Clicking on a sensor will show its name.</li>
-            <li>Collected live measurements are displayed in a table below the map, and clicking on a row will navigate to the corresponding sensor on the map.</li>
+            <li>Collected live measurements are displayed in a table below the map, and clicking on a row will navigate
+              to the corresponding sensor on the map.</li>
             <li>The map shows collected measurements as a heatmap based on the selected measurement type.</li>
             <li>You can choose from available options in the control panel.</li>
             <li>The control panel opens by clicking the red pushpin in the top right corner of the map.</li>
-            <li>Opening the panel provides information such as the number of registered sensors and collected measurements.</li>
+            <li>Opening the panel provides information such as the number of registered sensors and collected
+              measurements.</li>
             <li>You can select the measurement type to display and any layers to overlay.</li>
-            <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the map.</li>
-            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest ones following a FIFO (first in, first out) system.</li>
+            <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the
+              map.</li>
+            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest
+              ones following a FIFO (first in, first out) system.</li>
           </ul>
         </div>
       </div>
@@ -81,6 +91,7 @@
         <div class="component-header">
           <h2>Statistics</h2>
         </div>
+        <TableComponent ref="measurementComponent" :data="statsMeasurementData" :columns="statsMeasurementColumns" />
       </div>
 
       <div class="dashboard-component log-component-container">
@@ -107,7 +118,7 @@
             </button>
           </div>
         </div>
-        <TableComponent ref="sensorsComponent" :data="sensorData.values()" :columns="sensorColumns"
+        <TableComponent ref="sensorsComponent" :data="Array.from(sensorData.values())" :columns="sensorColumns"
           @row-click="handleSensorRowClick" />
       </div>
     </div>
@@ -132,82 +143,72 @@ export default {
     return {
       socket: null,
       maxMessages: 50,
-      infoMeasurementColumns: [
-        { key: 'measurement',       label: 'Measurement' },
-        { key: 'min',               label: 'Min',               center: true },
-        { key: 'max',               label: 'Max',               center: true },
-        { key: 'measurement_unit',  label: 'Measurement unit',  center: true,  },
-        { key: 'info',              label: 'Info',              center: true, html: true }
+      measurementTypes: [
+        'pm25',
+        'pm10',
+        'voc',
+        'co2',
+        'temperature',
+        'humidity',
+        'pressure'
       ],
-      infoMeasurementData: [
-        {
-          measurement: 'Temperature',
-          min: -15,
-          max: 35,
-          measurement_unit: '°C',
-          info: this.createInfoIcon('Measures ambient air temperature, expressed in degrees Celsius, indicating thermal conditions in the monitored environment.')
-        },
-        {
-          measurement: 'Humidity',
-          min: 30,
-          max: 100,
-          measurement_unit: '%',
-          info: this.createInfoIcon('Records relative humidity levels as a percentage, showing the amount of moisture present in the air compared to maximum capacity at current temperature.')
-        },
-        {
-          measurement: 'Pressure',
-          min: 980,
-          max: 1020,
-          measurement_unit: 'hPa',
-          info: this.createInfoIcon('Monitors atmospheric pressure, usually measured in hPa (hectopascals), indicating air pressure changes that can affect weather patterns.')
-        },
-        {
-          measurement: 'PM2.5',
-          min: 0,
-          max: 50,
-          measurement_unit: 'µg/m³',
-          info: this.createInfoIcon('Detects fine particulate matter with diameter ≤2.5 micrometers, measuring dangerous airborne particles that can penetrate deep into lungs and bloodstream.')
-        },
-        {
-          measurement: 'PM10',
-          min: 0,
-          max: 100,
-          measurement_unit: 'µg/m³',
-          info: this.createInfoIcon('Measures coarse particulate matter with diameter ≤10 micrometers, monitoring larger airborne particles that can cause respiratory irritation.')
-        },
-        {
-          measurement: 'VOC',
-          min: 0,
-          max: 3,
-          measurement_unit: 'ppm',
-          info: this.createInfoIcon('Volatile Organic Compounds detection, measuring gaseous chemicals from various sources that can affect indoor air quality and human health.')
-        },
-        {
-          measurement: 'CO2',
-          min: 400,
-          max: 2000,
-          measurement_unit: 'ppm',
-          info: this.createInfoIcon('Carbon dioxide concentration measurement in parts per million (ppm), indicating air quality and ventilation effectiveness in enclosed spaces.')
-          },
+      thresholds: {
+        pm25: { good: 15, moderate: 35, poor: 55 },
+        pm10: { good: 25, moderate: 50, poor: 90 },
+        voc: { good: 1, moderate: 3, poor: 5 },
+        co2: { good: 400, moderate: 800, poor: 1200 },
+        temperature: { good: [18, 24], moderate: [15, 28], poor: [10, 35] },
+        humidity: { good: [40, 60], moderate: [30, 70], poor: [20, 80] },
+        pressure: { good: [1013, 1023], moderate: [1005, 1030], poor: [995, 1040] }
+      },
+      measurements: {
+        pm25: [],
+        pm10: [],
+        voc: [],
+        co2: [],
+        temperature: [],
+        humidity: [],
+        pressure: [],
+      },
+      infoMeasurementColumns: [
+        { key: 'measurement', label: 'Measurement' },
+        { key: 'measurement_unit', label: 'Measurement unit', center: true },
+        { key: 'min', label: 'Min', center: true },
+        { key: 'max', label: 'Max', center: true },
+        { key: 'threshold_good', label: 'Good', center: true, html: true },
+        { key: 'threshold_moderate', label: 'Moderate', center: true, html: true },
+        { key: 'threshold_poor', label: 'Poor', center: true, html: true },
+        { key: 'info', label: 'Info', center: true, html: true }
       ],
       measurementColumns: [
         { key: "sensor_id", label: "Sensor ID" },
-        { key: "timestamp", label: "Timestamp" },
-        { key: "temperature", label: "Temperature (°C)" },
-        { key: "humidity", label: "Humidity (%)" },
-        { key: "pressure", label: "Pressure (hPa)" },
-        { key: "pm25", label: "PM25 (µg/m³)" },
-        { key: "pm10", label: "PM10 (µg/m³)" },
-        { key: "voc", label: "VOC (ppm)" },
-        { key: "co2", label: "CO2 (ppm)" },
+        { key: "timestamp", label: "Timestamp", center: true },
+        { key: "temperature", label: "Temperature (°C)", center: true },
+        { key: "humidity", label: "Humidity (%)", center: true },
+        { key: "pressure", label: "Pressure (hPa)", center: true },
+        { key: "pm25", label: "PM25 (µg/m³)", center: true },
+        { key: "pm10", label: "PM10 (µg/m³)", center: true },
+        { key: "voc", label: "VOC (ppm)", center: true },
+        { key: "co2", label: "CO2 (ppm)", center: true },
+      ],
+      statsMeasurementColumns: [
+        { key: 'measurement', label: 'Measurement' },
+        { key: 'mean', label: 'Mean', center: true },
+        { key: 'median', label: 'Median', center: true },
+        { key: 'min', label: 'Min', center: true },
+        { key: 'max', label: 'Max', center: true },
+        { key: 'range', label: 'Range', center: true },
+        { key: 'quality', label: 'Quality', center: true },
       ],
       sensorColumns: [
-        { key: 'id', label: 'ID' },
-        { key: 'lat', label: 'Latitude' },
-        { key: 'lng', label: 'Longitude' },
-        { key: 'status', label: 'Status' },
+        { key: 'id', label: 'Sensor ID' },
+        { key: 'lat', label: 'Latitude', center: true },
+        { key: 'lng', label: 'Longitude', center: true },
+        { key: 'status', label: 'Status', center: true },
       ],
+      infoMeasurementData: [],
       measurementData: [],
+      statsMeasurementData: {},
       sensorData: [],
       map: null,
       activeSensors: true,
@@ -215,6 +216,102 @@ export default {
   },
   created() {
     this.connectSocket();
+
+    const explainThreshold = (threshold) => {
+      if (Array.isArray(threshold)) return `&ge; ${threshold[0]}, &le; ${threshold[1]}`;
+      return `&le; ${threshold}`;
+    }
+    const getInfoMeasurementData = (measurement, measurement_unit, min, max, threshold, info) => {
+      return {
+        measurement: measurement,
+        measurement_unit: measurement_unit,
+        min: min,
+        max: max,
+        threshold_good: explainThreshold(this.thresholds[threshold].good),
+        threshold_moderate: explainThreshold(this.thresholds[threshold].moderate),
+        threshold_poor: explainThreshold(this.thresholds[threshold].poor),
+        info: this.createInfoIcon(info),
+      }
+    }
+    this.infoMeasurementData = [
+      getInfoMeasurementData(
+        'Temperature',
+        '°C',
+        -15,
+        35,
+        'temperature',
+        'Measures ambient air temperature, expressed in degrees Celsius, indicating thermal conditions in the monitored environment.',
+      ),
+      getInfoMeasurementData(
+        'Humidity',
+        '%',
+        30,
+        100,
+        'humidity',
+        'Records relative humidity levels as a percentage, showing the amount of moisture present in the air compared to maximum capacity at current temperature.',
+      ),
+      getInfoMeasurementData(
+        'Pressure',
+        'hPa',
+        980,
+        1020,
+        'pressure',
+        'Monitors atmospheric pressure, usually measured in hPa (hectopascals), indicating air pressure changes that can affect weather patterns.',
+      ),
+      getInfoMeasurementData(
+        'PM2.5',
+        'µg/m³',
+        0,
+        50,
+        'pm25',
+        'Detects fine particulate matter with diameter ≤2.5 micrometers, measuring dangerous airborne particles that can penetrate deep into lungs and bloodstream.',
+      ),
+      getInfoMeasurementData(
+        'PM10',
+        'µg/m³',
+        0,
+        100,
+        'pm10',
+        'Measures coarse particulate matter with diameter ≤10 micrometers, monitoring larger airborne particles that can cause respiratory irritation.',
+      ),
+      getInfoMeasurementData(
+        'VOC',
+        'ppm',
+        0,
+        3,
+        'voc',
+        'Volatile Organic Compounds detection, measuring gaseous chemicals from various sources that can affect indoor air quality and human health.',
+      ),
+      getInfoMeasurementData(
+        'CO2',
+        'ppm',
+        400,
+        2000,
+        'co2',
+        'Carbon dioxide concentration measurement in parts per million (ppm), indicating air quality and ventilation effectiveness in enclosed spaces.',
+      ),
+    ];
+
+    const getStatsMeasurementData = (measurement) => {
+      return {
+        measurement: measurement,
+        mean: null,
+        median: null,
+        min: null,
+        max: null,
+        range: null,
+        quality: null,
+      };
+    }
+    this.statsMeasurementData = {
+      pm25: getStatsMeasurementData('PM2.5'),
+      pm10: getStatsMeasurementData('PM10'),
+      voc: getStatsMeasurementData('VOC'),
+      co2: getStatsMeasurementData('CO2'),
+      temperature: getStatsMeasurementData('Temperature'),
+      humidity: getStatsMeasurementData('Humidity'),
+      pressure: getStatsMeasurementData('Pressure'),
+    }
   },
   beforeDestroy() {
     this.disconnectSocket();
@@ -248,6 +345,28 @@ export default {
         this.measurementData.unshift(formattedData);
         if (this.measurementData.length > this.maxMessages)
           this.measurementData = this.measurementData.slice(0, this.maxMessages);
+
+        if (!this.sensorData?.size) return;
+
+        const sensor = this.sensorData.get(message.sensor_id);
+        if (!sensor) return;
+
+        const limit = 50
+        for (const measurementType of this.measurementTypes) {
+          const intensity = this.getIntensity(message[measurementType], measurementType);
+          let measurement = this.measurements[measurementType];
+          measurement.unshift(intensity);
+          if (measurement.length > limit)
+            measurement = measurement.slice(0, limit);
+
+          const stats = this.calculateStats(measurement);
+          this.statsMeasurementData[measurementType].mean = parseFloat(stats.mean).toFixed(2);
+          this.statsMeasurementData[measurementType].median = parseFloat(stats.median).toFixed(2);
+          this.statsMeasurementData[measurementType].min = parseFloat(stats.min).toFixed(2);
+          this.statsMeasurementData[measurementType].max = parseFloat(stats.max).toFixed(2);
+          this.statsMeasurementData[measurementType].range = parseFloat(stats.range).toFixed(2);
+          this.statsMeasurementData[measurementType].quality = parseFloat(intensity).toFixed(2);
+        }
       });
 
       this.socket.on("connect", () => {
@@ -257,6 +376,36 @@ export default {
       this.socket.on("disconnect", () => {
         this.addInfo("Disconnected from server");
       });
+    },
+    calculateStats(values) {
+      const sorted = [...values].sort((a, b) => a - b);
+      const mean = values.reduce((a, b) => a + b) / values.length;
+
+      return {
+        mean: mean.toFixed(2),
+        median: sorted[Math.floor(sorted.length / 2)],
+        min: Math.min(...values),
+        max: Math.max(...values),
+        range: Math.max(...values) - Math.min(...values)
+      };
+    },
+    getIntensity(value, parameter) {
+      const threshold = this.thresholds[parameter];
+
+      if (Array.isArray(threshold.good)) {
+        const [minGood, maxGood] = threshold.good;
+        const [minModerate, maxModerate] = threshold.moderate;
+        const [minPoor, maxPoor] = threshold.poor;
+        if (minGood <= value && maxGood >= value) return 0.2;
+        if (minModerate <= value && maxModerate >= value) return 0.4;
+        if (minPoor <= value && maxPoor >= value) return 0.7;
+        return 1.0;
+      }
+
+      if (value <= threshold.good) return 0.2;
+      if (value <= threshold.moderate) return 0.4;
+      if (value <= threshold.poor) return 0.7;
+      return 1.0;
     },
     disconnectSocket() {
       if (!this.socket) return;
@@ -435,26 +584,25 @@ body {
   }
 }
 
+.stats-component-container,
+.log-component-container {
+  max-height: 450px;
+}
+
 .sensors-component-container {
   grid-area: sensors;
 }
 
-.info-component-container tbody tr,
-.measurements-component-container tbody tr,
-.sensors-component-container tbody tr {
+tbody tr {
   font-family: monospace;
   font-size: 14px;
 }
 
-.info-component-container thead tr,
-.measurements-component-container thead tr,
-.sensors-component-container thead tr {
+thead tr {
   background-color: #f0f0f0;
 }
 
-.info-component-container tbody tr:nth-child(even),
-.measurements-component-container tbody tr:nth-child(even),
-.sensors-component-container tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
 
