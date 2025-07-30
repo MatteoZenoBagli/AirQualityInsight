@@ -295,12 +295,12 @@ export default {
     const getStatsMeasurementData = (measurement) => {
       return {
         measurement: measurement,
-        mean: null,
-        median: null,
-        min: null,
-        max: null,
-        range: null,
-        quality: null,
+        mean: 'N/A',
+        median: 'N/A',
+        min: 'N/A',
+        max: 'N/A',
+        range: 'N/A',
+        quality: 'N/A',
       };
     }
     this.statsMeasurementData = {
