@@ -1,130 +1,3 @@
-<template>
-  <div class="app">
-    <h1>AirQualityInsight - Dashboard</h1>
-
-    <div class="dashboard">
-      <div class="dashboard-component info-component-container">
-        <div class="description">
-          <h2>Description</h2>
-          <p>
-            Simulation project of a sensor system to monitor air quality,
-            with data sent to a server for real-time analysis and visualization.
-          </p>
-          <p>
-            The system simulates a network of sensors,
-            such as Raspberry Pi,
-            capable of measuring air quality.
-            These measurements will be sent to a server,
-            which will analyze them
-            and present the data in real-time on a dedicated dashboard.
-          </p>
-          <p>
-            The case study subject is the city of Bologna, the sensors are displaced into his boundaries.
-          </p>
-          <p class="project-link">
-            <i class="fa-brands fa-github"></i>
-            <a href="https://github.com/MatteoZenoBagli/AirQualityInsight">GitHub's project page link</a>
-          </p>
-        </div>
-        <div class="measurement-ranges">
-          <h2>Measurement ranges</h2>
-          <TableComponent ref="measurementComponent" :data="infoMeasurementData" :columns="infoMeasurementColumns" />
-          <p>
-            The table above explains what types of measurements are collected and how they are interpreted.
-            It shows the measurement name, the unit of measurement, the sampling interval, and 3 indicators that represent the quality of the obtained measurement:
-            the closer the measurement value is to the quality thresholds, the better the value.
-            If you hover the cursor over the information label, a brief description of the measure is displayed.
-          </p>
-        </div>
-        <div class="how-to-use-it">
-          <h2>How to use it</h2>
-          <ul>
-            <li>The map displays a collection of sensors indicated by red pushpins.</li>
-            <li>Clicking on a sensor will show its name.</li>
-            <li>Collected live measurements are displayed in a table below the map, and clicking on a row will navigate
-              to the corresponding sensor on the map.</li>
-            <li>The map shows collected measurements as a heatmap based on the selected measurement type.</li>
-            <li>You can choose from available options in the control panel.</li>
-            <li>The control panel opens by clicking the red pushpin in the top right corner of the map.</li>
-            <li>Opening the panel provides information such as the number of registered sensors and collected
-              measurements.</li>
-            <li>You can select the measurement type to display and any layers to overlay.</li>
-            <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the
-              map.</li>
-            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest
-              ones following a FIFO (first in, first out) system.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="dashboard-component map-component-container">
-        <div class="component-header">
-          <h2>Map</h2>
-          <div class="component-header-buttons">
-            <button @click="refreshSensors" class="btn">
-              <i class="fas fa-sync-alt"></i> Refresh
-            </button>
-            <button @click="handleActiveSensors" :class="['btn', { 'btn-danger': this.activeSensors }]">
-              <i :class="['fas', { 'fa-stop': this.activeSensors, 'fa-play': !this.activeSensors }]"></i> {{
-                this.activeSensors ? 'Stop' : 'Start' }}
-            </button>
-          </div>
-        </div>
-        <MapComponent ref="mapComponent" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
-          @measurements-cleared="handleMeasurementsCleared" />
-      </div>
-
-      <div class="dashboard-component measurements-component-container">
-        <div class="component-header">
-          <h2>Last {{ this.maxMessages }} measurements received</h2>
-          <div>
-            <button @click="refreshTable" class="btn">
-              <i class="fas fa-sync-alt"></i> Refresh
-            </button>
-          </div>
-        </div>
-        <TableComponent ref="measurementComponent" :data="measurementData" :columns="measurementColumns"
-          @row-click="handleMeasurementRowClick" />
-      </div>
-
-      <div class="dashboard-component stats-component-container">
-        <div class="component-header">
-          <h2>Statistics</h2>
-        </div>
-        <TableComponent ref="measurementComponent" :data="statsMeasurementData" :columns="statsMeasurementColumns" />
-      </div>
-
-      <div class="dashboard-component log-component-container">
-        <div class="component-header">
-          <h2>
-            System Log
-            <i class="fas fa-info-circle" :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"></i>
-          </h2>
-          <div>
-            <button @click="clearLog" class="btn btn-danger">
-              <i class="fas fa-trash"></i> Clear
-            </button>
-          </div>
-        </div>
-        <LogComponent ref="logComponent" />
-      </div>
-
-      <div class="dashboard-component sensors-component-container">
-        <div class="component-header">
-          <h2>Registered sensors: {{ this.sensorData.size }}</h2>
-          <div>
-            <button @click="refreshSensors" class="btn">
-              <i class="fas fa-sync-alt"></i> Refresh
-            </button>
-          </div>
-        </div>
-        <TableComponent ref="sensorsComponent" :data="Array.from(sensorData.values())" :columns="sensorColumns"
-          @row-click="handleSensorRowClick" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import io from "socket.io-client";
 
@@ -479,6 +352,133 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="app">
+    <h1>AirQualityInsight - Dashboard</h1>
+
+    <div class="dashboard">
+      <div class="dashboard-component info-component-container">
+        <div class="description">
+          <h2>Description</h2>
+          <p>
+            Simulation project of a sensor system to monitor air quality,
+            with data sent to a server for real-time analysis and visualization.
+          </p>
+          <p>
+            The system simulates a network of sensors,
+            such as Raspberry Pi,
+            capable of measuring air quality.
+            These measurements will be sent to a server,
+            which will analyze them
+            and present the data in real-time on a dedicated dashboard.
+          </p>
+          <p>
+            The case study subject is the city of Bologna, the sensors are displaced into his boundaries.
+          </p>
+          <p class="project-link">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/MatteoZenoBagli/AirQualityInsight">GitHub's project page link</a>
+          </p>
+        </div>
+        <div class="measurement-ranges">
+          <h2>Measurement ranges</h2>
+          <TableComponent ref="measurementComponent" :data="infoMeasurementData" :columns="infoMeasurementColumns" />
+          <p>
+            The table above explains what types of measurements are collected and how they are interpreted.
+            It shows the measurement name, the unit of measurement, the sampling interval, and 3 indicators that represent the quality of the obtained measurement:
+            the closer the measurement value is to the quality thresholds, the better the value.
+            If you hover the cursor over the information label, a brief description of the measure is displayed.
+          </p>
+        </div>
+        <div class="how-to-use-it">
+          <h2>How to use it</h2>
+          <ul>
+            <li>The map displays a collection of sensors indicated by red pushpins.</li>
+            <li>Clicking on a sensor will show its name.</li>
+            <li>Collected live measurements are displayed in a table below the map, and clicking on a row will navigate
+              to the corresponding sensor on the map.</li>
+            <li>The map shows collected measurements as a heatmap based on the selected measurement type.</li>
+            <li>You can choose from available options in the control panel.</li>
+            <li>The control panel opens by clicking the red pushpin in the top right corner of the map.</li>
+            <li>Opening the panel provides information such as the number of registered sensors and collected
+              measurements.</li>
+            <li>You can select the measurement type to display and any layers to overlay.</li>
+            <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the
+              map.</li>
+            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest
+              ones following a FIFO (first in, first out) system.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dashboard-component map-component-container">
+        <div class="component-header">
+          <h2>Map</h2>
+          <div class="component-header-buttons">
+            <button @click="refreshSensors" class="btn">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button @click="handleActiveSensors" :class="['btn', { 'btn-danger': this.activeSensors }]">
+              <i :class="['fas', { 'fa-stop': this.activeSensors, 'fa-play': !this.activeSensors }]"></i> {{
+                this.activeSensors ? 'Stop' : 'Start' }}
+            </button>
+          </div>
+        </div>
+        <MapComponent ref="mapComponent" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
+          @measurements-cleared="handleMeasurementsCleared" />
+      </div>
+
+      <div class="dashboard-component measurements-component-container">
+        <div class="component-header">
+          <h2>Last {{ this.maxMessages }} measurements received</h2>
+          <div>
+            <button @click="refreshTable" class="btn">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
+        </div>
+        <TableComponent ref="measurementComponent" :data="measurementData" :columns="measurementColumns"
+          @row-click="handleMeasurementRowClick" />
+      </div>
+
+      <div class="dashboard-component stats-component-container">
+        <div class="component-header">
+          <h2>Statistics</h2>
+        </div>
+        <TableComponent ref="measurementComponent" :data="statsMeasurementData" :columns="statsMeasurementColumns" />
+      </div>
+
+      <div class="dashboard-component log-component-container">
+        <div class="component-header">
+          <h2>
+            System Log
+            <i class="fas fa-info-circle" :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"></i>
+          </h2>
+          <div>
+            <button @click="clearLog" class="btn btn-danger">
+              <i class="fas fa-trash"></i> Clear
+            </button>
+          </div>
+        </div>
+        <LogComponent ref="logComponent" />
+      </div>
+
+      <div class="dashboard-component sensors-component-container">
+        <div class="component-header">
+          <h2>Registered sensors: {{ this.sensorData.size }}</h2>
+          <div>
+            <button @click="refreshSensors" class="btn">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
+        </div>
+        <TableComponent ref="sensorsComponent" :data="Array.from(sensorData.values())" :columns="sensorColumns"
+          @row-click="handleSensorRowClick" />
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss">
 body {
