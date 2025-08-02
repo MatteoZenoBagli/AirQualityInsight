@@ -546,16 +546,13 @@ body {
 .dashboard {
   display: grid;
   grid-template-areas:
-    "info info info"
-    "map map map"
-    "map map map"
-    "measurements measurements measurements"
-    "measurements measurements measurements"
-    "stats stats log"
-    "stats stats log"
-    "sensors sensors sensors"
-    "sensors sensors sensors";
-  grid-template-columns: repeat(3, 1fr);
+    "info"
+    "map"
+    "measurements"
+    "stats"
+    "log"
+    "sensors";
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 
   &-component {
@@ -667,6 +664,8 @@ tbody tr:nth-child(even) {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .component-header-buttons {
@@ -700,27 +699,15 @@ tbody tr:nth-child(even) {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .dashboard {
-    grid-template-columns: 1fr;
-  }
-
-  .map-component-container,
-  .measurements-component-container,
-  .log-component-container {
-    grid-column: 1 / -1;
-  }
-
-  .map-component-container {
-    grid-row: 1;
-  }
-
-  .measurements-component-container {
-    grid-row: 2;
-  }
-
-  .log-component-container {
-    grid-row: 3;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "info info info"
+      "map map map"
+      "measurements measurements measurements"
+      "stats stats log"
+      "sensors sensors sensors";
   }
 }
 </style>
