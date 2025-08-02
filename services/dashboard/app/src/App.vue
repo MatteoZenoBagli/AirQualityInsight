@@ -86,7 +86,7 @@ export default {
       sensorData: [],
       map: null,
       center: { lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }, // Piazza Maggiore, Bologna
-      activeSensors: false,
+      activeSensors: true,
     };
   },
   created() {
@@ -96,6 +96,7 @@ export default {
       if (Array.isArray(threshold)) return `&ge; ${threshold[0]}, &le; ${threshold[1]}`;
       return `&le; ${threshold}`;
     }
+
     const getInfoMeasurementData = (measurement, measurement_unit, min, max, threshold, info) => {
       return {
         measurement: measurement,
@@ -108,6 +109,7 @@ export default {
         info: this.createInfoIcon(info),
       }
     }
+
     this.infoMeasurementData = [
       getInfoMeasurementData(
         'Temperature',
@@ -166,27 +168,7 @@ export default {
         'Carbon dioxide concentration measurement in parts per million (ppm), indicating air quality and ventilation effectiveness in enclosed spaces.',
       ),
     ];
-
-    const getStatsMeasurementData = (measurement) => {
-      return {
-        measurement: measurement,
-        mean: 'N/A',
-        median: 'N/A',
-        min: 'N/A',
-        max: 'N/A',
-        range: 'N/A',
-        quality: 'N/A',
-      };
-    }
-    this.statsMeasurementData = {
-      pm25: getStatsMeasurementData('PM2.5'),
-      pm10: getStatsMeasurementData('PM10'),
-      voc: getStatsMeasurementData('VOC'),
-      co2: getStatsMeasurementData('CO2'),
-      temperature: getStatsMeasurementData('Temperature'),
-      humidity: getStatsMeasurementData('Humidity'),
-      pressure: getStatsMeasurementData('Pressure'),
-    }
+    this.clearStats();
   },
   beforeDestroy() {
     this.disconnectSocket();
@@ -312,6 +294,31 @@ export default {
     },
     addError(msg) {
       this.$refs.logComponent?.addError(msg);
+    },
+    clearMeasurements() {
+      this.measurementData = [];
+    },
+    clearStats() {
+      const getStatsMeasurementData = (measurement) => {
+        return {
+          measurement: measurement,
+          mean: 'N/A',
+          median: 'N/A',
+          min: 'N/A',
+          max: 'N/A',
+          range: 'N/A',
+          quality: 'N/A',
+        };
+      }
+      this.statsMeasurementData = {
+        pm25: getStatsMeasurementData('PM2.5'),
+        pm10: getStatsMeasurementData('PM10'),
+        voc: getStatsMeasurementData('VOC'),
+        co2: getStatsMeasurementData('CO2'),
+        temperature: getStatsMeasurementData('Temperature'),
+        humidity: getStatsMeasurementData('Humidity'),
+        pressure: getStatsMeasurementData('Pressure'),
+      }
     },
     clearLog() {
       this.$refs.logComponent?.clearLog();
@@ -470,9 +477,12 @@ export default {
       <div class="dashboard-component measurements-component-container">
         <div class="component-header">
           <h2>Last {{ this.maxMessages }} measurements received</h2>
-          <div>
+          <div class="component-header-buttons">
             <button @click="refreshTable" class="btn">
               <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button @click="clearMeasurements" class="btn btn-danger">
+              <i class="fas fa-trash"></i> Clear
             </button>
           </div>
         </div>
@@ -483,6 +493,9 @@ export default {
       <div class="dashboard-component stats-component-container">
         <div class="component-header">
           <h2>Statistics</h2>
+          <button @click="clearStats" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Clear
+          </button>
         </div>
         <TableComponent ref="measurementComponent" :data="statsMeasurementData" :columns="statsMeasurementColumns" />
       </div>
@@ -493,11 +506,9 @@ export default {
             System Log
             <i class="fas fa-info-circle" :title="'Last ' + this.$refs.logComponent?.maxEntries + ' entries'"></i>
           </h2>
-          <div>
-            <button @click="clearLog" class="btn btn-danger">
-              <i class="fas fa-trash"></i> Clear
-            </button>
-          </div>
+          <button @click="clearLog" class="btn btn-danger">
+            <i class="fas fa-trash"></i> Clear
+          </button>
         </div>
         <LogComponent ref="logComponent" />
       </div>
