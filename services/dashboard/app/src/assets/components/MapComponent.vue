@@ -4,12 +4,13 @@ import 'leaflet.heat';
 import "leaflet/dist/leaflet.css";
 import { ref } from "vue";
 import pushpinSvg from '@/assets/pushpin.svg';
+import pushpinHomeSvg from '@/assets/pushpin_home.svg';
 
 export default {
   name: "MapComponent",
   data() {
     return {
-      center: ref({ lng: '11.3426000', lat: '44.4939000' }), // Piazza Maggiore, Bologna
+      center: ref({ lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }), // Piazza Maggiore, Bologna
       zoom: ref(13),
       map: null,
       measurementTypes: [
@@ -109,6 +110,22 @@ export default {
         maxZoom: 19,
       }).addTo(this.map);
 
+      const pushpinHomeIcon = L.icon({
+        iconUrl: pushpinHomeSvg,
+        iconSize: [24, 24],
+        iconAnchor: [12, 20],
+        popupAnchor: [0, -20],
+      });
+      const homeMarker = L.marker([
+        this.center.lat,
+        this.center.lng,
+      ],
+        { icon: pushpinHomeIcon }
+      );
+      homeMarker.bindPopup(`Center of the map: “${this.center.name}”`)
+      homeMarker.addTo(this.map);
+
+
       let currentLat, currentLng;
 
       const updateCurrentCoordinates = () => {
@@ -188,7 +205,7 @@ export default {
     getIntensity(value, parameter) {
       const threshold = this.thresholds[parameter];
 
-      if (Array.isArray(threshold.good)){
+      if (Array.isArray(threshold.good)) {
         const [minGood, maxGood] = threshold.good;
         const [minModerate, maxModerate] = threshold.moderate;
         const [minPoor, maxPoor] = threshold.poor;
@@ -656,7 +673,7 @@ export default {
         <div class="measurements-controls">
           <input id="parameter-slider" type="range" v-model="this.maxHeatLatLng" :min="50" :max="1000" step="10" />
           <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng
-          }}</span>
+            }}</span>
         </div>
         <div class="measurements-controls">
           <p>Current measurements:</p>

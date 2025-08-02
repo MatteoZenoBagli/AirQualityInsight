@@ -78,13 +78,15 @@ export default {
         { key: 'lat', label: 'Latitude', center: true },
         { key: 'lng', label: 'Longitude', center: true },
         { key: 'status', label: 'Status', center: true },
+        { key: 'distance_from_center', label: 'Distance from center (m)', center: true },
       ],
       infoMeasurementData: [],
       measurementData: [],
       statsMeasurementData: {},
       sensorData: [],
       map: null,
-      activeSensors: true,
+      center: { lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }, // Piazza Maggiore, Bologna
+      activeSensors: false,
     };
   },
   created() {
@@ -316,6 +318,13 @@ export default {
     },
     handleSensorsLoaded(sensors) {
       this.sensorData = sensors;
+      for (const sensor of this.sensorData.values())
+        sensor.distance_from_center = this.calculateDistance(
+          this.center.lat,
+          this.center.lng,
+          sensor.lat,
+          sensor.lng,
+        ).toFixed(2);
       this.addInfo(`Loaded ${sensors.size} sensors`);
     },
     refreshSensors() {
@@ -348,6 +357,23 @@ export default {
     },
     createInfoIcon(title) {
       return `<i class="fas fa-info-circle" title="${title}"></i>`
+    },
+    /**
+     * Function to calculate the distance between two geographic points (Haversine formula)
+     * @see https://en.wikipedia.org/wiki/Haversine_formula
+     */
+    calculateDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371000; // Earth radius in meters
+      const dLat = ((lat2 - lat1) * Math.PI) / 180;
+      const dLon = ((lon2 - lon1) * Math.PI) / 180;
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((lat1 * Math.PI) / 180) *
+          Math.cos((lat2 * Math.PI) / 180) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
     }
   },
 };
@@ -374,7 +400,19 @@ export default {
             and present the data in real-time on a dedicated dashboard.
           </p>
           <p>
-            The case study subject is the city of Bologna, the sensors are displaced into his boundaries.
+            <span>
+              The case study subject is the city of Bologna, the sensors are displaced into his boundaries.
+            </span>
+            <span>
+              The center of the map is located in <i>“{{ this.center.name }}”</i>
+              [
+                lat: <code>{{ this.center.lat }}</code>,
+                lng: <code>{{ this.center.lng }}</code>
+              ].
+              </span>
+            <span>
+              The distance of the sensors from the center is in meters [m].
+            </span>
           </p>
           <p class="project-link">
             <i class="fa-brands fa-github"></i>
@@ -539,6 +577,11 @@ body {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+  }
+
+  .description p:not(.project-link) {
+    display: flex;
+    flex-direction: column;
   }
 
   .measurement-ranges .table-wrapper {
