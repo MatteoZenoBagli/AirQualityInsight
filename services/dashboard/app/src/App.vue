@@ -17,6 +17,8 @@ export default {
       socket: null,
       maxMessages: 50,
       center: { lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }, // Piazza Maggiore, Bologna
+      minMeasurements: 50,
+      maxMeasurements: 1000,
       measurements: {
         temperature: {
           label: 'Temperature',
@@ -511,7 +513,8 @@ export default {
             <li>You can select the measurement type to display and any layers to overlay.</li>
             <li>Data collection can be stopped and resumed at any time using the buttons in the top right corner of the
               map.</li>
-            <li>Collected measurements have a limit between 50 and 1000, after which new recordings replace the oldest
+            <li>Collected measurements have a limit between {{ this.minMeasurements }} and {{ this.maxMeasurements }},
+              after which new recordings replace the oldest
               ones following a FIFO (first in, first out) system.</li>
           </ul>
         </div>
@@ -531,7 +534,8 @@ export default {
           </div>
         </div>
         <MapComponent ref="mapComponent" :measurements="measurements" :get-intensity="getIntensity"
-          :calculate-stats="calculateStats" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
+          :min-measurements="minMeasurements" :max-measurements="maxMeasurements" :calculate-stats="calculateStats"
+          @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
           @measurements-cleared="handleMeasurementsCleared" />
       </div>
 

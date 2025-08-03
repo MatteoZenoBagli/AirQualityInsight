@@ -21,6 +21,14 @@ export default {
         pressure: []
       })
     },
+    minMeasurements: {
+      type: Number,
+      required: true
+    },
+    maxMeasurements: {
+      type: Number,
+      required: true
+    },
     getIntensity: {
       type: Function,
       required: true
@@ -617,7 +625,8 @@ export default {
         </div>
         <p>Limit of measurements:</p>
         <div class="measurements-controls">
-          <input id="parameter-slider" type="range" v-model="this.maxHeatLatLng" :min="50" :max="1000" step="10" />
+          <input id="parameter-slider" type="range" v-model="this.maxHeatLatLng" :min="this.minMeasurements"
+            :max="this.maxMeasurements" step="10" />
           <span class="help" title="The higher the limit, the more accurate the measurements.">{{ this.maxHeatLatLng
             }}</span>
         </div>
