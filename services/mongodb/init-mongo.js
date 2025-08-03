@@ -89,31 +89,31 @@ db.createCollection("measurements", {
           description: "Time of measurement",
         },
         temperature: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "Temperature in Celsius",
         },
         humidity: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "Relative humidity percentage",
         },
         pressure: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "Atmospheric pressure in hPa",
         },
         pm25: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "PM2.5 concentration in µg/m³",
         },
         pm10: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "PM10 concentration in µg/m³",
         },
         voc: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "Volatile Organic Compounds in ppb",
         },
         co2: {
-          bsonType: "double",
+          bsonType: ["double", "int"],
           description: "CO2 concentration in ppm",
         },
       },

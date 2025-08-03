@@ -1,3 +1,4 @@
+const DEBUG = false;
 const mongoose = require("mongoose");
 
 const sensorSchema = new mongoose.Schema({
@@ -68,14 +69,29 @@ const connectWithRetry = async () => {
 };
 
 const saveMeasurement = async (measurement) => {
-  new Measurement(measurement)
-    .save()
-    .then((result) => {
-      console.log("Measurement saved successfully:", result);
-    })
-    .catch((err) => {
-      console.error("Error saving measurement:", err);
-    });
+  const processedMeasurement = {
+    ...measurement,
+    timestamp: new Date(measurement.timestamp),
+    temperature: parseFloat(measurement.temperature),
+    humidity: parseFloat(measurement.humidity),
+    pressure: parseFloat(measurement.pressure),
+    pm25: parseFloat(measurement.pm25),
+    pm10: parseFloat(measurement.pm10),
+    voc: parseFloat(measurement.voc),
+    co2: parseFloat(measurement.co2),
+  };
+
+  if (DEBUG) console.log('Processed Measurement:', processedMeasurement);
+
+  try {
+    const result = await new Measurement(processedMeasurement).save();
+    if (DEBUG) console.log("Measurement saved successfully:", result);
+  } catch (err) {
+    console.error("Error saving measurement:", err);
+    if (err.errInfo && err.errInfo.details) {
+      console.error("Validation details:", JSON.stringify(err.errInfo.details, null, 2));
+    }
+  }
 };
 
 module.exports = {
