@@ -23,6 +23,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: [18, 24], moderate: [15, 28], poor: [10, 35] },
+          heatLatLng: [],
           info: {
             min: -15,
             max: 30,
@@ -35,6 +36,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: [40, 60], moderate: [30, 70], poor: [20, 80] },
+          heatLatLng: [],
           info: {
             min: 30,
             max: 100,
@@ -47,6 +49,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: [1013, 1023], moderate: [1005, 1030], poor: [995, 1040] },
+          heatLatLng: [],
           info: {
             min: 980,
             max: 1020,
@@ -59,6 +62,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: 15, moderate: 35, poor: 55 },
+          heatLatLng: [],
           info: {
             min: 0,
             max: 50,
@@ -71,6 +75,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: 25, moderate: 50, poor: 90 },
+          heatLatLng: [],
           info: {
             min: 0,
             max: 100,
@@ -83,6 +88,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: 1, moderate: 3, poor: 5 },
+          heatLatLng: [],
           info: {
             min: 0,
             max: 30,
@@ -95,6 +101,7 @@ export default {
           data: [],
           stats: {},
           thresholds: { good: 400, moderate: 800, poor: 1200 },
+          heatLatLng: [],
           info: {
             min: 400,
             max: 2000,
@@ -479,8 +486,15 @@ export default {
             </button>
           </div>
         </div>
-        <MapComponent ref="mapComponent" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
-          @measurements-cleared="handleMeasurementsCleared" />
+        <MapComponent
+          ref="mapComponent"
+          :measurements="measurements"
+          :get-intensity="getIntensity"
+          :calculate-stats="calculateStats"
+          @marker-click="handleMarkerClick"
+          @sensors-loaded="handleSensorsLoaded"
+          @measurements-cleared="handleMeasurementsCleared"
+        />
       </div>
 
       <div class="dashboard-component measurements-component-container">

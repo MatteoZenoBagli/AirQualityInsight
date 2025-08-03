@@ -8,29 +8,29 @@ import pushpinHomeSvg from '@/assets/pushpin_home.svg';
 
 export default {
   name: "MapComponent",
+  props: {
+    measurements: {
+      type: Object,
+      default: () => ({
+        pm25: [],
+        pm10: [],
+        voc: [],
+        co2: [],
+        temperature: [],
+        humidity: [],
+        pressure: []
+      })
+    },
+    getIntensity: {
+      type: Function,
+      required: true
+    }
+  },
   data() {
     return {
       center: ref({ lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }), // Piazza Maggiore, Bologna
       zoom: ref(13),
       map: null,
-      measurementTypes: [
-        'pm25',
-        'pm10',
-        'voc',
-        'co2',
-        'temperature',
-        'humidity',
-        'pressure'
-      ],
-      measurementLabels: {
-        pm25: 'PM2.5',
-        pm10: 'PM10',
-        voc: 'VOC',
-        co2: 'CO2',
-        temperature: 'Temperature',
-        humidity: 'Humidity',
-        pressure: 'Pressure'
-      },
       heatLayer: null,
       selectedMeasurement: 'pm25',
       maxHeatLatLng: 250,
@@ -60,24 +60,6 @@ export default {
       gridType: 'none',
       isHovered: ref(false),
       isPinned: ref(false),
-      thresholds: {
-        pm25: { good: 15, moderate: 35, poor: 55 },
-        pm10: { good: 25, moderate: 50, poor: 90 },
-        voc: { good: 1, moderate: 3, poor: 5 },
-        co2: { good: 400, moderate: 800, poor: 1200 },
-        temperature: { good: [18, 24], moderate: [15, 28], poor: [10, 35] },
-        humidity: { good: [40, 60], moderate: [30, 70], poor: [20, 80] },
-        pressure: { good: [1013, 1023], moderate: [1005, 1030], poor: [995, 1040] }
-      },
-      heatLatLng: {
-        pm25: [],
-        pm10: [],
-        voc: [],
-        co2: [],
-        temperature: [],
-        humidity: [],
-        pressure: [],
-      }
     };
   },
   methods: {
@@ -202,24 +184,6 @@ export default {
         }
       }).addTo(this.map);
     },
-    getIntensity(value, parameter) {
-      const threshold = this.thresholds[parameter];
-
-      if (Array.isArray(threshold.good)) {
-        const [minGood, maxGood] = threshold.good;
-        const [minModerate, maxModerate] = threshold.moderate;
-        const [minPoor, maxPoor] = threshold.poor;
-        if (minGood <= value && maxGood >= value) return 0.2;
-        if (minModerate <= value && maxModerate >= value) return 0.4;
-        if (minPoor <= value && maxPoor >= value) return 0.7;
-        return 1.0;
-      }
-
-      if (value <= threshold.good) return 0.2;
-      if (value <= threshold.moderate) return 0.4;
-      if (value <= threshold.poor) return 0.7;
-      return 1.0;
-    },
     toggleLayer(layer, hideOrEvent = false) {
       const hide = hideOrEvent instanceof Event ? false : hideOrEvent;
 
@@ -254,37 +218,18 @@ export default {
 
       this.highlightSensor(sensor);
 
-      for (const measurementType of this.measurementTypes) {
+      for (const measurementType of Object.keys(this.measurements)) {
         const intensity = this.getIntensity(data[measurementType], measurementType);
 
-        const measurement = sensor.measurements[measurementType];
-        measurement.data.unshift(intensity);
-        if (measurement.data.length > this.maxHeatLatLng)
-          measurement.data = measurement.data.slice(0, this.maxHeatLatLng);
-
-        measurement.stats = this.calculateStats(measurement.data);
-
         const latLng = [sensor.lat, sensor.lng, intensity];
-        this.heatLatLng[measurementType].unshift(latLng);
-        if (this.heatLatLng[measurementType].length > this.maxHeatLatLng)
-          this.heatLatLng[measurementType] = this.heatLatLng[measurementType].slice(0, this.maxHeatLatLng);
+        this.measurements[measurementType].heatLatLng.unshift(latLng);
+        if (this.measurements[measurementType].heatLatLng.length > this.maxHeatLatLng)
+          this.measurements[measurementType].heatLatLng = this.measurements[measurementType].heatLatLng.slice(0, this.maxHeatLatLng);
       }
       this.updateHeatmap();
     },
-    calculateStats(values) {
-      const sorted = [...values].sort((a, b) => a - b);
-      const mean = values.reduce((a, b) => a + b) / values.length;
-
-      return {
-        mean: mean.toFixed(2),
-        median: sorted[Math.floor(sorted.length / 2)],
-        min: Math.min(...values),
-        max: Math.max(...values),
-        range: Math.max(...values) - Math.min(...values)
-      };
-    },
     updateHeatmap() {
-      this.heatLayer.setLatLngs(this.heatLatLng[this.selectedMeasurement]);
+      this.heatLayer.setLatLngs(this.measurements[this.selectedMeasurement].heatLatLng);
     },
     highlightSensor(sensor) {
       sensor.marker?.setOpacity(0.75);
@@ -317,7 +262,7 @@ export default {
               ip: sensor.ip,
               last_seen: sensor.last_seen,
               measurements: Object.fromEntries(
-                this.measurementTypes.map(type => [
+                Object.keys(this.measurements).map(type => [
                   type,
                   { stats: null, data: [] }
                 ])
@@ -591,8 +536,9 @@ export default {
       if (this.gridType !== 'none') mapContainer.classList.add(`grid-${this.gridType}`);
     },
     clearMeasurements() {
-      const count = this.heatLatLng[this.selectedMeasurement].length;
-      for (const measurementType of this.measurementTypes) this.heatLatLng[measurementType] = [];
+      const count = this.measurements[this.selectedMeasurement].heatLatLng.length;
+      for (const measurementType of Object.keys(this.measurements))
+        this.measurements[measurementType].heatLatLng = [];
       this.updateHeatmap();
       this.$emit('measurements-cleared', count);
     }
@@ -664,8 +610,8 @@ export default {
         <div class="measurements-controls">
           <label><strong>Measurement:</strong></label>
           <select v-model="selectedMeasurement" @change="updateHeatmap">
-            <option v-for="type in this.measurementTypes" :key="type" :value="type">
-              {{ this.measurementLabels[type] }}
+            <option v-for="type in Object.keys(this.measurements)" :key="type" :value="type">
+              {{ this.measurements[type].label }}
             </option>
           </select>
         </div>
@@ -677,7 +623,7 @@ export default {
         </div>
         <div class="measurements-controls">
           <p>Current measurements:</p>
-          <p>{{ this.heatLatLng[this.selectedMeasurement].length }}</p>
+          <p>{{ this.measurements[this.selectedMeasurement].heatLatLng.length }}</p>
         </div>
         <button @click="clearMeasurements" class="btn btn-danger clear-measurements">
           <i class="fas fa-trash"></i> Clear
