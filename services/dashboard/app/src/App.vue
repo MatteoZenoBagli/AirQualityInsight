@@ -520,7 +520,7 @@ export default {
             <i class="fas fa-trash"></i> Clear
           </button>
         </div>
-        <TableComponent ref="measurementComponent" :data="statsMeasurement.data" :columns="statsMeasurement.columns" />
+        <TableComponent ref="measurementComponent" :data="Object.values(statsMeasurement.data)" :columns="statsMeasurement.columns" />
       </div>
 
       <div class="dashboard-component log-component-container">
