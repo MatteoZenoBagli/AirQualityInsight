@@ -149,11 +149,14 @@ export default {
           { key: 'lng', label: 'Longitude', center: true, sortable: true },
           { key: 'status', label: 'Status', center: true, sortable: true },
           { key: 'distanceFromCenter', label: 'Distance from center (m)', center: true, sortable: true },
+          { key: 'lastMeasurementReceived', label: 'Last measurement received', center: true, sortable: true },
+          { key: 'timeSinceLastMeasurement', label: 'Time since last measurement', center: true, sortable: true },
         ],
         data: []
       },
       map: null,
       activeSensors: false,
+      timeUpdateInterval: null,
     };
   },
   created() {
@@ -189,9 +192,15 @@ export default {
     }
 
     this.clearStats();
+
+    this.timeUpdateInterval = setInterval(() => {
+      this.updateTimeSinceLastMeasurements();
+    }, 1000);
   },
   beforeDestroy() {
     this.disconnectSocket();
+
+    if (this.timeUpdateInterval) clearInterval(this.timeUpdateInterval);
   },
   methods: {
     connectSocket() {
@@ -228,6 +237,11 @@ export default {
         const sensor = this.sensors.data.get(message.sensor_id);
         if (!sensor) return;
 
+        const now = new Date();
+        sensor.lastMeasurementReceived = this.formatTimestamp(now);
+        sensor.lastMeasurementReceivedRaw = now;
+        sensor.timeSinceLastMeasurement = 'Just now';
+
         for (const measurementType of Object.keys(this.measurements)) {
           let measurement = this.measurements[measurementType].data;
           measurement.unshift(message[measurementType]);
@@ -252,6 +266,32 @@ export default {
       this.socket.on("disconnect", () => {
         this.addInfo("Disconnected from server");
       });
+    },
+    updateTimeSinceLastMeasurements() {
+      if (!this.sensors.data?.size) return;
+
+      for (const sensor of this.sensors.data.values())
+        sensor.timeSinceLastMeasurement = this.calculateTimeSince(sensor.lastMeasurementReceivedRaw);
+    },
+    calculateTimeSince(timestamp) {
+      if (!timestamp || timestamp === 'N/A') return 'N/A';
+
+      const now = new Date();
+      const lastMeasurement = new Date(timestamp);
+      const diffMs = now - lastMeasurement;
+
+      if (diffMs < 0) return 'N/A';
+
+      const diffSeconds = Math.floor(diffMs / 1000);
+      const diffMinutes = Math.floor(diffSeconds / 60);
+      const diffHours = Math.floor(diffMinutes / 60);
+      const diffDays = Math.floor(diffHours / 24);
+
+      if (diffDays > 0) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+      if (diffHours > 0) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+      if (diffMinutes > 0) return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`;
+      if (diffSeconds > 0) return `${diffSeconds} second${diffSeconds > 1 ? 's' : ''} ago`;
+      return 'Just now';
     },
     calculateStats(values) {
       const sorted = [...values].sort((a, b) => a - b);
@@ -340,13 +380,17 @@ export default {
     },
     handleSensorsLoaded(sensors) {
       this.sensors.data = sensors;
-      for (const sensor of this.sensors.data.values())
+      for (const sensor of this.sensors.data.values()) {
         sensor.distanceFromCenter = this.calculateDistance(
           this.center.lat,
           this.center.lng,
           sensor.lat,
           sensor.lng,
         ).toFixed(2);
+        sensor.lastMeasurementReceived = 'N/A';
+        sensor.lastMeasurementReceivedRaw = null;
+        sensor.timeSinceLastMeasurement = 'N/A';
+      }
       this.addInfo(`Loaded ${sensors.size} sensors`);
     },
     refreshSensors() {
@@ -486,15 +530,9 @@ export default {
             </button>
           </div>
         </div>
-        <MapComponent
-          ref="mapComponent"
-          :measurements="measurements"
-          :get-intensity="getIntensity"
-          :calculate-stats="calculateStats"
-          @marker-click="handleMarkerClick"
-          @sensors-loaded="handleSensorsLoaded"
-          @measurements-cleared="handleMeasurementsCleared"
-        />
+        <MapComponent ref="mapComponent" :measurements="measurements" :get-intensity="getIntensity"
+          :calculate-stats="calculateStats" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
+          @measurements-cleared="handleMeasurementsCleared" />
       </div>
 
       <div class="dashboard-component measurements-component-container">
@@ -520,7 +558,8 @@ export default {
             <i class="fas fa-trash"></i> Clear
           </button>
         </div>
-        <TableComponent ref="measurementComponent" :data="Object.values(statsMeasurement.data)" :columns="statsMeasurement.columns" />
+        <TableComponent ref="measurementComponent" :data="Object.values(statsMeasurement.data)"
+          :columns="statsMeasurement.columns" />
       </div>
 
       <div class="dashboard-component log-component-container">
