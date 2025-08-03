@@ -9,7 +9,8 @@
             'sorted': sortConfig.key === column.key
           }" @click="handleSort(column)">
             <div class="th-content">
-              <span>{{ column.label }}</span>
+              <span v-if="column.html" v-html="column.label"></span>
+              <span v-else>{{ column.label }}</span>
               <div v-if="column.sortable && false !== column.sortable" class="sort-indicators">
                 <i class="fas fa-caret-up sort-arrow" :class="{
                   'active': sortConfig.key === column.key && sortConfig.direction === 'asc'

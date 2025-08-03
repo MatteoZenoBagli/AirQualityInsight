@@ -120,13 +120,6 @@ export default {
         columns: [
           { key: "sensor_id", label: "Sensor ID" },
           { key: "timestamp", label: "Timestamp", center: true },
-          { key: "temperature", label: "Temperature (°C)", center: true },
-          { key: "humidity", label: "Humidity (%)", center: true },
-          { key: "pressure", label: "Pressure (hPa)", center: true },
-          { key: "pm25", label: "PM25 (µg/m³)", center: true },
-          { key: "pm10", label: "PM10 (µg/m³)", center: true },
-          { key: "voc", label: "VOC (ppm)", center: true },
-          { key: "co2", label: "CO2 (ppm)", center: true },
         ],
         data: []
       },
@@ -164,7 +157,7 @@ export default {
       return `&le; ${threshold}`;
     }
 
-    for (const [key, data] of Object.entries(this.measurements))
+    for (const [key, data] of Object.entries(this.measurements)) {
       this.infoMeasurement.data.push({
         measurement: data.label,
         measurementUnit: data.info.measurementUnit,
@@ -175,6 +168,18 @@ export default {
         thresholdPoor: explainThreshold(data.thresholds.poor),
         info: this.createInfoIcon(data.info.description),
       });
+
+      this.collectedMeasurement.columns.push({
+        key: key,
+        label: [
+          this.measurements[key].label,
+          ' ',
+          '(' + this.measurements[key].info.measurementUnit + ')'
+        ].join('<wbr>'),
+        center: true,
+        html: true
+      });
+    }
 
     this.clearStats();
   },
@@ -229,7 +234,7 @@ export default {
           this.statsMeasurement.data[measurementType].min = parseFloat(stats.min).toFixed(2);
           this.statsMeasurement.data[measurementType].max = parseFloat(stats.max).toFixed(2);
           this.statsMeasurement.data[measurementType].range = parseFloat(stats.range).toFixed(2);
-          this.statsMeasurement.data[measurementType].quality = parseFloat(intensity).toFixed(2);
+          this.statsMeasurement.data[measurementType].quality = this.getIntensityLabel(intensity);
         }
       });
 
@@ -270,6 +275,12 @@ export default {
       if (value <= threshold.moderate) return 0.4;
       if (value <= threshold.poor) return 0.7;
       return 1.0;
+    },
+    getIntensityLabel(intensity) {
+      if (intensity <= 0.2) return 'Good';
+      if (intensity <= 0.4) return 'Moderate';
+      if (intensity <= 0.7) return 'Poor';
+      return 'Very poor';
     },
     disconnectSocket() {
       if (!this.socket) return;
