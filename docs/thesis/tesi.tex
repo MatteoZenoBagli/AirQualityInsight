@@ -1,0 +1,121 @@
+% Template source: https://www.overleaf.com/project/5c3f179666c6b83e735fb136
+
+% Font size: 12pt
+% Format A4 paper
+% Openright: open chapters on the right
+% Twoside: front and back document
+% Report: thesis style (or book)
+\documentclass[12pt,a4paper,openright,twoside]{report}
+\usepackage[italian]{babel} % Italian dictionary library
+\usepackage[utf8]{inputenc} % Italian characters
+\usepackage{fancyhdr} % Document layout library
+\usepackage{indentfirst} % Indentation at the beginning of the chapters
+%\usepackage{showkeys} % Label's library
+\usepackage{graphicx} % Graph's library
+\usepackage{newlfont} % Custom fonts library
+% Math libraries
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[square,numbers,sort]{natbib}
+%\bibliographystyle{unsrt}
+\bibliographystyle{unsrtnat}
+
+\lstset{
+  frame=single,   % Adds a frame (border) around code blocks
+                  % single means it will be a continuous line that completely surrounds the code
+  breaklines=true % Enables automatic line breaking for long lines
+                  % When a line of code is too long to fit within the page width, it will be automatically broken and continued on the next line
+}
+
+\oddsidemargin=30pt \evensidemargin=20pt    % Margins
+\hyphenation{sil-la-ba-zio-ne pa-ren-te-si} % It serves for hyphenation
+
+% Page layout setup
+\pagestyle{fancy}\addtolength{\headwidth}{20pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+\linespread{1.3} % Line spaceing
+
+%%%%%%%%%%%%%%%%%%%
+% Custom commands %
+%%%%%%%%%%%%%%%%%%%
+\newcommand{\xstudent}{Matteo Zeno Bagli}
+\newcommand{\xsupervisor}{Giovanni Delnevo}
+\newcommand{\xcorrelatore}{Kelvin Oluwada Milare Obuneme Olaiya}
+
+%%%%%%%%%%%%%%%%%%%
+% End of Preamble %
+% Document start  %
+%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% preface start                           %
+%                                         %
+% title page, table of contents, abstract %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \input{frontMatter/frontespizio.tex}
+% \input{frontMatter/00-dedication.tex}
+% \input{frontMatter/00-introduction.tex}
+
+\tableofcontents % Index
+
+% Page heading
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INDICE}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Doesn't numerate last page on the left
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\listoffigures % Makes list of figures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Doesn't numerate last page on the left
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\listoftables % Makes list of tables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document body start                                                                   %
+%                                                                                       %
+% Sequence of various sections                                                          %
+% It is recommended to maintain a well-defined logical structure for section separation %
+% It is suggested to reflect this structure physically in the file system               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Sections inclusion
+% \input{mainMatter/01-cap.tex}
+% \input{mainMatter/02-cap.tex}
+% \input{mainMatter/03-cap.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document final section start                                    %
+%                                                                 %
+% Any appendices, required bibliography,                          %
+% Optional table and figure lists (if needed, uncomment           %
+% The line containing \listoffigures and \listoftables commands)  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \input{backMatter/conclusioni.tex}
+% \input{backMatter/bibliografia.tex}
+% \input{backMatter/ringraziamenti.tex}
+
+%\input{./Appendice/appendice.tex}
+%\input{./Bibliografia/bibliografia.tex}
+
+\nocite{*}
+
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Bibliografia}
+
+%\listoffigures
+%\listoftables
+
+\end{document}

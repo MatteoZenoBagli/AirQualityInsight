@@ -1,0 +1,4 @@
+Il volume deve essere composto da 3 capitoli di circa 20 pagine:
+Contesto: in quale ambito si colloca la tesi, progetti simili, ecc
+Tecnologie: lista e spiegazione di tutte le tecnologie usate (linguaggi, framework, librerie, strumenti di sviluppo, ecc)
+Progetto: descrizione di quanto implementato
