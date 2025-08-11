@@ -13,6 +13,7 @@
 \usepackage{indentfirst} % Indentation at the beginning of the chapters
 %\usepackage{showkeys} % Label's library
 \usepackage{graphicx} % Graph's library
+\graphicspath{{assets/images}}
 \usepackage{newlfont} % Custom fonts library
 % Math libraries
 \usepackage{amssymb}
@@ -22,8 +23,21 @@
 \usepackage{listings}
 \usepackage{hyperref}
 \usepackage[square,numbers,sort]{natbib}
-% \bibliographystyle{unsrt}
-\bibliographystyle{unsrtnat}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{adjustbox}
+
+\setlength{\headheight}{14.49998pt}
+\addtolength{\topmargin}{-2.49998pt}
+
+% List of IQA colors for table
+\definecolor{good}{RGB}{80,240,230}           % Turquoise
+\definecolor{fair}{RGB}{80,204,170}           % Aqua green
+\definecolor{moderate}{RGB}{240,230,65}       % Yellow
+\definecolor{poor}{RGB}{255,80,80}            % Red
+\definecolor{verypoor}{RGB}{150,0,50}         % Dark purple
+\definecolor{extremelypoor}{RGB}{125,33,129}  % Indigo
 
 \lstset{
   frame=single,   % Adds a frame (border) around code blocks
@@ -47,8 +61,11 @@
 % Custom commands %
 %%%%%%%%%%%%%%%%%%%
 \newcommand{\xstudent}{Matteo Zeno Bagli}
-\newcommand{\xsupervisor}{Giovanni Delnevo}
-\newcommand{\xcorrelatore}{Kelvin Oluwada Milare Obuneme Olaiya}
+\newcommand{\xsupervisor}{Silvia Mirri}
+\newcommand{\xcorrelatore}{Giovanni Delnevo}
+\newcommand{\xsession}{II}
+\newcommand{\xaccademicyear}{2024-2025}
+\newcommand{\donotmumberlastpageonleft}{\clearpage{\pagestyle{empty}\cleardoublepage}}
 
 %%%%%%%%%%%%%%%%%%%
 % End of Preamble %
@@ -63,9 +80,9 @@
 % title page, table of contents, abstract %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{frontMatter/frontespizio.tex}
-% \input{frontMatter/00-dedication.tex}
-% \input{frontMatter/00-introduction.tex}
+\input{frontMatter/frontespizio.tex}
+\input{frontMatter/00-dedication.tex}
+\input{frontMatter/00-introduction.tex}
 
 \tableofcontents % Index
 
@@ -73,12 +90,10 @@
 \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INDICE}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Doesn't numerate last page on the left
-\clearpage{\pagestyle{empty}\cleardoublepage}
+\donotmumberlastpageonleft
 \listoffigures % Makes list of figures
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Doesn't numerate last page on the left
-\clearpage{\pagestyle{empty}\cleardoublepage}
+\donotmumberlastpageonleft
 \listoftables % Makes list of tables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,7 +105,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Sections inclusion
-% \input{mainMatter/01-cap.tex}
+\input{mainMatter/01-cap.tex}
 % \input{mainMatter/02-cap.tex}
 % \input{mainMatter/03-cap.tex}
 
@@ -104,11 +119,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \input{backMatter/conclusioni.tex}
-% \input{backMatter/bibliografia.tex}
+\input{backMatter/bibliografia.tex}
 % \input{backMatter/ringraziamenti.tex}
 
 %\input{./Appendice/appendice.tex}
-%\input{./Bibliografia/bibliografia.tex}
+% \input{./Bibliografia/bibliografia.tex}
 
 \nocite{*}
 
