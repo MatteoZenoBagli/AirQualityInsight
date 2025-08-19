@@ -285,7 +285,7 @@ export default {
           { key: 'min', label: 'Min', center: true },
           { key: 'max', label: 'Max', center: true },
           { key: 'range', label: 'Range', center: true },
-          { key: 'quality', label: 'Quality', center: true },
+          { key: 'quality', label: 'Quality', center: true, html: true },
         ],
         data: {}
       },
@@ -470,28 +470,28 @@ export default {
         const [minPoor, maxPoor] = threshold.poor;
         const [minVeryPoor, maxVeryPoor] = threshold.poor;
 
-        if (minGood <= value && maxGood >= value) return this.thresholds.good.value;
-        if (minFair <= value && maxFair >= value) return this.thresholds.fair.value;
-        if (minModerate <= value && maxModerate >= value) return this.thresholds.moderate.value;
-        if (minPoor <= value && maxPoor >= value) return this.thresholds.poor.value;
-        if (minVeryPoor <= value && maxVeryPoor >= value) return this.thresholds.very_poor.value;
-        return this.thresholds.extremely_poor.value;
+        if (minGood <= value && maxGood >= value) return this.thresholds.good;
+        if (minFair <= value && maxFair >= value) return this.thresholds.fair;
+        if (minModerate <= value && maxModerate >= value) return this.thresholds.moderate;
+        if (minPoor <= value && maxPoor >= value) return this.thresholds.poor;
+        if (minVeryPoor <= value && maxVeryPoor >= value) return this.thresholds.very_poor;
+        return this.thresholds.extremely_poor;
       }
 
-      if (value <= threshold.good) return this.thresholds.good.value;
-      if (value <= threshold.fair) return this.thresholds.fair.value;
-      if (value <= threshold.moderate) return this.thresholds.moderate.value;
-      if (value <= threshold.poor) return this.thresholds.poor.value;
-      if (value <= threshold.very_poor) return this.thresholds.very_poor.value;
-      return this.thresholds.extremely_poor.value;
+      if (value <= threshold.good) return this.thresholds.good;
+      if (value <= threshold.fair) return this.thresholds.fair;
+      if (value <= threshold.moderate) return this.thresholds.moderate;
+      if (value <= threshold.poor) return this.thresholds.poor;
+      if (value <= threshold.very_poor) return this.thresholds.very_poor;
+      return this.thresholds.extremely_poor;
     },
     getIntensityLabel(intensity) {
-      if (intensity <= this.thresholds.good) return this.thresholds.good.label;
-      if (intensity <= this.thresholds.fair) return this.thresholds.fair.label;
-      if (intensity <= this.thresholds.moderate) return this.thresholds.moderate.label;
-      if (intensity <= this.thresholds.poor) return this.thresholds.poor.label;
-      if (intensity <= this.thresholds.very_poor) return this.thresholds.very_poor.label;
-      return this.thresholds.extremely_poor.label;
+      return `
+        <div class="intensity-label">
+          <i class="threshold-intensity" style="background-color: ${intensity.color}"></i>
+          <span>${intensity.label}</span>
+        </div>
+      `;
     },
     disconnectSocket() {
       if (!this.socket) return;
@@ -938,5 +938,23 @@ tbody tr:nth-child(even) {
       "stats stats log"
       "sensors sensors sensors";
   }
+}
+
+.intensity-label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.threshold-intensity {
+  width: 16px;
+  height: 16px;
+  border: solid 0.5px black;
+  border-radius: 50%;
+}
+
+.table-row td:has(.intensity-label) {
+  width: 200px;
 }
 </style>

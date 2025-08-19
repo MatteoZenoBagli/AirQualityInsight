@@ -235,7 +235,7 @@ export default {
       for (const measurementType of Object.keys(this.measurements)) {
         const intensity = this.getIntensity(data[measurementType], measurementType);
 
-        const latLng = [sensor.lat, sensor.lng, intensity];
+        const latLng = [sensor.lat, sensor.lng, intensity.value];
         this.measurements[measurementType].heatLatLng.unshift(latLng);
         if (this.measurements[measurementType].heatLatLng.length > this.maxHeatLatLng)
           this.measurements[measurementType].heatLatLng = this.measurements[measurementType].heatLatLng.slice(0, this.maxHeatLatLng);
