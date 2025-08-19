@@ -19,12 +19,51 @@ export default {
       center: { lng: '11.3426000', lat: '44.4939000', name: 'Piazza Maggiore' }, // Piazza Maggiore, Bologna
       minMeasurements: 50,
       maxMeasurements: 1000,
+      thresholds: {
+        good: {
+          label: 'Good',
+          value: 0.15,
+          color: '#50f0e6'
+        },
+        fair: {
+          label: 'Fair',
+          value: 0.30,
+          color: '#50ccaa'
+        },
+        moderate: {
+          label: 'Moderate',
+          value: 0.45,
+          color: '#f0e641'
+        },
+        poor: {
+          label: 'Poor',
+          value: 0.60,
+          color: '#ff5050'
+        },
+        very_poor: {
+          label: 'Very poor',
+          value: 0.75,
+          color: '#960032'
+        },
+        extremely_poor: {
+          label: 'Extremely poor',
+          value: 1,
+          color: '#7d2181'
+        },
+      },
       measurements: {
         temperature: {
           label: 'Temperature',
           data: [],
           stats: {},
-          thresholds: { good: [18, 24], moderate: [15, 28], poor: [10, 35] },
+          thresholds: {
+            good: [18, 24],
+            fair: [15, 27],
+            moderate: [12, 30],
+            poor: [9, 33],
+            very_poor: [0, 35],
+            extremely_poor: ["otherwise"],
+          },
           heatLatLng: [],
           info: {
             min: -15,
@@ -37,7 +76,14 @@ export default {
           label: 'Humidity',
           data: [],
           stats: {},
-          thresholds: { good: [40, 60], moderate: [30, 70], poor: [20, 80] },
+          thresholds: {
+            good: [40, 60],
+            fair: [35, 65],
+            moderate: [30, 70],
+            poor: [20, 80],
+            very_poor: [10, 90],
+            extremely_poor: ["otherwise"],
+          },
           heatLatLng: [],
           info: {
             min: 30,
@@ -46,11 +92,19 @@ export default {
             description: 'Records relative humidity levels as a percentage, showing the amount of moisture present in the air compared to maximum capacity at current temperature.',
           }
         },
+
         pressure: {
           label: 'Pressure',
           data: [],
           stats: {},
-          thresholds: { good: [1013, 1023], moderate: [1005, 1030], poor: [995, 1040] },
+          thresholds: {
+            good: [1013, 1020],
+            fair: [1005, 1020],
+            moderate: [1000, 1020],
+            poor: [995, 1020],
+            very_poor: [990, 1020],
+            extremely_poor: ["otherwise"],
+          },
           heatLatLng: [],
           info: {
             min: 980,
@@ -63,7 +117,14 @@ export default {
           label: 'VOC',
           data: [],
           stats: {},
-          thresholds: { good: 1, moderate: 3, poor: 5 },
+          thresholds: {
+            good: 0.3,
+            fair: 0.6,
+            moderate: 1.2,
+            poor: 2.0,
+            very_poor: 2.5,
+            extremely_poor: 2.5,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -76,7 +137,14 @@ export default {
           label: 'CO2',
           data: [],
           stats: {},
-          thresholds: { good: 400, moderate: 800, poor: 1200 },
+          thresholds: {
+            good: 450,
+            fair: 600,
+            moderate: 1000,
+            poor: 1500,
+            very_poor: 1800,
+            extremely_poor: 1800,
+          },
           heatLatLng: [],
           info: {
             min: 400,
@@ -89,7 +157,14 @@ export default {
           label: 'PM2.5',
           data: [],
           stats: {},
-          thresholds: { good: 15, moderate: 35, poor: 55 },
+          thresholds: {
+            good: 5,
+            fair: 15,
+            moderate: 50,
+            poor: 90,
+            very_poor: 140,
+            extremely_poor: 140,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -102,7 +177,14 @@ export default {
           label: 'PM10',
           data: [],
           stats: {},
-          thresholds: { good: 25, moderate: 50, poor: 90 },
+          thresholds: {
+            good: 15,
+            fair: 45,
+            moderate: 120,
+            poor: 195,
+            very_poor: 270,
+            extremely_poor: 270,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -115,7 +197,14 @@ export default {
           label: 'NO2',
           data: [],
           stats: {},
-          thresholds: { good: 25, moderate: 50, poor: 90 },
+          thresholds: {
+            good: 60,
+            fair: 100,
+            moderate: 120,
+            poor: 160,
+            very_poor: 180,
+            extremely_poor: 180,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -128,7 +217,14 @@ export default {
           label: 'O3',
           data: [],
           stats: {},
-          thresholds: { good: 25, moderate: 50, poor: 90 },
+          thresholds: {
+            good: 10,
+            fair: 25,
+            moderate: 60,
+            poor: 100,
+            very_poor: 150,
+            extremely_poor: 150,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -141,7 +237,14 @@ export default {
           label: 'SO2',
           data: [],
           stats: {},
-          thresholds: { good: 25, moderate: 50, poor: 90 },
+          thresholds: {
+            good: 20,
+            fair: 40,
+            moderate: 125,
+            poor: 190,
+            very_poor: 275,
+            extremely_poor: 275,
+          },
           heatLatLng: [],
           info: {
             min: 0,
@@ -158,8 +261,11 @@ export default {
           { key: 'min', label: 'Min', center: true },
           { key: 'max', label: 'Max', center: true },
           { key: 'thresholdGood', label: 'Good', center: true, html: true },
+          { key: 'thresholdFair', label: 'Fair', center: true, html: true },
           { key: 'thresholdModerate', label: 'Moderate', center: true, html: true },
           { key: 'thresholdPoor', label: 'Poor', center: true, html: true },
+          { key: 'thresholdVeryPoor', label: 'Very poor', center: true, html: true },
+          { key: 'thresholdExtremelyPoor', label: 'Extremely poor', center: true, html: true },
           { key: 'info', label: 'Info', center: true, html: true }
         ],
         data: []
@@ -203,8 +309,10 @@ export default {
   created() {
     this.connectSocket();
 
-    const explainThreshold = (threshold) => {
+    const explainThreshold = (threshold, extremely_poor = false) => {
+      if (Array.isArray(threshold) && extremely_poor) return threshold;
       if (Array.isArray(threshold)) return `&ge; ${threshold[0]}, &le; ${threshold[1]}`;
+      if (extremely_poor) return `&gt; ${threshold}`;
       return `&le; ${threshold}`;
     }
 
@@ -215,8 +323,11 @@ export default {
         min: data.info.min,
         max: data.info.max,
         thresholdGood: explainThreshold(data.thresholds.good),
+        thresholdFair: explainThreshold(data.thresholds.fair),
         thresholdModerate: explainThreshold(data.thresholds.moderate),
         thresholdPoor: explainThreshold(data.thresholds.poor),
+        thresholdVeryPoor: explainThreshold(data.thresholds.very_poor),
+        thresholdExtremelyPoor: explainThreshold(data.thresholds.extremely_poor, true),
         info: this.createInfoIcon(data.info.description),
       });
 
@@ -354,24 +465,33 @@ export default {
 
       if (Array.isArray(threshold.good)) {
         const [minGood, maxGood] = threshold.good;
+        const [minFair, maxFair] = threshold.fair;
         const [minModerate, maxModerate] = threshold.moderate;
         const [minPoor, maxPoor] = threshold.poor;
-        if (minGood <= value && maxGood >= value) return 0.2;
-        if (minModerate <= value && maxModerate >= value) return 0.4;
-        if (minPoor <= value && maxPoor >= value) return 0.7;
-        return 1.0;
+        const [minVeryPoor, maxVeryPoor] = threshold.poor;
+
+        if (minGood <= value && maxGood >= value) return this.thresholds.good.value;
+        if (minFair <= value && maxFair >= value) return this.thresholds.fair.value;
+        if (minModerate <= value && maxModerate >= value) return this.thresholds.moderate.value;
+        if (minPoor <= value && maxPoor >= value) return this.thresholds.poor.value;
+        if (minVeryPoor <= value && maxVeryPoor >= value) return this.thresholds.very_poor.value;
+        return this.thresholds.extremely_poor.value;
       }
 
-      if (value <= threshold.good) return 0.2;
-      if (value <= threshold.moderate) return 0.4;
-      if (value <= threshold.poor) return 0.7;
-      return 1.0;
+      if (value <= threshold.good) return this.thresholds.good.value;
+      if (value <= threshold.fair) return this.thresholds.fair.value;
+      if (value <= threshold.moderate) return this.thresholds.moderate.value;
+      if (value <= threshold.poor) return this.thresholds.poor.value;
+      if (value <= threshold.very_poor) return this.thresholds.very_poor.value;
+      return this.thresholds.extremely_poor.value;
     },
     getIntensityLabel(intensity) {
-      if (intensity <= 0.2) return 'Good';
-      if (intensity <= 0.4) return 'Moderate';
-      if (intensity <= 0.7) return 'Poor';
-      return 'Very poor';
+      if (intensity <= this.thresholds.good) return this.thresholds.good.label;
+      if (intensity <= this.thresholds.fair) return this.thresholds.fair.label;
+      if (intensity <= this.thresholds.moderate) return this.thresholds.moderate.label;
+      if (intensity <= this.thresholds.poor) return this.thresholds.poor.label;
+      if (intensity <= this.thresholds.very_poor) return this.thresholds.very_poor.label;
+      return this.thresholds.extremely_poor.label;
     },
     disconnectSocket() {
       if (!this.socket) return;
@@ -576,8 +696,8 @@ export default {
           </div>
         </div>
         <MapComponent ref="mapComponent" :measurements="measurements" :get-intensity="getIntensity"
-          :min-measurements="minMeasurements" :max-measurements="maxMeasurements" :calculate-stats="calculateStats"
-          @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
+          :min-measurements="minMeasurements" :max-measurements="maxMeasurements" :thresholds="thresholds"
+          :calculate-stats="calculateStats" @marker-click="handleMarkerClick" @sensors-loaded="handleSensorsLoaded"
           @measurements-cleared="handleMeasurementsCleared" />
       </div>
 
@@ -746,7 +866,7 @@ body {
 
 .stats-component-container,
 .log-component-container {
-  max-height: 450px;
+  max-height: 600px;
 }
 
 .sensors-component-container {

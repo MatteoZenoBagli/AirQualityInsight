@@ -35,7 +35,11 @@ export default {
     getIntensity: {
       type: Function,
       required: true
-    }
+    },
+    thresholds: {
+      type: Object,
+      required: true
+    },
   },
   data() {
     return {
@@ -183,16 +187,15 @@ export default {
         this.map.invalidateSize();
       });
 
+      const gradient = {};
+      for (const threshold of Object.values(this.thresholds))
+        gradient[threshold.value] = threshold.color;
+
       this.heatLayer = L.heatLayer([], {
         radius: 30,
         blur: 25,
         maxZoom: 17,
-        gradient: {
-          0.2: '#00ff00',  // Green - good quality
-          0.4: '#ffff00',  // Yellow - moderate
-          0.6: '#ff8000',  // Orange - low
-          1.0: '#ff0000'   // Red - bad
-        }
+        gradient,
       }).addTo(this.map);
     },
     toggleLayer(layer, hideOrEvent = false) {
