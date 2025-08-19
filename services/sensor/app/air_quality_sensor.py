@@ -31,15 +31,20 @@ class AirQualitySensor:
             # Initial pressure
             pressure = np.mean(self.config['pressure_range'])
 
-            # PM2.5 and PM10 are correlated
-            pm25 = random.uniform(*self.config['pm25_range'])
-            pm10 = pm25 + random.uniform(0, self.config['pm10_range'][1] - pm25)
-
             # VOC levels
             voc = random.uniform(*self.config['voc_range'])
 
             # CO2 levels - starting with typical outdoor CO2 level
             co2 = 400
+
+            # PM2.5 and PM10 are correlated
+            pm25 = random.uniform(*self.config['pm25_range'])
+            pm10 = pm25 + random.uniform(0, self.config['pm10_range'][1] - pm25)
+
+            # Gas pollutants - NO2, O3, SO2
+            no2 = random.uniform(*self.config['no2_range'])
+            o3 = random.uniform(*self.config['o3_range'])
+            so2 = random.uniform(*self.config['so2_range'])
         else:
             # Apply random change of 1-5% to previous values
             def random_change(value):
@@ -60,13 +65,6 @@ class AirQualitySensor:
             pressure = random_change(self.last_reading['pressure'])
             pressure = np.clip(pressure, *self.config['pressure_range'])
 
-            # PM2.5 and PM10 with correlation maintained
-            pm25 = random_change(self.last_reading['pm25'])
-            pm25 = np.clip(pm25, *self.config['pm25_range'])
-
-            pm10 = max(pm25 + random_change(self.last_reading['pm10'] - self.last_reading['pm25']), pm25)
-            pm10 = np.clip(pm10, pm25, self.config['pm10_range'][1])
-
             # VOC levels
             voc = random_change(self.last_reading['voc'])
             voc = np.clip(voc, *self.config['voc_range'])
@@ -75,6 +73,28 @@ class AirQualitySensor:
             co2 = random_change(self.last_reading['co2'])
             co2 = np.clip(co2, *self.config['co2_range'])
 
+            # Gas pollutants with random changes #
+
+            # PM2.5 and PM10 with correlation maintained
+            pm25 = random_change(self.last_reading['pm25'])
+            pm25 = np.clip(pm25, *self.config['pm25_range'])
+
+            pm10 = max(pm25 + random_change(self.last_reading['pm10'] - self.last_reading['pm25']), pm25)
+            pm10 = np.clip(pm10, pm25, self.config['pm10_range'][1])
+
+
+            # Nitrogen dioxide levels
+            no2 = random_change(self.last_reading['no2'])
+            no2 = np.clip(no2, *self.config['no2_range'])
+
+            # Ozone levels
+            o3 = random_change(self.last_reading['o3'])
+            o3 = np.clip(o3, *self.config['o3_range'])
+
+            # Sulfur dioxide levels
+            so2 = random_change(self.last_reading['so2'])
+            so2 = np.clip(so2, *self.config['so2_range'])
+
         # Create the new reading
         new_reading = {
             'sensor_id': self.sensor['sensor_id'],
@@ -82,10 +102,13 @@ class AirQualitySensor:
             'temperature': round(temp, 2),
             'humidity': round(humidity, 2),
             'pressure': round(pressure, 2),
+            'voc': round(voc, 3),
+            'co2': round(co2, 1),
             'pm25': round(pm25, 2),
             'pm10': round(pm10, 2),
-            'voc': round(voc, 3),
-            'co2': round(co2, 1)
+            'no2': round(no2, 2),
+            'o3': round(o3, 2),
+            'so2': round(so2, 2)
         }
 
         # Store this as the last reading for next time

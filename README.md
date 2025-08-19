@@ -13,9 +13,6 @@ The measured data includes: CO2, PM10 and PM2.5 (Particulate Matter)
 -   PM10 consists of particles with a diameter of less than 10 micrometers.
 -   PM2.5 consists of even finer particles, with a diameter of less than 2.5 micrometers.
     -   They mainly originate from traffic, heating, and industrial activities.
-
-Other values that may be measured in the future:
-
 -   NO2 (Nitrogen Dioxide): primarily from vehicular traffic.
 -   O3 (Ozone): formed through photochemical reactions.
 -   CO (Carbon Monoxide): from incomplete combustion.

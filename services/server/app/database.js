@@ -44,10 +44,13 @@ const measurementSchema = new mongoose.Schema({
   temperature: Number,
   humidity: Number,
   pressure: Number,
-  pm25: Number,
-  pm10: Number,
   voc: Number,
   co2: Number,
+  pm25: Number,
+  pm10: Number,
+  no2: Number,
+  o3: Number,
+  so2: Number,
 });
 const Measurement = mongoose.model("Measurement", measurementSchema);
 
@@ -75,10 +78,13 @@ const saveMeasurement = async (measurement) => {
     temperature: parseFloat(measurement.temperature),
     humidity: parseFloat(measurement.humidity),
     pressure: parseFloat(measurement.pressure),
-    pm25: parseFloat(measurement.pm25),
-    pm10: parseFloat(measurement.pm10),
     voc: parseFloat(measurement.voc),
     co2: parseFloat(measurement.co2),
+    pm25: parseFloat(measurement.pm25),
+    pm10: parseFloat(measurement.pm10),
+    no2: parseFloat(measurement.no2),
+    o3: parseFloat(measurement.o3),
+    so2: parseFloat(measurement.so2),
   };
 
   if (DEBUG) console.log('Processed Measurement:', processedMeasurement);

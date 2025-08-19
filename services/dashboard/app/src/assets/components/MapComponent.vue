@@ -12,10 +12,13 @@ export default {
     measurements: {
       type: Object,
       default: () => ({
-        pm25: [],
-        pm10: [],
         voc: [],
         co2: [],
+        pm25: [],
+        pm10: [],
+        no2: [],
+        o3: [],
+        so2: [],
         temperature: [],
         humidity: [],
         pressure: []

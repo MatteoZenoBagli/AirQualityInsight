@@ -74,10 +74,13 @@ db.createCollection("measurements", {
         "temperature",
         "humidity",
         "pressure",
-        "pm25",
-        "pm10",
         "voc",
         "co2",
+        "pm25",
+        "pm10",
+        "no2",
+        "o3",
+        "so2",
       ],
       properties: {
         sensor_id: {
@@ -100,6 +103,14 @@ db.createCollection("measurements", {
           bsonType: ["double", "int"],
           description: "Atmospheric pressure in hPa",
         },
+        voc: {
+          bsonType: ["double", "int"],
+          description: "Volatile Organic Compounds in ppb",
+        },
+        co2: {
+          bsonType: ["double", "int"],
+          description: "CO2 concentration in ppm",
+        },
         pm25: {
           bsonType: ["double", "int"],
           description: "PM2.5 concentration in µg/m³",
@@ -108,13 +119,17 @@ db.createCollection("measurements", {
           bsonType: ["double", "int"],
           description: "PM10 concentration in µg/m³",
         },
-        voc: {
+        no2: {
           bsonType: ["double", "int"],
-          description: "Volatile Organic Compounds in ppb",
+          description: "NO2 concentration in µg/m³",
         },
-        co2: {
+        o3: {
           bsonType: ["double", "int"],
-          description: "CO2 concentration in ppm",
+          description: "O3 concentration in µg/m³",
+        },
+        so2: {
+          bsonType: ["double", "int"],
+          description: "SO2 concentration in µg/m³",
         },
       },
     },

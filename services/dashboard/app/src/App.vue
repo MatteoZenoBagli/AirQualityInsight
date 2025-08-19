@@ -59,32 +59,6 @@ export default {
             description: 'Monitors atmospheric pressure, usually measured in hPa (hectopascals), indicating air pressure changes that can affect weather patterns.',
           }
         },
-        pm25: {
-          label: 'PM2.5',
-          data: [],
-          stats: {},
-          thresholds: { good: 15, moderate: 35, poor: 55 },
-          heatLatLng: [],
-          info: {
-            min: 0,
-            max: 50,
-            measurementUnit: 'µg/m³',
-            description: 'Detects fine particulate matter with diameter ≤2.5 micrometers, measuring dangerous airborne particles that can penetrate deep into lungs and bloodstream.',
-          }
-        },
-        pm10: {
-          label: 'PM10',
-          data: [],
-          stats: {},
-          thresholds: { good: 25, moderate: 50, poor: 90 },
-          heatLatLng: [],
-          info: {
-            min: 0,
-            max: 100,
-            measurementUnit: 'µg/m³',
-            description: 'Measures coarse particulate matter with diameter ≤10 micrometers, monitoring larger airborne particles that can cause respiratory irritation.',
-          }
-        },
         voc: {
           label: 'VOC',
           data: [],
@@ -111,6 +85,71 @@ export default {
             description: 'Carbon dioxide concentration measurement in parts per million (ppm), indicating air quality and ventilation effectiveness in enclosed spaces.',
           }
         },
+        pm25: {
+          label: 'PM2.5',
+          data: [],
+          stats: {},
+          thresholds: { good: 15, moderate: 35, poor: 55 },
+          heatLatLng: [],
+          info: {
+            min: 0,
+            max: 50,
+            measurementUnit: 'µg/m³',
+            description: 'Detects fine particulate matter with diameter ≤2.5 micrometers, measuring dangerous airborne particles that can penetrate deep into lungs and bloodstream.',
+          }
+        },
+        pm10: {
+          label: 'PM10',
+          data: [],
+          stats: {},
+          thresholds: { good: 25, moderate: 50, poor: 90 },
+          heatLatLng: [],
+          info: {
+            min: 0,
+            max: 100,
+            measurementUnit: 'µg/m³',
+            description: 'Measures coarse particulate matter with diameter ≤10 micrometers, monitoring larger airborne particles that can cause respiratory irritation.',
+          }
+        },
+        no2: {
+          label: 'NO2',
+          data: [],
+          stats: {},
+          thresholds: { good: 25, moderate: 50, poor: 90 },
+          heatLatLng: [],
+          info: {
+            min: 0,
+            max: 200,
+            measurementUnit: 'µg/m³',
+            description: "A reddish-brown gas primarily produced by vehicle emissions and industrial combustion. It contributes to smog formation, acid rain, and can cause respiratory irritation. High concentrations are often found in urban areas with heavy traffic."
+          }
+        },
+        o3: {
+          label: 'O3',
+          data: [],
+          stats: {},
+          thresholds: { good: 25, moderate: 50, poor: 90 },
+          heatLatLng: [],
+          info: {
+            min: 0,
+            max: 200,
+            measurementUnit: 'µg/m³',
+            description: "At ground level, ozone is a harmful pollutant formed when nitrogen oxides and volatile organic compounds react in sunlight. It's a key component of smog and can cause breathing problems, especially during hot, sunny days. Note that this is different from the protective ozone layer in the upper atmosphere."
+          }
+        },
+        so2: {
+          label: 'SO2',
+          data: [],
+          stats: {},
+          thresholds: { good: 25, moderate: 50, poor: 90 },
+          heatLatLng: [],
+          info: {
+            min: 0,
+            max: 300,
+            measurementUnit: 'µg/m³',
+            description: "A colorless gas with a sharp, irritating smell, mainly produced by burning fossil fuels containing sulfur (coal, oil) and industrial processes. It can cause respiratory problems and contributes to acid rain formation. Power plants and refineries are major sources."
+          }
+        }
       },
       infoMeasurement: {
         columns: [
@@ -224,10 +263,13 @@ export default {
           temperature: parseFloat(message.temperature).toFixed(2),
           humidity: parseFloat(message.humidity).toFixed(2),
           pressure: parseFloat(message.pressure).toFixed(2),
+          voc: parseFloat(message.voc).toFixed(2),
+          co2: parseFloat(message.co2).toFixed(2),
           pm25: parseFloat(message.pm25).toFixed(2),
           pm10: parseFloat(message.pm10).toFixed(2),
-          voc: parseFloat(message.voc).toFixed(2),
-          co2: parseFloat(message.co2).toFixed(2)
+          no2: parseFloat(message.no2).toFixed(2),
+          o3: parseFloat(message.o3).toFixed(2),
+          so2: parseFloat(message.so2).toFixed(2),
         };
 
         this.collectedMeasurement.data.unshift(formattedData);
