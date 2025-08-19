@@ -23,32 +23,56 @@ export default {
         good: {
           label: 'Good',
           value: 0.15,
-          color: '#50f0e6'
+          color: '#50f0e6',
+          advice: {
+            general: "The air quality is good. Enjoy your usual outdoor activities.",
+            sensitive: "The air quality is good. Enjoy your usual outdoor activities."
+          },
         },
         fair: {
           label: 'Fair',
           value: 0.30,
-          color: '#50ccaa'
+          color: '#50ccaa',
+          advice: {
+            general: "Enjoy your usual outdoor activities.",
+            sensitive: "Enjoy your usual outdoor activities."
+          },
         },
         moderate: {
           label: 'Moderate',
           value: 0.45,
-          color: '#f0e641'
+          color: '#f0e641',
+          advice: {
+            general: "Enjoy your usual outdoor activities.",
+            sensitive: "Consider reducing intense outdoor activities, if you experience symptoms."
+          },
         },
         poor: {
           label: 'Poor',
           value: 0.60,
-          color: '#ff5050'
+          color: '#ff5050',
+          advice: {
+            general: "Consider reducing intense activities outdoors, if you experience symptoms such as sore eyes, a cough or sore throat.",
+            sensitive: "Consider reducing physical activities, particularly outdoors, especially if you experience symptoms."
+          },
         },
         very_poor: {
           label: 'Very poor',
           value: 0.75,
-          color: '#960032'
+          color: '#960032',
+          advice: {
+            general: "Consider reducing intense activities outdoors, if you experience symptoms such as sore eyes, a cough or sore throat.",
+            sensitive: "Reduce physical activities, particularly outdoors, especially if you experience symptoms."
+          },
         },
         extremely_poor: {
           label: 'Extremely poor',
           value: 1,
-          color: '#7d2181'
+          color: '#7d2181',
+          advice: {
+            general: "Reduce physical activities outdoors.",
+            sensitive: "Avoid physical activities outdoors."
+          }
         },
       },
       measurements: {
@@ -304,6 +328,7 @@ export default {
       map: null,
       activeSensors: false,
       timeUpdateInterval: null,
+      eaqi: null,
     };
   },
   created() {
@@ -405,6 +430,7 @@ export default {
 
           const stats = this.calculateStats(measurement);
           const intensity = this.getIntensity(stats.mean, measurementType);
+          this.statsMeasurement.data[measurementType].intensity = intensity;
           this.statsMeasurement.data[measurementType].mean = parseFloat(stats.mean).toFixed(2);
           this.statsMeasurement.data[measurementType].median = parseFloat(stats.median).toFixed(2);
           this.statsMeasurement.data[measurementType].min = parseFloat(stats.min).toFixed(2);
@@ -412,6 +438,14 @@ export default {
           this.statsMeasurement.data[measurementType].range = parseFloat(stats.range).toFixed(2);
           this.statsMeasurement.data[measurementType].quality = this.getIntensityLabel(intensity);
         }
+
+        this.eaqi = this.calculateEAQI([
+          this.statsMeasurement.data.pm25,
+          this.statsMeasurement.data.pm10,
+          this.statsMeasurement.data.no2,
+          this.statsMeasurement.data.o3,
+          this.statsMeasurement.data.so2,
+        ]);
       });
 
       this.socket.on("connect", () => {
@@ -460,8 +494,20 @@ export default {
         range: Math.max(...values) - Math.min(...values)
       };
     },
-    getIntensity(value, parameter) {
-      const threshold = this.measurements[parameter].thresholds;
+    calculateEAQI(pollutants) {
+      let dominantPollutant = null;
+
+      for (const pollutant of pollutants) {
+        if (null === dominantPollutant) dominantPollutant = pollutant;
+        if (dominantPollutant.intensity.value < pollutant.intensity.value)
+          dominantPollutant = pollutant;
+      };
+
+      return dominantPollutant;
+    },
+    getIntensity(concentration, pollutant) {
+      const threshold = this.measurements[pollutant].thresholds;
+      if (!threshold) throw new Error(`Unknown pollutant: ${pollutant}`);
 
       if (Array.isArray(threshold.good)) {
         const [minGood, maxGood] = threshold.good;
@@ -470,19 +516,19 @@ export default {
         const [minPoor, maxPoor] = threshold.poor;
         const [minVeryPoor, maxVeryPoor] = threshold.poor;
 
-        if (minGood <= value && maxGood >= value) return this.thresholds.good;
-        if (minFair <= value && maxFair >= value) return this.thresholds.fair;
-        if (minModerate <= value && maxModerate >= value) return this.thresholds.moderate;
-        if (minPoor <= value && maxPoor >= value) return this.thresholds.poor;
-        if (minVeryPoor <= value && maxVeryPoor >= value) return this.thresholds.very_poor;
+        if (minGood <= concentration && maxGood >= concentration) return this.thresholds.good;
+        if (minFair <= concentration && maxFair >= concentration) return this.thresholds.fair;
+        if (minModerate <= concentration && maxModerate >= concentration) return this.thresholds.moderate;
+        if (minPoor <= concentration && maxPoor >= concentration) return this.thresholds.poor;
+        if (minVeryPoor <= concentration && maxVeryPoor >= concentration) return this.thresholds.very_poor;
         return this.thresholds.extremely_poor;
       }
 
-      if (value <= threshold.good) return this.thresholds.good;
-      if (value <= threshold.fair) return this.thresholds.fair;
-      if (value <= threshold.moderate) return this.thresholds.moderate;
-      if (value <= threshold.poor) return this.thresholds.poor;
-      if (value <= threshold.very_poor) return this.thresholds.very_poor;
+      if (concentration <= threshold.good) return this.thresholds.good;
+      if (concentration <= threshold.fair) return this.thresholds.fair;
+      if (concentration <= threshold.moderate) return this.thresholds.moderate;
+      if (concentration <= threshold.poor) return this.thresholds.poor;
+      if (concentration <= threshold.very_poor) return this.thresholds.very_poor;
       return this.thresholds.extremely_poor;
     },
     getIntensityLabel(intensity) {
@@ -701,6 +747,42 @@ export default {
           @measurements-cleared="handleMeasurementsCleared" />
       </div>
 
+      <div class="dashboard-component eaqi-component-container">
+        <div class="component-header">
+          <h2>Current EAQI (European Air Quality Index)</h2>
+        </div>
+        <div>
+          <div>
+            The EAQI (European Air Quality Index) is and index based on concentration values for up to five key
+            pollutants:
+            <ul>
+              <li>Particulate matter (PM10)</li>
+              <li>Fine particulate matter (PM2.5)</li>
+              <li>Nitrogen dioxide (NO2)</li>
+              <li>Ozone (O3)</li>
+              <li>Sulphur dioxide (SO2)</li>
+            </ul>
+            Each pollutant gets a sub-index based on its concentration against the EAQI thresholds.
+            The worst sub-index among all measured pollutants becomes the overall EAQI.
+          </div>
+          <div v-if="this.eaqi">
+            <h3>Live EAQI</h3>
+            <ul>
+              <li style="display: flex; gap: 0.5rem;">Quality: <span v-html="this.eaqi?.quality ?? 'N/A'"></span></li>
+              <li>Worst pollutant: {{ this.eaqi?.measurement ?? 'N/A' }}</li>
+              <li>Mean concentration: {{ this.eaqi?.mean ?? 'N/A' }} µg/m³</li>
+              <li>
+                Health advice:
+                <ul>
+                  <li>General population: {{ this.eaqi?.intensity?.advice?.general ?? 'N/A' }}</li>
+                  <li>Sensitive population: {{ this.eaqi?.intensity?.advice?.sensitive ?? 'N/A' }}</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="dashboard-component measurements-component-container">
         <div class="component-header">
           <h2>Last {{ this.maxMessages }} measurements received</h2>
@@ -830,6 +912,20 @@ body {
   }
 }
 
+.eaqi-component-container {
+  grid-area: eaqi;
+  min-width: 0;
+  height: 100%;
+
+  h3 {
+    margin-top: 1rem;
+  }
+
+  ul {
+    padding: 0.5rem 1rem;
+  }
+}
+
 .map-component-container {
   grid-area: map;
   min-height: 80vh;
@@ -933,6 +1029,7 @@ tbody tr:nth-child(even) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "info info info"
+      "eaqi eaqi eaqi"
       "map map map"
       "measurements measurements measurements"
       "stats stats log"
