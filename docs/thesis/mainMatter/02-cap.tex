@@ -1,10 +1,74 @@
 \clearpage{\pagestyle{empty}\cleardoublepage}
-\chapter{Secondo capitolo}                %crea il capitolo
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
+\chapter{Tecnologie}
 
-Questo \`e il secondo capitolo.
-\section{Prima Sezione}                 %crea la sezione
-Questa \`e la prima sezione.
+Nel seguente capitolo verranno presentate le tecnologie adottate per la realizzazione del progetto AirQualityInsight. Data la natura di applicazione web del progetto, le tecnologie sono state classificate distinguendo tra quelle utilizzate per il front-end e quelle per il back-end.
 
-\section{Seconda Sezione}                 %crea la sezione
-Questa \`e la seconda sezione.
+\section{Applicazione front-end}
+
+In questa sezione verranno presentate le principali tecnologie front-end impiegate nello sviluppo del progetto AirQualityInsight.
+L'applicazione front-end verrà sviluppata in Javascript utilizzando i seguenti framework:
+\begin{itemize}
+  \item Vue per lo sviluppo dell'architettura e della struttura generale dell'applicazione.
+  \item Leaflet per la visualizzazione della mappa interattiva.
+\end{itemize}
+
+Di seguito, la descrizione dettagliata delle singole tecnologie.
+
+\subsection{Vue}
+
+Vue.js è un framework JavaScript progressivo per la costruzione di interfacce utente, creato da Evan You nel 2014 \cite{vue2014}. Nato dall'esperienza dell'autore con AngularJS \cite{angularjs2010} durante il suo periodo in Google, Vue è stato progettato per essere incrementalmente adottabile, combinando le peculiarità di Angular e React \cite{react2013} con una curva di apprendimento più veloce per gli sviluppatori che si interfacciano con esso.
+
+La caratteristica distintiva di Vue risiede nella sua natura progressiva, che consente di adottarlo gradualmente in base alle necessità del progetto. Al livello più elementare, Vue può essere utilizzato come una semplice libreria JavaScript per arricchire pagine HTML esistenti con funzionalità interattive. A livello intermedio invece, il framework è in grado di gestire componenti complessi in relazione fra loro utilizzando sistemi di routing sofisticati. Infine, al livello più avanzato, Vue permette la costruzione di Single Page Applications (SPA) \cite{mdn2024spa} complete e performanti.
+
+Il sistema di reattività costituisce uno dei pilastri fondamentali dell'architettura di Vue. Questo meccanismo garantisce infatti la sincronizzazione automatica tra il modello dati e la vista attraverso un sistema di data binding bidirezionale, ossia un meccanismo di sincronizzazione automatica che mantiene allineati i dati tra il modello dell'applicazione (model) e l'interfaccia utente (view) in entrambe le direzioni. Le computed properties permettono la definizione di proprietà calcolate che si aggiornano automaticamente quando cambiano le loro dipendenze, mentre i watchers offrono la possibilità di creare osservatori personalizzati per reagire a modifiche specifiche dei dati.
+
+Vue adotta un'architettura basata su componenti, in cui ciascun componente costituisce un elemento modulare e riutilizzabile dell'interfaccia utente. I Single File Components (SFC), caratterizzati dall'estensione \\texttt{.vue}, incapsulano template HTML, logica JavaScript e stili CSS in un unico file, facilitando la manutenzione e l'organizzazione del codice. La comunicazione tra componenti avviene attraverso un sistema ben definito di props per il passaggio di dati da genitore a figlio e di eventi per la comunicazione inversa.
+
+A livello tecnico, Vue implementa un sistema di template dichiarativo che utilizza una sintassi intuitiva. Il framework utilizza un Virtual DOM per ottimizzare le prestazioni, effettuando confronti efficienti tra stati precedenti e nuovi per minimizzare gli aggiornamenti del DOM reale. Con l'introduzione di Vue 3, è stata introdotta la Composition API accanto alla tradizionale Options API, offrendo maggiore flessibilità nella strutturazione della logica dei componenti e migliorando la riusabilità del codice.
+
+L'ambiente Vue si caratterizza per la presenza di molteplici strumenti di tipologie differenti.
+Per la gestione e compilazione dei progetti Vue, vengono maggiormente utilizzati Vue CLI \cite{vuecli2018} e Vite \cite{vite2021}:
+Vue CLI permette la per la creazione e gestione di progetti da riga di comando, mentre Vite rappresenta un build tool con tempi di compilazione ridotti e maggiore semplicità d'utilizzo.
+Per il routing esiste Vue Router \cite{vuerouter2016}, il quale gestisce il routing nelle Single Page Applications (SPA).
+Per la gestione centralizzata dello stato si hanno Vuex \cite{vuex2016} e Pinia \cite{pinia2021}.
+Infine, per il debugging, Vue DevTools \cite{vuedevtools2016} fornisce strumenti avanzati attraverso estensioni per browser.
+
+L'evoluzione di Vue ha visto il passaggio da Vue 2, che ha consolidato l'adozione del framework nell'ambiente enterprise, a Vue 3, rilasciato nel 2020. L'innovazione più significativa di questa major release è probabilmente la Composition API, che permette una migliore organizzazione della logica dei componenti e facilita la riusabilità del codice. Inoltre, è stato migliorato il supporto nativo per il Typescript e, con l'introduzione del supporto per il tree-shaking, sono state ridotte le dimensioni generali dei bundle.
+
+I vantaggi di Vue si manifestano principalmente nella sua facilità di apprendimento, grazie a una sintassi intuitiva e a una documentazione completa. La flessibilità rappresenta un punto di forza del framework, permettendo l'integrazione graduale in progetti esistenti e supportando sia applicazioni single-page che multi-pagina.
+
+In conclusione, Vue.js trova applicazione ideale nello sviluppo di applicazioni web moderne, dalle Single Page Applications (SPA) alle Progressive Web Apps, dai dashboard amministrativi alle piattaforme e-commerce. La sua natura progressiva lo rende particolarmente adatto per la migrazione graduale di applicazioni legacy e per la prototipazione rapida di nuove funzionalità.
+
+\subsection{Leaflet}
+
+Leaflet rappresenta una delle librerie JavaScript open-source più popolari per la creazione di mappe interattive ottimizzate per dispositivi mobili e l'integrazione di funzionalità cartografiche nelle applicazioni web. Sviluppata inizialmente da Vladimir Agafonkin nel 2011 \cite{agafonkin2011leaflet} è stata successivamente mantenuta da una comunità attiva di sviluppatori per la cartografia digitale.
+
+I punti cardine di Leaflet sono la semplicità, l'efficienza e l'usabilità, qualità che lo rendono uno strumento di larga diffusione per sviluppatori che necessitano di implementare mappe interattive senza la complessità di librerie più pesanti, grazie anche ad un footprint di soli 39 KB di JavaScript compresso \cite{leafletnpm2024}.
+
+L'architettura modulare di Leaflet costituisce uno dei suoi principali punti di forza. Tale libreria è stata infatti progettata seguendo il principio della responsabilità singola, dove ogni componente gestisce solo alcuni aspetti specifici della funzionalità cartografica. Questa approccio consente di scegliere di utilizzare solo i moduli necessari per il proprio progetto, riducendo così l'impatto sulle prestazioni e facilitando la manutenzione del codice.
+
+Le funzionalità core di Leaflet includono la gestione di layer cartografici multipli, il supporto per vari formati di tile server, la gestione di marker personalizzabili, popup informativi, controlli di navigazione e zoom interattivo. La libreria supporta nativamente i più comuni sistemi di proiezione cartografica, con particolare attenzione alla proiezione Web Mercator utilizzata dalla maggior parte dei servizi di tile moderni come OpenStreetMap, Google Maps e Mapbox.
+
+È possibile inoltre installare moduli accessori (plugin) sviluppati da terzi per integrare funzionalità aggiuntive. Tali moduli vengono realizzati, mantenuti e resi disponibili dalla comunità open source. Questi vanno ad estendere le funzionalità base della libreria, ad esempio, aggiungendo supporto per clustering di marker, drawing tools, integrazione con servizi di geocoding, visualizzazione di heatmap, gestione di dati GPX e altro ancora. Questa modularità permette di costruire applicazioni cartografiche complesse partendo da una base leggera e aggiungendo solo le funzionalità effettivamente necessarie.
+
+Dal punto di vista delle prestazioni, Leaflet implementa diverse ottimizzazioni per garantire un'esperienza utente fluida. Il sistema di gestione dei tile implementa strategie di caching e lazy loading, caricando solo le porzioni di mappa effettivamente visibili nell'area di visualizzazione. Il rendering dei marker è ottimizzato attraverso tecniche di virtualizzazione che gestiscono efficientemente svariati punti disegnati sulla mappa senza appesantire le prestazioni di scrolling e zoom.
+
+L'API di Leaflet offre un'interfaccia intuitiva e ben documentata che segue convenzioni JavaScript moderne. La libreria supporta sia approcci programmatici tradizionali che pattern più moderni come la programmazione funzionale e l'utilizzo di Promise per operazioni asincrone. L'integrazione con framework JavaScript contemporanei come Vue.js, React e Angular è facilitata da wrapper specifici e da una architettura event-driven che si integra naturalmente con i sistemi di reattività di questi framework.
+
+La compatibilità cross-platform di Leaflet è estremamente ampia, supportando tutti i browser moderni desktop e mobile, inclusi Safari su iOS e Chrome su Android. La libreria gestisce automaticamente le differenze tra dispositivi touch e mouse, offrendo un'esperienza di navigazione ottimizzata per ogni tipo di interfaccia. Il supporto per retina display e schermi ad alta densità garantisce una qualità di visualizzazione eccellente su tutti i dispositivi.
+
+Dal punto di vista della personalizzazione, Leaflet offre un controllo granulare sull'aspetto e il comportamento delle mappe. Il sistema di styling basato su CSS permette di personalizzare completamente l'aspetto dei controlli, marker e popup, mentre l'API JavaScript consente di definire comportamenti interattivi complessi. La libreria supporta la creazione di marker personalizzati utilizzando HTML, CSS e SVG, permettendo la realizzazione di interfacce cartografiche uniche e branded.
+
+L'integrazione con servizi di tile esterni è uno dei punti di forza di Leaflet. La libreria supporta nativamente OpenStreetMap, ma può facilmente interfacciarsi con servizi commerciali come Google Maps, Mapbox, HERE e molti altri. Questa flessibilità permette agli sviluppatori di scegliere il provider di tile più adatto alle proprie esigenze in termini di qualità, copertura geografica e costi, mantenendo la stessa API di sviluppo.
+
+La libreria dei dati geografici supporta il formato GeoJSON nativo, permettendo la visualizzazione di geometrie complesse come poligoni, linee e punti direttamente da dati strutturati, come le aree comunali ed i confini territoriali ed amministrativi di regioni, province ed altre suddivisioni geografiche. L'integrazione con servizi REST e API geografiche è semplificata dalla gestione nativa di richieste AJAX e dalla capacità di processare dati in tempo reale.
+
+La community di Leaflet mantiene attivo il core della libreria e contribuisce con supporto tecnico, numerosi plugin, tutorial, esempi d'utilizzo ed una documentazione ufficiale completa ed aggiornata.
+
+In termini di performance e scalabilità, Leaflet gestisce elasticamente applicazioni di varia natura e dimensione. Per le applicazioni più semplici, la libreria offre una soluzione plug-and-play che richiede configurazione minima per installare le sole funzionalità necessarie, in modo da migliorare l'esperienza d'utilizzo.
+
+In conclusione, Leaflet si posiziona come una soluzione affidabile per l'integrazione di funzionalità cartografiche in applicazioni web moderne. Combinando leggerezza, potenza, estensibilità e facilità d'uso diventa una scelta indicata per sviluppatori che necessitano di implementare mappe interattive performanti e personalizzabili, dal prototipo rapido all'applicazione complessa.
+
+\section{Applicazione back-end}
+
+In questa sezione verranno presentate le principali tecnologie back-end impiegate nello sviluppo del progetto AirQualityInsight.
