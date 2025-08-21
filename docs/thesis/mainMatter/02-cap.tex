@@ -1,9 +1,10 @@
 \clearpage{\pagestyle{empty}\cleardoublepage}
+
 \chapter{Tecnologie}
 
 Nel seguente capitolo verranno presentate le tecnologie adottate per la realizzazione del progetto AirQualityInsight. Data la natura di applicazione web del progetto, le tecnologie sono state classificate distinguendo tra quelle utilizzate per il front-end e quelle per il back-end.
 
-\section{Applicazione front-end}
+\section{Applicazioni front-end}
 
 In questa sezione verranno presentate le principali tecnologie front-end impiegate nello sviluppo del progetto AirQualityInsight.
 L'applicazione front-end verrà sviluppata in Javascript utilizzando i seguenti framework:
@@ -69,6 +70,212 @@ In termini di performance e scalabilità, Leaflet gestisce elasticamente applica
 
 In conclusione, Leaflet si posiziona come una soluzione affidabile per l'integrazione di funzionalità cartografiche in applicazioni web moderne. Combinando leggerezza, potenza, estensibilità e facilità d'uso diventa una scelta indicata per sviluppatori che necessitano di implementare mappe interattive performanti e personalizzabili, dal prototipo rapido all'applicazione complessa.
 
-\section{Applicazione back-end}
+\section{Applicazioni back-end}
 
 In questa sezione verranno presentate le principali tecnologie back-end impiegate nello sviluppo del progetto AirQualityInsight.
+
+Verranno utilizzati Node.js per realizzare il server, Python per simulare i dispositivi di misurazione della qualità dell'aria e MongoDB per mantenere un database documentale delle registrazioni.
+
+\subsection{Node.js}
+
+Node.js è un runtime system open-source multipiattaforma costruito sul motore JavaScript V8 di Google Chrome \citep{capan_2013_nodejs}. A differenza dei tradizionali ambienti JavaScript che operano esclusivamente nel browser, Node.js permette l'esecuzione di codice JavaScript lato server, abilitando lo sviluppo di applicazioni web complete utilizzando un unico linguaggio di programmazione.
+
+Le principali caratteristiche di Node.js sono l'adozione di un paradigma event-driven, un approccio non-blocking I/O ed un processo single-threaded. Il modello di programmazione orientato agli eventi consente di gestire efficientemente operazioni asincrone basate sulla manifestazione di determinati eventi. Le operazioni di input e di output non bloccanti migliorano le performance dell'applicativo. L'uso di un singolo thread principale con un event loop riduce la complessità della gestione della concorrenza.
+
+Il seguente esempio mostra come creare un server HTTP minimale utilizzando Node.js:
+
+\begin{lstlisting}[caption={Server HTTP base in Node.js}]
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello world!');
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+\end{lstlisting}
+
+Node.js offre ampie funzionalità per l'interazione con il file system. L'esempio seguente dimostra la lettura asincrona di un file:
+
+\begin{lstlisting}[caption={Lettura asincrona di file}]
+const fs = require('fs');
+
+// Asynchronous reading
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error in file reading:', err);
+    return;
+  }
+  console.log('File content:', data);
+});
+
+// Synchronous reading (not file for large files)
+try {
+  const data = fs.readFileSync('example.txt', 'utf8');
+  console.log('File content:', data);
+} catch (err) {
+  console.error('Error in file reading:', err);
+}
+\end{lstlisting}
+
+L'architettura di Node.js si basa sul concetto di event loop, un meccanismo che permette di gestire multiple operazioni I/O senza bloccare l'esecuzione del programma principale \citep{nodejs_docs_2023}. Questo approccio lo rende particolarmente adatto per applicazioni che richiedono alta concorrenza con operazioni I/O intensive, come API REST, applicazioni real-time su dispositivi distribuiti e microservizi.
+
+Le performance di Node.js sono generalmente migliori rispetto ai server tradizionali multi-threaded per applicazioni I/O-bound, grazie alla riduzione dell'overhead dovuto al context switching tra thread e alla gestione efficiente della memoria. Questo poiché i sistemi tradizionali adottano tecniche di gestione delle richieste creando un nuovo thread per ogni nuova connessione, mentre Node.js, operando su un singolo thread ed utilizzando chiamate I/O non bloccati, riesce a supportare un maggior numero di richieste concorrenti nell'event loop.
+
+Quello che ha reso popolare tale framework è la praticità e la versatilità che lo contraddistinguono. Risulta infatti una buona scelta nel realizzare velocemente applicazioni web scalabili, grazie alla sua capacità di gestire un numero elevato di connessioni simultanee.
+
+Node.js dispone di un gestore di pacchetti chiamato ``npm'' (Node Package Manager), il quale fornisce un insieme di librerie e componenti riutilizzabili e disponibili al pubblico, facilmente installabili tramite un repository online, con gestione delle versioni e delle dipendenze. Tali librerie sono accessibili attraverso uno strumento command-line dedicato.
+
+I moduli principali sono:
+\begin{itemize}
+  \item Express, un framework di sviluppo web \cite{express_js};
+  \item Socket.io, un componente server-side di due WebSocket components comuni \cite{socket_io};
+  \item Mongodb, che fornisce API per l'omonimo database \cite{mongodb};
+  \item Redis, un sistema di caching \cite{redis}.
+\end{itemize}
+È possibile per chiunque realizzare e pubblicare la propria libreria su npm (Node Package Manager).
+
+In conclusione, Node.js rappresenta una soluzione moderna e efficace per lo sviluppo di applicazioni server-side, disponendo di una vasta scelta di librerie disponibili attraverso npm (Node Package Manager) ed una community attiva. La sua architettura event-driven e le performance elevate lo rendono una scelta ideale per molte tipologie di applicazioni web moderne.
+
+\subsection{Python}
+
+Python è un linguaggio di programmazione di alto livello, interpretato e multi-paradigma. È stato creato da Guido Van Rossum e rilasciato per la prima volta nel 1991 \citep{van_rossum_1995}. Il nome deriva dalla serie televisiva britannica "Monty Python's Flying Circus", riflettendo l'approccio creativo che caratterizza l'intera filosofia del linguaggio.
+
+La filosofia di Python è codificata nel famoso "Zen of Python" di Tim Peters, un insieme di principi guida che enfatizzano la leggibilità, la semplicità e la qualità del codice. Tra questi principi spicca il motto \textit{"Beautiful is better than ugly"} e \textit{"Simple is better than complex"}, che hanno influenzato profondamente la progettazione del linguaggio e la sua evoluzione nel corso degli anni \citep{peters_2004}.
+
+Uno degli elementi che contraddistinguono Python rispetto ad altri linguaggi di programmazione è l'assenza di parentesi graffe per delimitare i blocchi di codice ma bensì l'utilizzo dell'indentazione stessa. Tale caratteristica ha promosso l'apprendimento del linguaggio a programmatori alle prime armi, che hanno potuto così concentrarsi maggiormente sul contenuto del codice grazie alla sua forma più pulita e leggibile.
+
+Il supporto di diversi modelli di programmazione da parte di Python lo ha reso un linguaggio versatile e popolare. Si possono infatti scegliere approcci procedurali per script semplici, orientati agli oggetti per applicazioni più complesse o funzionali per elaborazioni matematiche più avanzate. Questa flessibilità permette di scegliere il paradigma migliore per il problema specifico da risolvere.
+
+Una peculiarità del linguaggio Python è il concetto dove tutto è un oggetto, inclusi numeri, stringhe, funzioni e persino le classi stesse. Tale uniformità concettuale semplifica notevolmente il modello mentale necessario per comprendere il linguaggio, facilitando quindi l'apprendimento di concetti avanzati.
+
+Il sistema di tipizzazione è forte (strong typing) ed eseguito a run-time (dynamic typing), evitando così errori comuni dipesi dalle operazioni implicite tra tipi incompatibili. È stato introdotto il supporto per type hints, permettendo di annotare esplicitamente i tipi delle variabili e dei parametri delle funzioni. Queste annotazioni, pur non influenzando l'esecuzione del programma, migliorano significativamente la leggibilità del codice e abilitano strumenti di analisi statica per la rilevazione precoce di errori di tipo.
+
+Python gestisce in autonomia la memoria allocata grazie ad un sistema garbage collector. Questo solleva il programmatore dalla necessità di gestire manualmente l'allocazione e la deallocazione della memoria, riducendo drasticamente i bug legati alla gestione delle risorse. Il garbage collector rappresenta un utile strumento che, sfruttando il reference counting ed integrato con un rilevatore di cicli, permette di individuare e segnalare riferimenti circolari.
+
+Anche se spesso viene inteso come linguaggio interpretato, Python in realtà non converte direttamente il codice sorgente in linguaggio macchina, ma passa prima una fase di pre-compilazione bytecode, evitando di reinterpretare integralmente il codice e migliorando le prestazioni.
+
+L'ecosistema di Python è arricchito dal Python Package Index (PyPI), un repository centrale che ospita centinaia di migliaia di pacchetti di terze parti \citep{pypi_2023}. Viene così  praticamente ricoperto ogni dominio applicativo, dalla sviluppo web all'intelligenza artificiale, dall'analisi dei dati alla computer vision.
+
+Il sistema di gestione dei pacchetti, principalmente attraverso pip, rende estremamente semplice l'installazione e la gestione delle dipendenze. L'introduzione di strumenti come virtualenv e, più recentemente, pipenv e poetry, ha ulteriormente migliorato la gestione degli ambienti di sviluppo isolati, permettendo di evitare conflitti tra diverse versioni delle librerie. Questo risulta molto comodo qualora si lavori a progetti che utilizzando versioni differenti delle dipendenze.
+
+La libreria standard provvede un ricco numero di moduli base, come quelli per le operazioni su file system, networking, regex, database, threading, e molto altro. Questa completezza riduce la necessità di dipendenze esterne per molte operazioni comuni.
+
+Uno dei campi in cui il linguaggio è maggiormente usato è quello scientifico, dove librerie come NumPy e SciPy hanno trasformato Python in uno strumento fondamentale per il calcolo numerico, fornendo strutture dati efficienti e algoritmi ottimizzati per operazioni matematiche complesse. Pandas ha rivoluzionato l'analisi dei dati, offrendo strutture dati potenti per la manipolazione e l'analisi di dataset strutturati.
+
+Il seguente esempio \ref{lst:measurements} mostra come sia possibile generare misurazioni aleatorie in Python:
+
+\begin{lstlisting}[caption={Generazioni misuarzioni aleatorie in Python}, label=lst:measurements]
+import random
+import numpy as np
+from datetime import datetime, timedelta
+
+class MeasurementGenerator:
+    def __init__(self):
+        self.sensors = {
+            'temperature': {'min': 15, 'max': 35, 'unit': 'C'},
+            'humidity': {'min': 30, 'max': 90, 'unit': '%'},
+            'pressure': {'min': 990, 'max': 1030, 'unit': 'hPa'}
+        }
+
+    def generate_measurement(self, sensor_type):
+        config = self.sensors[sensor_type]
+        value = random.uniform(config['min'], config['max'])
+        return {
+            'timestamp': datetime.now().isoformat(),
+            'sensor': sensor_type,
+            'value': round(value, 2),
+            'unit': config['unit']
+        }
+
+    def generate_time_series(self, sensor_type, hours=24, interval_minutes=60):
+        measurements = []
+        start_time = datetime.now() - timedelta(hours=hours)
+
+        for i in range(0, hours * 60, interval_minutes):
+            timestamp = start_time + timedelta(minutes=i)
+            config = self.sensors[sensor_type]
+
+            base_value = (config['min'] + config['max']) / 2
+            daily_variation = 5 * np.sin(2 * np.pi * i / (24 * 60))
+            noise = random.gauss(0, 1)
+            value = base_value + daily_variation + noise
+
+            measurements.append({
+                'timestamp': timestamp.isoformat(),
+                'sensor': sensor_type,
+                'value': round(np.clip(value, config['min'], config['max']), 2),
+                'unit': config['unit']
+            })
+
+        return measurements
+
+if __name__ == '__main__':
+    generator = MeasurementGenerator()
+
+    single_measurement = generator.generate_measurement('temperature')
+    print(f"Single: {single_measurement}")
+
+    time_series = generator.generate_time_series('temperature', hours=12)
+    print(f"Generated {len(time_series)} measurements")
+    print(f"First: {time_series[0]}")
+    print(f"Last: {time_series[-1]}")
+\end{lstlisting}
+
+Anche nello sviluppo web, Python rimane una delle scelte preferire dagli sviluppatori, i quali possono usare framework cone Django e Flask \citep{django_2023, flask_2023} per realizzare le proprie applicazioni web. Fra i due, Flask risulta più minimale e flessibili per progetti che richiedono un controllo più granulare dell'architettura, mentre Django include tutto il necessario per sviluppare sistemi complessi.
+
+Il seguente esempio \ref{lst:flask} mostra come sia possibile realizzare un semplice server usando Flask:
+
+\begin{lstlisting}[caption={Server Flask base in Python}, label=lst:flask]
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+users = [
+    {"id": 1, "name": "John", "email": "john@example.com"},
+    {"id": 2, "name": "Jane", "email": "jane@example.com"}
+]
+
+@app.route('/')
+def home():
+    return {"message": "Flask server running", "users_count": len(users)}
+
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    return jsonify(users)
+
+@app.route('/api/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    user = next((u for u in users if u["id"] == user_id), None)
+    if user:
+        return jsonify(user)
+    return jsonify({"error": "User not found"}), 404
+
+@app.route('/api/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    if not data or 'name' not in data or 'email' not in data:
+        return jsonify({"error": "Name and email required"}), 400
+
+    new_user = {
+        "id": max([u["id"] for u in users]) + 1,
+        "name": data["name"],
+        "email": data["email"]
+    }
+    users.append(new_user)
+    return jsonify(new_user), 201
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+\end{lstlisting}
+
+L'approccio "pythonic" enfatizza la leggibilità del codice e la rapidità di sviluppo, permettendo di creare prototipi funzionali in tempi molto brevi e di scalare gradualmente verso applicazioni enterprise.
+
+Sempre nel campo scientifico, Python è diventato il linguaggio de-facto per data science e machine learning, grazie alle librerie specializzate. TensorFlow e PyTorch, ad esempio, hanno reso accessibili le tecniche di deep learning senza il bisogno di avere nozioni approfondite di matematica avanzata.
+
+Un altro campo in cui il linguaggio è fortemente utilizzato è quello delle DevOps e dell'amministrazione di sistemi, grazie alla capacità di interagire facilmente con il sistema operativo, nel processare file di testo, interfacciarsi con database e API REST. Viene infatti scelto per automatizzare processi ripetitivi, creare pipeline di elaborazione dati ed integrazione di sistemi eterogenei, settori dove la rapidità di sviluppo e la manutenibilità del codice sono cruciali.
+
+Python rimane uno dei linguaggi più popolari e trasversali, godendo di una forte comunità che ne segue gli sviluppi e lo aggiorna in modo continuativo, con rilasci annuali che introducono nuove funzionalità e miglioramenti delle performance. L'adozione crescente in settori come l'intelligenza artificiale, l'Internet of Things e l'edge computing suggerisce che Python rimarrà rilevante e in continua evoluzione, adattandosi alle esigenze di un panorama tecnologico in rapido cambiamento.
