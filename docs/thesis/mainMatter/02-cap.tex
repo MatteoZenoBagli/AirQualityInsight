@@ -67,18 +67,18 @@ Il seguente esempio \ref{lst:leaflet} mostra come sia possibile realizzare una m
   // Coordinates of Piazza Maggiore
   const lat = 44.4939;
   const lng = 11.3426;
-    
+
   const map = L.map('map').setView([lat, lng], 13);
-    
+
   // Tiles layer (OpenStreetMap)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-    
+
   // Current position marker
   const marker = L.marker([lat, lng]).addTo(map);
-    
+
   // Marker popup
   marker.bindPopup(`
     <div style="text-align: center;">
@@ -95,7 +95,7 @@ Il seguente esempio \ref{lst:leaflet} mostra come sia possibile realizzare una m
     fillOpacity: 0.2,
     radius: 1000 // meters
   }).addTo(map);
-    
+
   // Optional controls
   L.control.scale({
     imperial: false,
@@ -124,9 +124,9 @@ Node.js è un runtime system open-source multipiattaforma costruito sul motore J
 
 Le principali caratteristiche di Node.js sono l'adozione di un paradigma event-driven, un approccio non-blocking I/O ed un processo single-threaded. Il modello di programmazione orientato agli eventi consente di gestire efficientemente operazioni asincrone basate sulla manifestazione di determinati eventi. Le operazioni di input e di output non bloccanti migliorano le performance dell'applicativo. L'uso di un singolo thread principale con un event loop riduce la complessità della gestione della concorrenza.
 
-Il seguente esempio mostra come creare un server HTTP minimale utilizzando Node.js:
+Il seguente esempio \ref{lst:node-server} mostra come creare un server HTTP minimale utilizzando Node.js:
 
-\begin{lstlisting}[caption={Server HTTP base in Node.js}]
+\begin{lstlisting}[caption={Server HTTP base in Node.js}, label=lst:node-server]
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -140,9 +140,9 @@ server.listen(PORT, () => {
 });
 \end{lstlisting}
 
-Node.js offre ampie funzionalità per l'interazione con il file system. L'esempio seguente dimostra la lettura asincrona di un file:
+Node.js offre ampie funzionalità per l'interazione con il file system. L'esempio seguente \ref{lst:node-fs} dimostra la lettura asincrona di un file:
 
-\begin{lstlisting}[caption={Lettura asincrona di file}]
+\begin{lstlisting}[caption={Lettura asincrona di file}, label=lst:node-fs]
 const fs = require('fs');
 
 // Asynchronous reading
