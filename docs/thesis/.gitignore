@@ -10,3 +10,10 @@
 *.gz
 *.toc
 *.blg
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
