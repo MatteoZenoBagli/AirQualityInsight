@@ -114,13 +114,46 @@ consistente di punti, siano stati poi filtrati secondo i criteri precedentemente
 È stata implementata una griglia di campionamento con spaziatura di 250 metri, parametro calibrato
 sperimentalmente per ottenere una densità ottimale di punti. Per fare ciò è stata realizzata una pagina dedicata
 allo scopo, essendo un processo che può essere riprodotto cambiando la distanza fra i punti tramite input numerico.
+La pagina presenta una parte iniziale dove è possibile scegliere la città (nel nostro caso Bologna) e lo spazio
+fra un sensore e l'altro. Viene anche indicata la query di estrazione,
+la stessa citata in precedenza~\ref{lst:overpass-query}.
+Questa parte d'intestazione è riportata nell'immagine~\ref{fig:sensors-heading}, dove si possono notare gli elementi
+citati.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{sensors/00_heading.png}
+  \caption{Intestazione pagina}
+  \label{fig:sensors-heading}
+\end{figure}
+
+Sotto di essa, è disponibile la mappa che mostra i nodi risultanti dalla query.
+Tali nodi vengono disposti su 3 livelli, che sono: nodi originali, nodi filtrati e nodi differenza.
+I primi, gli originali (in rosso)~\ref{fig:sensors-before},
+sono ottenuti direttamente dalla query ~\ref{formula:sensors-original}.
+I secondi, quelli filtrati (in blu)~\ref{fig:sensors-after}, sono il risultato del trattamento effettuato su di essi,
+dato dall'elezione di un solo nodo ogni 250 metri ~\ref{formula:sensors-filtered}.
+Gli ultimi infine, quelli di differenza (in verde)~\ref{fig:sensors-difference}, sono semplicemente i nodi originali
+meno quelli filtrati ~\ref{formula:sensors-difference}.
+La richiesta viene effettuata nel momento in cui viene cliccato il pulsante di invio, che riporta la
+dicitura \textit{"Submit request"}.
+
+\definecolor{sensors-original}{HTML}{e74c3c}
+\definecolor{sensors-filtered}{HTML}{3498db}
+\definecolor{sensors-difference}{HTML}{27ae60}
+
+\begin{align}
+  \textcolor{sensors-original}{O}   & = \text{insieme degli elementi originali} \label{formula:sensors-original}                                                                                                                            \\
+  \textcolor{sensors-filtered}{F}   & = \text{sottoinsieme filtrato, dove } \textcolor{sensors-filtered}{F}\subseteq \textcolor{sensors-original}{O} \label{formula:sensors-filtered}                                                       \\
+  \textcolor{sensors-difference}{D} & = \textcolor{sensors-original}{O} \setminus \textcolor{sensors-filtered}{F} = \{x \in \textcolor{sensors-original}{O} : x \notin \textcolor{sensors-filtered}{F}\} \label{formula:sensors-difference}
+\end{align}
 
 \begin{figure}[H]
   \centering
 
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.75\textwidth]{sensors/00_before.png}
+    \includegraphics[width=0.85\textwidth]{sensors/01_original.png}
     \caption{Risultato originale della query}
     \label{fig:sensors-before}
   \end{subfigure}
@@ -128,12 +161,34 @@ allo scopo, essendo un processo che può essere riprodotto cambiando la distanza
   \hfill
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.75\textwidth]{sensors/01_after.png}
+    \includegraphics[width=0.85\textwidth]{sensors/02_filtered.png}
     \caption{Punti filtrati finali}
     \label{fig:sensors-after}
   \end{subfigure}
 
+
+  \hfill
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.85\textwidth]{sensors/03_difference.png}
+    \caption{Punti di differenza}
+    \label{fig:sensors-difference}
+  \end{subfigure}
+
   \caption{Acquisizione punti delle intersezioni stradali}
+\end{figure}
+
+Come ultimo elemento, la parte finale della pagina, esposta nell'immagine~\ref{fig:sensors-footer},
+riporta le statistiche quali il numero di sensori originale,
+il numero di sensori filtrati e la riduzione espressa come percentuale.
+Premendo il pulsante con scritto \textit{"Download filtered \acrshort{json}"} è possibile scaricare il json dei sensori
+filtrati ottenuti. Tale \acrshort{json} presenta i sensori usati per popolare la mappa dell'applicazione principale.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{sensors/03_footer.png}
+  \caption{Piè di pagina}
+  \label{fig:sensors-footer}
 \end{figure}
 
 \section{Broker service}
@@ -233,53 +288,149 @@ il metodo di calcolo utilizzato per ottenere l'\acrfull{eaqi} \ref{fig:app-eaqi-
 
 \paragraph{Mappa}
 
-Atterrando sulla pagina principale, viene presentata una mappa come da immagine \ref{fig:app-map-sensors}.
-Tale mappa viene centrata su Bologna, e presenta i sensori registrati utilizzando degli spilli color rosso.
-È possibile distinguere il centro della mappa, Piazza Maggiore, per via del colore blu del suo spillo,
-come si può notare nell'immagine \ref{fig:app-map-center}.
+Accedendo alla pagina principale, l'utente si trova di fronte a una mappa dettagliata della città di Bologna,
+come documentato nell'immagine \ref{fig:app-map-sensors}. La rappresentazione cartografica utilizza un sistema
+di simboli colorati per organizzare visivamente le informazioni: i sensori attivi sul territorio
+sono contrassegnati da spilli rossi, creando una panoramica immediata della loro distribuzione geografica.
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{dashboard/04_map_sensors.png}
-    \caption{Mappa principale}
-    \label{fig:app-map-sensors}
-  \end{subfigure}
+  \includegraphics[width=\textwidth]{dashboard/04_map_sensors.png}
+  \caption{Mappa principale}
+  \label{fig:app-map-sensors}
+\end{figure}
+
+Al centro della visualizzazione si trova Piazza Maggiore, simbolo di Bologna, che viene opportunamente evidenziata
+con uno spillo blu per distinguerla dagli altri elementi della mappa e fornire un punto di riferimento
+costante all'utente, come si può osservare nell'immagine \ref{fig:app-map-center}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{dashboard/05_map_sensors_center_of_the_map.png}
+  \caption{Centro della mappa}
+  \label{fig:app-map-center}
+\end{figure}
+
+L'interfaccia cartografica è dotata di diversi controlli interattivi per facilitare la navigazione e la
+gestione dei dati.
+Sul lato sinistro sono posizionati i pulsanti per aumentare o diminuire lo zoom (\texttt{+} e \texttt{-}) della mappa,
+mentre sul lato destro si trovano tre pulsanti: due verdi ed uno bianco avente come icona uno spillo rosso.
+
+Al centro della mappa è presente un indicatore visuale composto da un mirino a croce (\textit{crosshair}) rosso
+dentro una cornice circolare bianca. Questo elemento serve come marcatore del punto centrale della
+visualizzazione cartografica attuale. Il sistema registra automaticamente le coordinate geografiche associate
+alla posizione di questo mirino, conservandole in memoria e rendendole disponibili per la consultazione
+da parte dell'utente. Quando l'utente naviga sulla mappa spostando la visualizzazione, le coordinate
+del punto centrale vengono aggiornate per mantenere la corrispondenza con la nuova area geografica inquadrata.
+
+Il pulsante verde contrassegnato dalla dicitura \textit{"Start"} rappresenta l'interruttore principale
+per attivare o disattivare la ricezione in tempo reale delle misurazioni dai sensori.
+All'avvio dell'applicazione, questa funzionalità risulta disabilitata per impostazione predefinita.
+Una volta attivata, il sistema inizierà a visualizzare graficamente sulla mappa
+i valori ricevuti dai sensori e aggiornerà automaticamente le tabelle informative sottostanti,
+come documentato nelle figure \ref{fig:app-tab-last-measurements}, \ref{fig:app-tab-statistics},
+\ref{fig:app-tab-system-log} e \ref{fig:app-tab-registered-sensors}.
+
+Il pulsante caratterizzato dall'icona dello spillo rosso attiva l'espansione di un pannello di controllo,
+che fornisce informazioni dettagliate sulla mappa attualmente visualizzata e mette a disposizione strumenti
+aggiuntivi per l'interazione con l'interfaccia cartografica.
+Il pannello di controllo mette a disposizione dell'utente un'ampia gamma di strumenti interattivi, tra cui
+informazioni testuali, pulsanti di comando, menu a tendina e un controllo slider orizzontale
+(come mostrato nelle figure \ref{fig:map-layer-sensors} e \ref{fig:map-layer-clear}).
+
+Procedendo dall'alto verso il basso, la prima informazione visualizzata concerne il conteggio complessivo
+dei sensori presenti sulla mappa. Questo indicatore numerico fornisce un valore globale che comprende tutti
+i dispositivi registrati nel sistema, a prescindere dal loro stato operativo attuale. La condizione di funzionamento
+viene definita attraverso una proprietà booleana denominata \texttt{status}, che restituisce il valore \texttt{active}
+per i sensori operativi. Per un'analisi dettagliata degli attributi di ciascun sensore, è possibile consultare
+la tabella documentata nella figura \ref{fig:app-tab-registered-sensors} e nel listato \ref{lst:sensors-properties}.
+
+La sezione successiva presenta un pulsante verde dedicato alla copia delle coordinate geografiche del centro mappa
+(corrispondenti alla posizione del mirino). Seguono una serie di pulsanti grigi che consentono
+di attivare o disattivare la visualizzazione dei diversi layer cartografici: sensori, demarcazioni territoriali
+come le zone di avviamento postale (\acrshort{cap}) (figura~\ref{fig:map-layer-caps}),
+quartieri (figura~\ref{fig:map-layer-neighborhoods}),
+zone amministrative (figura~\ref{fig:map-layer-zones}) e \acrshort{ztl} (figura~\ref{fig:map-layer-ztl}).
+
+Nella parte inferiore del pannello si trovano ulteriori controlli specializzati: un menu a tendina per la selezione
+del tipo di inquinante da visualizzare, uno slider orizzontale per impostare il numero di misurazioni
+da registrare (range da 50 a 1000), un indicatore del numero di misurazioni attualmente memorizzate, e un pulsante
+rosso con icona cestino per l'eliminazione dei dati registrati. Il sistema implementa un meccanismo di registrazione
+delle misurazioni dei sensori basato su una coda (struttura dati \acrshort{lifo}), che garantisce
+l'eliminazione automatica delle registrazioni più datate quando viene raggiunta la capacità massima prestabilita,
+privilegiando così la conservazione dei dati più recenti.
+
+Conclude l'interfaccia un menu a tendina aggiuntivo per l'attivazione di griglie di riferimento sulla mappa
+quali una grigia (figura~\ref{fig:map-grid-gray}), una rossa
+(figura~\ref{fig:map-grid-red}) ed una grigia crosshair che divide la mappa
+in quattro quarti (figura~\ref{fig:map-grid-crosshair}).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{dashboard/06_map_sensors_controls.png}
+  \caption{Pannello controllo espanso con sensori visualizzati}
+  \label{fig:map-layer-sensors}
 
   \hfill
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{dashboard/05_map_sensors_center_of_the_map.png}
-    \caption{Centro della mappa}
-    \label{fig:app-map-center}
-  \end{subfigure}
+
+  \includegraphics[width=0.95\textwidth]{dashboard/07_map_controls.png}
+  \caption{Pannello controllo espanso con sensori nascosti}
+  \label{fig:map-layer-clear}
 \end{figure}
 
-La mappa dispone di un pannello di controllo presente in alto a destra.
-Cliccandovici sopra, tale pannello si espande, mostrando le informazioni sulla mappa attualmente
-visualizzata e fornendo degli strumenti per interagire con essa.
+\newpage
 
-Come prima voce si ha il numero dei sensori attualmente presenti in mappa.
-Tale conteggio è globale e considera tutti i sensori forniti, indipendentemente dall'attuale stato dei singoli,
-che siano quindi attivi o meno. Lo stato è una proprietà booleana del sensore chiamata \texttt{status}
-che esprime lo stato di "attivo" («\texttt{active}») se accesa.  Nelle tabella in figura
-\ref{fig:app-tab-registered-sensors} è possibile vedere gi attributi dei sensori, precedentemente esposti nella lista
-\ref{lst:sensors-properties}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{dashboard/08_map_caps_controls.png}
+  \caption{Livello a \acrshort{cap}}
+  \label{fig:map-layer-caps}
 
-TODO Parlare di come si calcola la distanza dal centro!
+  \hfill
+
+  \includegraphics[width=0.95\textwidth]{dashboard/09_map_neighborhoods_controls.png}
+  \caption{Livello a quartieri}
+  \label{fig:map-layer-neighborhoods}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{dashboard/10_map_zones_controls.png}
+  \caption{Livello a zone}
+  \label{fig:map-layer-zones}
+
+  \hfill
+
+  \includegraphics[width=0.95\textwidth]{dashboard/11_map_ztl_controls.png}
+  \caption{Livello \acrshort{ztl}}
+  \label{fig:map-layer-ztl}
+\end{figure}
+
+\newpage
 
 \begin{figure}[H]
   \centering
 
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{dashboard/04_map_sensors.png}
-    \caption{Descrizione}
-    % \label{fig:app-description}
-  \end{subfigure}
+  \includegraphics[width=0.55\textwidth]{dashboard/12_map_grid_gray_controls.png}
+  \caption{Griglia grigia}
+  \label{fig:map-grid-gray}
 
+  \hfill
+
+  \centering
+  \includegraphics[width=0.55\textwidth]{dashboard/13_map_grid_red_controls.png}
+  \caption{Griglia rossa}
+  \label{fig:map-grid-red}
+
+  \hfill
+
+  \centering
+  \includegraphics[width=0.55\textwidth]{dashboard/14_map_grid_crosshair_controls.png}
+  \caption{Griglia crosshair}
+  \label{fig:map-grid-crosshair}
 \end{figure}
+
+\newpage
 
 \paragraph{Heatmap}
 
@@ -305,7 +456,7 @@ Partendo dalla vista default in immagine \ref{fig:app-map-pm25-controls-15},
 passiamo ad una versione con zoom inferiore senza sensori \ref{fig:app-map-pm25-controls-16} e
 con sensori \ref{fig:app-map-pm25-controls-17}.
 Successivamente diminuiamo ulteriormente lo zoom senza sensori \ref{fig:app-map-pm25-controls-18}, per poi
-riavvicinarci \ref{fig:app-map-pm25-controls-19}, visualizzarle la ZTL \ref{fig:app-map-pm25-controls-20} ed i
+riavvicinarci \ref{fig:app-map-pm25-controls-19}, visualizzarle la \acrshort{ztl} \ref{fig:app-map-pm25-controls-20} ed i
 quartieri\ref{fig:app-map-pm25-controls-21}.
 Infine, visualizziamo una versione con concentrazioni più elevate \ref{fig:app-map-pm25-controls-22}
 rispetto alle prime, essendo passato più tempo ed avendo quindi un numero maggiore di misurazioni, e le altre
@@ -351,7 +502,7 @@ Anche il numero di misurazioni influisce sulle concentrazioni della mappa di cal
   \hfill
 
   \includegraphics[width=0.95\textwidth]{dashboard/20_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori con ZTL}
+  \caption{Heatmap zoom 12 senza sensori con \acrshort{ztl}}
   \label{fig:app-map-pm25-controls-20}
 \end{figure}
 
@@ -375,9 +526,15 @@ Anche il numero di misurazioni influisce sulle concentrazioni della mappa di cal
   \label{fig:app-map-pm25-controls-23}
 \end{figure}
 
-\paragraph{Ultime misuraizoni}
+\newpage
 
-TODO
+\paragraph{Ultime misurazioni}
+
+La tabella illustrata nella figura~\ref{fig:app-tab-last-measurements} presenta la visualizzazione tabulare
+delle misurazioni effettuate. Vengono mostrate le ultime 50 rilevazioni acquisite dal sistema, ciascuna organizzata
+su una riga dedicata. Cliccando su una riga specifica, l'utente può viene condotto direttamente sulla mappa
+centrata sul sensore che ha effettuato quella particolare rilevazione. La struttura della tabella comprende
+l'identificativo del sensore, il timestamp di acquisizione ed i parametri misurati con le rispettive unità di misura.
 
 \begin{figure}[H]
   \centering
@@ -385,9 +542,17 @@ TODO
   \caption{Ultime misurazioni}
   \label{fig:app-tab-last-measurements}
 \end{figure}
+
+\newpage
+
 \paragraph{Statistiche}
 
-TODO Statistiche
+La tabella~\ref{fig:app-tab-statistics} presenta dei dati statistici per ciascuna tipologia di misurazione ambientale.
+L'elaborazione dei dati comprende il calcolo dei principali indicatori statistici, quali: valore medio, mediana,
+valori minimo e massimo registrati, range di variazione (calcolato come differenza tra il valore
+massimo e minimo), e una valutazione qualitativa dell'aria in relazione al tipo di inquinante considerato.
+Quest'ultima valutazione viene determinata applicando i criteri di classificazione
+riportati nella tabella~\ref{tab:air_quality}, mostrando sia la voce che il colore relativo al livello raggiunto.
 
 \begin{figure}[H]
   \centering
@@ -396,6 +561,8 @@ TODO Statistiche
   \label{fig:app-tab-statistics}
 \end{figure}
 
+\newpage
+
 \paragraph{Log di sistema}
 
 Le interazioni con l'applicazioni, che siano da interfaccia utente o tramite \acrshort{api}, vengono elencate
@@ -403,10 +570,12 @@ nella tabella del log di sistema. Eventi quali la ricezione di una nuova misuraz
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{dashboard/26_table_system_log.png}
+  \includegraphics[width=0.75\textwidth]{dashboard/26_table_system_log.png}
   \caption{Tabella log di sistema}
   \label{fig:app-tab-system-log}
 \end{figure}
+
+\newpage
 
 \paragraph{Tabella dei sensori registrati}
 
@@ -427,6 +596,7 @@ mentre nella seconda~\ref{fig:app-tab-registered-sensors-distance-sort-asc} e
 terza immagine~\ref{fig:app-tab-registered-sensors-distance-sort-desc} si ha la tabella ordinata rispetto
 la distanza dal centro della mappa relativamente in ordine crescente (dal sensore più prossimo al più remoto) e
 decrescente (dal sensore più lontano al più vicino).
+Anche qui, cliccando sulla riga dedicata, la pagina scorre verso la mappa centrata sul sensore indicato.
 
 \begin{figure}[H]
   \centering
