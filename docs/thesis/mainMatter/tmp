@@ -1,0 +1,281 @@
+
+\section{Sensor service}
+
+Il \textbf{Sensor service} rappresenta il punto di ingresso dei dati nel sistema AirQualityInsight. Implementato in \textbf{Python}, questo servizio simula il comportamento di una rete di sensori IoT distribuiti sul territorio per il monitoraggio della qualità dell'aria.
+
+\subsection{Caratteristiche tecniche}
+
+Il servizio è progettato per simulare sensori fisici come i Raspberry Pi, ciascuno caratterizzato da:
+\begin{itemize}
+  \item \textbf{Identificativo univoco}: ogni sensore possiede un ID che lo distingue nella rete
+  \item \textbf{Nome descrittivo}: per facilitare l'identificazione geografica o funzionale
+  \item \textbf{Coordinate geografiche}: latitudine e longitudine per la localizzazione precisa
+  \item \textbf{Indirizzo IP simulato}: per emulare la connettività di rete dei dispositivi fisici
+\end{itemize}
+
+\subsection{Parametri monitorati}
+
+I sensori simulati generano misurazioni per i seguenti parametri di qualità dell'aria:
+\begin{itemize}
+  \item \textbf{CO\textsubscript{2} (Biossido di Carbonio)}: indicatore della qualità dell'aria indoor, con valori ottimali sotto i 1000 ppm
+  \item \textbf{PM10}: particelle con diametro inferiore a 10 micrometri
+  \item \textbf{PM2.5}: particelle ultrafini con diametro inferiore a 2,5 micrometri
+  \item \textbf{NO\textsubscript{2} (Biossido di Azoto)}: principalmente da traffico veicolare
+  \item \textbf{O\textsubscript{3} (Ozono)}: formato attraverso reazioni fotochimiche
+  \item \textbf{CO (Monossido di Carbonio)}: da combustione incompleta
+  \item \textbf{SO\textsubscript{2} (Biossido di Zolfo)}: da processi industriali
+  \item \textbf{VOC (Composti Organici Volatili)}: da solventi, vernici e materiali da costruzione
+\end{itemize}
+
+\subsection{Logica di simulazione}
+
+Il servizio implementa algoritmi configurabili per:
+\begin{itemize}
+  \item Generazione di dati realistici basati su pattern temporali e geografici
+  \item Simulazione di variazioni circadiane e stagionali
+  \item Introduzione di anomalie e picchi per testare la resilienza del sistema
+  \item Configurazione parametrica per diversi tipi di sensori e scenari ambientali
+\end{itemize}
+
+\subsection{Pubblicazione dei dati}
+
+Le misurazioni vengono inviate in tempo reale al broker Kafka attraverso topic dedicati, garantendo la consegna asincrona e affidabile dei dati al resto del sistema.
+
+\section{Broker service}
+
+Il \textbf{Broker service} utilizza \textbf{Apache Kafka} come sistema di messaggistica distribuito, fungendo da spina dorsale per la comunicazione asincrona tra i vari componenti del sistema.
+
+\subsection{Architettura Kafka}
+
+Apache Kafka è una piattaforma di streaming distribuito che offre:
+\begin{itemize}
+  \item \textbf{Alta disponibilità}: attraverso la replicazione dei dati su più nodi
+  \item \textbf{Scalabilità orizzontale}: capacità di gestire milioni di messaggi al secondo
+  \item \textbf{Persistenza}: memorizzazione durabile dei messaggi su disco
+  \item \textbf{Tolleranza ai guasti}: continuità del servizio anche in caso di failure di nodi
+\end{itemize}
+
+\subsection{Gestione dei topic}
+
+Il sistema utilizza topic specifici per organizzare i flussi di dati:
+\begin{itemize}
+  \item \textbf{sensor-measurements}: topic principale per le misurazioni dei sensori
+  \item \textbf{system-alerts}: per notifiche di sistema e allarmi
+  \item \textbf{configuration-updates}: per aggiornamenti di configurazione distribuiti
+\end{itemize}
+
+\subsection{ZooKeeper Integration}
+
+\textbf{Apache ZooKeeper} supporta Kafka nella gestione di:
+\begin{itemize}
+  \item \textbf{Coordinazione del cluster}: elezione del leader e gestione delle partizioni
+  \item \textbf{Configurazione centralizzata}: mantenimento delle informazioni di cluster
+  \item \textbf{Service discovery}: registrazione e scoperta dei servizi
+  \item \textbf{Sincronizzazione}: coordinamento tra i nodi del cluster
+\end{itemize}
+
+\subsection{Pattern di comunicazione}
+
+Il broker implementa pattern di comunicazione publish-subscribe, permettendo:
+\begin{itemize}
+  \item Disaccoppiamento tra produttori e consumatori
+  \item Scalabilità indipendente dei componenti
+  \item Resilienza attraverso retry automatici e dead letter queues
+\end{itemize}
+
+\section{API Server service}
+
+L'\textbf{API Server service} è implementato in \textbf{Node.js} con il framework \textbf{Express}, fornendo un'interfaccia unificata per l'accesso ai dati del sistema.
+
+\subsection{Architettura dell'API}
+
+Il servizio implementa un approccio ibrido che combina:
+\begin{itemize}
+  \item \textbf{GraphQL endpoint}: per query complesse e flessibili sui dati
+  \item \textbf{RESTful endpoints}: per operazioni CRUD standard e health checks
+\end{itemize}
+
+\subsection{Funzionalità GraphQL}
+
+L'endpoint GraphQL offre:
+\begin{itemize}
+  \item \textbf{Query flessibili}: i client possono richiedere esattamente i dati necessari
+  \item \textbf{Aggregazioni real-time}: calcolo di medie, massimi e minimi in tempo reale
+  \item \textbf{Filtri geografici}: query basate su coordinate e aree specifiche
+  \item \textbf{Filtri temporali}: selezione di dati per intervalli di tempo personalizzati
+\end{itemize}
+
+\subsection{Consumer Kafka}
+
+Il servizio agisce come consumer Kafka, implementando:
+\begin{itemize}
+  \item \textbf{Processing stream}: elaborazione in tempo reale dei messaggi in arrivo
+  \item \textbf{Batch processing}: gestione ottimizzata di grandi volumi di dati
+  \item \textbf{Error handling}: gestione robusta di messaggi malformati o incompleti
+  \item \textbf{Offset management}: tracciamento preciso della posizione di lettura
+\end{itemize}
+
+\subsection{Persistence layer}
+
+L'integrazione con MongoDB avviene attraverso:
+\begin{itemize}
+  \item \textbf{Connection pooling}: gestione efficiente delle connessioni al database
+  \item \textbf{Schema validation}: validazione dei dati prima della persistenza
+  \item \textbf{Indexing strategies}: ottimizzazione delle query attraverso indici appropriati
+  \item \textbf{Data transformation}: conversione e normalizzazione dei dati in ingresso
+\end{itemize}
+
+\subsection{Endpoints RESTful}
+
+I servizi REST forniscono:
+\begin{itemize}
+  \item \textbf{Health checks}: \texttt{/health} per monitoraggio dello stato del servizio
+  \item \textbf{System metrics}: \texttt{/metrics} per statistiche operative
+  \item \textbf{Configuration endpoints}: per gestione dinamica della configurazione
+\end{itemize}
+
+\section{Dashboard service}
+
+Il \textbf{Dashboard service} fornisce l'interfaccia utente per la visualizzazione e l'interazione con i dati di qualità dell'aria attraverso una moderna applicazione web.
+
+\subsection{Tecnologie frontend}
+
+L'interfaccia è sviluppata utilizzando tecnologie web moderne:
+\begin{itemize}
+  \item \textbf{Framework JavaScript}: (presumibilmente React.js per la gestione dello stato e componenti)
+  \item \textbf{Librerie di visualizzazione}: per grafici interattivi e rappresentazioni temporali
+  \item \textbf{Mapping libraries}: per la visualizzazione geografica dei sensori
+  \item \textbf{Real-time libraries}: per aggiornamenti live dei dati
+\end{itemize}
+
+\subsection{Componenti principali}
+
+La dashboard è strutturata in diversi moduli:
+
+\subsubsection{Mappa interattiva}
+\begin{itemize}
+  \item \textbf{Visualizzazione geografica}: posizionamento dei sensori su mappa
+  \item \textbf{Indicatori colorimetrici}: rappresentazione visuale della qualità dell'aria
+  \item \textbf{Zoom e navigazione}: esplorazione dettagliata delle aree di interesse
+  \item \textbf{Clustering}: raggruppamento intelligente di sensori in aree dense
+\end{itemize}
+
+\subsubsection{Pannelli di controllo}
+\begin{itemize}
+  \item \textbf{Real-time monitoring}: visualizzazione in tempo reale delle misurazioni
+  \item \textbf{Grafici temporali}: trend e andamenti storici dei parametri
+  \item \textbf{Tabelle dati}: visualizzazione tabulare per analisi dettagliate
+  \item \textbf{Filtri avanzati}: selezione per tipo di sensore, area geografica e periodo temporale
+\end{itemize}
+
+\subsubsection{Sistema di allerta}
+\begin{itemize}
+  \item \textbf{Notifiche real-time}: avvisi per superamento soglie critiche
+  \item \textbf{Dashboard alerts}: indicatori visivi per situazioni di attenzione
+  \item \textbf{Historical alerts}: cronologia degli eventi significativi
+\end{itemize}
+
+\subsection{Comunicazione con il backend}
+
+L'interfaccia comunica con l'API server attraverso:
+\begin{itemize}
+  \item \textbf{GraphQL queries}: per il recupero ottimizzato dei dati
+  \item \textbf{WebSocket connections}: per aggiornamenti real-time
+  \item \textbf{REST API calls}: per operazioni di configurazione e gestione
+\end{itemize}
+
+\subsection{Responsive design}
+
+La dashboard è progettata per essere accessibile su diversi dispositivi:
+\begin{itemize}
+  \item \textbf{Desktop experience}: interfaccia completa per analisi approfondite
+  \item \textbf{Mobile adaptation}: visualizzazione ottimizzata per dispositivi mobili
+  \item \textbf{Tablet support}: interfaccia intermedia per consultazione portatile
+\end{itemize}
+
+\section{Database service}
+
+Il \textbf{Database service} utilizza \textbf{MongoDB}, un database NoSQL document-oriented, ottimizzato per la gestione di grandi volumi di dati time-series.
+
+\subsection{Architettura NoSQL}
+
+MongoDB è stato scelto per le seguenti caratteristiche:
+\begin{itemize}
+  \item \textbf{Schema flessibile}: adattabilità a strutture dati eterogenee
+  \item \textbf{Scalabilità orizzontale}: sharding automatico per grandi dataset
+  \item \textbf{Performance elevate}: ottimizzazioni specifiche per query time-series
+  \item \textbf{JSON nativo}: integrazione naturale con applicazioni JavaScript
+\end{itemize}
+
+\subsection{Struttura dei documenti}
+
+I dati sono organizzati in collezioni specifiche:
+
+\subsubsection{Collezione measurements}
+\begin{lstlisting}[caption={Collezione measurements}, label=lst:measurements]
+{
+  "_id": ObjectId,
+  "sensorId": "string",
+  "timestamp": ISODate,
+  "location": {
+    "latitude": Number,
+    "longitude": Number
+  },
+  "measurements": {
+    "co2": Number,
+    "pm10": Number,
+    "pm25": Number,
+    "no2": Number,
+    "o3": Number,
+    "co": Number,
+    "so2": Number,
+    "voc": Number
+  },
+}
+\end{lstlisting}
+
+\subsubsection{Collezione sensors}
+Informazioni di configurazione e stato dei sensori registrati nel sistema.
+
+\subsubsection{Collezione alerts}
+Cronologia degli allarmi e notifiche generate dal sistema.
+
+\subsection{Strategie di indicizzazione}
+
+Per ottimizzare le prestazioni delle query, sono implementati indici su:
+\begin{itemize}
+  \item \textbf{Timestamp}: per query temporali efficienti
+  \item \textbf{SensorId}: per aggregazioni per sensore
+  \item \textbf{Location}: indice geospaziale 2dsphere per query geografiche
+  \item \textbf{Compound indexes}: combinazioni ottimizzate per query complesse
+\end{itemize}
+
+\subsection{Time-series optimizations}
+
+MongoDB offre funzionalità specifiche per dati time-series:
+\begin{itemize}
+  \item \textbf{Time Series Collections}: ottimizzazioni automatiche per dati temporali
+  \item \textbf{Automatic bucketing}: raggruppamento intelligente dei dati
+  \item \textbf{Compression}: riduzione dello spazio di archiviazione
+  \item \textbf{TTL indexes}: eliminazione automatica di dati obsoleti
+\end{itemize}
+
+\subsection{Aggregation framework}
+
+Utilizzo del potente framework di aggregazione per:
+\begin{itemize}
+  \item \textbf{Calcoli statistici}: medie, mediane, percentili
+  \item \textbf{Aggregazioni temporali}: dati per ora, giorno, settimana, mese
+  \item \textbf{Aggregazioni geografiche}: statistiche per area o regione
+  \item \textbf{Pipeline complesse}: elaborazioni multi-stage per analisi avanzate
+\end{itemize}
+
+\subsection{Backup e recovery}
+
+Implementazione di strategie di backup per garantire:
+\begin{itemize}
+  \item \textbf{Point-in-time recovery}: ripristino a momenti specifici
+  \item \textbf{Replica sets}: ridondanza automatica dei dati
+  \item \textbf{Disaster recovery}: procedure per ripristino in caso di emergenza
+  \item \textbf{Data archiving}: archiviazione a lungo termine di dati storici
+\end{itemize}

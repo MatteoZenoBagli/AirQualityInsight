@@ -216,9 +216,9 @@ consente di gestire efficientemente operazioni asincrone basate sulla manifestaz
 Le operazioni di input e di output non bloccanti migliorano le performance dell'applicativo.
 L'uso di un singolo thread principale con un event loop riduce la complessità della gestione della concorrenza.
 
-Il seguente esempio \ref{lst:node-server} mostra come creare un server HTTP minimale utilizzando Node.js:
+Il seguente esempio \ref{lst:node-server} mostra come creare un server \acrshort{http} minimale utilizzando Node.js:
 
-\begin{lstlisting}[caption={Server HTTP base in Node.js}, label=lst:node-server]
+\begin{lstlisting}[caption={Server \acrshort{http} base in Node.js}, label=lst:node-server]
 const http = require('http');
 
 const server = http.createServer((req, res) => {

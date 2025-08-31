@@ -113,15 +113,19 @@ connectWithRetry();
 
 // Health check endpoint
 app.get("/health", (req, res) => {
-  res.json({ status: "healthy" });
+  res.json({
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
 });
 
 app.get("/api/measurements", async (req, res) => {
   try {
-    const { startDate, endDate, sensor_id } = req.query;
+    const { startDate, endDate, sensorId } = req.query;
     const query = {};
 
-    if (sensor_id) query.sensor_id = sensor_id;
+    if (sensorId) query.sensor_id = sensorId;
 
     if (startDate && endDate)
       query.timestamp = {
@@ -140,9 +144,14 @@ app.get("/api/measurements", async (req, res) => {
 });
 
 app.get("/api/sensors", async (req, res) => {
+  const { sensorId } = req.query;
+  const query = {};
+
+  if (sensorId) query.sensor_id = sensorId;
+
   try {
     connectWithRetry();
-    const sensors = await Sensor.find({});
+    const sensors = await Sensor.find(query);
     res.json(sensors);
   } catch (error) {
     res.status(500).json({ error: error.message });
