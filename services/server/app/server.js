@@ -69,13 +69,6 @@ app.use((req, res, next) => {
 function createThingDescription(sensor) {
   const baseUrl = `http://localhost:${port}/wot/things/${sensor.sensor_id}`;
 
-  let coordinates = "Unknown location";
-  if (
-    sensor.location?.coordinates?.latitude &&
-    sensor.location?.coordinates?.longitude
-  )
-    coordinates = `[lat: ${sensor.location.coordinates.latitude}, lng: ${sensor.location.coordinates.longitude}]`;
-
   /** @see https://www.w3.org/TR/wot-thing-description11/#introduction-td */
   return {
     "@context": [
@@ -87,7 +80,7 @@ function createThingDescription(sensor) {
     "@type": ["Thing", "saref:Sensor"],
     id: `urn:sensor:air-quality:${sensor.sensor_id}`,
     title: sensor.name || `Air Quality Sensor ${sensor.sensor_id}`,
-    description: `Air Quality Sensor monitoring environmental parameters at ${coordinates}`,
+    description: `Air Quality Sensor monitoring environmental parameters at ${sensor.location?.coordinates || 'Unknown location'}`,
     base: baseUrl,
     securityDefinitions: {
       nosec_sc: { scheme: "nosec" },
