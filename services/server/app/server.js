@@ -110,7 +110,7 @@ function createThingDescription(sensor) {
         title: "Humidity",
         description: "Relative humidity percentage",
         unit: "%",
-        minimum: 0,
+        minimum: 30,
         maximum: 100,
         readOnly: true,
         observable: false,
