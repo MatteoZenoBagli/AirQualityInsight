@@ -1,3 +1,4 @@
+# config.py
 SENSOR_CONFIG = {
     'sampling_rate': 10,  # seconds (def. 60)
 

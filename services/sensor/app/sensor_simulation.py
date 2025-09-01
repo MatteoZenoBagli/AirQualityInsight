@@ -1,3 +1,4 @@
+# sensor_simulation.py
 from config import SENSOR_CONFIG
 from kafka import KafkaProducer
 from pymongo import MongoClient

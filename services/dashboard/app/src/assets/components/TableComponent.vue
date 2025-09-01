@@ -1,3 +1,4 @@
+<!-- components/TableComponent.vue -->
 <template>
   <div class="table-wrapper">
     <table>

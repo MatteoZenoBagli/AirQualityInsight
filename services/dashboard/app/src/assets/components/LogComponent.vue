@@ -1,3 +1,4 @@
+<!-- components/LogComponent.vue -->
 <template>
   <div class="log-container">
     <div v-if="entries.length === 0" class="log-entry empty">

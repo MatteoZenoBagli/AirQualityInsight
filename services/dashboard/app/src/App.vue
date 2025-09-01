@@ -1,3 +1,4 @@
+<!-- App.vue -->
 <script>
 import io from "socket.io-client";
 

@@ -1,3 +1,4 @@
+<!-- components/MapComponent.vue -->
 <script>
 import L from "leaflet";
 import 'leaflet.heat';
