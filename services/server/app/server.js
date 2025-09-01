@@ -424,7 +424,7 @@ app.get("/wot/things/:sensorId/properties", (req, res) => {
   res.json(properties);
 });
 
-app.post("/wot/things/:sensorId/actions/:actionName", (req, res) => {
+app.get("/wot/things/:sensorId/actions/:actionName", (req, res) => {
   const { sensorId, actionName } = req.params;
   const thing = registeredSensors.get(sensorId);
 
