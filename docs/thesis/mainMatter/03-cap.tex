@@ -61,17 +61,11 @@ Di seguito vengono esplicitate le varie responsabilità per ognuno dei servizi p
         con cadenza regolare, le misurazioni della qualità dell'aria. Ogni sensore è provvisto di un id univoco,
         un nome, una posizione geografica (le coordinate della sua collocazione) ed un indirizzo \acrshort{ip}.
         Tali misurazioni vengono inviate al broker dei messaggi in modo che vengano poi trasmesse ai servizi in ascolto.
-  \item Broker service: questo servizio dispone di un canale di comunicazione logico (topic)
-        dove vengono pubblicate e consumate le informazioni. Nel canale vengono accodate le misurazioni
-        ottenute dai sensori, le quali sono poi consumate dal servizio del server \acrshort{api},
-        per la loro gestione ed erogazione.
   \item \acrshort{api} service: questo servizio consuma dal broker le misurazioni, le salva
         sul database non relazione e le rende disponibili attraverso \acrshort{api}.
   \item Dashboard service: questo servizio fornisce un'interfaccia grafica tramite cui è possibile consultare
         la mappa interattiva, aggiornata in tempo reale con i dati forniti dal server \acrshort{api}, e le relative
         tabelle.
-  \item Database service: questo servizio si occupa di salvare in modo persistente le misurazioni
-        registrate dai sensori, permettendo future interrogazioni sui dati storici.
 \end{itemize}
 
 \section{Sensor service}
@@ -100,7 +94,7 @@ Queste proprietà sono:
 \subsection{Generazione pseudo-misurazioni}
 
 La classe \texttt{AirQualitySensor} è dotata di un metodo \texttt{generate\_reading} che produce misurazioni simulate.
-Ad ogni sensore viene fornita la configurazione presentata in lista~\ref{lst:sensor-config} per la generazione
+Ad ogni sensore viene fornita la configurazione presentata nel listato~\ref{lst:sensor-config} per la generazione
 delle misurazioni.
 
 \begin{lstlisting}[caption={Configurazione sensore}, label=lst:sensor-config]
@@ -126,7 +120,7 @@ si basa sulla lettura precedente (quando disponibile) e si discosta da essa di u
 l'1\% e il 5\%.
 
 Parte del codice Python utilizzato per la generazione di queste misurazioni simulate è riportato
-nella lista~\ref{lst:generate-reading} che segue.
+nel listato~\ref{lst:generate-reading} che segue.
 
 \begin{lstlisting}[caption={Metodo per la generazione di pseudo-misurazioni}, label=lst:generate-reading]
   def generate_reading(self):
@@ -180,15 +174,15 @@ consistente di punti, questi siano stati poi filtrati secondo i criteri preceden
 sperimentalmente per ottenere una densità ottimale di punti. Per fare ciò è stata realizzata una pagina dedicata
 allo scopo, dato che si tratta di un processo che può essere riprodotto
 cambiando la distanza fra i punti tramite input numerico.
-0La pagina presenta una parte iniziale dove è possibile scegliere la città (nel nostro caso Bologna) e lo spazio
+La pagina presenta una parte iniziale dove è possibile scegliere la città (nel nostro caso Bologna) e lo spazio
 minimo fra un sensore e l'altro. Viene anche indicata la query di estrazione,
-la stessa citata in precedenza nella lista~\ref{lst:overpass-query}.
+la stessa citata in precedenza nel listato~\ref{lst:overpass-query}.
 Questa parte d'intestazione è riportata nell'immagine~\ref{fig:sensors-heading}, dove si possono notare gli elementi
 citati.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.65\textwidth]{sensors/00_heading.png}
+  \includegraphics[width=\textwidth]{sensors/00_heading.png}
   \caption{Intestazione pagina}
   \label{fig:sensors-heading}
 \end{figure}
@@ -237,7 +231,6 @@ esito positivo.
     \label{fig:sensors-after}
   \end{subfigure}
 
-
   \hfill
   \begin{subfigure}{\textwidth}
     \centering
@@ -265,65 +258,19 @@ dell'applicazione principale.
   \label{fig:sensors-footer}
 \end{figure}
 
-\section{Broker service}
-
-In questa sezione verrà descritto il servizio di message broker rispetto alle gestione delle misurazioni fittizie
-generate dai sensori e consumate dal server.
-
-\subsection{Architettura del Sistema}
-
-Il sistema utilizza Apache Kafka come message broker per gestire il flusso di dati
-tra i sensori Python e il server Node.js. È configurato in modalità \acrfull{kraft}, che elimina la dipendenza
-da Apache ZooKeeper per la gestione dei metadati del cluster.
-L'utilizzo Apache Kafka in questa configurazione porta diversi benefici significativi al sistema.
-Innanzitutto, la piattaforma permette di elaborare i dati provenienti dai sensori in modo asincrono e con prestazioni
-elevate, garantendo un throughput alto anche con volumi considerevoli di informazioni.
-Un altro aspetto vantaggioso è che sensori e server possono funzionare in completa autonomia l'uno dall'altro,
-senza dipendenze dirette che potrebbero creare colli di bottiglia o punti di failure.
-Questa indipendenza si traduce anche in una maggiore flessibilità del sistema: è possibile aggiungere nuovi sensori
-alla rete senza dover apportare modifiche al codice del consumer, rendendo l'architettura facilmente scalabile.
-La persistenza dei dati rappresenta un ulteriore punto di forza: tutti i messaggi vengono conservati nei log di Kafka
-per un periodo di tempo configurabile secondo le esigenze specifiche del progetto.
-Questo significa che le informazioni non vanno perse anche in caso di interruzioni temporanee.
-Infine, Kafka gestisce automaticamente aspetti critici come le riconnessioni in caso di problemi di rete e le procedure
-di recovery, riducendo significativamente la complessità operativa e aumentando l'affidabilità complessiva del sistema.
-
-\paragraph{Produzione dei Messaggi}
-
-I sensori Python generano misurazioni simulate della qualità dell'aria e le incapsulano
-in un \acrshort{json} per poi pubblicale sul topic Kafka \texttt{measurements}, connettendosi
-al broker tramite l'indirizzo interno \texttt{kafka:9092}.
-
-\paragraph{Consumo dei Messaggi}
-
-Il server Node.js agisce come consumer Kafka, rimanendo in ascolto continuo sul topic \texttt{measurements},
-ricevendo le misurazioni simulate della qualità dell'aria registrate in esso. Su tali misurazioni viene effettuato
-il parsing \acrshort{json} e la validazione dei dati ricevuti. Se le misurazioni ottenute sono valide,
-vengono salvate nel database MongoDB ed inoltrate ai client web tramite WebSocket.
-
-\paragraph{Health Check}
-
-Il container Kafka include un health check che verifica periodicamente la disponibilità del broker
-attraverso il comando \texttt{kafka-topics.sh}, con parametri di retry configurabili quali:
-intervallo di controllo (30 secondi), timeout (15 secondi), numero di tentativi (10) e periodo di avvio (30 secondi).
-
 \section{\acrshort{api} service}
 
 In questa sezione verrà descritto il servizio \acrshort{api} che riceve le misurazioni simulate della qualità dell'aria
 dal broker di messaggi, le trasforma ed eroga ai client che lo interrogano.
 
-\subsection{Architettura del Server}
+\subsection{Implementazione del Server}
 
-Il server Node.js implementa un'architettura basata su Express.js che espone \acrshort{api} \acrshort{rest}ful
-per l'accesso ai dati delle misurazioni ambientali.
-Il server integra diverse tecnologie per fornire un servizio completo.
-Express.js gestisce le richieste \acrshort{http} come framework web principale,
-mentre MongoDB si occupa della persistenza dei dati attraverso un database NoSQL flessibile e scalabile.
-Apache Kafka funge da sistema di messaggistica per il consumo continuo dei dati sensoriali,
-garantendo un flusso affidabile delle informazioni.
-Socket.IO abilita la comunicazione WebSocket per fornire aggiornamenti in tempo reale ai client connessi.
-La configurazione \acrshort{cors} completa l'architettura consentendo richieste cross-origin sicure e controllate,
-necessarie per il corretto funzionamento dell'applicazione web distribuita.
+Il server Node.js fornisce un servizio web per la gestione e l'accesso ai dati delle misurazioni ambientali.
+Utilizza Express.js per implementare un'interfaccia \acrshort{rest} che espone diversi endpoint per le operazioni sui dati.
+Il server integra MongoDB per la memorizzazione persistente dei dati sensoriali, Apache Kafka per il consumo
+continuo dei flussi di dati in arrivo dai sensori, e Socket.IO per fornire notifiche push in tempo reale ai client web
+quando vengono registrate nuove misurazioni o superati i valori di soglia configurati. La configurazione \acrshort{cors}
+permette l'accesso sicuro da domini diversi, consentendo l'integrazione con applicazioni web distribuite.
 
 \subsection{Endpoint Disponibili}
 
@@ -335,14 +282,16 @@ essere \texttt{200 OK} in caso di successo o \texttt{500 Internal Server Error} 
 
 Endpoint per il monitoraggio dello stato del servizio.
 Verifica la disponibilità del server e restituisce lo stato operativo.
-Risponde con un semplice \acrshort{json} con lo status ed il tempo di attività,
-come da esempio~\ref{lst:api-health-example}.
+Risponde con un semplice \acrshort{json} con lo status, il tempo di attività, il numero di sensori attivi e le
+misurazioni registrate come da esempio nel listato~\ref{lst:api-health-example}.
 
 \begin{lstlisting}[caption={Risposta di sucesso per endpoint \texttt{health}}, label=lst:api-health-example]
   {
     "status":"healthy",
     "timestamp":"2025-08-30T13:58:44.198Z",
-    "uptime":39.198012656
+    "uptime":39.198012656,
+    "wot_things":459,
+    "active_measurements":258
   }
 \end{lstlisting}
 
@@ -358,7 +307,7 @@ Se specificato \texttt{sensorId}, filtra per sensore specifico,
 mentre se specificati \texttt{startDate} e \texttt{endDate}, filtra per intervallo temporale.
 Le misurazioni in risposta sono in ordine crescente per timestamp e con limite massimo di 1000 record per richiesta.
 
-Un esempio di risposta di successo è riportato nella lista~\ref{lst:api-measurements-example}
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-measurements-example}
 \begin{lstlisting}[caption={Risposta di sucesso per endpoint \texttt{measurements}},label=lst:api-measurements-example]
 [
   {
@@ -387,7 +336,7 @@ Restituisce tutti i sensori configurati con le relative informazioni di localizz
 È possibile utilizzare come parametro opzionale di query \texttt{sensorId} come identificativo del sensore specifico,
 estraendo il solo sensore indicato (se disponibile).
 
-Un esempio di risposta di successo è riportato nella lista~\ref{lst:api-sensors-example}
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-sensors-example}
 \begin{lstlisting}[caption={Risposta di sucesso per endpoint \texttt{sensors}},label=lst:api-sensors-example]
 [
   {
@@ -408,7 +357,7 @@ Un esempio di risposta di successo è riportato nella lista~\ref{lst:api-sensors
 Endpoint per il recupero della misurazione più recente nel sistema.
 Restituisce l'ultima misurazione registrata, ordinata per timestamp decrescente.
 
-Un esempio di risposta di successo è riportato nella lista~\ref{lst:api-latest-example}
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-latest-example}
 \begin{lstlisting}[caption={Risposta di sucesso per endpoint \texttt{latest}},label=lst:api-latest-example]
 {
   "_id":"68b421c342b53a3e45108d73",
@@ -507,15 +456,10 @@ il metodo di calcolo utilizzato per ottenere l'\acrfull{eaqi} \ref{fig:app-eaqi-
 \paragraph{Mappa}
 
 Accedendo alla pagina principale, l'utente si trova di fronte a una mappa dettagliata della città di Bologna,
-come documentato nell'immagine \ref{fig:app-map-sensors}. La rappresentazione cartografica utilizza un sistema
-di simboli colorati per organizzare visivamente le informazioni: i sensori attivi sul territorio
-sono contrassegnati da spilli rossi, creando una panoramica immediata della loro distribuzione geografica.
-Nel momento in cui viene ricevuta una nuova misurazione, il sensore responsabile viene illuminato nella mappa,
-attraverso l'effetto grafico del relativo spillo che lampeggia per un paio di secondi.
-
-Al centro della visualizzazione si trova Piazza Maggiore, simbolo di Bologna, che viene opportunamente evidenziata
-con uno spillo blu per distinguerla dagli altri elementi della mappa e fornire un punto di riferimento
-costante all'utente, come si può osservare nell'immagine \ref{fig:app-map-center}.
+come documentato nell'immagine \ref{fig:app-map-sensors}. I sensori attivi sul territorio
+sono contrassegnati da spilli rossi, mentre il centro della mappa (Piazza Maggiore) è evidenziato da uno spillo blu
+come si può osservare nell'immagine \ref{fig:app-map-center}. Nel momento in cui viene ricevuta una nuova misurazione,
+il sensore responsabile viene lampeggia per un paio di secondi.
 
 \begin{figure}
   \centering
@@ -533,19 +477,20 @@ costante all'utente, come si può osservare nell'immagine \ref{fig:app-map-cente
     \caption{Centro della mappa}
     \label{fig:app-map-center}
   \end{subfigure}
+
+  \caption{Mappa}
+  \label{fig:app-map}
 \end{figure}
 
-L'interfaccia cartografica è dotata di diversi controlli interattivi per facilitare la navigazione e la
-gestione dei dati.
-Sul lato sinistro sono posizionati i pulsanti per aumentare o diminuire lo zoom (\texttt{+} e \texttt{-}) della mappa,
-mentre sul lato destro si trovano tre pulsanti: due verdi ed uno bianco avente come icona uno spillo rosso.
+L'interfaccia cartografica è dotata di diversi controlli interattivi: sul lato sinistro sono posizionati i pulsanti
+per aumentare o diminuire lo zoom (\texttt{+} e \texttt{-}) della mappa, mentre sul lato destro si trovano due pulsanti
+verdi ed uno bianco avente come icona uno spillo rosso.
 
-Al centro della mappa è presente un indicatore visuale composto da un mirino a croce (\textit{crosshair}) rosso
-dentro una cornice circolare bianca. Questo elemento serve come marcatore del punto centrale della
-visualizzazione cartografica attuale. Il sistema registra automaticamente le coordinate geografiche associate
-alla posizione di questo mirino, conservandole in memoria e rendendole disponibili per la consultazione
-da parte dell'utente. Quando l'utente naviga sulla mappa spostando la visualizzazione, le coordinate
-del punto centrale vengono aggiornate per mantenere la corrispondenza con la nuova area geografica inquadrata.
+Al centro della mappa è presente un mirino a croce (\textit{crosshair}) rosso dentro una cornice circolare bianca,
+che indica il centro della mappa attualmente visualizzata. Il sistema registra automaticamente le coordinate geografiche
+ad esso, conservandole in memoria e rendendole disponibili per la consultazione. Quando l'utente naviga sulla mappa
+spostando la visualizzazione, le coordinate del punto centrale vengono aggiornate per mantenere la corrispondenza
+con la nuova area geografica inquadrata.
 
 Il pulsante verde contrassegnato dalla dicitura \textit{"Start"} rappresenta l'interruttore principale
 per attivare o disattivare la ricezione in tempo reale delle misurazioni dai sensori.
@@ -555,20 +500,12 @@ i valori ricevuti dai sensori e aggiornerà automaticamente le tabelle informati
 come documentato nelle figure \ref{fig:app-tab-last-measurements}, \ref{fig:app-tab-statistics},
 \ref{fig:app-tab-system-log} e \ref{fig:app-tab-registered-sensors}.
 
-Il pulsante caratterizzato dall'icona dello spillo rosso attiva l'espansione di un pannello di controllo,
-che fornisce informazioni dettagliate sulla mappa attualmente visualizzata e mette a disposizione strumenti
-aggiuntivi per l'interazione con l'interfaccia cartografica.
-Il pannello di controllo mette a disposizione dell'utente un'ampia gamma di strumenti interattivi, tra cui
-informazioni testuali, pulsanti di comando, menu a tendina e un controllo slider orizzontale
-(come mostrato nelle figure \ref{fig:map-layer-sensors} e \ref{fig:map-layer-clear}).
+Il pulsante avente come icona lo spillo rosso attiva l'espansione di un pannello di controllo che fornisce informazioni
+dettagliate sulla mappa e strumenti aggiuntivi per l'interazione con l'interfaccia cartografica, come mostrato nelle
+figure \ref{fig:map-layer-sensors} e \ref{fig:map-layer-clear}.
 
 Procedendo dall'alto verso il basso, la prima informazione visualizzata concerne il conteggio complessivo
-dei sensori presenti sulla mappa. Questo indicatore numerico fornisce un valore globale che comprende tutti
-i dispositivi registrati nel sistema, a prescindere dal loro stato operativo attuale. La condizione di funzionamento
-viene definita attraverso una proprietà booleana denominata \texttt{status}, che restituisce il valore \texttt{active}
-per i sensori operativi. Per un'analisi dettagliata degli attributi di ciascun sensore, è possibile consultare
-la tabella documentata nella figura \ref{fig:app-tab-registered-sensors} e nel listato \ref{lst:sensors-properties}.
-
+di tutti i sensori presenti sulla mappa, indipendentemente dal loro stato.
 La sezione successiva presenta un pulsante verde dedicato alla copia delle coordinate geografiche del centro mappa
 (corrispondenti alla posizione del mirino). Seguono una serie di pulsanti grigi che consentono
 di attivare o disattivare la visualizzazione dei diversi layer cartografici: sensori, demarcazioni territoriali
@@ -576,13 +513,12 @@ come le zone di avviamento postale (\acrshort{cap}) (figura~\ref{fig:map-layer-c
 quartieri (figura~\ref{fig:map-layer-neighborhoods}),
 zone amministrative (figura~\ref{fig:map-layer-zones}) e \acrshort{ztl} (figura~\ref{fig:map-layer-ztl}).
 
-Nella parte inferiore del pannello si trovano ulteriori controlli specializzati: un menu a tendina per la selezione
-del tipo di inquinante da visualizzare, uno slider orizzontale per impostare il numero di misurazioni
-da registrare (range da 50 a 1000), un indicatore del numero di misurazioni attualmente memorizzate, e un pulsante
-rosso con icona cestino per l'eliminazione dei dati registrati. Il sistema implementa un meccanismo di registrazione
-delle misurazioni dei sensori basato su una coda (struttura dati \acrshort{fifo}), che garantisce
-l'eliminazione automatica delle registrazioni più datate quando viene raggiunta la capacità massima prestabilita,
-privilegiando così la conservazione dei dati più recenti.
+Nella parte inferiore del pannello si trovano un menu a tendina per la selezione del tipo di inquinante da visualizzare,
+uno slider orizzontale per impostare il numero di misurazioni da registrare (range da 50 a 1000),
+un indicatore del numero di misurazioni attualmente memorizzate e un pulsante rosso con icona cestino per
+l'eliminazione dei dati registrati. Il sistema implementa un meccanismo di registrazione delle misurazioni dei sensori
+basato su una coda (struttura dati \acrshort{fifo}), che garantisce l'eliminazione automatica delle registrazioni
+più datate quando viene raggiunta la capacità massima prestabilita, conservando i dati più recenti.
 
 Conclude l'interfaccia un menu a tendina aggiuntivo per l'attivazione di griglie di riferimento sulla mappa
 quali una grigia (figura~\ref{fig:map-grid-gray}), una rossa
@@ -591,67 +527,88 @@ in quattro quarti (figura~\ref{fig:map-grid-crosshair}).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/06_map_sensors_controls.png}
-  \caption{Pannello controllo espanso con sensori visualizzati}
-  \label{fig:map-layer-sensors}
 
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/06_map_sensors_controls.png}
+    \caption{Pannello controllo espanso con sensori visualizzati}
+    \label{fig:map-layer-sensors}
+  \end{subfigure}
   \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/07_map_controls.png}
+    \caption{Pannello controllo espanso con sensori nascosti}
+    \label{fig:map-layer-clear}
+  \end{subfigure}
 
-  \includegraphics[width=0.95\textwidth]{dashboard/07_map_controls.png}
-  \caption{Pannello controllo espanso con sensori nascosti}
-  \label{fig:map-layer-clear}
+  \vspace{1em}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/08_map_caps_controls.png}
+    \caption{Livello a \acrshort{cap}}
+    \label{fig:map-layer-caps}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/09_map_neighborhoods_controls.png}
+    \caption{Livello a quartieri}
+    \label{fig:map-layer-neighborhoods}
+  \end{subfigure}
+
+  \vspace{1em}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/10_map_zones_controls.png}
+    \caption{Livello a zone}
+    \label{fig:map-layer-zones}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/11_map_ztl_controls.png}
+    \caption{Livello \acrshort{ztl}}
+    \label{fig:map-layer-ztl}
+  \end{subfigure}
+
+
+  \caption{Livelli mappa}
+  \label{fig:app-map-levels}
 \end{figure}
 
 \newpage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/08_map_caps_controls.png}
-  \caption{Livello a \acrshort{cap}}
-  \label{fig:map-layer-caps}
 
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/12_map_grid_gray_controls.png}
+    \caption{Griglia grigia}
+    \label{fig:map-grid-gray}
+  \end{subfigure}
   \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/13_map_grid_red_controls.png}
+    \caption{Griglia rossa}
+    \label{fig:map-grid-red}
+  \end{subfigure}
 
-  \includegraphics[width=0.95\textwidth]{dashboard/09_map_neighborhoods_controls.png}
-  \caption{Livello a quartieri}
-  \label{fig:map-layer-neighborhoods}
-\end{figure}
+  \vspace{1em}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/10_map_zones_controls.png}
-  \caption{Livello a zone}
-  \label{fig:map-layer-zones}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/14_map_grid_crosshair_controls.png}
+    \caption{Griglia crosshair}
+    \label{fig:map-grid-crosshair}
+  \end{subfigure}
 
-  \hfill
-
-  \includegraphics[width=0.95\textwidth]{dashboard/11_map_ztl_controls.png}
-  \caption{Livello \acrshort{ztl}}
-  \label{fig:map-layer-ztl}
-\end{figure}
-
-\newpage
-
-\begin{figure}[H]
-  \centering
-
-  \includegraphics[width=0.95\textwidth]{dashboard/12_map_grid_gray_controls.png}
-  \caption{Griglia grigia}
-  \label{fig:map-grid-gray}
-
-  \hfill
-
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/13_map_grid_red_controls.png}
-  \caption{Griglia rossa}
-  \label{fig:map-grid-red}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/14_map_grid_crosshair_controls.png}
-  \caption{Griglia crosshair}
-  \label{fig:map-grid-crosshair}
+  \caption{Griglie mappa}
+  \label{fig:app-map-grids}
 \end{figure}
 
 \newpage
@@ -677,14 +634,13 @@ Tali colori sono infatti quelli forniti dall'\acrfull{eea} come indicato nella t
 
 Nelle immagini seguenti viene mostrata la heatmap relativa alle misurazioni di \acrshort{pm25}.
 Partendo dalla vista default in immagine \ref{fig:app-map-pm25-controls-15},
-passiamo ad una versione con zoom inferiore senza sensori \ref{fig:app-map-pm25-controls-16} e
-con sensori \ref{fig:app-map-pm25-controls-17}.
-Successivamente diminuiamo ulteriormente lo zoom senza sensori \ref{fig:app-map-pm25-controls-18}, per poi
-riavvicinarci \ref{fig:app-map-pm25-controls-19},
-visualizzarle la \acrshort{ztl} \ref{fig:app-map-pm25-controls-20} ed i quartieri\ref{fig:app-map-pm25-controls-21}.
-Infine, visualizziamo una versione con concentrazioni più elevate \ref{fig:app-map-pm25-controls-22}
-rispetto alle prime, essendo passato più tempo ed avendo quindi un numero maggiore di misurazioni, e le altre
-misurazioni disponibili \ref{fig:app-map-pm25-controls-23}.
+passiamo ad una versione con zoom inferiore senza sensori (figura~\ref{fig:app-map-pm25-controls-16}) e con sensori
+(figura~\ref{fig:app-map-pm25-controls-17}). Successivamente diminuiamo ulteriormente lo zoom senza sensori
+(figura~\ref{fig:app-map-pm25-controls-18}), per poi riavvicinarci (figura~\ref{fig:app-map-pm25-controls-19}),
+visualizzarle la \acrshort{ztl} (figura~\ref{fig:app-map-pm25-controls-20}) ed i quartieri
+(figura~\ref{fig:app-map-pm25-controls-21}). Infine, visualizziamo una versione con concentrazioni più elevate
+(figura~\ref{fig:app-map-pm25-controls-22}) rispetto alle prime, essendo passato più tempo ed avendo quindi un numero
+maggiore di misurazioni, e le altre misurazioni disponibili (figura~\ref{fig:app-map-pm25-controls-23}).
 
 Come anticipato, allontanarci dal centro della mappa porterà a concentrazioni maggiori, mentre avvicinarci il contrario.
 Anche il numero di misurazioni influisce sulle concentrazioni della mappa di calore, essendo direttamente correlate.
@@ -693,61 +649,85 @@ Anche il numero di misurazioni influisce sulle concentrazioni della mappa di cal
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/15_map_pm25_controls.png}
-  \caption{Heatmap default}
-  \label{fig:app-map-pm25-controls-15}
 
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/15_map_pm25_controls.png}
+    \caption{Heatmap default}
+    \label{fig:app-map-pm25-controls-15}
+  \end{subfigure}
   \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/16_map_pm25_controls.png}
+    \caption{Heatmap zoom 11 senza sensori}
+    \label{fig:app-map-pm25-controls-16}
+  \end{subfigure}
 
-  \includegraphics[width=0.95\textwidth]{dashboard/16_map_pm25_controls.png}
-  \caption{Heatmap zoom 11 senza sensori}
-  \label{fig:app-map-pm25-controls-16}
+  \vspace{1em}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/17_map_pm25_controls.png}
+    \caption{Heatmap zoom 11 con sensori}
+    \label{fig:app-map-pm25-controls-17}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/18_map_pm25_controls.png}
+    \caption{Heatmap zoom 9 senza sensori}
+    \label{fig:app-map-pm25-controls-18}
+  \end{subfigure}
+
+  \vspace{1em}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/19_map_pm25_controls.png}
+    \caption{Heatmap zoom 12 senza sensori}
+    \label{fig:app-map-pm25-controls-19}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/20_map_pm25_controls.png}
+    \caption{Heatmap zoom 12 senza sensori \acrshort{ztl}}
+    \label{fig:app-map-pm25-controls-20}
+  \end{subfigure}
+
+  \caption{Heatmap - parte 1}
+  \label{fig:app-map-heatmap-1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/17_map_pm25_controls.png}
-  \caption{Heatmap zoom 11 con sensori}
-  \label{fig:app-map-pm25-controls-17}
 
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/21_map_pm25_controls.png}
+    \caption{Heatmap zoom 12 senza sensori con quartieri}
+    \label{fig:app-map-pm25-controls-21}
+  \end{subfigure}
   \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/22_map_pm25_controls.png}
+    \caption{Heatmap zoom 12 senza sensori, concentrazione maggiore}
+    \label{fig:app-map-pm25-controls-22}
+  \end{subfigure}
 
-  \includegraphics[width=0.95\textwidth]{dashboard/18_map_pm25_controls.png}
-  \caption{Heatmap zoom 9 senza sensori}
-  \label{fig:app-map-pm25-controls-18}
-\end{figure}
+  \vspace{1em}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/19_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori}
-  \label{fig:app-map-pm25-controls-19}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{dashboard/23_map_pm25_controls.png}
+    \caption{Heatmap zoom 12 senza sensori, apertura lista misurazioni disponibili}
+    \label{fig:app-map-pm25-controls-23}
+  \end{subfigure}
 
-  \hfill
-
-  \includegraphics[width=0.95\textwidth]{dashboard/20_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori con \acrshort{ztl}}
-  \label{fig:app-map-pm25-controls-20}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/21_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori con quartieri}
-  \label{fig:app-map-pm25-controls-21}
-
-  \hfill
-
-  \includegraphics[width=0.95\textwidth]{dashboard/22_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori, concentrazione maggiore}
-  \label{fig:app-map-pm25-controls-22}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dashboard/23_map_pm25_controls.png}
-  \caption{Heatmap zoom 12 senza sensori, apertura lista misurazioni disponibili}
-  \label{fig:app-map-pm25-controls-23}
+  \caption{Heatmap - parte 2}
+  \label{fig:app-map-heatmap-2}
 \end{figure}
 
 \newpage
@@ -836,35 +816,35 @@ distanza dal centro della mappa, data ultima misurazione registrata e relativo t
   \label{fig:app-tab-registered-sensors}
 \end{figure}
 
-Nella prima immagine~\ref{fig:app-tab-registered-sensors} abbiamo i sensori ordinati per id crescente (default),
-mentre nella seconda~\ref{fig:app-tab-registered-sensors-distance-sort-asc} e
-terza immagine~\ref{fig:app-tab-registered-sensors-distance-sort-desc} si ha la tabella ordinata rispetto
-la distanza dal centro della mappa relativamente in ordine crescente (dal sensore più prossimo al più remoto) e
-decrescente (dal sensore più lontano al più vicino).
-Anche qui, cliccando sulla riga dedicata, la pagina scorre verso la mappa centrata sul sensore indicato.
+% Nella prima immagine~\ref{fig:app-tab-registered-sensors} abbiamo i sensori ordinati per id crescente (default),
+% mentre nella seconda~\ref{fig:app-tab-registered-sensors-distance-sort-asc} e
+% terza immagine~\ref{fig:app-tab-registered-sensors-distance-sort-desc} si ha la tabella ordinata rispetto
+% la distanza dal centro della mappa relativamente in ordine crescente (dal sensore più prossimo al più remoto) e
+% decrescente (dal sensore più lontano al più vicino).
+% Anche qui, cliccando sulla riga dedicata, la pagina scorre verso la mappa centrata sul sensore indicato.
 
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{dashboard/28_table_registered_sensors_distance_sort_asc.png}
-    \caption{Tabella sensori registrati, ordinati per "distanza dal centro" crescente}
-    \label{fig:app-tab-registered-sensors-distance-sort-asc}
-  \end{subfigure}
+% \begin{figure}[H]
+%   \centering
+%   \begin{subfigure}{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{dashboard/28_table_registered_sensors_distance_sort_asc.png}
+%     \caption{Tabella sensori registrati, ordinati per "distanza dal centro" crescente}
+%     \label{fig:app-tab-registered-sensors-distance-sort-asc}
+%   \end{subfigure}
 
-  \hfill
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{dashboard/29_table_registered_sensors_distance_sort_desc.png}
-    \caption{Tabella sensori registrati, ordinati per "distanza dal centro" decrescente}
-    \label{fig:app-tab-registered-sensors-distance-sort-desc}
-  \end{subfigure}
-\end{figure}
+%   \hfill
+%   \begin{subfigure}{\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{dashboard/29_table_registered_sensors_distance_sort_desc.png}
+%     \caption{Tabella sensori registrati, ordinati per "distanza dal centro" decrescente}
+%     \label{fig:app-tab-registered-sensors-distance-sort-desc}
+%   \end{subfigure}
+% \end{figure}
 
-Il calcolo per tale distanza è realizzato attraverso la formula di Haversine \cite{haversine_formula},
-ovvero una funzione usata per calcolare la distanza ortodromica (linea retta sulla superficie terrestre) tra due punti.
-Essendo i sensori dotati di coordinate spaziali quali latitudine e longitudine, come il centro della mappa,
-la formula è risultata l'ideale per calcolarne la distanza.
+Il calcolo per ottenere la distanza di un sensore dal centro della mappa è realizzato attraverso
+la formula di Haversine \cite{haversine_formula}, ovvero una funzione usata per calcolare la distanza ortodromica
+(linea retta sulla superficie terrestre) tra due punti. Essendo i sensori dotati di coordinate spaziali
+quali latitudine e longitudine, come il centro della mappa, la formula è risultata l'ideale per calcolarne la distanza.
 
 \paragraph{Formula di Haversine}
 
@@ -891,7 +871,7 @@ di codice Javascript~\ref{lst:haversine-formula-code} realmente utilizzata dall'
   $\lambda$              & longitudine (in radianti)                           \\
   $\lambda_1, \lambda_2$ & longitudine del punto 1 e punto 2                   \\
   $\Delta\lambda$        & differenza di longitudine ($\lambda_2 - \lambda_1$) \\
-  $R$                    & raggio terrestre medio ($\sim 6371$ km)          \\
+  $R$                    & raggio terrestre medio ($\sim 6371$ km)             \\
   $d$                    & distanza tra i punti (in metri o km)                \\
   $c$                    & distanza angolare (in radianti)                     \\
   $a$                    & termine intermedio                                  \\
@@ -913,176 +893,4 @@ di codice Javascript~\ref{lst:haversine-formula-code} realmente utilizzata dall'
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c;
   }
-\end{lstlisting}
-
-\section{Database service}
-
-In questa sezione verrà descritto il servizio di database, per il quale è stato scelto il database non relazione
-Mongodb.
-
-Il database MongoDB è stato progettato per gestire efficacemente i dati di sistemi analoghi a quelli del progetto.
-L'architettura del database si basa su due collezioni principali per mantenere le informazioni relative ai
-sensori e alle relative misurazioni simulate della qualità dell'aria.
-
-La prima collezione, denominata \texttt{sensors}, è dedicata alla gestione anagrafica dei dispositivi di rilevamento.
-Ogni sensore viene identificato in modo univoco attraverso un codice alfanumerico generato automaticamente e comprende
-informazioni essenziali come il nome del dispositivo, la sua posizione geografica espressa in formato GeoJSON
-con coordinate longitude-latitude, l'indirizzo \acrshort{ip} assegnato e lo stato di attività.
-Il sistema mantiene inoltre traccia dell'ultimo contatto con ciascun sensore per monitorare la disponibilità
-della rete di rilevamento.
-
-La seconda collezione, \texttt{measurements}, costituisce il cuore del sistema di archiviazione dati,
-conservando tutte le misurazioni ambientali acquisite nel tempo. Ogni rilevazione comprende un riferimento al sensore
-di origine, il timestamp preciso dell'acquisizione e un set completo di parametri ambientali: temperatura,
-umidità relativa, pressione atmosferica, concentrazione di composti organici volatili, livelli di \acrshort{co2},
-particolato fine \acrshort{pm25} e \acrshort{pm10}, e concentrazioni di inquinanti gassosi come \acrshort{no2},
-\acrshort{o3} e \acrshort{so2}.
-
-Il sistema di inizializzazione automatizza completamente la configurazione del database.
-Durante l'avvio, vengono create le collezioni con validatori di schema che garantiscono l'integrità
-strutturale dei dati, vengono popolati i sensori utilizzando coordinate geografiche caricate
-da file \acrshort{json} esterno ottenuto dal sistema citato in~\ref{subsection:sensor-distribution}, e vengono
-configurati gli indici necessari per ottimizzare le prestazioni di ricerca. L'indicizzazione include chiavi univoche
-per gli identificatori dei sensori, indici geospaziali per le query di prossimità geografica, e indici composti
-per ottimizzare l'accesso cronologico alle misurazioni.
-
-Nelle seguenti liste viene indicato il codice Javascript atto alla creazione delle collezioni
-\texttt{sensors}~\ref{lst:mongodb-sensors}, \texttt{measurements}~\ref{lst:mongodb-measurements} e relativi
-indici~\ref{lst:mongodb-indexes}.
-
-\begin{lstlisting}[caption={Generazione collezione \texttt{sensors} MongoDB}, label=lst:mongodb-sensors]
-// Sensors collection
-db.createCollection("sensors", {
-  validator: {
-    $jsonSchema: {
-      bsonType: "object",
-      required: ["sensor_id", "name", "location", "ip"],
-      properties: {
-        sensor_id: {
-          bsonType: "string",
-          description: "Unique identifier for the sensor",
-        },
-        name: {
-          bsonType: "string",
-          description: "Name of the sensor",
-        },
-        location: {
-          bsonType: "object",
-          required: ["type", "coordinates"],
-          properties: {
-            type: {
-              bsonType: "string",
-              enum: ["Point"],
-              description: "GeoJSON type",
-            },
-            coordinates: {
-              bsonType: "array",
-              minItems: 2,
-              maxItems: 2,
-              items: {
-                bsonType: "double",
-                description: "[longitude, latitude]",
-              },
-            },
-          },
-        },
-        ip: {
-          bsonType: "string",
-          description: "IP address of the sensor",
-        },
-        active: {
-          bsonType: "bool",
-          description: "Whether the sensor is currently active",
-        },
-        last_seen: {
-          bsonType: "date",
-          description: "Last time the sensor reported data",
-        },
-      },
-    },
-  },
-});
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Generazione collezione \texttt{measurements} MongoDB}, label=lst:mongodb-measurements]
-// Measurements collection
-db.createCollection("measurements", {
-  validator: {
-    $jsonSchema: {
-      bsonType: "object",
-      required: [
-        "sensor_id",
-        "timestamp",
-        "temperature",
-        "humidity",
-        "pressure",
-        "voc",
-        "co2",
-        "pm25",
-        "pm10",
-        "no2",
-        "o3",
-        "so2",
-      ],
-      properties: {
-        sensor_id: {
-          bsonType: "string",
-          description: "Reference to the sensor",
-        },
-        timestamp: {
-          bsonType: "date",
-          description: "Time of measurement",
-        },
-        temperature: {
-          bsonType: ["double", "int"],
-          description: "Temperature in Celsius",
-        },
-        humidity: {
-          bsonType: ["double", "int"],
-          description: "Relative humidity percentage",
-        },
-        pressure: {
-          bsonType: ["double", "int"],
-          description: "Atmospheric pressure in hPa",
-        },
-        voc: {
-          bsonType: ["double", "int"],
-          description: "Volatile Organic Compounds in ppb",
-        },
-        co2: {
-          bsonType: ["double", "int"],
-          description: "CO2 concentration in ppm",
-        },
-        pm25: {
-          bsonType: ["double", "int"],
-          description: "PM2.5 concentration in micrograms/m^3",
-        },
-        pm10: {
-          bsonType: ["double", "int"],
-          description: "PM10 concentration in micrograms/m^3",
-        },
-        no2: {
-          bsonType: ["double", "int"],
-          description: "NO2 concentration in micrograms/m^3",
-        },
-        o3: {
-          bsonType: ["double", "int"],
-          description: "O3 concentration in micrograms/m^3",
-        },
-        so2: {
-          bsonType: ["double", "int"],
-          description: "SO2 concentration in micrograms/m^3",
-        },
-      },
-    },
-  },
-});
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Generazione indici MongoDB}, label=lst:mongodb-indexes]
-  // Indexes
-  db.sensors.createIndex({ sensor_id: 1 }, { unique: true });
-  db.sensors.createIndex({ location: "2dsphere" });
-  db.measurements.createIndex({ sensor_id: 1, timestamp: -1 });
-  db.measurements.createIndex({ timestamp: -1 });
 \end{lstlisting}
