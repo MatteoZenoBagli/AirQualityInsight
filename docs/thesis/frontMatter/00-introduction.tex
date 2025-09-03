@@ -7,6 +7,59 @@
 
 % Add entry to index
 \addcontentsline{toc}{chapter}{Introduzione}
-Questa \`e l'introduzione.
+
+Il monitoraggio della qualità dell'aria urbana rappresenta oggi una delle sfide più rilevanti per la salute
+pubblica e la sostenibilità ambientale. In un'epoca caratterizzata dalla crescente urbanizzazione e dall'intensificarsi
+delle attività antropiche, la necessità di disporre di sistemi affidabili per il rilevamento e l'interpretazione
+dei dati sull'inquinamento atmosferico diventa sempre più necessario. Le concentrazioni di particolato
+PM$_{2.5}$ e PM$_{10}$, biossido di azoto, ozono troposferico e anidride solforosa nelle aree metropolitane
+influenzano direttamente il benessere dei cittadini, richiedendo strumenti di monitoraggio che siano al contempo
+tecnicamente accurati e facilmente accessibili.
+
+L'evoluzione tecnologica degli ultimi anni ha aperto nuove prospettive nell'ambito del monitoraggio ambientale,
+rendendo possibile lo sviluppo di sistemi distribuiti di sensori che operano in tempo reale. Parallelamente,
+la diffusione delle tecnologie web e dei dispositivi mobili ha creato l'opportunità di democratizzare l'accesso
+alle informazioni ambientali, trasformando dati tecnici complessi in visualizzazioni comprensibili e utilizzabili
+da un'ampia gamma di utenti. In questo contesto si inserisce il presente elaborato di tesi, che propone lo sviluppo
+di AirQualityInsight, un sistema integrato per la simulazione, raccolta e visualizzazione di dati
+sulla qualità dell'aria.
+
+Questo applicativo fornisce all'utente una dashboard web che presenta una mappa interattiva di Bologna, sulla quale
+vengono disegnate in tempo reale le misurazioni effettuate da un insieme di sensori dislocati sul territorio.
+La dashboard web, progettata secondo i principi del design mobile-first, offre un'esperienza utente fluida e intuitiva
+sia su dispositivi desktop che mobili. La mappa interattiva, arricchita da layer informativi
+sui confini amministrativi e le \acrshort{ztl}, permette agli utenti di esplorare i dati ambientali nel loro contesto
+geografico, facilitando la comprensione delle correlazioni spaziali tra inquinamento e caratteristiche territoriali.
+
+Una particolare attenzione è stata dedicata alla visualizzazione dei dati attraverso heatmap dinamiche che traducono
+le concentrazioni di inquinanti in rappresentazioni cromatiche intuitive. Questa tecnica di visualizzazione,
+basata sulla scala di colori dell'\acrfull{eaqi}, permette di identificare immediatamente le aree critiche e di
+monitorare l'evoluzione temporale della qualità dell'aria. L'integrazione di funzionalità di filtraggio e aggregazione
+consente agli utenti di personalizzare la visualizzazione in base alle proprie esigenze, concentrandosi
+su specifici inquinanti o periodi temporali.
+
+Il presente elaborato si propone di dimostrare come l'integrazione strategica di tecnologie moderne possa dare vita
+a sistemi di monitoraggio ambientale che coniughino efficacemente accuratezza tecnica e accessibilità d'uso.
+Attraverso l'implementazione di AirQualityInsight, si intende evidenziare le potenzialità delle architetture
+distribuite nel contesto delle smart cities, proponendo soluzioni che possano essere replicate e adattate a diverse
+realtà urbane. La metodologia adottata, che privilegia l'approccio incrementale e la modularità dei componenti,
+rende il sistema facilmente estensibile e manutenibile, caratteristiche fondamentali per la sostenibilità
+a lungo termine di infrastrutture tecnologiche destinate al servizio pubblico.
+
+Di seguito viene illustrata la struttura e gli obiettivi di ciascun capitolo del presente elaborato di tesi:
+
+\begin{itemize}
+  \item Il \textbf{primo capitolo}~(\ref{chapter:first}) introduce l'obiettivo del progetto di tesi e fornisce
+  il quadro teorico necessario alla comprensione del lavoro sviluppato. Viene presentata un'analisi
+  dello stato dell'arte dei sistemi esistenti affini alla soluzione proposta, unitamente ai concetti fondamentali
+  del dominio applicativo di riferimento. Il capitolo si conclude con una descrizione dettagliata delle funzionalità
+  del sistema implementato.
+  \item Il \textbf{secondo capitolo}~(\ref{chapter:second}) illustra le tecnologie adoperate
+  nello sviluppo del progetto. Considerata la natura web-based dell'applicazione, le tecnologie vengono categorizzate
+  distinguendo tra quelle utilizzate per il front-end e quelle impiegate per il back-end.
+  \item Il \textbf{terzo capitolo}~(\ref{chapter:third}) presenta in modo approfondito la fase
+  di progettazione e implementazione del sistema. Dopo aver delineato l'architettura generale, viene fornita
+  una descrizione dettagliata di ciascun componente, dai servizi implementati all'interfaccia utente front-end.
+\end{itemize}
 
 \donotmumberlastpageonleft
