@@ -279,7 +279,7 @@ Di seguito verranno elencati gli endpoint disponibili esposti dalle \acrshort{ap
 Tutti gli endpoint di seguito elencati restituiscono un \acrshort{json} ed un codice di stato \acrshort{http} che può
 essere \texttt{200 OK} in caso di successo o \texttt{500 Internal Server Error} in caso di errore.
 
-\subsubsection{Health Check - \texttt{GET /health}}
+\paragraph{Health Check - \texttt{GET /health}}
 
 Endpoint per il monitoraggio dello stato del servizio.
 Verifica la disponibilità del server e restituisce lo stato operativo.
@@ -296,7 +296,7 @@ misurazioni registrate come da esempio nel listato~\ref{lst:api-health-example}.
   }
 \end{lstlisting}
 
-\subsubsection{Recupero Misurazioni - \texttt{GET /api/measurements}}
+\paragraph{Recupero Misurazioni - \texttt{GET /api/measurements}}
 
 Endpoint per il recupero delle misurazioni ambientali con supporto per filtri e paginazione.
 Restituisce le misurazioni archiviate nel database con possibilità di filtraggio per sensore e intervallo temporale.
@@ -330,7 +330,7 @@ Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-measure
 ]
 \end{lstlisting}
 
-\subsubsection{Lista Sensori - \texttt{GET /api/sensors}}
+\paragraph{Lista Sensori - \texttt{GET /api/sensors}}
 
 Endpoint per il recupero dell'elenco completo dei sensori registrati nel sistema.
 Restituisce tutti i sensori configurati con le relative informazioni di localizzazione e configurazione.
@@ -353,7 +353,7 @@ Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-sensors
 ]
 \end{lstlisting}
 
-\subsubsection{Ultima Misurazione - \texttt{GET /api/latest}}
+\paragraph{Ultima Misurazione - \texttt{GET /api/latest}}
 
 Endpoint per il recupero della misurazione più recente nel sistema.
 Restituisce l'ultima misurazione registrata, ordinata per timestamp decrescente.
@@ -376,6 +376,213 @@ Un esempio di risposta di successo è riportato nel listato~\ref{lst:api-latest-
   "so2":112.44,
   "__v":0
 }
+\end{lstlisting}
+
+\paragraph{Directory WoT - \texttt{GET /wot/things}}
+
+Endpoint per il discovery automatico dei dispositivi registrati nel gateway.
+Restituisce un elenco di tutti i Thing disponibili con informazioni sommarie su identità,
+stato operativo e ultimo contatto. Supporta la notifica proattiva via WebSocket per mantenere sincronizzate
+le applicazioni client senza polling periodico.
+
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:wot-directory-example}
+\begin{lstlisting}[caption={Risposta di successo per endpoint \texttt{/wot/things}}, label=lst:wot-directory-example]
+[
+  {
+    "id": "SENSOR00001",
+    "title": "d0d54bf349674398",
+    "description": "Air Quality Sensor monitoring environmental parameters at 11.3482468,44.4856545",
+    "base": "http://localhost:3000/wot/things/SENSOR00001",
+    "status": "active",
+    "lastContact": "2025-08-30T10:21:32.252Z",
+    "properties": [
+      "temperature",
+      "humidity",
+      "pressure",
+      "voc",
+      "co2",
+      "pm25",
+      "pm10",
+      "no2",
+      "o3",
+      "so2",
+      "status",
+      "location"
+    ],
+    "actions": ["getLatestMeasurement"]
+  },
+  ...
+]
+\end{lstlisting}
+
+\paragraph{\acrlong{td} - \texttt{GET /wot/things/\{sensorId\}}}
+
+Endpoint per il recupero della \acrlong{td} completa per un sensore specifico.
+Restituisce la TD conforme alla specifica \acrshort{w3c} \acrshort{wot} \acrshort{td} v1.1, includendo il contesto
+semantico, le proprietà disponibili, le azioni supportate e tutti i metadati del dispositivo.
+La risposta contiene l'intera struttura \acrshort{json} della \acrlong{td} con vocabolari \acrlong{saref} e definizioni
+complete delle forme di interazione.
+
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:wot-thing-example}
+\begin{lstlisting}[caption={Risposta di successo per endpoint \texttt{/wot/things/{sensorId}}}, label=lst:wot-thing-example]
+{
+  "@context": [
+    "https://www.w3.org/2022/wot/td/v1.1",
+    { "saref": "https://saref.etsi.org/core/" }
+  ],
+  "@type": ["Thing", "saref:Sensor"],
+  "id": "urn:sensor:air-quality:SENSOR00001",
+  "title": "d0d54bf349674398",
+  "description": "Air Quality Sensor monitoring environmental parameters at 11.3482468,44.4856545",
+  "base": "http://localhost:3000/wot/things/SENSOR00001",
+  "securityDefinitions": { "nosec_sc": { "scheme": "nosec" } },
+  "security": ["nosec_sc"],
+  "properties": {
+    "temperature": {
+      "type": "number",
+      "title": "Temperature",
+      "description": "Ambient temperature in Celsius",
+      "unit": "Celsius degrees",
+      "minimum": -15,
+      "maximum": 35,
+      "readOnly": true,
+      "observable": false,
+      "forms": [
+        {
+          "href": "http://localhost:3000/wot/things/SENSOR00001/properties/temperature",
+          "contentType": "application/json",
+          "op": ["readproperty"]
+        }
+      ]
+    },
+    "humidity": {...},
+    "pressure": {...},
+    "voc": {...},
+    "co2": {...},
+    "pm25": {...},
+    "pm10": {...},
+    "no2": {...},
+    "o3": {...},
+    "so2": {...},
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "description": "Current sensor status",
+      "enum": ["active", "inactive"],
+      "readOnly": true,
+      "observable": false,
+      "forms": [
+        {
+          "href": "http://localhost:3000/wot/things/SENSOR00001/properties/status",
+          "contentType": "application/json",
+          "op": ["readproperty"]
+        }
+      ]
+    },
+    "location": {
+      "type": "object",
+      "title": "Location",
+      "description": "Sensor geographical location",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" }
+      },
+      "readOnly": true,
+      "observable": false,
+      "forms": [
+        {
+          "href": "http://localhost:3000/wot/things/SENSOR00001/properties/location",
+          "contentType": "application/json",
+          "op": ["readproperty"]
+        }
+      ]
+    }
+  },
+  "actions": {
+    "getLatestMeasurement": {
+      "title": "Get Latest Measurement",
+      "description": "Get the latest complete measurement from this sensor",
+      "forms": [
+        {
+          "href": "http://localhost:3000/wot/things/SENSOR00001/actions/getLatestMeasurement",
+          "contentType": "application/json",
+          "op": ["invokeaction"]
+        }
+      ]
+    }
+  }
+}
+\end{lstlisting}
+
+\paragraph{Proprietà Singola - \texttt{GET /wot/things/\{sensorId\}/properties/\{propertyName\}}}
+
+Endpoint per l'accesso alle singole proprietà del Thing.
+Restituisce il valore corrente della proprietà richiesta incapsulato in un oggetto \acrshort{json} standardizzato.
+Supporta tutte le proprietà ambientali (\texttt{temperature}, \texttt{humidity}, \texttt{pressure}, \texttt{voc},
+\texttt{co2}, \texttt{pm25}, \texttt{pm10}, \texttt{no2}, \texttt{o3}, \texttt{so2}) oltre a proprietà di sistema
+(\texttt{status}, \texttt{location}).
+
+Un esempio di risposta di successo per la proprietà \texttt{temperature} è riportato
+nel listato~\ref{lst:wot-property-example}
+\begin{lstlisting}[caption={Risposta di successo per proprietà singola}, label=lst:wot-property-example]
+{
+  "value": 23.5
+}
+\end{lstlisting}
+
+\paragraph{Tutte le Proprietà - \texttt{GET /wot/things/\{sensorId\}/properties}}
+
+Endpoint per il recupero di tutte le proprietà del Thing in una singola chiamata.
+Ottimizza l'efficienza della comunicazione permettendo di recuperare lo stato completo del sensore senza multiple
+richieste \acrshort{http}. Restituisce un oggetto \acrshort{json} contenente tutte le proprietà con i relativi
+valori correnti.
+
+Un esempio di risposta di successo è riportato nel listato~\ref{lst:wot-properties-example}
+\begin{lstlisting}[caption={Risposta di successo per tutte le proprietà}, label=lst:wot-properties-example]
+{
+  "temperature": { "value": -7.15 },
+  "humidity": { "value": 54.52 },
+  "pressure": { "value": 1020 },
+  "voc": { "value": 1.71 },
+  "co2": { "value": 431.7 },
+  "pm25": { "value": 36.91 },
+  "pm10": { "value": 90.61 },
+  "no2": { "value": 133.43 },
+  "o3": { "value": 54.66 },
+  "so2": { "value": 270.31 },
+  "status": { "value": "active" },
+  "location": { "value": { "latitude": 11.3482468, "longitude": 44.4856545 } }
+}
+\end{lstlisting}
+
+\paragraph{Invocazione Azioni - \texttt{GET /wot/things/\{sensorId\}/actions/\{actionName\}}}
+
+Endpoint per l'invocazione delle azioni definite nella \acrlong{td}.
+Attualmente supporta l'azione \texttt{getLatestMeasurement} che restituisce l'insieme completo delle misurazioni
+più recenti del sensore. L'azione viene eseguita immediatamente e restituisce il risultato in formato \acrshort{json}
+strutturato con tutti i parametri ambientali misurati.
+
+Un esempio di risposta di successo per l'azione \texttt{getLatestMeasurement} è riportato
+nel listato~\ref{lst:wot-action-example}
+\begin{lstlisting}[caption={Risposta di successo per azione \texttt{getLatestMeasurement}},
+  label=lst:wot-action-example]
+{
+  "result": {
+    "sensor_id": "SENSOR00001",
+    "timestamp": "2025-08-30T10:21:39.092Z",
+    "temperature": -6.74,
+    "humidity": 55.31,
+    "pressure": 1020,
+    "voc": 1.791,
+    "co2": 421.9,
+    "pm25": 35.67,
+    "pm10": 89.71,
+    "no2": 129.49,
+    "o3": 56.53,
+    "so2": 286.01
+  }
+}
+
 \end{lstlisting}
 
 \section{Dashboard service}

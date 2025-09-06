@@ -291,6 +291,41 @@ disponendo di una vasta scelta di librerie disponibili attraverso \acrfull{npm} 
 La sua architettura event-driven e le performance elevate lo rendono una scelta ideale per molte tipologie
 di applicazioni web moderne.
 
+\subsubsection{\acrshort{wot}}
+
+Il Web of Things (\acrshort{wot}) rappresenta un paradigma architetturale che estende i principi del \acrshort{www}
+all'\acrshort{iot}, permettendo l'interoperabilità tra dispositivi eterogenei attraverso standard
+web consolidati~\cite{w3c-wot-td}. L'implementazione analizzata trasforma sensori di qualità dell'aria in
+\textit{Things} web-accessibili, seguendo le specifiche \acrshort{w3c} e utilizzando l'ontologia
+\acrfull{saref}~\cite{saref-ontology}. Ogni sensore fisico viene quindi trasformato in una risorsa web
+identificabile univocamente, accessibile attraverso protocolli \acrshort{http} standard e descritta mediante metadati
+strutturati secondo il vocabolario \acrshort{wot}. Questa approccio garantisce l'interoperabilità semantica e
+l'integrazione seamless con applicazioni web esistenti.
+
+L'architettura utilizza le \acrfull{td} come elemento centrale, conformi alla specifica \acrshort{w3c} \acrshort{wot}
+\acrlong{td} v1.1~\cite{w3c-wot-td}. La struttura della \acrshort{td} include diversi componenti fondamentali
+che definiscono l'identità, le capacità e le modalità di interazione del dispositivo. Ogni sensore viene identificato
+univocamente attraverso \acrshort{uri} strutturati (urn:sensor:air-quality:\$\{sensor\_id\}) e classificato
+semanticamente usando il tipo saref:Sensor.
+
+Il contesto semantico integra il vocabolario \acrshort{wot} standard con l'ontologia \acrshort{saref},
+facilitando l'interpretazione automatica delle funzionalità del dispositivo. Le proprietà modellano
+parametri ambientali con schemi di dati precisi che includono tipo, unità di misura e range di validità.
+
+La directory \acrshort{wot} (\texttt{/wot/things}) supporta il discovery automatico dei dispositivi,
+fornendo informazioni sommarie su identità, stato operativo e ultimo contatto.
+Le notifiche proattive via WebSocket mantengono sincronizzate le applicazioni client senza polling periodico.
+
+L'implementazione rispetta le specifiche \acrshort{w3c} \acrshort{wot}~\cite{w3c-wot-architecture}, utilizzando
+vocabolari semantici standard e implementando gli elementi necessari.
+L'uso dell'ontologia \acrshort{saref}~\cite{saref-ontology} aggiunge un layer semantico che facilita
+l'interoperabilità con sistemi di building automation e smart city.
+
+La separazione tra modello logico (\acrlong{td}) e implementazione fisica (sensori hardware) facilita l'evoluzione
+dell'architettura e l'integrazione di nuove tipologie di dispositivi, confermando la validità del paradigma
+\acrshort{wot} per applicazioni \acrshort{iot} di larga scala e garantiscono compatibilità
+con toolchain \acrshort{wot} esistenti e scalabilità orizzontale~\cite{guinard-wot}.
+
 \subsection{Python}
 
 Python è un linguaggio di programmazione di alto livello, interpretato e multi-paradigma.
@@ -645,8 +680,8 @@ per gli sviluppatori familiari con JavaScript e altri linguaggi di programmazion
 
 L'Aggregation Framework rappresenta uno strumento potente per l'elaborazione e l'analisi dei dati,
 offrendo funzionalità comparabili a quelle dei sistemi SQL attraverso pipeline di trasformazione
- \cite{membrey2014definitive}. Le operazioni di aggregazione includono filtering, grouping, sorting,
- reshaping e computational operations, permettendo analisi complesse direttamente a livello di database.
+\cite{membrey2014definitive}. Le operazioni di aggregazione includono filtering, grouping, sorting,
+reshaping e computational operations, permettendo analisi complesse direttamente a livello di database.
 
 Le prestazioni di MongoDB dipendono significativamente dalla progettazione dello schema e dalla strategia
 di indicizzazione adottata \cite{chodorow2013mongodb}. A differenza dei database relazionali,
