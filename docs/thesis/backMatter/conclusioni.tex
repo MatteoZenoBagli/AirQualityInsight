@@ -1,32 +1,70 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%per fare le conclusioni
 \chapter*{Conclusioni}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
 \rhead[\fancyplain{}{\bfseries
 CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries
 CONCLUSIONI}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Conclusioni
-                                        %   nell'indice
-\addcontentsline{toc}{chapter}{Conclusioni} Queste sono le
-conclusioni.\\
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a magna quis nunc venenatis vestibulum. Curabitur commodo efficitur ipsum, non ullamcorper tellus. Duis dictum commodo nisi nec venenatis. Donec euismod pulvinar finibus. Suspendisse lorem mi, suscipit quis faucibus ut, luctus in justo. Cras pulvinar arcu ut ullamcorper pulvinar. Aliquam dictum tortor quis diam luctus, quis tristique tortor ultrices. Integer et lacus a velit efficitur convallis. Morbi enim erat, fermentum vel nulla id, viverra vehicula nisi. Integer non auctor leo, eu convallis massa. Cras eu cursus ligula. Nunc non purus et sem vehicula viverra ut nec nibh.
+\addcontentsline{toc}{chapter}{Conclusioni}
 
-Quisque posuere purus quis eros auctor efficitur. Etiam mattis vitae nulla et blandit. Nulla a orci magna. Cras ac elit enim. Vestibulum nec nisl metus. Mauris congue velit nec malesuada scelerisque. Sed dignissim, enim vitae semper fermentum, mauris leo vestibulum nisl, in malesuada nibh felis nec dui.
+Il progetto AirQualityInsight ha dimostrato la fattibilità e l'efficacia di un approccio integrato al monitoraggio
+ambientale urbano, combinando tecnologie moderne di sviluppo web, architetture distribuite e tecniche avanzate
+di visualizzazione dati. L'implementazione del sistema ha permesso di validare le scelte architetturali adottate e di
+confermare l'importanza della user experience nella progettazione di strumenti per il monitoraggio ambientale
+destinati al pubblico generale.
 
-Nullam sit amet tellus eget mi varius commodo. Vestibulum sit amet egestas odio. Nam in ullamcorper quam, nec efficitur augue. Curabitur eget elit in leo eleifend tempor vel lobortis lorem. Duis neque dui, tempus eu sollicitudin ac, lobortis sit amet odio. Morbi eleifend, tellus a varius consequat, enim erat sagittis justo, ac rutrum ipsum augue in leo. Suspendisse non mi ante.
+Uno degli aspetti più significativi emersi durante lo sviluppo è stata l'importanza della geolocalizzazione
+strategica dei sensori. L'utilizzo delle query Overpass per identificare le intersezioni stradali più rilevanti e la
+successiva applicazione di algoritmi di filtraggio spaziale hanno permesso di ottimizzare la copertura territoriale,
+bilanciando efficacemente densità di monitoraggio e utilizzo delle risorse. La scelta di concentrarsi sui punti
+di maggiore criticità del traffico urbano si è dimostrata una strategia interessante per massimizzare l'utilità
+informativa del sistema.
 
-Praesent sed pretium dui, id volutpat tortor. Suspendisse tortor lorem, vestibulum vitae ullamcorper vitae, tincidunt nec leo. Proin interdum congue blandit. Ut bibendum sagittis leo, nec venenatis urna mollis id. Donec nec erat non justo maximus venenatis. In mollis elit eu odio maximus porta. Vestibulum varius turpis sit amet orci blandit, vitae volutpat erat viverra.
+L'implementazione delle heatmap dinamiche ha evidenziato le potenzialità delle visualizzazioni geografiche nel rendere
+accessibili informazioni tecniche complesse. La capacità di tradurre concentrazioni di inquinanti in rappresentazioni
+cromatiche intuitive ha trasformato dataset numerici in strumenti di comunicazione efficaci e rappresentativi,
+facilitando la comprensione immediata delle condizioni ambientali e dei loro pattern spaziali. L'integrazione con gli
+standard europei \acrshort{eaqi} ha inoltre garantito la coerenza con i sistemi di monitoraggio ufficiali,
+aumentando la credibilità e l'utilità pratica del sistema.
 
-Suspendisse nunc urna, elementum ut purus a, sagittis porta velit. Integer ultricies convallis tortor id pellentesque. Duis et sem a mi bibendum congue. Morbi ut tellus cursus, laoreet ipsum rutrum, condimentum felis. Proin velit mi, ultricies a urna nec, facilisis pretium mi. Pellentesque tristique interdum purus, a facilisis mi tempor quis. Sed finibus venenatis ligula porttitor porttitor. Suspendisse cursus lorem nec velit commodo fringilla.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a magna quis nunc venenatis vestibulum. Curabitur commodo efficitur ipsum, non ullamcorper tellus. Duis dictum commodo nisi nec venenatis. Donec euismod pulvinar finibus. Suspendisse lorem mi, suscipit quis faucibus ut, luctus in justo. Cras pulvinar arcu ut ullamcorper pulvinar. Aliquam dictum tortor quis diam luctus, quis tristique tortor ultrices. Integer et lacus a velit efficitur convallis. Morbi enim erat, fermentum vel nulla id, viverra vehicula nisi. Integer non auctor leo, eu convallis massa. Cras eu cursus ligula. Nunc non purus et sem vehicula viverra ut nec nibh.
+Il progetto ha tuttavia evidenziato anche alcune limitazioni e aree di possibile miglioramento. La natura simulata
+dei dati, pur permettendo lo sviluppo e il testing del sistema, non può sostituire completamente l'integrazione
+con sensori reali per una validazione completa dell'efficacia operativa. Inoltre, l'attuale implementazione
+si concentra esclusivamente sul territorio bolognese, limitando la valutazione della scalabilità geografica del sistema.
 
-Quisque posuere purus quis eros auctor efficitur. Etiam mattis vitae nulla et blandit. Nulla a orci magna. Cras ac elit enim. Vestibulum nec nisl metus. Mauris congue velit nec malesuada scelerisque. Sed dignissim, enim vitae semper fermentum, mauris leo vestibulum nisl, in malesuada nibh felis nec dui.
+Le fondamenta architetturali e tecnologiche di AirQualityInsight aprono numerose prospettive per
+estensioni e miglioramenti futuri, ciascuna delle quali potrebbe significativamente ampliare
+l'utilità e l'impatto del sistema.
+Di seguito si propongo degli sviluppi futuri che potrebbero arricchire il sistema realizzato in modo da accrescerne
+il potere informativo e migliorare l'esperienza utente con l'aggiunta di nuove funzionalità.
 
-Nullam sit amet tellus eget mi varius commodo. Vestibulum sit amet egestas odio. Nam in ullamcorper quam, nec efficitur augue. Curabitur eget elit in leo eleifend tempor vel lobortis lorem. Duis neque dui, tempus eu sollicitudin ac, lobortis sit amet odio. Morbi eleifend, tellus a varius consequat, enim erat sagittis justo, ac rutrum ipsum augue in leo. Suspendisse non mi ante.
+Le evoluzioni principali riguardano l'implementazione di funzionalità di analisi retrospettiva con controlli temporali
+granulari per visualizzare l'evoluzione della qualità dell'aria su diverse scale temporali, dall'analisi oraria a
+quella mensile. Questa funzionalità richiederebbe algoritmi di compressione e aggregazione dei dati storici
+per garantire prestazioni ottimali.
 
-Praesent sed pretium dui, id volutpat tortor. Suspendisse tortor lorem, vestibulum vitae ullamcorper vitae, tincidunt nec leo. Proin interdum congue blandit. Ut bibendum sagittis leo, nec venenatis urna mollis id. Donec nec erat non justo maximus venenatis. In mollis elit eu odio maximus porta. Vestibulum varius turpis sit amet orci blandit, vitae volutpat erat viverra.
+Un sistema di notifiche proattivo trasformerebbe il sistema da strumento passivo a piattaforma di allerta attiva,
+implementando soglie personalizzabili e meccanismi di notifica multicanale. Gli algoritmi predittivi potrebbero
+anticipare il superamento delle soglie critiche, integrando servizi di messaggistica esterni
+per garantire l'affidabilità delle comunicazioni.
 
-Suspendisse nunc urna, elementum ut purus a, sagittis porta velit. Integer ultricies convallis tortor id pellentesque. Duis et sem a mi bibendum congue. Morbi ut tellus cursus, laoreet ipsum rutrum, condimentum felis. Proin velit mi, ultricies a urna nec, facilisis pretium mi. Pellentesque tristique interdum purus, a facilisis mi tempor quis. Sed finibus venenatis ligula porttitor porttitor. Suspendisse cursus lorem nec velit commodo fringilla.
+Il modulo di reporting avanzato beneficerebbe enti pubblici e ricercatori attraverso la generazione automatica
+di grafici statistici e report personalizzabili, trasformando i dati grezzi in strumenti di supporto decisionale.
+L'implementazione includerebbe librerie di visualizzazione avanzate e template conformi agli standard normativi europei.
+
+I servizi di prossimità geografica fornirebbero informazioni sulla qualità dell'aria nel raggio
+di distanze personalizzabili, utilizzando \acrshort{api} di geolocalizzazione e algoritmi di interpolazione spaziale
+per calcolare indici medi in tempo reale, risultando particolarmente utili per applicazioni mobile.
+
+L'evoluzione più ambiziosa riguarda lo sviluppo di capacità predittive tramite modelli di machine learning
+che integrino variabili meteorologiche, pattern di traffico e dati storici per fornire
+previsioni affidabili a breve e medio termine.
+
+L'integrazione con l'ecosistema urbano includerebbe l'interoperabilità con sistemi smart city
+esistenti attraverso \acrshort{api} standardizzate, mentre l'espansione geografica oltre Bologna richiederebbe
+meccanismi automatizzati per l'acquisizione di dati via \acrlong{osm}. Infine, l'evoluzione verso un monitoraggio
+collaborativo integrerebbe sensori citizen science e dispositivi \acrshort{iot} domestici, democratizzando l'accesso
+alle informazioni ambientali.
+
+La modularità del sistema e l'adozione di standard aperti facilitano un'implementazione
+incrementale che bilanci innovazione tecnologica e sostenibilità operativa.
